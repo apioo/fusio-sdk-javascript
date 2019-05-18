@@ -1,0 +1,11 @@
+{
+  "name": "fusio-sdk",
+  "version": "1.0.0",
+  "description": "SDK to talk to the Fusio API",
+  "author": "Christoph Kappestein",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}

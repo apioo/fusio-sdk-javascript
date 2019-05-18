@@ -1,0 +1,17 @@
+import * as PlanContractCollection from "../../gen/consumer_plan_contract";
+import * as PlanContractEntity
+    from "../../gen/consumer_plan_contract__contract_id__0_9___";
+import {BaseResource} from "../BaseResource";
+
+export class PlanContractResource extends BaseResource
+{
+    public collection()
+    {
+        return new PlanContractCollection.default(this.accessToken, this.httpClient);
+    }
+
+    public entity(id: number)
+    {
+        return new PlanContractEntity.default(id, this.accessToken, this.httpClient);
+    }
+}
