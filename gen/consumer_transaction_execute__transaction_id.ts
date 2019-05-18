@@ -23,7 +23,7 @@ export default class Resource {
             method: "GET",
         };
 
-        return this.httpClient.get<>(this.url, params);
+        return this.httpClient.get(this.url, params);
     }
 
 }
