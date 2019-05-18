@@ -5,6 +5,6 @@ export class LoginResource extends BaseResource
 {
     public do()
     {
-        return new Login.default(this.accessToken, this.httpClient);
+        return new Login.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 }

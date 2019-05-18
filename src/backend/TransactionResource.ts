@@ -7,11 +7,11 @@ export class TransactionResource extends BaseResource
 {
     public collection()
     {
-        return new TransactionCollection.default(this.accessToken, this.httpClient);
+        return new TransactionCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public entity(id: number)
     {
-        return new TransactionEntity.default(id, this.accessToken, this.httpClient);
+        return new TransactionEntity.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
 }

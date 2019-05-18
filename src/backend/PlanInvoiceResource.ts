@@ -7,11 +7,11 @@ export class PlanInvoiceResource extends BaseResource
 {
     public collection()
     {
-        return new PlanInvoiceCollection.default(this.accessToken, this.httpClient);
+        return new PlanInvoiceCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public entity(id: number)
     {
-        return new PlanInvoiceEntity.default(id, this.accessToken, this.httpClient);
+        return new PlanInvoiceEntity.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
 }

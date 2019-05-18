@@ -6,11 +6,11 @@ export class GrantResource extends BaseResource
 {
     public collection()
     {
-        return new GrantCollection.default(this.accessToken, this.httpClient);
+        return new GrantCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public entity(id: number)
     {
-        return new GrantEntity.default(id, this.accessToken, this.httpClient);
+        return new GrantEntity.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
 }

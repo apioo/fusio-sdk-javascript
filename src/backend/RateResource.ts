@@ -6,11 +6,11 @@ export class RateResource extends BaseResource
 {
     public collection()
     {
-        return new RateCollection.default(this.accessToken, this.httpClient);
+        return new RateCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public entity(id: number)
     {
-        return new RateEntity.default(id, this.accessToken, this.httpClient);
+        return new RateEntity.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
 }

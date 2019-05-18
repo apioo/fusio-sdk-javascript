@@ -6,11 +6,11 @@ export class EventResource extends BaseResource
 {
     public collection()
     {
-        return new EventCollection.default(this.accessToken, this.httpClient);
+        return new EventCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public entity(id: number)
     {
-        return new EventEntity.default(id, this.accessToken, this.httpClient);
+        return new EventEntity.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
 }

@@ -6,11 +6,11 @@ export class CronjobResource extends BaseResource
 {
     public collection()
     {
-        return new CronjobCollection.default(this.accessToken, this.httpClient);
+        return new CronjobCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public entity(id: number)
     {
-        return new CronjobEntity.default(id, this.accessToken, this.httpClient);
+        return new CronjobEntity.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
 }

@@ -6,11 +6,11 @@ export class UserResource extends BaseResource
 {
     public collection()
     {
-        return new UserCollection.default(this.accessToken, this.httpClient);
+        return new UserCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public entity(id: number)
     {
-        return new UserEntity.default(id, this.accessToken, this.httpClient);
+        return new UserEntity.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
 }

@@ -6,11 +6,11 @@ export class AppResource extends BaseResource
 {
     public collection()
     {
-        return new AppCollection.default(this.accessToken, this.httpClient);
+        return new AppCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public entity(id: number)
     {
-        return new AppEntity.default(id, this.accessToken, this.httpClient);
+        return new AppEntity.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
 }

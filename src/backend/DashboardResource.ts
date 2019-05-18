@@ -5,6 +5,6 @@ export class DashboardResource extends BaseResource
 {
     public collection()
     {
-        return new DashboardCollection.default(this.accessToken, this.httpClient);
+        return new DashboardCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 }

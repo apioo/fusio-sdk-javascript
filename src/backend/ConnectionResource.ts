@@ -9,21 +9,21 @@ export class ConnectionResource extends BaseResource
 {
     public collection()
     {
-        return new ConnectionCollection.default(this.accessToken, this.httpClient);
+        return new ConnectionCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public entity(id: number)
     {
-        return new ConnectionEntity.default(id, this.accessToken, this.httpClient);
+        return new ConnectionEntity.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public form()
     {
-        return new ConnectionForm.default(this.accessToken, this.httpClient);
+        return new ConnectionForm.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public list()
     {
-        return new ConnectionList.default(this.accessToken, this.httpClient);
+        return new ConnectionList.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 }

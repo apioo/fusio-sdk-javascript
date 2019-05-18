@@ -7,11 +7,11 @@ export class SubscriptionResource extends BaseResource
 {
     public collection()
     {
-        return new SubscriptionCollection.default(this.accessToken, this.httpClient);
+        return new SubscriptionCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public entity(id: number)
     {
-        return new SubscriptionEntity.default(id, this.accessToken, this.httpClient);
+        return new SubscriptionEntity.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
 }

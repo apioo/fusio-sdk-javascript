@@ -5,6 +5,6 @@ export class RevokeResource extends BaseResource
 {
     public do()
     {
-        return new Revoke.default(this.accessToken, this.httpClient);
+        return new Revoke.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 }

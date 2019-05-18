@@ -6,11 +6,11 @@ export class LogResource extends BaseResource
 {
     public collection()
     {
-        return new LogCollection.default(this.accessToken, this.httpClient);
+        return new LogCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public entity(id: number)
     {
-        return new LogEntity.default(id, this.accessToken, this.httpClient);
+        return new LogEntity.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
 }

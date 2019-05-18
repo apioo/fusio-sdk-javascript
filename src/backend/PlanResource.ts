@@ -6,11 +6,11 @@ export class PlanResource extends BaseResource
 {
     public collection()
     {
-        return new PlanCollection.default(this.accessToken, this.httpClient);
+        return new PlanCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public entity(id: number)
     {
-        return new PlanEntity.default(id, this.accessToken, this.httpClient);
+        return new PlanEntity.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
 }

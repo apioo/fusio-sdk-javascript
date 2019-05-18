@@ -9,21 +9,21 @@ export class SchemaResource extends BaseResource
 {
     public collection()
     {
-        return new SchemaCollection.default(this.accessToken, this.httpClient);
+        return new SchemaCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public entity(id: number)
     {
-        return new SchemaEntity.default(id, this.accessToken, this.httpClient);
+        return new SchemaEntity.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
     
     public form(id: number)
     {
-        return new SchemaForm.default(id, this.accessToken, this.httpClient);
+        return new SchemaForm.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
     
     public preview(id: number)
     {
-        return new SchemaPreview.default(id, this.accessToken, this.httpClient);
+        return new SchemaPreview.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
 }

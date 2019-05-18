@@ -6,11 +6,11 @@ export class DocResource extends BaseResource
 {
     public collection()
     {
-        return new DocCollection.default(this.accessToken, this.httpClient);
+        return new DocCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public entity(version: string, path: string)
     {
-        return new DocEntity.default(version, path, this.accessToken, this.httpClient);
+        return new DocEntity.default(version, path, this.baseUrl, this.accessToken, this.httpClient);
     }
 }

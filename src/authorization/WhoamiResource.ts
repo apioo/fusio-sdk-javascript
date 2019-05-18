@@ -5,6 +5,6 @@ export class WhoamiResource extends BaseResource
 {
     public do()
     {
-        return new Whoami.default(this.accessToken, this.httpClient);
+        return new Whoami.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 }

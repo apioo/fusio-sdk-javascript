@@ -6,11 +6,11 @@ export class LogErrorResource extends BaseResource
 {
     public collection()
     {
-        return new LogErrorCollection.default(this.accessToken, this.httpClient);
+        return new LogErrorCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public entity(id: number)
     {
-        return new LogErrorEntity.default(id, this.accessToken, this.httpClient);
+        return new LogErrorEntity.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
 }

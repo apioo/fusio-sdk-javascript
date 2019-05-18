@@ -5,6 +5,6 @@ export class RegisterResource extends BaseResource
 {
     public do()
     {
-        return new Register.default(this.accessToken, this.httpClient);
+        return new Register.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 }

@@ -6,11 +6,11 @@ export class AuditResource extends BaseResource
 {
     public collection()
     {
-        return new AuditCollection.default(this.accessToken, this.httpClient);
+        return new AuditCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public entity(id: number)
     {
-        return new AuditEntity.default(id, this.accessToken, this.httpClient);
+        return new AuditEntity.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
 }

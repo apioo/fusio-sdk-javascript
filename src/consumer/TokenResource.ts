@@ -5,6 +5,6 @@ export class TokenResource extends BaseResource
 {
     public do()
     {
-        return new Token.default(this.accessToken, this.httpClient);
+        return new Token.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 }

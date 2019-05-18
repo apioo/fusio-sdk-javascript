@@ -6,11 +6,11 @@ export class AccountResource extends BaseResource
 {
     public entity()
     {
-        return new Account.default(this.accessToken, this.httpClient);
+        return new Account.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public changePassword()
     {
-        return new ChangePassword.default(this.accessToken, this.httpClient);
+        return new ChangePassword.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 }

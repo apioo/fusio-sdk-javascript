@@ -6,11 +6,11 @@ export class RoutesResource extends BaseResource
 {
     public collection()
     {
-        return new RoutesCollection.default(this.accessToken, this.httpClient);
+        return new RoutesCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public entity(id: number)
     {
-        return new RoutesEntity.default(id, this.accessToken, this.httpClient);
+        return new RoutesEntity.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
 }

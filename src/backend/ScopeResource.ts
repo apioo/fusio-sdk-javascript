@@ -6,11 +6,11 @@ export class ScopeResource extends BaseResource
 {
     public collection()
     {
-        return new ScopeCollection.default(this.accessToken, this.httpClient);
+        return new ScopeCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public entity(id: number)
     {
-        return new ScopeEntity.default(id, this.accessToken, this.httpClient);
+        return new ScopeEntity.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
 }

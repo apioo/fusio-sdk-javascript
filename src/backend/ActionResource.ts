@@ -10,26 +10,26 @@ export class ActionResource extends BaseResource
 {
     public collection()
     {
-        return new ActionCollection.default(this.accessToken, this.httpClient);
+        return new ActionCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public entity(id: number)
     {
-        return new ActionEntity.default(id, this.accessToken, this.httpClient);
+        return new ActionEntity.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public execute(id: number)
     {
-        return new ActionExecute.default(id, this.accessToken, this.httpClient);
+        return new ActionExecute.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public form()
     {
-        return new ActionForm.default(this.accessToken, this.httpClient);
+        return new ActionForm.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public list()
     {
-        return new ActionList.default(this.accessToken, this.httpClient);
+        return new ActionList.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 }

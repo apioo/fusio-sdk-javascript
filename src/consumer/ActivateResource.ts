@@ -5,6 +5,6 @@ export class ActivateResource extends BaseResource
 {
     public do()
     {
-        return new Activate.default(this.accessToken, this.httpClient);
+        return new Activate.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 }

@@ -23,52 +23,52 @@ export class StatisticResource extends BaseResource
 {
     public countRequests()
     {
-        return new StatisticCountRequests.default(this.accessToken, this.httpClient);
+        return new StatisticCountRequests.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public errorsPerRoute()
     {
-        return new StatisticErrorsPerRoute.default(this.accessToken, this.httpClient);
+        return new StatisticErrorsPerRoute.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public incomingRequests()
     {
-        return new StatisticIncomingRequests.default(this.accessToken, this.httpClient);
+        return new StatisticIncomingRequests.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public incomingTransactions()
     {
-        return new StatisticIncomingTransactions.default(this.accessToken, this.httpClient);
+        return new StatisticIncomingTransactions.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public issuedTokens()
     {
-        return new StatisticIssuedTokens.default(this.accessToken, this.httpClient);
+        return new StatisticIssuedTokens.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public mostUsedApps()
     {
-        return new StatisticMostUsedApps.default(this.accessToken, this.httpClient);
+        return new StatisticMostUsedApps.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public mostUsedRoutes()
     {
-        return new StatisticMostUsedRoutes.default(this.accessToken, this.httpClient);
+        return new StatisticMostUsedRoutes.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public timeAverage()
     {
-        return new StatisticTimeAverage.default(this.accessToken, this.httpClient);
+        return new StatisticTimeAverage.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public timePerRoute()
     {
-        return new StatisticTimePerRoute.default(this.accessToken, this.httpClient);
+        return new StatisticTimePerRoute.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
     public usedpoints()
     {
-        return new StatisticUsedPoints.default(this.accessToken, this.httpClient);
+        return new StatisticUsedPoints.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
 }
