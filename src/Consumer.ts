@@ -33,11 +33,7 @@ export class Consumer extends BaseResource
     public constructor(baseUrl: string, accessToken: string, httpClient: AxiosInstance)
     {
         super(baseUrl, accessToken, httpClient);
-        this.init();
-    }
 
-    private init()
-    {
         this.account = new AccountResource(this.baseUrl, this.accessToken, this.httpClient);
         this.activate = new ActivateResource(this.baseUrl, this.accessToken, this.httpClient);
         this.app = new AppResource(this.baseUrl, this.accessToken, this.httpClient);

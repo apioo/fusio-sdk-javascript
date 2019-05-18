@@ -47,11 +47,7 @@ export class Backend extends BaseResource
     public constructor(baseUrl: string, accessToken: string, httpClient: AxiosInstance)
     {
         super(baseUrl, accessToken, httpClient);
-        this.init();
-    }
 
-    private init()
-    {
         this.action = new ActionResource(this.baseUrl, this.accessToken, this.httpClient);
         this.app = new AppResource(this.baseUrl, this.accessToken, this.httpClient);
         this.audit = new AuditResource(this.baseUrl, this.accessToken, this.httpClient);

@@ -9,11 +9,7 @@ export class Meta extends BaseResource
     public constructor(baseUrl: string, accessToken: string, httpClient: AxiosInstance)
     {
         super(baseUrl, accessToken, httpClient);
-        this.init();
-    }
 
-    private init()
-    {
         this.doc = new DocResource(this.baseUrl, this.accessToken, this.httpClient);
     }
 }
