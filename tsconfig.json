@@ -1,9 +1,13 @@
 {
   "compilerOptions": {
-    "module": "ES6",
-    "target": "ES5",
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["es2015", "dom"],
+    "declaration": true,
     "outDir": "./dist",
-    "moduleResolution": "node"
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true
   },
   "files": [
     "index.ts"
