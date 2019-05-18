@@ -13,7 +13,7 @@ export default class Resource {
         this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
-    public post(data: Authorization): AxiosPromise<Access_token> {
+    public post(data: Authorization_code | Password | Client_credentials | Refresh_token): AxiosPromise<Access_token> {
         let params = {
             method: "POST",
         };
