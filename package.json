@@ -4,7 +4,7 @@
   "description": "SDK to talk to the Fusio API",
   "author": "Christoph Kappestein",
   "license": "MIT",
-  "homepage": "https://github.com/apioo/fusio-sdk-javascript",
+  "homepage": "https://www.fusio-project.org/",
   "main": "dist/index.js",
   "dependencies": {
     "axios": "^0.18.0"
