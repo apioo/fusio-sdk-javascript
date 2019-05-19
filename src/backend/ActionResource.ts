@@ -6,30 +6,24 @@ import * as ActionForm from "../../gen/backend_action_form";
 import * as ActionList from "../../gen/backend_action_list";
 import {BaseResource} from "../BaseResource";
 
-export class ActionResource extends BaseResource
-{
-    public collection()
-    {
+export class ActionResource extends BaseResource {
+    public collection() {
         return new ActionCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
-    public entity(id: number)
-    {
+    public entity(id: number) {
         return new ActionEntity.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
 
-    public execute(id: number)
-    {
+    public execute(id: number) {
         return new ActionExecute.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
 
-    public form()
-    {
+    public form() {
         return new ActionForm.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
-    public list()
-    {
+    public list() {
         return new ActionList.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 }

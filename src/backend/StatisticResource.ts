@@ -19,55 +19,44 @@ import * as StatisticTimePerRoute
 import * as StatisticUsedPoints from "../../gen/backend_statistic_used_points";
 import {BaseResource} from "../BaseResource";
 
-export class StatisticResource extends BaseResource
-{
-    public countRequests()
-    {
+export class StatisticResource extends BaseResource {
+    public countRequests() {
         return new StatisticCountRequests.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
-    public errorsPerRoute()
-    {
+    public errorsPerRoute() {
         return new StatisticErrorsPerRoute.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
-    public incomingRequests()
-    {
+    public incomingRequests() {
         return new StatisticIncomingRequests.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
-    public incomingTransactions()
-    {
+    public incomingTransactions() {
         return new StatisticIncomingTransactions.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
-    public issuedTokens()
-    {
+    public issuedTokens() {
         return new StatisticIssuedTokens.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
-    public mostUsedApps()
-    {
+    public mostUsedApps() {
         return new StatisticMostUsedApps.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
-    public mostUsedRoutes()
-    {
+    public mostUsedRoutes() {
         return new StatisticMostUsedRoutes.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
-    public timeAverage()
-    {
+    public timeAverage() {
         return new StatisticTimeAverage.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
-    public timePerRoute()
-    {
+    public timePerRoute() {
         return new StatisticTimePerRoute.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
-    public usedpoints()
-    {
+    public usedpoints() {
         return new StatisticUsedPoints.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 

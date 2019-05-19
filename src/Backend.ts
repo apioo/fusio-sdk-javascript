@@ -22,8 +22,7 @@ import {TransactionResource} from "./backend/TransactionResource";
 import {UserResource} from "./backend/UserResource";
 import {TokenResource} from "./backend/TokenResource";
 
-export class Backend extends BaseResource
-{
+export class Backend extends BaseResource {
     public action: ActionResource;
     public app: AppResource;
     public audit: AuditResource;
@@ -46,8 +45,7 @@ export class Backend extends BaseResource
     public transaction: TransactionResource;
     public user: UserResource;
 
-    public constructor(baseUrl: string, accessToken: string, httpClient: AxiosInstance)
-    {
+    public constructor(baseUrl: string, accessToken: string, httpClient: AxiosInstance) {
         super(baseUrl, accessToken, httpClient);
 
         this.action = new ActionResource(this.baseUrl, this.accessToken, this.httpClient);

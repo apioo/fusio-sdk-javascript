@@ -7,25 +7,20 @@ import * as TransactionPrepare
     from "../../gen/consumer_transaction_prepare__provider";
 import {BaseResource} from "../BaseResource";
 
-export class TransactionResource extends BaseResource
-{
-    public collection()
-    {
+export class TransactionResource extends BaseResource {
+    public collection() {
         return new TransactionCollection.default(this.baseUrl, this.accessToken, this.httpClient);
     }
 
-    public entity(id: number)
-    {
+    public entity(id: number) {
         return new TransactionEntity.default(id, this.baseUrl, this.accessToken, this.httpClient);
     }
-    
-    public execute(transactionId: string)
-    {
+
+    public execute(transactionId: string) {
         return new TransactionExecute.default(transactionId, this.baseUrl, this.accessToken, this.httpClient);
     }
 
-    public prepare(provider: string)
-    {
+    public prepare(provider: string) {
         return new TransactionPrepare.default(provider, this.baseUrl, this.accessToken, this.httpClient);
     }
 }

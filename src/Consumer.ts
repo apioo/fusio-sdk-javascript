@@ -14,8 +14,7 @@ import {SubscriptionResource} from "./consumer/SubscriptionResource";
 import {TransactionResource} from "./consumer/TransactionResource";
 import {TokenResource} from "./consumer/TokenResource";
 
-export class Consumer extends BaseResource
-{
+export class Consumer extends BaseResource {
     public account: AccountResource;
     public activate: ActivateResource;
     public app: AppResource;
@@ -30,8 +29,7 @@ export class Consumer extends BaseResource
     public token: TokenResource;
     public transaction: TransactionResource;
 
-    public constructor(baseUrl: string, accessToken: string, httpClient: AxiosInstance)
-    {
+    public constructor(baseUrl: string, accessToken: string, httpClient: AxiosInstance) {
         super(baseUrl, accessToken, httpClient);
 
         this.account = new AccountResource(this.baseUrl, this.accessToken, this.httpClient);
