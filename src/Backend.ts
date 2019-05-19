@@ -20,6 +20,7 @@ import {ScopeResource} from "./backend/ScopeResource";
 import {StatisticResource} from "./backend/StatisticResource";
 import {TransactionResource} from "./backend/TransactionResource";
 import {UserResource} from "./backend/UserResource";
+import {TokenResource} from "./backend/TokenResource";
 
 export class Backend extends BaseResource
 {
@@ -41,6 +42,7 @@ export class Backend extends BaseResource
     public schema: SchemaResource;
     public scope: ScopeResource;
     public statistic: StatisticResource;
+    public token: TokenResource;
     public transaction: TransactionResource;
     public user: UserResource;
 
@@ -66,6 +68,7 @@ export class Backend extends BaseResource
         this.schema = new SchemaResource(this.baseUrl, this.accessToken, this.httpClient);
         this.scope = new ScopeResource(this.baseUrl, this.accessToken, this.httpClient);
         this.statistic = new StatisticResource(this.baseUrl, this.accessToken, this.httpClient);
+        this.token = new TokenResource(this.baseUrl, this.accessToken, this.httpClient);
         this.transaction = new TransactionResource(this.baseUrl, this.accessToken, this.httpClient);
         this.user = new UserResource(this.baseUrl, this.accessToken, this.httpClient);
     }
