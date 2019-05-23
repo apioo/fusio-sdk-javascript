@@ -4,14 +4,12 @@ import {Consumer} from "./src/Consumer";
 import {Meta} from "./src/Meta";
 import {Authorization} from "./src/Authorization";
 
-interface Options
-{
+interface Options {
     baseUrl: string
     accessToken?: string
 }
 
-export class Fusio
-{
+export class Fusio {
     public static auth: Authorization;
     public static backend: Backend;
     public static consumer: Consumer;
@@ -19,11 +17,10 @@ export class Fusio
 
     /**
      * Initializes the Fusio SDK
-     * 
+     *
      * @param options
      */
-    public static init(options: Options)
-    {
+    public static init(options: Options) {
         let baseUrl = options.baseUrl;
         let accessToken = options.accessToken ? options.accessToken : "";
         let httpClient = Axios.create();
@@ -34,8 +31,7 @@ export class Fusio
         this.meta = new Meta(baseUrl, accessToken, httpClient);
     }
 
-    public static setBaseUrl(baseUrl: string)
-    {
+    public static setBaseUrl(baseUrl: string) {
         if (!Fusio.auth) {
             throw new Error('SDK not initialized, you need to call the init method previously');
         }
@@ -46,8 +42,7 @@ export class Fusio
         Fusio.meta.setBaseUrl(baseUrl);
     }
 
-    public static setAccessToken(accessToken: string)
-    {
+    public static setAccessToken(accessToken: string) {
         if (!Fusio.auth) {
             throw new Error('SDK not initialized, you need to call the init method previously');
         }
@@ -58,8 +53,7 @@ export class Fusio
         Fusio.meta.setAccessToken(accessToken);
     }
 
-    public static setHttpClient(httpClient: AxiosInstance)
-    {
+    public static setHttpClient(httpClient: AxiosInstance) {
         if (!Fusio.auth) {
             throw new Error('SDK not initialized, you need to call the init method previously');
         }
