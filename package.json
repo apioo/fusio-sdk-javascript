@@ -2,6 +2,13 @@
   "name": "fusio-sdk",
   "version": "0.1.4",
   "description": "SDK to talk to the Fusio API",
+  "keywords": [
+    "API",
+    "API Management",
+    "REST",
+    "Fusio",
+    "SDK"
+  ],
   "author": "Christoph Kappestein",
   "license": "MIT",
   "homepage": "https://www.fusio-project.org/",
@@ -9,5 +16,8 @@
   "types": "dist/index.d.ts",
   "dependencies": {
     "axios": "^0.18.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.4.5"
   }
 }
