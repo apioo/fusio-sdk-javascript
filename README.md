@@ -7,15 +7,15 @@ backend. The following code contains some samples how to use the SDK:
 
 ## Authorization
 
-For most endpoint you need to obtain an access token. Fusio provides multiple
-ways to obtain such an access token. In general the access token is always a
-JWT, which you should store i.e. at the local storage so that you can simply
-reuse the token. Note every token has an expire time, if the token is expired
-you either need to obtain a new token or use the refresh token.
+For most endpoints you need to obtain an access token. Fusio provides multiple
+ways to obtain such an access token. The access token is always a JWT, which you
+should store i.e. at the local storage so that you can simply reuse the token.
+Note every token has an expire time, if the token is expired you either need to
+obtain a new token or use the refresh token.
 
 ### Simple login
 
-Provides a simple was to obtain an access token using simply the username and
+Provides a simple way to obtain an access token using simply the username and
 password. If you need more fine control over the access token it is recommended
 to use an OAuth2 endpoint
 
