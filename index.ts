@@ -21,7 +21,7 @@ export class Fusio {
      * @param options
      */
     public static init(options: Options) {
-        let baseUrl = options.baseUrl;
+        let baseUrl = Fusio.normalizeBaseUrl(options.baseUrl);
         let accessToken = options.accessToken ? options.accessToken : "";
         let httpClient = Axios.create();
 
@@ -62,6 +62,14 @@ export class Fusio {
         Fusio.backend.setHttpClient(httpClient);
         Fusio.consumer.setHttpClient(httpClient);
         Fusio.meta.setHttpClient(httpClient);
+    }
+
+    private static normalizeBaseUrl(baseUrl: string) {
+        if (baseUrl.charAt(baseUrl.length - 1) == '/') {
+            return baseUrl.substr(0, baseUrl.length - 1);
+        } else {
+            return baseUrl;
+        }
     }
 }
 
