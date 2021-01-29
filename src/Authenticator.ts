@@ -1,5 +1,5 @@
 import Axios, {AxiosInstance, AxiosPromise} from "axios";
-import {Fusio} from "../index";
+import {Util} from "./Util";
 
 interface AccessToken {
     access_token: string,
@@ -14,7 +14,7 @@ export class Authenticator {
     public httpClient: AxiosInstance;
 
     public constructor(baseUrl: string, httpClient?: AxiosInstance|null) {
-        this.baseUrl = Fusio.normalizeBaseUrl(baseUrl);
+        this.baseUrl = Util.normalizeBaseUrl(baseUrl);
         this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
