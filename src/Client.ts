@@ -20,7 +20,7 @@ export default class Client {
         this.httpClient = httpClient
     }
 
-    public async authenticator(): Promise<AccessToken> {
+    public async authenticate(): Promise<AccessToken> {
         if (this.token && this.token.expires_in > (Math.floor(Date.now() / 1000))) {
             return this.token
         }
@@ -31,12 +31,12 @@ export default class Client {
     }
 
     public async backend(): Promise<ClientBackend> {
-        let token = await this.authenticator();
+        let token = await this.authenticate();
         return new ClientBackend(this.baseUrl, token.access_token, this.httpClient);
     }
 
     public async consumer(): Promise<ClientConsumer>  {
-        let token = await this.authenticator();
+        let token = await this.authenticate();
         return new ClientConsumer(this.baseUrl, token.access_token, this.httpClient);
     }
 }
