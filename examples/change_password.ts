@@ -1,30 +1,24 @@
-import {Authenticator} from "../src/Authenticator";
-import Client from "../src/generated/consumer/Client";
+import Client from "../src/Client";
 import {Account_ChangePassword} from "../src/generated/consumer/Account_ChangePassword";
 
-// @TODO set correct base uri
-let baseUri = 'http://127.0.0.1/projects/fusio/public/index.php';
+// @TODO set correct client credentials
+let client = new Client(
+    'http://127.0.0.1/projects/fusio/public/index.php',
+    'test',
+    'test1234'
+);
 
-// request access token
-let authenticator = new Authenticator(baseUri);
-authenticator.requestAccessToken('test', 'test1234').then((response) => {
-    console.log('Obtained token: ' + response.data.access_token + "\n");
-
-    // changes the password of the user assigned to the token
-    let client = new Client(baseUri, response.data.access_token);
-
+client.consumer().then(async (consumer) => {
     let changePassword: Account_ChangePassword = {
         oldPassword: 'test1234',
         newPassword: 'test1234!',
         verifyPassword: 'test1234!'
     };
 
-    client.getConsumerAccountChangePassword().consumerActionUserChangePassword(changePassword).then((response) => {
-        if (!response.data.message) {
-            return;
-        }
+    let response = await consumer.getConsumerAccountChangePassword().consumerActionUserChangePassword(changePassword);
+    if (!response.data.message) {
+        return;
+    }
 
-        console.log(response.data.message);
-    });
-});
-
+    console.log(response.data.message);
+})
