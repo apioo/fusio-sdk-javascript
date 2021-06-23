@@ -18,7 +18,8 @@
     "build": "tsc"
   },
   "dependencies": {
-    "axios": "^0.18.1"
+    "axios": "^0.21.1",
+    "buffer": "^6.0.3"
   },
   "devDependencies": {
     "typescript": "^3.6.3"

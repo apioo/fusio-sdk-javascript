@@ -1,6 +1,7 @@
 import Axios, {AxiosInstance, AxiosPromise} from 'axios';
 import Util from './Util';
 import {AccessToken} from './AccesToken';
+import {Buffer} from "buffer";
 
 export default class Authenticator {
     public baseUrl: string;
@@ -23,9 +24,11 @@ export default class Authenticator {
             payload.scope = scopes.join(',');
         }
 
+        const credentials = (new Buffer(username + ':' + password)).toString('base64');
+
         return this.httpClient.post(this.baseUrl + '/authorization/token', payload, {
             headers: {
-                Authorization: 'Basic ' + btoa(username + ':' + password),
+                Authorization: 'Basic ' + credentials,
             },
         });
     }
