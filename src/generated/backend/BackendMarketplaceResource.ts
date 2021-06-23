@@ -1,9 +1,9 @@
 /**
- * BackendMarketplaceResource generated on 2021-01-29
+ * BackendMarketplaceResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Marketplace_Collection} from "./Marketplace_Collection";
 import {Marketplace_Install} from "./Marketplace_Install";
 
@@ -25,7 +25,7 @@ export default class BackendMarketplaceResource {
      */
     public backendActionMarketplaceGetAll(): AxiosPromise<Marketplace_Collection> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },
@@ -40,7 +40,7 @@ export default class BackendMarketplaceResource {
      */
     public backendActionMarketplaceInstall(data?: Marketplace_Install): AxiosPromise<Marketplace_Install> {
         let params = {
-            method: "POST",
+            method: <Method> "POST",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

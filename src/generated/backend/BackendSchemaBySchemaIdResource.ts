@@ -1,9 +1,9 @@
 /**
- * BackendSchemaBySchemaIdResource generated on 2021-01-29
+ * BackendSchemaBySchemaIdResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Schema} from "./Schema";
 import {Schema_Update} from "./Schema_Update";
 import {Message} from "./Message";
@@ -28,7 +28,7 @@ export default class BackendSchemaBySchemaIdResource {
      */
     public backendActionSchemaGet(): AxiosPromise<Schema> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },
@@ -43,7 +43,7 @@ export default class BackendSchemaBySchemaIdResource {
      */
     public backendActionSchemaUpdate(data?: Schema_Update): AxiosPromise<Message> {
         let params = {
-            method: "PUT",
+            method: <Method> "PUT",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },
@@ -57,7 +57,7 @@ export default class BackendSchemaBySchemaIdResource {
      */
     public backendActionSchemaDelete(): AxiosPromise<Message> {
         let params = {
-            method: "DELETE",
+            method: <Method> "DELETE",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

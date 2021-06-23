@@ -1,12 +1,10 @@
 /**
- * Plan_Contract generated on 2021-01-29
+ * Plan_Contract generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-
 import {Plan} from "./Plan";
 import {Plan_Invoice} from "./Plan_Invoice";
-
 export interface Plan_Contract {
     id?: number
     status?: number
@@ -17,4 +15,3 @@ export interface Plan_Contract {
     invoices?: Array<Plan_Invoice>
     insertDate?: string
 }
-

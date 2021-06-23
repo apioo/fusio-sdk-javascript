@@ -1,15 +1,13 @@
 /**
- * Dashboard generated on 2021-01-29
+ * Dashboard generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
-
 
 import {Statistic_Chart} from "./Statistic_Chart";
 import {Dashboard_Apps} from "./Dashboard_Apps";
 import {Dashboard_Requests} from "./Dashboard_Requests";
 import {Dashboard_Users} from "./Dashboard_Users";
 import {Dashboard_Transactions} from "./Dashboard_Transactions";
-
 export interface Dashboard {
     errorsPerRoute?: Statistic_Chart
     incomingRequests?: Statistic_Chart
@@ -21,4 +19,3 @@ export interface Dashboard {
     latestUsers?: Dashboard_Users
     latestTransactions?: Dashboard_Transactions
 }
-

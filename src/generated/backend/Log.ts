@@ -1,11 +1,9 @@
 /**
- * Log generated on 2021-01-29
+ * Log generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-
 import {Log_Error} from "./Log_Error";
-
 export interface Log {
     id?: number
     ip?: string
@@ -17,4 +15,3 @@ export interface Log {
     date?: string
     errors?: Array<Log_Error>
 }
-

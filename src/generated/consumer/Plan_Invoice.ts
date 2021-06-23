@@ -1,8 +1,7 @@
 /**
- * Plan_Invoice generated on 2021-01-29
+ * Plan_Invoice generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
-
 
 export interface Plan_Invoice {
     id?: number
@@ -12,4 +11,3 @@ export interface Plan_Invoice {
     payDate?: string
     insertDate?: string
 }
-

@@ -1,9 +1,9 @@
 /**
- * BackendUserResource generated on 2021-01-29
+ * BackendUserResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Collection_Query} from "./Collection_Query";
 import {User_Collection} from "./User_Collection";
 import {User_Create} from "./User_Create";
@@ -28,7 +28,7 @@ export default class BackendUserResource {
      */
     public backendActionUserGetAll(query?: Collection_Query): AxiosPromise<User_Collection> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             params: query,
             headers: {
                 'Authorization': 'Bearer ' + this.token
@@ -44,7 +44,7 @@ export default class BackendUserResource {
      */
     public backendActionUserCreate(data?: User_Create): AxiosPromise<Message> {
         let params = {
-            method: "POST",
+            method: <Method> "POST",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

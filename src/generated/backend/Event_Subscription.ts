@@ -1,8 +1,7 @@
 /**
- * Event_Subscription generated on 2021-01-29
+ * Event_Subscription generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
-
 
 export interface Event_Subscription {
     id?: number
@@ -10,4 +9,3 @@ export interface Event_Subscription {
     userId?: number
     endpoint?: string
 }
-

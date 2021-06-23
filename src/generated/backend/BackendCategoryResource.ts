@@ -1,9 +1,9 @@
 /**
- * BackendCategoryResource generated on 2021-01-29
+ * BackendCategoryResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Collection_Query} from "./Collection_Query";
 import {Category_Collection} from "./Category_Collection";
 import {Category_Create} from "./Category_Create";
@@ -28,7 +28,7 @@ export default class BackendCategoryResource {
      */
     public backendActionCategoryGetAll(query?: Collection_Query): AxiosPromise<Category_Collection> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             params: query,
             headers: {
                 'Authorization': 'Bearer ' + this.token
@@ -44,7 +44,7 @@ export default class BackendCategoryResource {
      */
     public backendActionCategoryCreate(data?: Category_Create): AxiosPromise<Message> {
         let params = {
-            method: "POST",
+            method: <Method> "POST",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

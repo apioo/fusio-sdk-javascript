@@ -1,9 +1,9 @@
 /**
- * BackendAuditByAuditIdResource generated on 2021-01-29
+ * BackendAuditByAuditIdResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Audit} from "./Audit";
 
 export default class BackendAuditByAuditIdResource {
@@ -26,7 +26,7 @@ export default class BackendAuditByAuditIdResource {
      */
     public backendActionAuditGet(): AxiosPromise<Audit> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

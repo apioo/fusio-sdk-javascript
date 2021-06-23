@@ -1,9 +1,9 @@
 /**
- * BackendConnectionByConnectionIdResource generated on 2021-01-29
+ * BackendConnectionByConnectionIdResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Connection} from "./Connection";
 import {Connection_Update} from "./Connection_Update";
 import {Message} from "./Message";
@@ -28,7 +28,7 @@ export default class BackendConnectionByConnectionIdResource {
      */
     public backendActionConnectionGet(): AxiosPromise<Connection> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },
@@ -43,7 +43,7 @@ export default class BackendConnectionByConnectionIdResource {
      */
     public backendActionConnectionUpdate(data?: Connection_Update): AxiosPromise<Message> {
         let params = {
-            method: "PUT",
+            method: <Method> "PUT",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },
@@ -57,7 +57,7 @@ export default class BackendConnectionByConnectionIdResource {
      */
     public backendActionConnectionDelete(): AxiosPromise<Message> {
         let params = {
-            method: "DELETE",
+            method: <Method> "DELETE",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

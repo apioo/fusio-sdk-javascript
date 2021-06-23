@@ -1,9 +1,9 @@
 /**
- * BackendConfigResource generated on 2021-01-29
+ * BackendConfigResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Collection_Query} from "./Collection_Query";
 import {Config_Collection} from "./Config_Collection";
 
@@ -26,7 +26,7 @@ export default class BackendConfigResource {
      */
     public backendActionConfigGetAll(query?: Collection_Query): AxiosPromise<Config_Collection> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             params: query,
             headers: {
                 'Authorization': 'Bearer ' + this.token

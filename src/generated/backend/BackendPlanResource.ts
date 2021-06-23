@@ -1,9 +1,9 @@
 /**
- * BackendPlanResource generated on 2021-01-29
+ * BackendPlanResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Collection_Query} from "./Collection_Query";
 import {Plan_Collection} from "./Plan_Collection";
 import {Plan_Create} from "./Plan_Create";
@@ -28,7 +28,7 @@ export default class BackendPlanResource {
      */
     public backendActionPlanGetAll(query?: Collection_Query): AxiosPromise<Plan_Collection> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             params: query,
             headers: {
                 'Authorization': 'Bearer ' + this.token
@@ -44,7 +44,7 @@ export default class BackendPlanResource {
      */
     public backendActionPlanCreate(data?: Plan_Create): AxiosPromise<Message> {
         let params = {
-            method: "POST",
+            method: <Method> "POST",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

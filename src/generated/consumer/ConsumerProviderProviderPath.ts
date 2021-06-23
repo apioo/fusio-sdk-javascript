@@ -1,10 +1,8 @@
 /**
- * ConsumerProviderProviderPath generated on 2021-01-29
+ * ConsumerProviderProviderPath generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
-
 
 export interface ConsumerProviderProviderPath {
     provider?: string
 }
-

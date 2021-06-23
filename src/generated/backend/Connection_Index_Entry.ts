@@ -1,11 +1,9 @@
 /**
- * Connection_Index_Entry generated on 2021-01-29
+ * Connection_Index_Entry generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
-
 
 export interface Connection_Index_Entry {
     name?: string
     class?: string
 }
-

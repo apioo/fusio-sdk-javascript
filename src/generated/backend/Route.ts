@@ -1,11 +1,9 @@
 /**
- * Route generated on 2021-01-29
+ * Route generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-
 import {Route_Version} from "./Route_Version";
-
 export interface Route {
     id?: number
     priority?: number
@@ -14,4 +12,3 @@ export interface Route {
     scopes?: Array<string>
     config?: Array<Route_Version>
 }
-

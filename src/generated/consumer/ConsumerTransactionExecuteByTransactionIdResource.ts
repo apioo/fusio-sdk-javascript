@@ -1,9 +1,9 @@
 /**
- * ConsumerTransactionExecuteByTransactionIdResource generated on 2021-01-29
+ * ConsumerTransactionExecuteByTransactionIdResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 
 export default class ConsumerTransactionExecuteByTransactionIdResource {
     private url: string;
@@ -25,7 +25,7 @@ export default class ConsumerTransactionExecuteByTransactionIdResource {
      */
     public consumerActionTransactionExecute() {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

@@ -1,8 +1,7 @@
 /**
- * Role generated on 2021-01-29
+ * Role generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
-
 
 export interface Role {
     id?: number
@@ -10,4 +9,3 @@ export interface Role {
     name?: string
     scopes?: Array<string>
 }
-

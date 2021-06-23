@@ -1,9 +1,9 @@
 /**
- * ConsumerPasswordResetResource generated on 2021-01-29
+ * ConsumerPasswordResetResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {User_Email} from "./User_Email";
 import {Message} from "./Message";
 import {User_PasswordReset} from "./User_PasswordReset";
@@ -27,7 +27,7 @@ export default class ConsumerPasswordResetResource {
      */
     public consumerActionUserResetPasswordRequest(data?: User_Email): AxiosPromise<Message> {
         let params = {
-            method: "POST",
+            method: <Method> "POST",
         };
 
         return this.httpClient.post<Message>(this.url, data, params);
@@ -39,7 +39,7 @@ export default class ConsumerPasswordResetResource {
      */
     public consumerActionUserResetPasswordExecute(data?: User_PasswordReset): AxiosPromise<Message> {
         let params = {
-            method: "PUT",
+            method: <Method> "PUT",
         };
 
         return this.httpClient.put<Message>(this.url, data, params);

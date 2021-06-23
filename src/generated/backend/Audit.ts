@@ -1,13 +1,11 @@
 /**
- * Audit generated on 2021-01-29
+ * Audit generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
-
 
 import {App} from "./App";
 import {User} from "./User";
 import {Audit_Object} from "./Audit_Object";
-
 export interface Audit {
     id?: number
     app?: App
@@ -18,4 +16,3 @@ export interface Audit {
     content?: Audit_Object
     date?: string
 }
-

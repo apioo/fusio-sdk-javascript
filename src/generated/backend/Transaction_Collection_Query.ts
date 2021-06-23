@@ -1,11 +1,9 @@
 /**
- * Transaction_Collection_Query generated on 2021-01-29
+ * Transaction_Collection_Query generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-
 import {Collection_Query} from "./Collection_Query";
-
 export interface Transaction_Collection_Query extends Collection_Query {
     from?: string
     to?: string
@@ -16,4 +14,3 @@ export interface Transaction_Collection_Query extends Collection_Query {
     provider?: string
     search?: string
 }
-

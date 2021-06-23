@@ -1,9 +1,9 @@
 /**
- * BackendSdkResource generated on 2021-01-29
+ * BackendSdkResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Sdk_Types} from "./Sdk_Types";
 import {Sdk_Generate} from "./Sdk_Generate";
 import {Message} from "./Message";
@@ -26,7 +26,7 @@ export default class BackendSdkResource {
      */
     public backendActionSdkGetAll(): AxiosPromise<Sdk_Types> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },
@@ -41,7 +41,7 @@ export default class BackendSdkResource {
      */
     public backendActionSdkGenerate(data?: Sdk_Generate): AxiosPromise<Message> {
         let params = {
-            method: "POST",
+            method: <Method> "POST",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

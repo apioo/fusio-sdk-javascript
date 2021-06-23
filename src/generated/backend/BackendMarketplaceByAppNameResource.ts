@@ -1,9 +1,9 @@
 /**
- * BackendMarketplaceByAppNameResource generated on 2021-01-29
+ * BackendMarketplaceByAppNameResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Marketplace_Local_App} from "./Marketplace_Local_App";
 import {Message} from "./Message";
 
@@ -27,7 +27,7 @@ export default class BackendMarketplaceByAppNameResource {
      */
     public backendActionMarketplaceGet(): AxiosPromise<Marketplace_Local_App> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },
@@ -41,7 +41,7 @@ export default class BackendMarketplaceByAppNameResource {
      */
     public backendActionMarketplaceUpdate(): AxiosPromise<Message> {
         let params = {
-            method: "PUT",
+            method: <Method> "PUT",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },
@@ -55,7 +55,7 @@ export default class BackendMarketplaceByAppNameResource {
      */
     public backendActionMarketplaceRemove(): AxiosPromise<Message> {
         let params = {
-            method: "DELETE",
+            method: <Method> "DELETE",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

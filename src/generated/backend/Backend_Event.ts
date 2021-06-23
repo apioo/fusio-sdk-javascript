@@ -1,10 +1,7 @@
 /**
- * Backend_Event generated on 2021-01-29
+ * Backend_Event generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-
 import {Event} from "./Event";
-
 export type Backend_Event = Event;
-

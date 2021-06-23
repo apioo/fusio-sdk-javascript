@@ -1,9 +1,9 @@
 /**
- * ConsumerPlanContractResource generated on 2021-01-29
+ * ConsumerPlanContractResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Collection_Query} from "./Collection_Query";
 import {Plan_Contract_Collection} from "./Plan_Contract_Collection";
 import {Plan_Order_Request} from "./Plan_Order_Request";
@@ -28,7 +28,7 @@ export default class ConsumerPlanContractResource {
      */
     public consumerActionPlanContractGetAll(query?: Collection_Query): AxiosPromise<Plan_Contract_Collection> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             params: query,
             headers: {
                 'Authorization': 'Bearer ' + this.token
@@ -44,7 +44,7 @@ export default class ConsumerPlanContractResource {
      */
     public consumerActionPlanContractCreate(data?: Plan_Order_Request): AxiosPromise<Plan_Order_Response> {
         let params = {
-            method: "POST",
+            method: <Method> "POST",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

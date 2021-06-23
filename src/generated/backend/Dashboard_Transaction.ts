@@ -1,8 +1,7 @@
 /**
- * Dashboard_Transaction generated on 2021-01-29
+ * Dashboard_Transaction generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
-
 
 export interface Dashboard_Transaction {
     status?: string
@@ -11,4 +10,3 @@ export interface Dashboard_Transaction {
     amount?: number
     date?: string
 }
-

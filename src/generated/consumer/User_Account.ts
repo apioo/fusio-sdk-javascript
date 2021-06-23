@@ -1,11 +1,9 @@
 /**
- * User_Account generated on 2021-01-29
+ * User_Account generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-
 import {User_Attributes} from "./User_Attributes";
-
 export interface User_Account {
     id?: number
     status?: number
@@ -16,4 +14,3 @@ export interface User_Account {
     attributes?: User_Attributes
     date?: string
 }
-

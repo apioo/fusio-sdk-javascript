@@ -1,9 +1,9 @@
 /**
- * BackendRoutesProviderByProviderResource generated on 2021-01-29
+ * BackendRoutesProviderByProviderResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Form_Container} from "./Form_Container";
 import {Route_Provider} from "./Route_Provider";
 import {Message} from "./Message";
@@ -30,7 +30,7 @@ export default class BackendRoutesProviderByProviderResource {
      */
     public backendActionRouteProviderForm(): AxiosPromise<Form_Container> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },
@@ -45,7 +45,7 @@ export default class BackendRoutesProviderByProviderResource {
      */
     public backendActionRouteProviderCreate(data?: Route_Provider): AxiosPromise<Message> {
         let params = {
-            method: "POST",
+            method: <Method> "POST",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },
@@ -60,7 +60,7 @@ export default class BackendRoutesProviderByProviderResource {
      */
     public backendActionRouteProviderChangelog(data?: Route_Provider_Config): AxiosPromise<Route_Provider_Changelog> {
         let params = {
-            method: "PUT",
+            method: <Method> "PUT",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

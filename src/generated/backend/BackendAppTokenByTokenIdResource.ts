@@ -1,9 +1,9 @@
 /**
- * BackendAppTokenByTokenIdResource generated on 2021-01-29
+ * BackendAppTokenByTokenIdResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {App_Token} from "./App_Token";
 
 export default class BackendAppTokenByTokenIdResource {
@@ -26,7 +26,7 @@ export default class BackendAppTokenByTokenIdResource {
      */
     public backendActionAppTokenGet(): AxiosPromise<App_Token> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

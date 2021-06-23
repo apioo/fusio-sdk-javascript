@@ -1,11 +1,9 @@
 /**
- * Event_Subscription generated on 2021-01-29
+ * Event_Subscription generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-
 import {Event_Subscription_Response} from "./Event_Subscription_Response";
-
 export interface Event_Subscription {
     id?: number
     status?: number
@@ -13,4 +11,3 @@ export interface Event_Subscription {
     endpoint?: string
     responses?: Array<Event_Subscription_Response>
 }
-

@@ -1,9 +1,9 @@
 /**
- * BackendAppTokenResource generated on 2021-01-29
+ * BackendAppTokenResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Backend_App_Token_Collection_Query} from "./Backend_App_Token_Collection_Query";
 import {App_Token_Collection} from "./App_Token_Collection";
 
@@ -26,7 +26,7 @@ export default class BackendAppTokenResource {
      */
     public backendActionAppTokenGetAll(query?: Backend_App_Token_Collection_Query): AxiosPromise<App_Token_Collection> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             params: query,
             headers: {
                 'Authorization': 'Bearer ' + this.token

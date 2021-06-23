@@ -1,9 +1,9 @@
 /**
- * BackendEventSubscriptionBySubscriptionIdResource generated on 2021-01-29
+ * BackendEventSubscriptionBySubscriptionIdResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Event_Subscription} from "./Event_Subscription";
 import {Event_Subscription_Update} from "./Event_Subscription_Update";
 import {Message} from "./Message";
@@ -28,7 +28,7 @@ export default class BackendEventSubscriptionBySubscriptionIdResource {
      */
     public backendActionEventSubscriptionGet(): AxiosPromise<Event_Subscription> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },
@@ -43,7 +43,7 @@ export default class BackendEventSubscriptionBySubscriptionIdResource {
      */
     public backendActionEventSubscriptionUpdate(data?: Event_Subscription_Update): AxiosPromise<Message> {
         let params = {
-            method: "PUT",
+            method: <Method> "PUT",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },
@@ -57,7 +57,7 @@ export default class BackendEventSubscriptionBySubscriptionIdResource {
      */
     public backendActionEventSubscriptionDelete(): AxiosPromise<Message> {
         let params = {
-            method: "DELETE",
+            method: <Method> "DELETE",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

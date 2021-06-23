@@ -1,9 +1,9 @@
 /**
- * BackendTransactionByTransactionIdResource generated on 2021-01-29
+ * BackendTransactionByTransactionIdResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Transaction} from "./Transaction";
 
 export default class BackendTransactionByTransactionIdResource {
@@ -26,7 +26,7 @@ export default class BackendTransactionByTransactionIdResource {
      */
     public backendActionTransactionGet(): AxiosPromise<Transaction> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

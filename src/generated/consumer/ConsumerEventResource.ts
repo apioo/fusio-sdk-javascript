@@ -1,9 +1,9 @@
 /**
- * ConsumerEventResource generated on 2021-01-29
+ * ConsumerEventResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Collection_Query} from "./Collection_Query";
 import {Event_Collection} from "./Event_Collection";
 
@@ -26,7 +26,7 @@ export default class ConsumerEventResource {
      */
     public consumerActionEventGetAll(query?: Collection_Query): AxiosPromise<Event_Collection> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             params: query,
             headers: {
                 'Authorization': 'Bearer ' + this.token

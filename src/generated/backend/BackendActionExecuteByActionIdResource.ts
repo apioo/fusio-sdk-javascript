@@ -1,9 +1,9 @@
 /**
- * BackendActionExecuteByActionIdResource generated on 2021-01-29
+ * BackendActionExecuteByActionIdResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Action_Execute_Request} from "./Action_Execute_Request";
 import {Action_Execute_Response} from "./Action_Execute_Response";
 
@@ -28,7 +28,7 @@ export default class BackendActionExecuteByActionIdResource {
      */
     public backendActionActionExecute(data?: Action_Execute_Request): AxiosPromise<Action_Execute_Response> {
         let params = {
-            method: "POST",
+            method: <Method> "POST",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

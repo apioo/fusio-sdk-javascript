@@ -1,9 +1,9 @@
 /**
- * BackendSchemaFormBySchemaIdResource generated on 2021-01-29
+ * BackendSchemaFormBySchemaIdResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Schema_Form} from "./Schema_Form";
 import {Message} from "./Message";
 
@@ -28,7 +28,7 @@ export default class BackendSchemaFormBySchemaIdResource {
      */
     public backendActionSchemaForm(data?: Schema_Form): AxiosPromise<Message> {
         let params = {
-            method: "PUT",
+            method: <Method> "PUT",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

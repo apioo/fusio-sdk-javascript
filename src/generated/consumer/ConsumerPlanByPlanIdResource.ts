@@ -1,9 +1,9 @@
 /**
- * ConsumerPlanByPlanIdResource generated on 2021-01-29
+ * ConsumerPlanByPlanIdResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Plan} from "./Plan";
 
 export default class ConsumerPlanByPlanIdResource {
@@ -26,7 +26,7 @@ export default class ConsumerPlanByPlanIdResource {
      */
     public consumerActionPlanGet(): AxiosPromise<Plan> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

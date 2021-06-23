@@ -1,8 +1,7 @@
 /**
- * Rate_Allocation generated on 2021-01-29
+ * Rate_Allocation generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
-
 
 export interface Rate_Allocation {
     id?: number
@@ -11,4 +10,3 @@ export interface Rate_Allocation {
     authenticated?: boolean
     parameters?: string
 }
-

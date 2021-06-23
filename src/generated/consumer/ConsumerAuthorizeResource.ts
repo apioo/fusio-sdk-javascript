@@ -1,9 +1,9 @@
 /**
- * ConsumerAuthorizeResource generated on 2021-01-29
+ * ConsumerAuthorizeResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Authorize_Meta} from "./Authorize_Meta";
 import {Authorize_Request} from "./Authorize_Request";
 import {Authorize_Response} from "./Authorize_Response";
@@ -26,7 +26,7 @@ export default class ConsumerAuthorizeResource {
      */
     public consumerActionUserGetApp(): AxiosPromise<Authorize_Meta> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
         };
 
         return this.httpClient.get<Authorize_Meta>(this.url, params);
@@ -38,7 +38,7 @@ export default class ConsumerAuthorizeResource {
      */
     public consumerActionUserAuthorize(data?: Authorize_Request): AxiosPromise<Authorize_Response> {
         let params = {
-            method: "POST",
+            method: <Method> "POST",
         };
 
         return this.httpClient.post<Authorize_Response>(this.url, data, params);

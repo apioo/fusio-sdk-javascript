@@ -1,9 +1,9 @@
 /**
- * ConsumerSubscriptionResource generated on 2021-01-29
+ * ConsumerSubscriptionResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Collection_Query} from "./Collection_Query";
 import {Event_Subscription_Collection} from "./Event_Subscription_Collection";
 import {Event_Subscription_Create} from "./Event_Subscription_Create";
@@ -28,7 +28,7 @@ export default class ConsumerSubscriptionResource {
      */
     public consumerActionEventSubscriptionGetAll(query?: Collection_Query): AxiosPromise<Event_Subscription_Collection> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             params: query,
             headers: {
                 'Authorization': 'Bearer ' + this.token
@@ -44,7 +44,7 @@ export default class ConsumerSubscriptionResource {
      */
     public consumerActionEventSubscriptionCreate(data?: Event_Subscription_Create): AxiosPromise<Message> {
         let params = {
-            method: "POST",
+            method: <Method> "POST",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

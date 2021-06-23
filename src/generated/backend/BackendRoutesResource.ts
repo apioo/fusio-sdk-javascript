@@ -1,9 +1,9 @@
 /**
- * BackendRoutesResource generated on 2021-01-29
+ * BackendRoutesResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Collection_Category_Query} from "./Collection_Category_Query";
 import {Route_Collection} from "./Route_Collection";
 import {Route_Create} from "./Route_Create";
@@ -28,7 +28,7 @@ export default class BackendRoutesResource {
      */
     public backendActionRouteGetAll(query?: Collection_Category_Query): AxiosPromise<Route_Collection> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             params: query,
             headers: {
                 'Authorization': 'Bearer ' + this.token
@@ -44,7 +44,7 @@ export default class BackendRoutesResource {
      */
     public backendActionRouteCreate(data?: Route_Create): AxiosPromise<Message> {
         let params = {
-            method: "POST",
+            method: <Method> "POST",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

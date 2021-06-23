@@ -1,9 +1,9 @@
 /**
- * BackendCronjobResource generated on 2021-01-29
+ * BackendCronjobResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Collection_Category_Query} from "./Collection_Category_Query";
 import {Cronjob_Collection} from "./Cronjob_Collection";
 import {Cronjob_Create} from "./Cronjob_Create";
@@ -28,7 +28,7 @@ export default class BackendCronjobResource {
      */
     public backendActionCronjobGetAll(query?: Collection_Category_Query): AxiosPromise<Cronjob_Collection> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             params: query,
             headers: {
                 'Authorization': 'Bearer ' + this.token
@@ -44,7 +44,7 @@ export default class BackendCronjobResource {
      */
     public backendActionCronjobCreate(data?: Cronjob_Create): AxiosPromise<Message> {
         let params = {
-            method: "POST",
+            method: <Method> "POST",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

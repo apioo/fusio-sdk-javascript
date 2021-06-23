@@ -1,9 +1,9 @@
 /**
- * BackendAccountResource generated on 2021-01-29
+ * BackendAccountResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {User} from "./User";
 import {User_Update} from "./User_Update";
 import {Message} from "./Message";
@@ -26,7 +26,7 @@ export default class BackendAccountResource {
      */
     public backendActionAccountGet(): AxiosPromise<User> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },
@@ -41,7 +41,7 @@ export default class BackendAccountResource {
      */
     public backendActionAccountUpdate(data?: User_Update): AxiosPromise<Message> {
         let params = {
-            method: "PUT",
+            method: <Method> "PUT",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

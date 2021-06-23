@@ -1,9 +1,9 @@
 /**
- * BackendRoleResource generated on 2021-01-29
+ * BackendRoleResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Collection_Query} from "./Collection_Query";
 import {Role_Collection} from "./Role_Collection";
 import {Role_Create} from "./Role_Create";
@@ -28,7 +28,7 @@ export default class BackendRoleResource {
      */
     public backendActionRoleGetAll(query?: Collection_Query): AxiosPromise<Role_Collection> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             params: query,
             headers: {
                 'Authorization': 'Bearer ' + this.token
@@ -44,7 +44,7 @@ export default class BackendRoleResource {
      */
     public backendActionRoleCreate(data?: Role_Create): AxiosPromise<Message> {
         let params = {
-            method: "POST",
+            method: <Method> "POST",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

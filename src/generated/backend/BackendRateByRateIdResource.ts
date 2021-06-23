@@ -1,9 +1,9 @@
 /**
- * BackendRateByRateIdResource generated on 2021-01-29
+ * BackendRateByRateIdResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Rate} from "./Rate";
 import {Rate_Update} from "./Rate_Update";
 import {Message} from "./Message";
@@ -28,7 +28,7 @@ export default class BackendRateByRateIdResource {
      */
     public backendActionRateGet(): AxiosPromise<Rate> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },
@@ -43,7 +43,7 @@ export default class BackendRateByRateIdResource {
      */
     public backendActionRateUpdate(data?: Rate_Update): AxiosPromise<Message> {
         let params = {
-            method: "PUT",
+            method: <Method> "PUT",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },
@@ -57,7 +57,7 @@ export default class BackendRateByRateIdResource {
      */
     public backendActionRateDelete(): AxiosPromise<Message> {
         let params = {
-            method: "DELETE",
+            method: <Method> "DELETE",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

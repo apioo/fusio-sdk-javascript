@@ -1,11 +1,9 @@
 /**
- * App generated on 2021-01-29
+ * App generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-
 import {App_Token} from "./App_Token";
-
 export interface App {
     id?: number
     userId?: number
@@ -19,4 +17,3 @@ export interface App {
     scopes?: Array<string>
     tokens?: Array<App_Token>
 }
-

@@ -1,9 +1,9 @@
 /**
- * BackendSchemaPreviewBySchemaIdResource generated on 2021-01-29
+ * BackendSchemaPreviewBySchemaIdResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Schema_Preview_Response} from "./Schema_Preview_Response";
 
 export default class BackendSchemaPreviewBySchemaIdResource {
@@ -26,7 +26,7 @@ export default class BackendSchemaPreviewBySchemaIdResource {
      */
     public backendActionSchemaGetPreview(): AxiosPromise<Schema_Preview_Response> {
         let params = {
-            method: "POST",
+            method: <Method> "POST",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

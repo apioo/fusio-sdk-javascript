@@ -1,9 +1,9 @@
 /**
- * BackendScopeCategoriesResource generated on 2021-01-29
+ * BackendScopeCategoriesResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Scope_Categories} from "./Scope_Categories";
 
 export default class BackendScopeCategoriesResource {
@@ -24,7 +24,7 @@ export default class BackendScopeCategoriesResource {
      */
     public backendActionScopeGetCategories(): AxiosPromise<Scope_Categories> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

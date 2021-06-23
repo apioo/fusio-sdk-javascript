@@ -1,9 +1,9 @@
 /**
- * BackendRoleByRoleIdResource generated on 2021-01-29
+ * BackendRoleByRoleIdResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Role} from "./Role";
 import {Role_Update} from "./Role_Update";
 import {Message} from "./Message";
@@ -28,7 +28,7 @@ export default class BackendRoleByRoleIdResource {
      */
     public backendActionRoleGet(): AxiosPromise<Role> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },
@@ -43,7 +43,7 @@ export default class BackendRoleByRoleIdResource {
      */
     public backendActionRoleUpdate(data?: Role_Update): AxiosPromise<Message> {
         let params = {
-            method: "PUT",
+            method: <Method> "PUT",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },
@@ -57,7 +57,7 @@ export default class BackendRoleByRoleIdResource {
      */
     public backendActionRoleDelete(): AxiosPromise<Message> {
         let params = {
-            method: "DELETE",
+            method: <Method> "DELETE",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

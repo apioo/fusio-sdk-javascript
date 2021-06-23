@@ -1,9 +1,9 @@
 /**
- * ConsumerGrantByGrantIdResource generated on 2021-01-29
+ * ConsumerGrantByGrantIdResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 
 export default class ConsumerGrantByGrantIdResource {
     private url: string;
@@ -25,7 +25,7 @@ export default class ConsumerGrantByGrantIdResource {
      */
     public consumerActionGrantDelete() {
         let params = {
-            method: "DELETE",
+            method: <Method> "DELETE",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

@@ -1,9 +1,9 @@
 /**
- * BackendConnectionListResource generated on 2021-01-29
+ * BackendConnectionListResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Connection_Index} from "./Connection_Index";
 
 export default class BackendConnectionListResource {
@@ -24,7 +24,7 @@ export default class BackendConnectionListResource {
      */
     public backendActionConnectionGetIndex(): AxiosPromise<Connection_Index> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

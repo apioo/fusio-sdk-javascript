@@ -1,9 +1,9 @@
 /**
- * BackendRoutesProviderResource generated on 2021-01-29
+ * BackendRoutesProviderResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Route_Index_Providers} from "./Route_Index_Providers";
 
 export default class BackendRoutesProviderResource {
@@ -24,7 +24,7 @@ export default class BackendRoutesProviderResource {
      */
     public backendActionRouteProviderIndex(): AxiosPromise<Route_Index_Providers> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

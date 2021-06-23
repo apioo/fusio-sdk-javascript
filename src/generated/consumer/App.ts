@@ -1,8 +1,7 @@
 /**
- * App generated on 2021-01-29
+ * App generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
-
 
 export interface App {
     id?: number
@@ -15,4 +14,3 @@ export interface App {
     date?: string
     scopes?: Array<string>
 }
-

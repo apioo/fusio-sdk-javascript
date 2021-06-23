@@ -1,9 +1,9 @@
 /**
- * ConsumerAccountResource generated on 2021-01-29
+ * ConsumerAccountResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {User_Account} from "./User_Account";
 import {Message} from "./Message";
 
@@ -25,7 +25,7 @@ export default class ConsumerAccountResource {
      */
     public consumerActionUserGet(): AxiosPromise<User_Account> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },
@@ -40,7 +40,7 @@ export default class ConsumerAccountResource {
      */
     public consumerActionUserUpdate(data?: User_Account): AxiosPromise<Message> {
         let params = {
-            method: "PUT",
+            method: <Method> "PUT",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

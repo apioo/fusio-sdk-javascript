@@ -1,10 +1,7 @@
 /**
- * Backend_Sdk_Types generated on 2021-01-29
+ * Backend_Sdk_Types generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-
 import {Sdk_Types} from "./Sdk_Types";
-
 export type Backend_Sdk_Types = Sdk_Types;
-

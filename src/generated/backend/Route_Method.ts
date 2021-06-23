@@ -1,11 +1,9 @@
 /**
- * Route_Method generated on 2021-01-29
+ * Route_Method generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-
 import {Route_Method_Responses} from "./Route_Method_Responses";
-
 export interface Route_Method {
     method?: string
     version?: number
@@ -21,4 +19,3 @@ export interface Route_Method {
     action?: string
     costs?: number
 }
-

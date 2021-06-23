@@ -1,9 +1,9 @@
 /**
- * BackendPlanContractByContractIdResource generated on 2021-01-29
+ * BackendPlanContractByContractIdResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Plan_Contract} from "./Plan_Contract";
 import {Plan_Contract_Update} from "./Plan_Contract_Update";
 import {Message} from "./Message";
@@ -28,7 +28,7 @@ export default class BackendPlanContractByContractIdResource {
      */
     public backendActionPlanContractGet(): AxiosPromise<Plan_Contract> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },
@@ -43,7 +43,7 @@ export default class BackendPlanContractByContractIdResource {
      */
     public backendActionPlanContractUpdate(data?: Plan_Contract_Update): AxiosPromise<Message> {
         let params = {
-            method: "PUT",
+            method: <Method> "PUT",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },
@@ -57,7 +57,7 @@ export default class BackendPlanContractByContractIdResource {
      */
     public backendActionPlanContractDelete(): AxiosPromise<Message> {
         let params = {
-            method: "DELETE",
+            method: <Method> "DELETE",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

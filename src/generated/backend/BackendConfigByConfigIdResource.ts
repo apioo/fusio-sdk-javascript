@@ -1,9 +1,9 @@
 /**
- * BackendConfigByConfigIdResource generated on 2021-01-29
+ * BackendConfigByConfigIdResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Config} from "./Config";
 import {Config_Update} from "./Config_Update";
 import {Message} from "./Message";
@@ -28,7 +28,7 @@ export default class BackendConfigByConfigIdResource {
      */
     public backendActionConfigGet(): AxiosPromise<Config> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },
@@ -43,7 +43,7 @@ export default class BackendConfigByConfigIdResource {
      */
     public backendActionConfigUpdate(data?: Config_Update): AxiosPromise<Message> {
         let params = {
-            method: "PUT",
+            method: <Method> "PUT",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

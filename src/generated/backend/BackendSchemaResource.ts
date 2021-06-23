@@ -1,9 +1,9 @@
 /**
- * BackendSchemaResource generated on 2021-01-29
+ * BackendSchemaResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Collection_Category_Query} from "./Collection_Category_Query";
 import {Schema_Collection} from "./Schema_Collection";
 import {Schema_Create} from "./Schema_Create";
@@ -28,7 +28,7 @@ export default class BackendSchemaResource {
      */
     public backendActionSchemaGetAll(query?: Collection_Category_Query): AxiosPromise<Schema_Collection> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             params: query,
             headers: {
                 'Authorization': 'Bearer ' + this.token
@@ -44,7 +44,7 @@ export default class BackendSchemaResource {
      */
     public backendActionSchemaCreate(data?: Schema_Create): AxiosPromise<Message> {
         let params = {
-            method: "POST",
+            method: <Method> "POST",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

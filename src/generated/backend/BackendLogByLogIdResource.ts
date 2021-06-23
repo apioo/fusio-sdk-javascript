@@ -1,9 +1,9 @@
 /**
- * BackendLogByLogIdResource generated on 2021-01-29
+ * BackendLogByLogIdResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Log} from "./Log";
 
 export default class BackendLogByLogIdResource {
@@ -26,7 +26,7 @@ export default class BackendLogByLogIdResource {
      */
     public backendActionLogGet(): AxiosPromise<Log> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

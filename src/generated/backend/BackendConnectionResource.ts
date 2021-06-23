@@ -1,9 +1,9 @@
 /**
- * BackendConnectionResource generated on 2021-01-29
+ * BackendConnectionResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Collection_Query} from "./Collection_Query";
 import {Connection_Collection} from "./Connection_Collection";
 import {Connection_Create} from "./Connection_Create";
@@ -28,7 +28,7 @@ export default class BackendConnectionResource {
      */
     public backendActionConnectionGetAll(query?: Collection_Query): AxiosPromise<Connection_Collection> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             params: query,
             headers: {
                 'Authorization': 'Bearer ' + this.token
@@ -44,7 +44,7 @@ export default class BackendConnectionResource {
      */
     public backendActionConnectionCreate(data?: Connection_Create): AxiosPromise<Message> {
         let params = {
-            method: "POST",
+            method: <Method> "POST",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

@@ -1,12 +1,10 @@
 /**
- * Plan_Contract generated on 2021-01-29
+ * Plan_Contract generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-
 import {User} from "./User";
 import {Plan} from "./Plan";
-
 export interface Plan_Contract {
     id?: number
     user?: User
@@ -17,4 +15,3 @@ export interface Plan_Contract {
     period?: number
     insertDate?: string
 }
-

@@ -1,10 +1,7 @@
 /**
- * Backend_Marketplace_Collection generated on 2021-01-29
+ * Backend_Marketplace_Collection generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-
 import {Marketplace_Collection} from "./Marketplace_Collection";
-
 export type Backend_Marketplace_Collection = Marketplace_Collection;
-

@@ -1,9 +1,9 @@
 /**
- * BackendActionListResource generated on 2021-01-29
+ * BackendActionListResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Action_Index} from "./Action_Index";
 
 export default class BackendActionListResource {
@@ -24,7 +24,7 @@ export default class BackendActionListResource {
      */
     public backendActionActionGetIndex(): AxiosPromise<Action_Index> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

@@ -1,9 +1,9 @@
 /**
- * ConsumerRegisterResource generated on 2021-01-29
+ * ConsumerRegisterResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {User_Register} from "./User_Register";
 import {Message} from "./Message";
 
@@ -26,7 +26,7 @@ export default class ConsumerRegisterResource {
      */
     public consumerActionUserRegister(data?: User_Register): AxiosPromise<Message> {
         let params = {
-            method: "POST",
+            method: <Method> "POST",
         };
 
         return this.httpClient.post<Message>(this.url, data, params);

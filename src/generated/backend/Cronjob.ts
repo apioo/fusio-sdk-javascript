@@ -1,11 +1,9 @@
 /**
- * Cronjob generated on 2021-01-29
+ * Cronjob generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-
 import {Cronjob_Error} from "./Cronjob_Error";
-
 export interface Cronjob {
     id?: number
     name?: string
@@ -15,4 +13,3 @@ export interface Cronjob {
     exitCode?: number
     errors?: Array<Cronjob_Error>
 }
-

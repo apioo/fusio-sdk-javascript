@@ -1,9 +1,9 @@
 /**
- * BackendActionFormResource generated on 2021-01-29
+ * BackendActionFormResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Form_Container} from "./Form_Container";
 
 export default class BackendActionFormResource {
@@ -24,7 +24,7 @@ export default class BackendActionFormResource {
      */
     public backendActionActionGetForm(): AxiosPromise<Form_Container> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

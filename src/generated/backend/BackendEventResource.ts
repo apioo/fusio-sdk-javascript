@@ -1,9 +1,9 @@
 /**
- * BackendEventResource generated on 2021-01-29
+ * BackendEventResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Collection_Category_Query} from "./Collection_Category_Query";
 import {Event_Collection} from "./Event_Collection";
 import {Event_Create} from "./Event_Create";
@@ -28,7 +28,7 @@ export default class BackendEventResource {
      */
     public backendActionEventGetAll(query?: Collection_Category_Query): AxiosPromise<Event_Collection> {
         let params = {
-            method: "GET",
+            method: <Method> "GET",
             params: query,
             headers: {
                 'Authorization': 'Bearer ' + this.token
@@ -44,7 +44,7 @@ export default class BackendEventResource {
      */
     public backendActionEventCreate(data?: Event_Create): AxiosPromise<Message> {
         let params = {
-            method: "POST",
+            method: <Method> "POST",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

@@ -1,10 +1,8 @@
 /**
- * BackendAuditAudit_idPath generated on 2021-01-29
+ * BackendAuditAudit_idPath generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
-
 
 export interface BackendAuditAudit_idPath {
     audit_id?: string
 }
-

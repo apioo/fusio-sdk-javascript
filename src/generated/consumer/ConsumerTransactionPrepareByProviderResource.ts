@@ -1,9 +1,9 @@
 /**
- * ConsumerTransactionPrepareByProviderResource generated on 2021-01-29
+ * ConsumerTransactionPrepareByProviderResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {Transaction_Prepare_Request} from "./Transaction_Prepare_Request";
 import {Transaction_Prepare_Response} from "./Transaction_Prepare_Response";
 
@@ -28,7 +28,7 @@ export default class ConsumerTransactionPrepareByProviderResource {
      */
     public consumerActionTransactionPrepare(data?: Transaction_Prepare_Request): AxiosPromise<Transaction_Prepare_Response> {
         let params = {
-            method: "POST",
+            method: <Method> "POST",
             headers: {
                 'Authorization': 'Bearer ' + this.token
             },

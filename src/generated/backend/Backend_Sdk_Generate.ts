@@ -1,10 +1,7 @@
 /**
- * Backend_Sdk_Generate generated on 2021-01-29
+ * Backend_Sdk_Generate generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-
 import {Sdk_Generate} from "./Sdk_Generate";
-
 export type Backend_Sdk_Generate = Sdk_Generate;
-

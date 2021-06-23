@@ -1,9 +1,9 @@
 /**
- * ConsumerProviderByProviderResource generated on 2021-01-29
+ * ConsumerProviderByProviderResource generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-import Axios, {AxiosInstance, AxiosPromise} from "axios";
+import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
 import {User_Provider} from "./User_Provider";
 import {User_JWT} from "./User_JWT";
 
@@ -28,7 +28,7 @@ export default class ConsumerProviderByProviderResource {
      */
     public consumerActionUserProvider(data?: User_Provider): AxiosPromise<User_JWT> {
         let params = {
-            method: "POST",
+            method: <Method> "POST",
         };
 
         return this.httpClient.post<User_JWT>(this.url, data, params);

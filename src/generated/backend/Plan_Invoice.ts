@@ -1,11 +1,9 @@
 /**
- * Plan_Invoice generated on 2021-01-29
+ * Plan_Invoice generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
 
-
 import {User} from "./User";
-
 export interface Plan_Invoice {
     id?: number
     contractId?: number
@@ -21,4 +19,3 @@ export interface Plan_Invoice {
     payDate?: string
     insertDate?: string
 }
-

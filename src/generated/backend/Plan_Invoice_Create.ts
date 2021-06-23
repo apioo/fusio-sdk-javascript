@@ -1,12 +1,10 @@
 /**
- * Plan_Invoice_Create generated on 2021-01-29
+ * Plan_Invoice_Create generated on 2021-06-23
  * {@link https://github.com/apioo}
  */
-
 
 export interface Plan_Invoice_Create {
     id?: number
     contractId: number
     startDate: string
 }
-
