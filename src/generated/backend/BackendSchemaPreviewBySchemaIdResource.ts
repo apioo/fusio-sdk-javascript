@@ -1,5 +1,5 @@
 /**
- * BackendSchemaPreviewBySchemaIdResource generated on 2021-06-23
+ * BackendSchemaPreviewBySchemaIdResource generated on 2021-06-26
  * {@link https://github.com/apioo}
  */
 
@@ -32,7 +32,7 @@ export default class BackendSchemaPreviewBySchemaIdResource {
             },
         };
 
-        return this.httpClient.post<Schema_Preview_Response>(this.url, params);
+        return this.httpClient.post<Schema_Preview_Response>(this.url, null, params);
     }
 
 }

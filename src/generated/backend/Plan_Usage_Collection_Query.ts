@@ -1,5 +1,5 @@
 /**
- * Plan_Usage_Collection_Query generated on 2021-06-23
+ * Plan_Usage_Collection_Query generated on 2021-06-26
  * {@link https://github.com/apioo}
  */
 

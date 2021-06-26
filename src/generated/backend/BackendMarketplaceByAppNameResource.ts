@@ -1,5 +1,5 @@
 /**
- * BackendMarketplaceByAppNameResource generated on 2021-06-23
+ * BackendMarketplaceByAppNameResource generated on 2021-06-26
  * {@link https://github.com/apioo}
  */
 
@@ -47,7 +47,7 @@ export default class BackendMarketplaceByAppNameResource {
             },
         };
 
-        return this.httpClient.put<Message>(this.url, params);
+        return this.httpClient.put<Message>(this.url, null, params);
     }
 
     /**

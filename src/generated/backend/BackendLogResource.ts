@@ -1,5 +1,5 @@
 /**
- * BackendLogResource generated on 2021-06-23
+ * BackendLogResource generated on 2021-06-26
  * {@link https://github.com/apioo}
  */
 
