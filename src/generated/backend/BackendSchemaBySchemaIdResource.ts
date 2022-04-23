@@ -1,26 +1,25 @@
 /**
- * BackendSchemaBySchemaIdResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendSchemaBySchemaIdResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Schema} from "./Schema";
 import {Schema_Update} from "./Schema_Update";
 import {Message} from "./Message";
 
-export default class BackendSchemaBySchemaIdResource {
+export default class BackendSchemaBySchemaIdResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
     private schema_id: string;
 
-    public constructor(schema_id: string, baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(schema_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
         this.schema_id = schema_id;
 
         this.url = baseUrl + "/backend/schema/"+schema_id+"";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -29,9 +28,6 @@ export default class BackendSchemaBySchemaIdResource {
     public backendActionSchemaGet(): AxiosPromise<Schema> {
         let params = {
             method: <Method> "GET",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<Schema>(this.url, params);
@@ -44,9 +40,6 @@ export default class BackendSchemaBySchemaIdResource {
     public backendActionSchemaUpdate(data?: Schema_Update): AxiosPromise<Message> {
         let params = {
             method: <Method> "PUT",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
@@ -58,9 +51,6 @@ export default class BackendSchemaBySchemaIdResource {
     public backendActionSchemaDelete(): AxiosPromise<Message> {
         let params = {
             method: <Method> "DELETE",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.delete(this.url, params);

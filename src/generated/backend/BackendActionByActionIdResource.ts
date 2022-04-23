@@ -1,26 +1,25 @@
 /**
- * BackendActionByActionIdResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendActionByActionIdResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Action} from "./Action";
 import {Action_Update} from "./Action_Update";
 import {Message} from "./Message";
 
-export default class BackendActionByActionIdResource {
+export default class BackendActionByActionIdResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
     private action_id: string;
 
-    public constructor(action_id: string, baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(action_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
         this.action_id = action_id;
 
         this.url = baseUrl + "/backend/action/"+action_id+"";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -29,9 +28,6 @@ export default class BackendActionByActionIdResource {
     public backendActionActionGet(): AxiosPromise<Action> {
         let params = {
             method: <Method> "GET",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<Action>(this.url, params);
@@ -44,9 +40,6 @@ export default class BackendActionByActionIdResource {
     public backendActionActionUpdate(data?: Action_Update): AxiosPromise<Message> {
         let params = {
             method: <Method> "PUT",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
@@ -58,9 +51,6 @@ export default class BackendActionByActionIdResource {
     public backendActionActionDelete(): AxiosPromise<Message> {
         let params = {
             method: <Method> "DELETE",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.delete(this.url, params);

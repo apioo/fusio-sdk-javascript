@@ -1,25 +1,24 @@
 /**
- * BackendSchemaFormBySchemaIdResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendSchemaFormBySchemaIdResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Schema_Form} from "./Schema_Form";
 import {Message} from "./Message";
 
-export default class BackendSchemaFormBySchemaIdResource {
+export default class BackendSchemaFormBySchemaIdResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
     private schema_id: string;
 
-    public constructor(schema_id: string, baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(schema_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
         this.schema_id = schema_id;
 
         this.url = baseUrl + "/backend/schema/form/"+schema_id+"";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -29,9 +28,6 @@ export default class BackendSchemaFormBySchemaIdResource {
     public backendActionSchemaForm(data?: Schema_Form): AxiosPromise<Message> {
         let params = {
             method: <Method> "PUT",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);

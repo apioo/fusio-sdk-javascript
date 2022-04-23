@@ -1,24 +1,23 @@
 /**
- * BackendAccountResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendAccountResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {User} from "./User";
 import {User_Update} from "./User_Update";
 import {Message} from "./Message";
 
-export default class BackendAccountResource {
+export default class BackendAccountResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
 
-    public constructor(baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
 
         this.url = baseUrl + "/backend/account";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -27,9 +26,6 @@ export default class BackendAccountResource {
     public backendActionAccountGet(): AxiosPromise<User> {
         let params = {
             method: <Method> "GET",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<User>(this.url, params);
@@ -42,9 +38,6 @@ export default class BackendAccountResource {
     public backendActionAccountUpdate(data?: User_Update): AxiosPromise<Message> {
         let params = {
             method: <Method> "PUT",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);

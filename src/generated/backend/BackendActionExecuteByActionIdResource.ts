@@ -1,25 +1,24 @@
 /**
- * BackendActionExecuteByActionIdResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendActionExecuteByActionIdResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Action_Execute_Request} from "./Action_Execute_Request";
 import {Action_Execute_Response} from "./Action_Execute_Response";
 
-export default class BackendActionExecuteByActionIdResource {
+export default class BackendActionExecuteByActionIdResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
     private action_id: string;
 
-    public constructor(action_id: string, baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(action_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
         this.action_id = action_id;
 
         this.url = baseUrl + "/backend/action/execute/"+action_id+"";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -29,9 +28,6 @@ export default class BackendActionExecuteByActionIdResource {
     public backendActionActionExecute(data?: Action_Execute_Request): AxiosPromise<Action_Execute_Response> {
         let params = {
             method: <Method> "POST",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.post<Action_Execute_Response>(this.url, data, params);

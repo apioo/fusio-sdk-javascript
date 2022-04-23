@@ -1,6 +1,6 @@
 /**
- * Rate generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * Rate generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
 import {Rate_Allocation} from "./Rate_Allocation";

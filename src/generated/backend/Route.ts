@@ -1,6 +1,6 @@
 /**
- * Route generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * Route generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
 import {Route_Version} from "./Route_Version";

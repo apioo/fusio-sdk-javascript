@@ -1,26 +1,25 @@
 /**
- * BackendAppByAppIdTokenAndTokenIdResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendAppByAppIdTokenAndTokenIdResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Message} from "./Message";
 
-export default class BackendAppByAppIdTokenAndTokenIdResource {
+export default class BackendAppByAppIdTokenAndTokenIdResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
     private app_id: string;
     private token_id: string;
 
-    public constructor(app_id: string, token_id: string, baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(app_id: string, token_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
         this.app_id = app_id;
         this.token_id = token_id;
 
         this.url = baseUrl + "/backend/app/"+app_id+"/token/"+token_id+"";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -29,9 +28,6 @@ export default class BackendAppByAppIdTokenAndTokenIdResource {
     public backendActionAppDeleteToken(): AxiosPromise<Message> {
         let params = {
             method: <Method> "DELETE",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.delete(this.url, params);

@@ -1,26 +1,25 @@
 /**
- * BackendConfigByConfigIdResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendConfigByConfigIdResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Config} from "./Config";
 import {Config_Update} from "./Config_Update";
 import {Message} from "./Message";
 
-export default class BackendConfigByConfigIdResource {
+export default class BackendConfigByConfigIdResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
     private config_id: string;
 
-    public constructor(config_id: string, baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(config_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
         this.config_id = config_id;
 
         this.url = baseUrl + "/backend/config/"+config_id+"";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -29,9 +28,6 @@ export default class BackendConfigByConfigIdResource {
     public backendActionConfigGet(): AxiosPromise<Config> {
         let params = {
             method: <Method> "GET",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<Config>(this.url, params);
@@ -44,9 +40,6 @@ export default class BackendConfigByConfigIdResource {
     public backendActionConfigUpdate(data?: Config_Update): AxiosPromise<Message> {
         let params = {
             method: <Method> "PUT",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);

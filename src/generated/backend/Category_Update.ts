@@ -1,6 +1,6 @@
 /**
- * Category_Update generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * Category_Update generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
 import {Category} from "./Category";

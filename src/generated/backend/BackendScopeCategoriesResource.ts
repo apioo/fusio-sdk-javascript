@@ -1,22 +1,21 @@
 /**
- * BackendScopeCategoriesResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendScopeCategoriesResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Scope_Categories} from "./Scope_Categories";
 
-export default class BackendScopeCategoriesResource {
+export default class BackendScopeCategoriesResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
 
-    public constructor(baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
 
         this.url = baseUrl + "/backend/scope/categories";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -25,9 +24,6 @@ export default class BackendScopeCategoriesResource {
     public backendActionScopeGetCategories(): AxiosPromise<Scope_Categories> {
         let params = {
             method: <Method> "GET",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<Scope_Categories>(this.url, params);

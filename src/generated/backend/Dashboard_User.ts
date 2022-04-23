@@ -1,6 +1,6 @@
 /**
- * Dashboard_User generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * Dashboard_User generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
 export interface Dashboard_User {

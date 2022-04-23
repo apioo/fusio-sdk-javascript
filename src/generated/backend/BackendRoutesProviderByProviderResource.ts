@@ -1,28 +1,27 @@
 /**
- * BackendRoutesProviderByProviderResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendRoutesProviderByProviderResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Form_Container} from "./Form_Container";
 import {Route_Provider} from "./Route_Provider";
 import {Message} from "./Message";
 import {Route_Provider_Config} from "./Route_Provider_Config";
 import {Route_Provider_Changelog} from "./Route_Provider_Changelog";
 
-export default class BackendRoutesProviderByProviderResource {
+export default class BackendRoutesProviderByProviderResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
     private provider: string;
 
-    public constructor(provider: string, baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(provider: string, baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
         this.provider = provider;
 
         this.url = baseUrl + "/backend/routes/provider/"+provider+"";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -31,9 +30,6 @@ export default class BackendRoutesProviderByProviderResource {
     public backendActionRouteProviderForm(): AxiosPromise<Form_Container> {
         let params = {
             method: <Method> "GET",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<Form_Container>(this.url, params);
@@ -46,9 +42,6 @@ export default class BackendRoutesProviderByProviderResource {
     public backendActionRouteProviderCreate(data?: Route_Provider): AxiosPromise<Message> {
         let params = {
             method: <Method> "POST",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.post<Message>(this.url, data, params);
@@ -61,9 +54,6 @@ export default class BackendRoutesProviderByProviderResource {
     public backendActionRouteProviderChangelog(data?: Route_Provider_Config): AxiosPromise<Route_Provider_Changelog> {
         let params = {
             method: <Method> "PUT",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.put<Route_Provider_Changelog>(this.url, data, params);

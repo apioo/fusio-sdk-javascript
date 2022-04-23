@@ -1,23 +1,22 @@
 /**
- * BackendMarketplaceResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendMarketplaceResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Marketplace_Collection} from "./Marketplace_Collection";
 import {Marketplace_Install} from "./Marketplace_Install";
 
-export default class BackendMarketplaceResource {
+export default class BackendMarketplaceResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
 
-    public constructor(baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
 
         this.url = baseUrl + "/backend/marketplace";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -26,9 +25,6 @@ export default class BackendMarketplaceResource {
     public backendActionMarketplaceGetAll(): AxiosPromise<Marketplace_Collection> {
         let params = {
             method: <Method> "GET",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<Marketplace_Collection>(this.url, params);
@@ -41,9 +37,6 @@ export default class BackendMarketplaceResource {
     public backendActionMarketplaceInstall(data?: Marketplace_Install): AxiosPromise<Marketplace_Install> {
         let params = {
             method: <Method> "POST",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.post<Marketplace_Install>(this.url, data, params);

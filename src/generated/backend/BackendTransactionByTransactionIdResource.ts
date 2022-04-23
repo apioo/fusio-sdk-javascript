@@ -1,24 +1,23 @@
 /**
- * BackendTransactionByTransactionIdResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendTransactionByTransactionIdResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Transaction} from "./Transaction";
 
-export default class BackendTransactionByTransactionIdResource {
+export default class BackendTransactionByTransactionIdResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
     private transaction_id: string;
 
-    public constructor(transaction_id: string, baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(transaction_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
         this.transaction_id = transaction_id;
 
         this.url = baseUrl + "/backend/transaction/"+transaction_id+"";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -27,9 +26,6 @@ export default class BackendTransactionByTransactionIdResource {
     public backendActionTransactionGet(): AxiosPromise<Transaction> {
         let params = {
             method: <Method> "GET",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<Transaction>(this.url, params);

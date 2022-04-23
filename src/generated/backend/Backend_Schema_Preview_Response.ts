@@ -1,6 +1,6 @@
 /**
- * Backend_Schema_Preview_Response generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * Backend_Schema_Preview_Response generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
 import {Schema_Preview_Response} from "./Schema_Preview_Response";

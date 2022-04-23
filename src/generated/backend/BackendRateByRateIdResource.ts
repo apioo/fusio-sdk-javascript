@@ -1,26 +1,25 @@
 /**
- * BackendRateByRateIdResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendRateByRateIdResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Rate} from "./Rate";
 import {Rate_Update} from "./Rate_Update";
 import {Message} from "./Message";
 
-export default class BackendRateByRateIdResource {
+export default class BackendRateByRateIdResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
     private rate_id: string;
 
-    public constructor(rate_id: string, baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(rate_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
         this.rate_id = rate_id;
 
         this.url = baseUrl + "/backend/rate/"+rate_id+"";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -29,9 +28,6 @@ export default class BackendRateByRateIdResource {
     public backendActionRateGet(): AxiosPromise<Rate> {
         let params = {
             method: <Method> "GET",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<Rate>(this.url, params);
@@ -44,9 +40,6 @@ export default class BackendRateByRateIdResource {
     public backendActionRateUpdate(data?: Rate_Update): AxiosPromise<Message> {
         let params = {
             method: <Method> "PUT",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
@@ -58,9 +51,6 @@ export default class BackendRateByRateIdResource {
     public backendActionRateDelete(): AxiosPromise<Message> {
         let params = {
             method: <Method> "DELETE",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.delete(this.url, params);

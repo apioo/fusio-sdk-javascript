@@ -1,26 +1,25 @@
 /**
- * BackendScopeByScopeIdResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendScopeByScopeIdResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Scope} from "./Scope";
 import {Scope_Update} from "./Scope_Update";
 import {Message} from "./Message";
 
-export default class BackendScopeByScopeIdResource {
+export default class BackendScopeByScopeIdResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
     private scope_id: string;
 
-    public constructor(scope_id: string, baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(scope_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
         this.scope_id = scope_id;
 
         this.url = baseUrl + "/backend/scope/"+scope_id+"";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -29,9 +28,6 @@ export default class BackendScopeByScopeIdResource {
     public backendActionScopeGet(): AxiosPromise<Scope> {
         let params = {
             method: <Method> "GET",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<Scope>(this.url, params);
@@ -44,9 +40,6 @@ export default class BackendScopeByScopeIdResource {
     public backendActionScopeUpdate(data?: Scope_Update): AxiosPromise<Message> {
         let params = {
             method: <Method> "PUT",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
@@ -58,9 +51,6 @@ export default class BackendScopeByScopeIdResource {
     public backendActionScopeDelete(): AxiosPromise<Message> {
         let params = {
             method: <Method> "DELETE",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.delete(this.url, params);

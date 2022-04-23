@@ -1,24 +1,23 @@
 /**
- * ConsumerPasswordResetResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * ConsumerPasswordResetResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {User_Email} from "./User_Email";
 import {Message} from "./Message";
 import {User_PasswordReset} from "./User_PasswordReset";
 
-export default class ConsumerPasswordResetResource {
+export default class ConsumerPasswordResetResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
 
-    public constructor(baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
 
         this.url = baseUrl + "/consumer/password_reset";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**

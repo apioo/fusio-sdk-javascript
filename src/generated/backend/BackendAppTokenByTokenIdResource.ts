@@ -1,24 +1,23 @@
 /**
- * BackendAppTokenByTokenIdResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendAppTokenByTokenIdResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {App_Token} from "./App_Token";
 
-export default class BackendAppTokenByTokenIdResource {
+export default class BackendAppTokenByTokenIdResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
     private token_id: string;
 
-    public constructor(token_id: string, baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(token_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
         this.token_id = token_id;
 
         this.url = baseUrl + "/backend/app/token/"+token_id+"";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -27,9 +26,6 @@ export default class BackendAppTokenByTokenIdResource {
     public backendActionAppTokenGet(): AxiosPromise<App_Token> {
         let params = {
             method: <Method> "GET",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<App_Token>(this.url, params);

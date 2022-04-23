@@ -1,6 +1,6 @@
 /**
- * Route_Provider_Config generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * Route_Provider_Config generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
 export type Route_Provider_Config = Record<string, any>;

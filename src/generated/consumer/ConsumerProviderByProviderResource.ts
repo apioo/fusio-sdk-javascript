@@ -1,25 +1,24 @@
 /**
- * ConsumerProviderByProviderResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * ConsumerProviderByProviderResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {User_Provider} from "./User_Provider";
 import {User_JWT} from "./User_JWT";
 
-export default class ConsumerProviderByProviderResource {
+export default class ConsumerProviderByProviderResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
     private provider: string;
 
-    public constructor(provider: string, baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(provider: string, baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
         this.provider = provider;
 
         this.url = baseUrl + "/consumer/provider/"+provider+"";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**

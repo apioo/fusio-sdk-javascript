@@ -1,6 +1,6 @@
 /**
- * BackendPlanContractContract_idPath generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendPlanContractContract_idPath generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
 export interface BackendPlanContractContract_idPath {

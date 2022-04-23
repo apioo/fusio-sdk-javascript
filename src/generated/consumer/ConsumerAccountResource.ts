@@ -1,23 +1,22 @@
 /**
- * ConsumerAccountResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * ConsumerAccountResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {User_Account} from "./User_Account";
 import {Message} from "./Message";
 
-export default class ConsumerAccountResource {
+export default class ConsumerAccountResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
 
-    public constructor(baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
 
         this.url = baseUrl + "/consumer/account";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -26,9 +25,6 @@ export default class ConsumerAccountResource {
     public consumerActionUserGet(): AxiosPromise<User_Account> {
         let params = {
             method: <Method> "GET",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<User_Account>(this.url, params);
@@ -41,9 +37,6 @@ export default class ConsumerAccountResource {
     public consumerActionUserUpdate(data?: User_Account): AxiosPromise<Message> {
         let params = {
             method: <Method> "PUT",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);

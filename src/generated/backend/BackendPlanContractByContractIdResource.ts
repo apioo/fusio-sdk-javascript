@@ -1,26 +1,25 @@
 /**
- * BackendPlanContractByContractIdResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendPlanContractByContractIdResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Plan_Contract} from "./Plan_Contract";
 import {Plan_Contract_Update} from "./Plan_Contract_Update";
 import {Message} from "./Message";
 
-export default class BackendPlanContractByContractIdResource {
+export default class BackendPlanContractByContractIdResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
     private contract_id: string;
 
-    public constructor(contract_id: string, baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(contract_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
         this.contract_id = contract_id;
 
         this.url = baseUrl + "/backend/plan/contract/"+contract_id+"";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -29,9 +28,6 @@ export default class BackendPlanContractByContractIdResource {
     public backendActionPlanContractGet(): AxiosPromise<Plan_Contract> {
         let params = {
             method: <Method> "GET",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<Plan_Contract>(this.url, params);
@@ -44,9 +40,6 @@ export default class BackendPlanContractByContractIdResource {
     public backendActionPlanContractUpdate(data?: Plan_Contract_Update): AxiosPromise<Message> {
         let params = {
             method: <Method> "PUT",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
@@ -58,9 +51,6 @@ export default class BackendPlanContractByContractIdResource {
     public backendActionPlanContractDelete(): AxiosPromise<Message> {
         let params = {
             method: <Method> "DELETE",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.delete(this.url, params);

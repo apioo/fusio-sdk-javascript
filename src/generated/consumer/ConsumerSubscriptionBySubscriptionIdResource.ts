@@ -1,26 +1,25 @@
 /**
- * ConsumerSubscriptionBySubscriptionIdResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * ConsumerSubscriptionBySubscriptionIdResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Event_Subscription} from "./Event_Subscription";
 import {Event_Subscription_Update} from "./Event_Subscription_Update";
 import {Message} from "./Message";
 
-export default class ConsumerSubscriptionBySubscriptionIdResource {
+export default class ConsumerSubscriptionBySubscriptionIdResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
     private subscription_id: string;
 
-    public constructor(subscription_id: string, baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(subscription_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
         this.subscription_id = subscription_id;
 
         this.url = baseUrl + "/consumer/subscription/"+subscription_id+"";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -29,9 +28,6 @@ export default class ConsumerSubscriptionBySubscriptionIdResource {
     public consumerActionEventSubscriptionGet(): AxiosPromise<Event_Subscription> {
         let params = {
             method: <Method> "GET",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<Event_Subscription>(this.url, params);
@@ -44,9 +40,6 @@ export default class ConsumerSubscriptionBySubscriptionIdResource {
     public consumerActionEventSubscriptionUpdate(data?: Event_Subscription_Update): AxiosPromise<Message> {
         let params = {
             method: <Method> "PUT",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
@@ -58,9 +51,6 @@ export default class ConsumerSubscriptionBySubscriptionIdResource {
     public consumerActionEventSubscriptionDelete(): AxiosPromise<Message> {
         let params = {
             method: <Method> "DELETE",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.delete(this.url, params);

@@ -1,6 +1,6 @@
 /**
- * Statistic_Chart generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * Statistic_Chart generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
 import {Statistic_Chart_Data} from "./Statistic_Chart_Data";

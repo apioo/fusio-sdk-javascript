@@ -1,6 +1,6 @@
 /**
- * Sdk_Types generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * Sdk_Types generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
 export type Sdk_Types = Record<string, string>;

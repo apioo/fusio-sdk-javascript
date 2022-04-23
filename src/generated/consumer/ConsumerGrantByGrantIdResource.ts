@@ -1,23 +1,22 @@
 /**
- * ConsumerGrantByGrantIdResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * ConsumerGrantByGrantIdResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 
-export default class ConsumerGrantByGrantIdResource {
+export default class ConsumerGrantByGrantIdResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
     private grant_id: string;
 
-    public constructor(grant_id: string, baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(grant_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
         this.grant_id = grant_id;
 
         this.url = baseUrl + "/consumer/grant/"+grant_id+"";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -26,9 +25,6 @@ export default class ConsumerGrantByGrantIdResource {
     public consumerActionGrantDelete() {
         let params = {
             method: <Method> "DELETE",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.delete(this.url, params);

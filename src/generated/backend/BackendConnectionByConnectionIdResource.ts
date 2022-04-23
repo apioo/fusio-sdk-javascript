@@ -1,26 +1,25 @@
 /**
- * BackendConnectionByConnectionIdResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendConnectionByConnectionIdResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Connection} from "./Connection";
 import {Connection_Update} from "./Connection_Update";
 import {Message} from "./Message";
 
-export default class BackendConnectionByConnectionIdResource {
+export default class BackendConnectionByConnectionIdResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
     private connection_id: string;
 
-    public constructor(connection_id: string, baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(connection_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
         this.connection_id = connection_id;
 
         this.url = baseUrl + "/backend/connection/"+connection_id+"";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -29,9 +28,6 @@ export default class BackendConnectionByConnectionIdResource {
     public backendActionConnectionGet(): AxiosPromise<Connection> {
         let params = {
             method: <Method> "GET",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<Connection>(this.url, params);
@@ -44,9 +40,6 @@ export default class BackendConnectionByConnectionIdResource {
     public backendActionConnectionUpdate(data?: Connection_Update): AxiosPromise<Message> {
         let params = {
             method: <Method> "PUT",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
@@ -58,9 +51,6 @@ export default class BackendConnectionByConnectionIdResource {
     public backendActionConnectionDelete(): AxiosPromise<Message> {
         let params = {
             method: <Method> "DELETE",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.delete(this.url, params);

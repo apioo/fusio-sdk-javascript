@@ -1,23 +1,22 @@
 /**
- * BackendStatisticErrorsPerRouteResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendStatisticErrorsPerRouteResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Backend_Log_Collection_Query} from "./Backend_Log_Collection_Query";
 import {Statistic_Count} from "./Statistic_Count";
 
-export default class BackendStatisticErrorsPerRouteResource {
+export default class BackendStatisticErrorsPerRouteResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
 
-    public constructor(baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
 
         this.url = baseUrl + "/backend/statistic/errors_per_route";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -28,9 +27,6 @@ export default class BackendStatisticErrorsPerRouteResource {
         let params = {
             method: <Method> "GET",
             params: query,
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<Statistic_Count>(this.url, params);

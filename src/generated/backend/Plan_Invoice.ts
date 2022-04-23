@@ -1,6 +1,6 @@
 /**
- * Plan_Invoice generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * Plan_Invoice generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
 import {User} from "./User";

@@ -1,26 +1,25 @@
 /**
- * BackendEventByEventIdResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendEventByEventIdResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Event} from "./Event";
 import {Event_Update} from "./Event_Update";
 import {Message} from "./Message";
 
-export default class BackendEventByEventIdResource {
+export default class BackendEventByEventIdResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
     private event_id: string;
 
-    public constructor(event_id: string, baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(event_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
         this.event_id = event_id;
 
         this.url = baseUrl + "/backend/event/"+event_id+"";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -29,9 +28,6 @@ export default class BackendEventByEventIdResource {
     public backendActionEventGet(): AxiosPromise<Event> {
         let params = {
             method: <Method> "GET",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<Event>(this.url, params);
@@ -44,9 +40,6 @@ export default class BackendEventByEventIdResource {
     public backendActionEventUpdate(data?: Event_Update): AxiosPromise<Message> {
         let params = {
             method: <Method> "PUT",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
@@ -58,9 +51,6 @@ export default class BackendEventByEventIdResource {
     public backendActionEventDelete(): AxiosPromise<Message> {
         let params = {
             method: <Method> "DELETE",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.delete(this.url, params);

@@ -1,6 +1,6 @@
 /**
- * Backend_Log_Collection_Query generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * Backend_Log_Collection_Query generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
 import {Log_Collection_Query} from "./Log_Collection_Query";

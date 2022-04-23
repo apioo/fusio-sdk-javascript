@@ -1,22 +1,21 @@
 /**
- * BackendActionFormResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendActionFormResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Form_Container} from "./Form_Container";
 
-export default class BackendActionFormResource {
+export default class BackendActionFormResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
 
-    public constructor(baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
 
         this.url = baseUrl + "/backend/action/form";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -25,9 +24,6 @@ export default class BackendActionFormResource {
     public backendActionActionGetForm(): AxiosPromise<Form_Container> {
         let params = {
             method: <Method> "GET",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<Form_Container>(this.url, params);

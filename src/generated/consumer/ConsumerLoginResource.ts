@@ -1,24 +1,23 @@
 /**
- * ConsumerLoginResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * ConsumerLoginResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {User_Login} from "./User_Login";
 import {User_JWT} from "./User_JWT";
 import {User_Refresh} from "./User_Refresh";
 
-export default class ConsumerLoginResource {
+export default class ConsumerLoginResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
 
-    public constructor(baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
 
         this.url = baseUrl + "/consumer/login";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**

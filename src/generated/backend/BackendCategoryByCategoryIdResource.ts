@@ -1,26 +1,25 @@
 /**
- * BackendCategoryByCategoryIdResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendCategoryByCategoryIdResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Category} from "./Category";
 import {Category_Update} from "./Category_Update";
 import {Message} from "./Message";
 
-export default class BackendCategoryByCategoryIdResource {
+export default class BackendCategoryByCategoryIdResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
     private category_id: string;
 
-    public constructor(category_id: string, baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(category_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
         this.category_id = category_id;
 
         this.url = baseUrl + "/backend/category/"+category_id+"";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -29,9 +28,6 @@ export default class BackendCategoryByCategoryIdResource {
     public backendActionCategoryGet(): AxiosPromise<Category> {
         let params = {
             method: <Method> "GET",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<Category>(this.url, params);
@@ -44,9 +40,6 @@ export default class BackendCategoryByCategoryIdResource {
     public backendActionCategoryUpdate(data?: Category_Update): AxiosPromise<Message> {
         let params = {
             method: <Method> "PUT",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
@@ -58,9 +51,6 @@ export default class BackendCategoryByCategoryIdResource {
     public backendActionCategoryDelete(): AxiosPromise<Message> {
         let params = {
             method: <Method> "DELETE",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.delete(this.url, params);

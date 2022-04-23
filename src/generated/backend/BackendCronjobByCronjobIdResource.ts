@@ -1,26 +1,25 @@
 /**
- * BackendCronjobByCronjobIdResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendCronjobByCronjobIdResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Cronjob} from "./Cronjob";
 import {Cronjob_Update} from "./Cronjob_Update";
 import {Message} from "./Message";
 
-export default class BackendCronjobByCronjobIdResource {
+export default class BackendCronjobByCronjobIdResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
     private cronjob_id: string;
 
-    public constructor(cronjob_id: string, baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(cronjob_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
         this.cronjob_id = cronjob_id;
 
         this.url = baseUrl + "/backend/cronjob/"+cronjob_id+"";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -29,9 +28,6 @@ export default class BackendCronjobByCronjobIdResource {
     public backendActionCronjobGet(): AxiosPromise<Cronjob> {
         let params = {
             method: <Method> "GET",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<Cronjob>(this.url, params);
@@ -44,9 +40,6 @@ export default class BackendCronjobByCronjobIdResource {
     public backendActionCronjobUpdate(data?: Cronjob_Update): AxiosPromise<Message> {
         let params = {
             method: <Method> "PUT",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
@@ -58,9 +51,6 @@ export default class BackendCronjobByCronjobIdResource {
     public backendActionCronjobDelete(): AxiosPromise<Message> {
         let params = {
             method: <Method> "DELETE",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.delete(this.url, params);

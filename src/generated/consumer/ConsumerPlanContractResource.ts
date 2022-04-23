@@ -1,25 +1,24 @@
 /**
- * ConsumerPlanContractResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * ConsumerPlanContractResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Collection_Query} from "./Collection_Query";
 import {Plan_Contract_Collection} from "./Plan_Contract_Collection";
 import {Plan_Order_Request} from "./Plan_Order_Request";
 import {Plan_Order_Response} from "./Plan_Order_Response";
 
-export default class ConsumerPlanContractResource {
+export default class ConsumerPlanContractResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
 
-    public constructor(baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
 
         this.url = baseUrl + "/consumer/plan/contract";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -30,9 +29,6 @@ export default class ConsumerPlanContractResource {
         let params = {
             method: <Method> "GET",
             params: query,
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<Plan_Contract_Collection>(this.url, params);
@@ -45,9 +41,6 @@ export default class ConsumerPlanContractResource {
     public consumerActionPlanContractCreate(data?: Plan_Order_Request): AxiosPromise<Plan_Order_Response> {
         let params = {
             method: <Method> "POST",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.post<Plan_Order_Response>(this.url, data, params);

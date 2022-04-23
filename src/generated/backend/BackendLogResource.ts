@@ -1,23 +1,22 @@
 /**
- * BackendLogResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendLogResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Backend_Log_Collection_Query} from "./Backend_Log_Collection_Query";
 import {Log_Collection} from "./Log_Collection";
 
-export default class BackendLogResource {
+export default class BackendLogResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
 
-    public constructor(baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
 
         this.url = baseUrl + "/backend/log";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -28,9 +27,6 @@ export default class BackendLogResource {
         let params = {
             method: <Method> "GET",
             params: query,
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<Log_Collection>(this.url, params);

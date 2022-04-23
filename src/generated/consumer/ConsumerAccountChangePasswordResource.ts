@@ -1,23 +1,22 @@
 /**
- * ConsumerAccountChangePasswordResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * ConsumerAccountChangePasswordResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Account_ChangePassword} from "./Account_ChangePassword";
 import {Message} from "./Message";
 
-export default class ConsumerAccountChangePasswordResource {
+export default class ConsumerAccountChangePasswordResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
 
-    public constructor(baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
 
         this.url = baseUrl + "/consumer/account/change_password";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -27,9 +26,6 @@ export default class ConsumerAccountChangePasswordResource {
     public consumerActionUserChangePassword(data?: Account_ChangePassword): AxiosPromise<Message> {
         let params = {
             method: <Method> "PUT",
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);

@@ -1,23 +1,22 @@
 /**
- * BackendStatisticIssuedTokensResource generated on 2021-06-26
- * {@link https://github.com/apioo}
+ * BackendStatisticIssuedTokensResource generated on 2022-04-23
+ * {@link https://sdkgen.app}
  */
 
-import Axios, {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {ResourceAbstract} from "sdkgen-client"
 import {Backend_App_Token_Collection_Query} from "./Backend_App_Token_Collection_Query";
 import {Statistic_Count} from "./Statistic_Count";
 
-export default class BackendStatisticIssuedTokensResource {
+export default class BackendStatisticIssuedTokensResource extends ResourceAbstract {
     private url: string;
-    private token: string;
-    private httpClient: AxiosInstance;
 
 
-    public constructor(baseUrl: string, token: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+        super(baseUrl, httpClient);
+
 
         this.url = baseUrl + "/backend/statistic/issued_tokens";
-        this.token = token;
-        this.httpClient = httpClient ? httpClient : Axios.create();
     }
 
     /**
@@ -28,9 +27,6 @@ export default class BackendStatisticIssuedTokensResource {
         let params = {
             method: <Method> "GET",
             params: query,
-            headers: {
-                'Authorization': 'Bearer ' + this.token
-            },
         };
 
         return this.httpClient.get<Statistic_Count>(this.url, params);
