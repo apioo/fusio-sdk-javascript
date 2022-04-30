@@ -1,5 +1,5 @@
 /**
- * ConsumerPageResource generated on 2022-04-23
+ * ConsumerPageResource generated on 2022-04-30
  * {@link https://sdkgen.app}
  */
 

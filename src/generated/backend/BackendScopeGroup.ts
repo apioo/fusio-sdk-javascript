@@ -1,0 +1,52 @@
+/**
+ * BackendScopeGroup generated on 2022-04-30
+ * {@link https://sdkgen.app}
+ */
+
+import {ResourceAbstract} from "sdkgen-client"
+import BackendScopeByScopeIdResource from "./BackendScopeByScopeIdResource";
+import BackendScopeCategoriesResource from "./BackendScopeCategoriesResource";
+import BackendScopeResource from "./BackendScopeResource";
+
+export default class BackendScopeGroup extends ResourceAbstract {
+    /**
+     * Endpoint: /backend/scope/$scope_id<[0-9]+|^~>
+     *
+     * @returns BackendScopeByScopeIdResource
+     */
+    public getBackendScopeByScopeId(scope_id: string): BackendScopeByScopeIdResource
+    {
+        return new BackendScopeByScopeIdResource(
+            scope_id,
+            this.baseUrl,
+            this.httpClient
+        );
+    }
+
+    /**
+     * Endpoint: /backend/scope/categories
+     *
+     * @returns BackendScopeCategoriesResource
+     */
+    public getBackendScopeCategories(): BackendScopeCategoriesResource
+    {
+        return new BackendScopeCategoriesResource(
+            this.baseUrl,
+            this.httpClient
+        );
+    }
+
+    /**
+     * Endpoint: /backend/scope
+     *
+     * @returns BackendScopeResource
+     */
+    public getBackendScope(): BackendScopeResource
+    {
+        return new BackendScopeResource(
+            this.baseUrl,
+            this.httpClient
+        );
+    }
+
+}

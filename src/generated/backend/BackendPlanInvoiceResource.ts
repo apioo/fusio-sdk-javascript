@@ -1,5 +1,5 @@
 /**
- * BackendPlanInvoiceResource generated on 2022-04-23
+ * BackendPlanInvoiceResource generated on 2022-04-30
  * {@link https://sdkgen.app}
  */
 
