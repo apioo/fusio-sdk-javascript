@@ -9,7 +9,7 @@ let client = new Client(
     'test1234'
 );
 
-client.backend().then(async (backend) => {
+client.backend().backendAction().then(async (backend) => {
     let config: Action_Config = {
         response: JSON.stringify({hello: 'world'})
     };

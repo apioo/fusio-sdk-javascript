@@ -8,7 +8,7 @@ let client = new Client(
     'test1234'
 );
 
-client.consumer().then(async (consumer) => {
+client.consumer().consumerUser().then(async (consumer) => {
     let changePassword: Account_ChangePassword = {
         oldPassword: 'test1234',
         newPassword: 'test1234!',
