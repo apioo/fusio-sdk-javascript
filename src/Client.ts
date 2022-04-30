@@ -1,42 +1,40 @@
-import {AxiosInstance} from 'axios';
-import {AccessToken} from './AccesToken';
-import Authenticator from './Authenticator';
+
 import ClientBackend from './generated/backend/Client';
 import ClientConsumer from './generated/consumer/Client';
+import {ClientCredentials, CredentialsInterface, MemoryTokenStore, TokenStoreInterface} from "sdkgen-client";
 
 export default class Client {
-    private baseUrl: string
-    private username: string
-    private password: string
-    private scopes?: string[]
-    private httpClient?: AxiosInstance
-    private token?: AccessToken
+    private readonly baseUrl: string;
+    private readonly credentials: CredentialsInterface;
+    private readonly scopes: Array<string>|null;
+    private readonly tokenStore: TokenStoreInterface;
 
-    public constructor(baseUrl: string, username: string, password: string, scopes?: string[], httpClient?: AxiosInstance) {
-        this.baseUrl = baseUrl
-        this.username = username
-        this.password = password
-        this.scopes = scopes
-        this.httpClient = httpClient
+    public constructor(baseUrl: string, clientId: string, clientSecret: string, scopes?: Array<string>|null, tokenStore?: TokenStoreInterface) {
+        this.baseUrl = baseUrl;
+        this.credentials = this.newCredentials(clientId, clientSecret);
+        this.scopes = scopes || [];
+        this.tokenStore = tokenStore || new MemoryTokenStore();
     }
 
-    public async authenticate(): Promise<AccessToken> {
-        if (this.token && this.token.expires_in > (Math.floor(Date.now() / 1000))) {
-            return this.token
-        }
-
-        const authenticator = new Authenticator(this.baseUrl, this.httpClient);
-        let response = await authenticator.requestAccessToken(this.username, this.password, this.scopes);
-        return this.token = response.data
+    public backend(): ClientBackend {
+        return new ClientBackend(this.baseUrl, this.credentials, this.tokenStore, this.scopes);
     }
 
-    public async backend(): Promise<ClientBackend> {
-        let token = await this.authenticate();
-        return new ClientBackend(this.baseUrl, token.access_token, this.httpClient);
+    public consumer(): ClientConsumer  {
+        return new ClientConsumer(this.baseUrl, this.credentials, this.tokenStore, this.scopes);
     }
 
-    public async consumer(): Promise<ClientConsumer>  {
-        let token = await this.authenticate();
-        return new ClientConsumer(this.baseUrl, token.access_token, this.httpClient);
+    public getTokenStore(): TokenStoreInterface {
+        return this.tokenStore;
+    }
+
+    private newCredentials(clientId: string, clientSecret: string): CredentialsInterface {
+        return new ClientCredentials(
+            clientId,
+            clientSecret,
+            this.baseUrl + '/authorization/token',
+            '',
+            this.baseUrl + '/authorization/refresh'
+        );
     }
 }

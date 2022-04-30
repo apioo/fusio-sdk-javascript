@@ -18,8 +18,8 @@
     "build": "tsc"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "buffer": "^6.0.3"
+    "axios": "^0.24.0",
+    "sdkgen-client": "^0.1.0"
   },
   "devDependencies": {
     "typescript": "^4.3"
