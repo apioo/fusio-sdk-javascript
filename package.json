@@ -1,6 +1,6 @@
 {
   "name": "fusio-sdk",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "description": "SDK to talk to the Fusio API",
   "keywords": [
     "API",
