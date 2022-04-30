@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Schema} from "./Schema";
 import {Schema_Update} from "./Schema_Update";
@@ -14,7 +14,7 @@ export default class BackendSchemaBySchemaIdResource extends ResourceAbstract {
 
     private schema_id: string;
 
-    public constructor(schema_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(schema_id: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
         this.schema_id = schema_id;
@@ -23,11 +23,15 @@ export default class BackendSchemaBySchemaIdResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {AxiosPromise<Schema>}
+     * @returns {Promise<AxiosResponse<Schema>>}
      */
-    public backendActionSchemaGet(): AxiosPromise<Schema> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionSchemaGet(): Promise<AxiosResponse<Schema>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Schema>(this.url, params);
@@ -35,22 +39,30 @@ export default class BackendSchemaBySchemaIdResource extends ResourceAbstract {
 
     /**
      * @param {Schema_Update} data
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public backendActionSchemaUpdate(data?: Schema_Update): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "PUT",
+    public async backendActionSchemaUpdate(data?: Schema_Update): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'PUT',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
     }
 
     /**
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public backendActionSchemaDelete(): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "DELETE",
+    public async backendActionSchemaDelete(): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'DELETE',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.delete(this.url, params);

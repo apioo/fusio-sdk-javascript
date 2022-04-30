@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Collection_Query} from "./Collection_Query";
 import {Log} from "./Log";
@@ -13,7 +13,7 @@ export default class ConsumerLogByLogIdResource extends ResourceAbstract {
 
     private log_id: string;
 
-    public constructor(log_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(log_id: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
         this.log_id = log_id;
@@ -23,12 +23,16 @@ export default class ConsumerLogByLogIdResource extends ResourceAbstract {
 
     /**
      * @param {Collection_Query} query
-     * @returns {AxiosPromise<Log>}
+     * @returns {Promise<AxiosResponse<Log>>}
      */
-    public consumerActionLogGet(query?: Collection_Query): AxiosPromise<Log> {
-        let params = {
-            method: <Method> "GET",
+    public async consumerActionLogGet(query?: Collection_Query): Promise<AxiosResponse<Log>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
             params: query,
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Log>(this.url, params);

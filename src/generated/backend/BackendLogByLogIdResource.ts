@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Log} from "./Log";
 
@@ -12,7 +12,7 @@ export default class BackendLogByLogIdResource extends ResourceAbstract {
 
     private log_id: string;
 
-    public constructor(log_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(log_id: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
         this.log_id = log_id;
@@ -21,11 +21,15 @@ export default class BackendLogByLogIdResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {AxiosPromise<Log>}
+     * @returns {Promise<AxiosResponse<Log>>}
      */
-    public backendActionLogGet(): AxiosPromise<Log> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionLogGet(): Promise<AxiosResponse<Log>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Log>(this.url, params);

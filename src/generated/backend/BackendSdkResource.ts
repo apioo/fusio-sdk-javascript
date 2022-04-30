@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Sdk_Types} from "./Sdk_Types";
 import {Sdk_Generate} from "./Sdk_Generate";
@@ -13,7 +13,7 @@ export default class BackendSdkResource extends ResourceAbstract {
     private url: string;
 
 
-    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
 
@@ -21,11 +21,15 @@ export default class BackendSdkResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {AxiosPromise<Sdk_Types>}
+     * @returns {Promise<AxiosResponse<Sdk_Types>>}
      */
-    public backendActionSdkGetAll(): AxiosPromise<Sdk_Types> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionSdkGetAll(): Promise<AxiosResponse<Sdk_Types>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Sdk_Types>(this.url, params);
@@ -33,11 +37,15 @@ export default class BackendSdkResource extends ResourceAbstract {
 
     /**
      * @param {Sdk_Generate} data
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public backendActionSdkGenerate(data?: Sdk_Generate): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "POST",
+    public async backendActionSdkGenerate(data?: Sdk_Generate): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'POST',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.post<Message>(this.url, data, params);

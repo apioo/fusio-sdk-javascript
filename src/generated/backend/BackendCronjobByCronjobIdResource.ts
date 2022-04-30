@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Cronjob} from "./Cronjob";
 import {Cronjob_Update} from "./Cronjob_Update";
@@ -14,7 +14,7 @@ export default class BackendCronjobByCronjobIdResource extends ResourceAbstract 
 
     private cronjob_id: string;
 
-    public constructor(cronjob_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(cronjob_id: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
         this.cronjob_id = cronjob_id;
@@ -23,11 +23,15 @@ export default class BackendCronjobByCronjobIdResource extends ResourceAbstract 
     }
 
     /**
-     * @returns {AxiosPromise<Cronjob>}
+     * @returns {Promise<AxiosResponse<Cronjob>>}
      */
-    public backendActionCronjobGet(): AxiosPromise<Cronjob> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionCronjobGet(): Promise<AxiosResponse<Cronjob>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Cronjob>(this.url, params);
@@ -35,22 +39,30 @@ export default class BackendCronjobByCronjobIdResource extends ResourceAbstract 
 
     /**
      * @param {Cronjob_Update} data
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public backendActionCronjobUpdate(data?: Cronjob_Update): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "PUT",
+    public async backendActionCronjobUpdate(data?: Cronjob_Update): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'PUT',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
     }
 
     /**
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public backendActionCronjobDelete(): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "DELETE",
+    public async backendActionCronjobDelete(): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'DELETE',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.delete(this.url, params);

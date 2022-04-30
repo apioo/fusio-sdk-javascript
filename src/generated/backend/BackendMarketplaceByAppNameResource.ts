@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Marketplace_Local_App} from "./Marketplace_Local_App";
 import {Message} from "./Message";
@@ -13,7 +13,7 @@ export default class BackendMarketplaceByAppNameResource extends ResourceAbstrac
 
     private app_name: string;
 
-    public constructor(app_name: string, baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(app_name: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
         this.app_name = app_name;
@@ -22,33 +22,45 @@ export default class BackendMarketplaceByAppNameResource extends ResourceAbstrac
     }
 
     /**
-     * @returns {AxiosPromise<Marketplace_Local_App>}
+     * @returns {Promise<AxiosResponse<Marketplace_Local_App>>}
      */
-    public backendActionMarketplaceGet(): AxiosPromise<Marketplace_Local_App> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionMarketplaceGet(): Promise<AxiosResponse<Marketplace_Local_App>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Marketplace_Local_App>(this.url, params);
     }
 
     /**
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public backendActionMarketplaceUpdate(): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "PUT",
+    public async backendActionMarketplaceUpdate(): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'PUT',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.put<Message>(this.url, null, params);
     }
 
     /**
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public backendActionMarketplaceRemove(): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "DELETE",
+    public async backendActionMarketplaceRemove(): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'DELETE',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.delete(this.url, params);

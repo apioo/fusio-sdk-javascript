@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Audit} from "./Audit";
 
@@ -12,7 +12,7 @@ export default class BackendAuditByAuditIdResource extends ResourceAbstract {
 
     private audit_id: string;
 
-    public constructor(audit_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(audit_id: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
         this.audit_id = audit_id;
@@ -21,11 +21,15 @@ export default class BackendAuditByAuditIdResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {AxiosPromise<Audit>}
+     * @returns {Promise<AxiosResponse<Audit>>}
      */
-    public backendActionAuditGet(): AxiosPromise<Audit> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionAuditGet(): Promise<AxiosResponse<Audit>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Audit>(this.url, params);

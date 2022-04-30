@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {User_Login} from "./User_Login";
 import {User_JWT} from "./User_JWT";
@@ -13,7 +13,7 @@ export default class ConsumerLoginResource extends ResourceAbstract {
     private url: string;
 
 
-    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
 
@@ -22,11 +22,15 @@ export default class ConsumerLoginResource extends ResourceAbstract {
 
     /**
      * @param {User_Login} data
-     * @returns {AxiosPromise<User_JWT>}
+     * @returns {Promise<AxiosResponse<User_JWT>>}
      */
-    public consumerActionUserLogin(data?: User_Login): AxiosPromise<User_JWT> {
-        let params = {
-            method: <Method> "POST",
+    public async consumerActionUserLogin(data?: User_Login): Promise<AxiosResponse<User_JWT>> {
+        let params: AxiosRequestConfig = {
+            method: 'POST',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.post<User_JWT>(this.url, data, params);
@@ -34,11 +38,15 @@ export default class ConsumerLoginResource extends ResourceAbstract {
 
     /**
      * @param {User_Refresh} data
-     * @returns {AxiosPromise<User_JWT>}
+     * @returns {Promise<AxiosResponse<User_JWT>>}
      */
-    public consumerActionUserRefresh(data?: User_Refresh): AxiosPromise<User_JWT> {
-        let params = {
-            method: <Method> "PUT",
+    public async consumerActionUserRefresh(data?: User_Refresh): Promise<AxiosResponse<User_JWT>> {
+        let params: AxiosRequestConfig = {
+            method: 'PUT',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.put<User_JWT>(this.url, data, params);

@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Collection_Category_Query} from "./Collection_Category_Query";
 import {Route_Collection} from "./Route_Collection";
@@ -14,7 +14,7 @@ export default class BackendRoutesResource extends ResourceAbstract {
     private url: string;
 
 
-    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
 
@@ -23,12 +23,16 @@ export default class BackendRoutesResource extends ResourceAbstract {
 
     /**
      * @param {Collection_Category_Query} query
-     * @returns {AxiosPromise<Route_Collection>}
+     * @returns {Promise<AxiosResponse<Route_Collection>>}
      */
-    public backendActionRouteGetAll(query?: Collection_Category_Query): AxiosPromise<Route_Collection> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionRouteGetAll(query?: Collection_Category_Query): Promise<AxiosResponse<Route_Collection>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
             params: query,
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Route_Collection>(this.url, params);
@@ -36,11 +40,15 @@ export default class BackendRoutesResource extends ResourceAbstract {
 
     /**
      * @param {Route_Create} data
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public backendActionRouteCreate(data?: Route_Create): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "POST",
+    public async backendActionRouteCreate(data?: Route_Create): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'POST',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.post<Message>(this.url, data, params);

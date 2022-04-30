@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Form_Container} from "./Form_Container";
 import {Route_Provider} from "./Route_Provider";
@@ -16,7 +16,7 @@ export default class BackendRoutesProviderByProviderResource extends ResourceAbs
 
     private provider: string;
 
-    public constructor(provider: string, baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(provider: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
         this.provider = provider;
@@ -25,11 +25,15 @@ export default class BackendRoutesProviderByProviderResource extends ResourceAbs
     }
 
     /**
-     * @returns {AxiosPromise<Form_Container>}
+     * @returns {Promise<AxiosResponse<Form_Container>>}
      */
-    public backendActionRouteProviderForm(): AxiosPromise<Form_Container> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionRouteProviderForm(): Promise<AxiosResponse<Form_Container>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Form_Container>(this.url, params);
@@ -37,11 +41,15 @@ export default class BackendRoutesProviderByProviderResource extends ResourceAbs
 
     /**
      * @param {Route_Provider} data
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public backendActionRouteProviderCreate(data?: Route_Provider): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "POST",
+    public async backendActionRouteProviderCreate(data?: Route_Provider): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'POST',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.post<Message>(this.url, data, params);
@@ -49,11 +57,15 @@ export default class BackendRoutesProviderByProviderResource extends ResourceAbs
 
     /**
      * @param {Route_Provider_Config} data
-     * @returns {AxiosPromise<Route_Provider_Changelog>}
+     * @returns {Promise<AxiosResponse<Route_Provider_Changelog>>}
      */
-    public backendActionRouteProviderChangelog(data?: Route_Provider_Config): AxiosPromise<Route_Provider_Changelog> {
-        let params = {
-            method: <Method> "PUT",
+    public async backendActionRouteProviderChangelog(data?: Route_Provider_Config): Promise<AxiosResponse<Route_Provider_Changelog>> {
+        let params: AxiosRequestConfig = {
+            method: 'PUT',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.put<Route_Provider_Changelog>(this.url, data, params);

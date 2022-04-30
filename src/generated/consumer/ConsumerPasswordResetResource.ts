@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {User_Email} from "./User_Email";
 import {Message} from "./Message";
@@ -13,7 +13,7 @@ export default class ConsumerPasswordResetResource extends ResourceAbstract {
     private url: string;
 
 
-    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
 
@@ -22,11 +22,15 @@ export default class ConsumerPasswordResetResource extends ResourceAbstract {
 
     /**
      * @param {User_Email} data
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public consumerActionUserResetPasswordRequest(data?: User_Email): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "POST",
+    public async consumerActionUserResetPasswordRequest(data?: User_Email): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'POST',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.post<Message>(this.url, data, params);
@@ -34,11 +38,15 @@ export default class ConsumerPasswordResetResource extends ResourceAbstract {
 
     /**
      * @param {User_PasswordReset} data
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public consumerActionUserResetPasswordExecute(data?: User_PasswordReset): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "PUT",
+    public async consumerActionUserResetPasswordExecute(data?: User_PasswordReset): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'PUT',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);

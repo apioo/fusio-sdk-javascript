@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Connection_Index} from "./Connection_Index";
 
@@ -11,7 +11,7 @@ export default class BackendConnectionListResource extends ResourceAbstract {
     private url: string;
 
 
-    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
 
@@ -19,11 +19,15 @@ export default class BackendConnectionListResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {AxiosPromise<Connection_Index>}
+     * @returns {Promise<AxiosResponse<Connection_Index>>}
      */
-    public backendActionConnectionGetIndex(): AxiosPromise<Connection_Index> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionConnectionGetIndex(): Promise<AxiosResponse<Connection_Index>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Connection_Index>(this.url, params);

@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Collection_Query} from "./Collection_Query";
 import {Grant_Collection} from "./Grant_Collection";
@@ -12,7 +12,7 @@ export default class ConsumerGrantResource extends ResourceAbstract {
     private url: string;
 
 
-    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
 
@@ -21,12 +21,16 @@ export default class ConsumerGrantResource extends ResourceAbstract {
 
     /**
      * @param {Collection_Query} query
-     * @returns {AxiosPromise<Grant_Collection>}
+     * @returns {Promise<AxiosResponse<Grant_Collection>>}
      */
-    public consumerActionGrantGetAll(query?: Collection_Query): AxiosPromise<Grant_Collection> {
-        let params = {
-            method: <Method> "GET",
+    public async consumerActionGrantGetAll(query?: Collection_Query): Promise<AxiosResponse<Grant_Collection>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
             params: query,
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Grant_Collection>(this.url, params);

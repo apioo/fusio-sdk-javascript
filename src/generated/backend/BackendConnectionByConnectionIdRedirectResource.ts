@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Message} from "./Message";
 
@@ -12,7 +12,7 @@ export default class BackendConnectionByConnectionIdRedirectResource extends Res
 
     private connection_id: string;
 
-    public constructor(connection_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(connection_id: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
         this.connection_id = connection_id;
@@ -21,11 +21,15 @@ export default class BackendConnectionByConnectionIdRedirectResource extends Res
     }
 
     /**
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public backendActionConnectionGetRedirect(): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionConnectionGetRedirect(): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Message>(this.url, params);

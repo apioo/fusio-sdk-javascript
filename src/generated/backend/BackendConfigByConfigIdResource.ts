@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Config} from "./Config";
 import {Config_Update} from "./Config_Update";
@@ -14,7 +14,7 @@ export default class BackendConfigByConfigIdResource extends ResourceAbstract {
 
     private config_id: string;
 
-    public constructor(config_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(config_id: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
         this.config_id = config_id;
@@ -23,11 +23,15 @@ export default class BackendConfigByConfigIdResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {AxiosPromise<Config>}
+     * @returns {Promise<AxiosResponse<Config>>}
      */
-    public backendActionConfigGet(): AxiosPromise<Config> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionConfigGet(): Promise<AxiosResponse<Config>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Config>(this.url, params);
@@ -35,11 +39,15 @@ export default class BackendConfigByConfigIdResource extends ResourceAbstract {
 
     /**
      * @param {Config_Update} data
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public backendActionConfigUpdate(data?: Config_Update): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "PUT",
+    public async backendActionConfigUpdate(data?: Config_Update): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'PUT',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);

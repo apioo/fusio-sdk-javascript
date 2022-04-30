@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Rate} from "./Rate";
 import {Rate_Update} from "./Rate_Update";
@@ -14,7 +14,7 @@ export default class BackendRateByRateIdResource extends ResourceAbstract {
 
     private rate_id: string;
 
-    public constructor(rate_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(rate_id: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
         this.rate_id = rate_id;
@@ -23,11 +23,15 @@ export default class BackendRateByRateIdResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {AxiosPromise<Rate>}
+     * @returns {Promise<AxiosResponse<Rate>>}
      */
-    public backendActionRateGet(): AxiosPromise<Rate> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionRateGet(): Promise<AxiosResponse<Rate>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Rate>(this.url, params);
@@ -35,22 +39,30 @@ export default class BackendRateByRateIdResource extends ResourceAbstract {
 
     /**
      * @param {Rate_Update} data
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public backendActionRateUpdate(data?: Rate_Update): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "PUT",
+    public async backendActionRateUpdate(data?: Rate_Update): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'PUT',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
     }
 
     /**
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public backendActionRateDelete(): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "DELETE",
+    public async backendActionRateDelete(): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'DELETE',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.delete(this.url, params);

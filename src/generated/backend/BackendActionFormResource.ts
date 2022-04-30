@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Form_Container} from "./Form_Container";
 
@@ -11,7 +11,7 @@ export default class BackendActionFormResource extends ResourceAbstract {
     private url: string;
 
 
-    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
 
@@ -19,11 +19,15 @@ export default class BackendActionFormResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {AxiosPromise<Form_Container>}
+     * @returns {Promise<AxiosResponse<Form_Container>>}
      */
-    public backendActionActionGetForm(): AxiosPromise<Form_Container> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionActionGetForm(): Promise<AxiosResponse<Form_Container>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Form_Container>(this.url, params);

@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Plan_Contract} from "./Plan_Contract";
 
@@ -12,7 +12,7 @@ export default class ConsumerPlanContractByContractIdResource extends ResourceAb
 
     private contract_id: string;
 
-    public constructor(contract_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(contract_id: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
         this.contract_id = contract_id;
@@ -21,11 +21,15 @@ export default class ConsumerPlanContractByContractIdResource extends ResourceAb
     }
 
     /**
-     * @returns {AxiosPromise<Plan_Contract>}
+     * @returns {Promise<AxiosResponse<Plan_Contract>>}
      */
-    public consumerActionPlanContractGet(): AxiosPromise<Plan_Contract> {
-        let params = {
-            method: <Method> "GET",
+    public async consumerActionPlanContractGet(): Promise<AxiosResponse<Plan_Contract>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Plan_Contract>(this.url, params);

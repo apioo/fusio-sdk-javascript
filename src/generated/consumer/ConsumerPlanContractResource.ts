@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Collection_Query} from "./Collection_Query";
 import {Plan_Contract_Collection} from "./Plan_Contract_Collection";
@@ -14,7 +14,7 @@ export default class ConsumerPlanContractResource extends ResourceAbstract {
     private url: string;
 
 
-    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
 
@@ -23,12 +23,16 @@ export default class ConsumerPlanContractResource extends ResourceAbstract {
 
     /**
      * @param {Collection_Query} query
-     * @returns {AxiosPromise<Plan_Contract_Collection>}
+     * @returns {Promise<AxiosResponse<Plan_Contract_Collection>>}
      */
-    public consumerActionPlanContractGetAll(query?: Collection_Query): AxiosPromise<Plan_Contract_Collection> {
-        let params = {
-            method: <Method> "GET",
+    public async consumerActionPlanContractGetAll(query?: Collection_Query): Promise<AxiosResponse<Plan_Contract_Collection>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
             params: query,
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Plan_Contract_Collection>(this.url, params);
@@ -36,11 +40,15 @@ export default class ConsumerPlanContractResource extends ResourceAbstract {
 
     /**
      * @param {Plan_Order_Request} data
-     * @returns {AxiosPromise<Plan_Order_Response>}
+     * @returns {Promise<AxiosResponse<Plan_Order_Response>>}
      */
-    public consumerActionPlanContractCreate(data?: Plan_Order_Request): AxiosPromise<Plan_Order_Response> {
-        let params = {
-            method: <Method> "POST",
+    public async consumerActionPlanContractCreate(data?: Plan_Order_Request): Promise<AxiosResponse<Plan_Order_Response>> {
+        let params: AxiosRequestConfig = {
+            method: 'POST',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.post<Plan_Order_Response>(this.url, data, params);

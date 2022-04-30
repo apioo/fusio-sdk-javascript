@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Collection_Category_Query} from "./Collection_Category_Query";
 import {Action_Collection} from "./Action_Collection";
@@ -14,7 +14,7 @@ export default class BackendActionResource extends ResourceAbstract {
     private url: string;
 
 
-    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
 
@@ -23,12 +23,16 @@ export default class BackendActionResource extends ResourceAbstract {
 
     /**
      * @param {Collection_Category_Query} query
-     * @returns {AxiosPromise<Action_Collection>}
+     * @returns {Promise<AxiosResponse<Action_Collection>>}
      */
-    public backendActionActionGetAll(query?: Collection_Category_Query): AxiosPromise<Action_Collection> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionActionGetAll(query?: Collection_Category_Query): Promise<AxiosResponse<Action_Collection>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
             params: query,
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Action_Collection>(this.url, params);
@@ -36,11 +40,15 @@ export default class BackendActionResource extends ResourceAbstract {
 
     /**
      * @param {Action_Create} data
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public backendActionActionCreate(data?: Action_Create): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "POST",
+    public async backendActionActionCreate(data?: Action_Create): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'POST',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.post<Message>(this.url, data, params);

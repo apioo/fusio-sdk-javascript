@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Scope_Categories} from "./Scope_Categories";
 
@@ -11,7 +11,7 @@ export default class BackendScopeCategoriesResource extends ResourceAbstract {
     private url: string;
 
 
-    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
 
@@ -19,11 +19,15 @@ export default class BackendScopeCategoriesResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {AxiosPromise<Scope_Categories>}
+     * @returns {Promise<AxiosResponse<Scope_Categories>>}
      */
-    public backendActionScopeGetCategories(): AxiosPromise<Scope_Categories> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionScopeGetCategories(): Promise<AxiosResponse<Scope_Categories>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Scope_Categories>(this.url, params);

@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Event_Subscription} from "./Event_Subscription";
 import {Event_Subscription_Update} from "./Event_Subscription_Update";
@@ -14,7 +14,7 @@ export default class ConsumerSubscriptionBySubscriptionIdResource extends Resour
 
     private subscription_id: string;
 
-    public constructor(subscription_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(subscription_id: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
         this.subscription_id = subscription_id;
@@ -23,11 +23,15 @@ export default class ConsumerSubscriptionBySubscriptionIdResource extends Resour
     }
 
     /**
-     * @returns {AxiosPromise<Event_Subscription>}
+     * @returns {Promise<AxiosResponse<Event_Subscription>>}
      */
-    public consumerActionEventSubscriptionGet(): AxiosPromise<Event_Subscription> {
-        let params = {
-            method: <Method> "GET",
+    public async consumerActionEventSubscriptionGet(): Promise<AxiosResponse<Event_Subscription>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Event_Subscription>(this.url, params);
@@ -35,22 +39,30 @@ export default class ConsumerSubscriptionBySubscriptionIdResource extends Resour
 
     /**
      * @param {Event_Subscription_Update} data
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public consumerActionEventSubscriptionUpdate(data?: Event_Subscription_Update): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "PUT",
+    public async consumerActionEventSubscriptionUpdate(data?: Event_Subscription_Update): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'PUT',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
     }
 
     /**
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public consumerActionEventSubscriptionDelete(): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "DELETE",
+    public async consumerActionEventSubscriptionDelete(): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'DELETE',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.delete(this.url, params);

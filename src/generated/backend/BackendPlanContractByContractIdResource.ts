@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Plan_Contract} from "./Plan_Contract";
 import {Plan_Contract_Update} from "./Plan_Contract_Update";
@@ -14,7 +14,7 @@ export default class BackendPlanContractByContractIdResource extends ResourceAbs
 
     private contract_id: string;
 
-    public constructor(contract_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(contract_id: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
         this.contract_id = contract_id;
@@ -23,11 +23,15 @@ export default class BackendPlanContractByContractIdResource extends ResourceAbs
     }
 
     /**
-     * @returns {AxiosPromise<Plan_Contract>}
+     * @returns {Promise<AxiosResponse<Plan_Contract>>}
      */
-    public backendActionPlanContractGet(): AxiosPromise<Plan_Contract> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionPlanContractGet(): Promise<AxiosResponse<Plan_Contract>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Plan_Contract>(this.url, params);
@@ -35,22 +39,30 @@ export default class BackendPlanContractByContractIdResource extends ResourceAbs
 
     /**
      * @param {Plan_Contract_Update} data
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public backendActionPlanContractUpdate(data?: Plan_Contract_Update): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "PUT",
+    public async backendActionPlanContractUpdate(data?: Plan_Contract_Update): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'PUT',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
     }
 
     /**
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public backendActionPlanContractDelete(): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "DELETE",
+    public async backendActionPlanContractDelete(): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'DELETE',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.delete(this.url, params);

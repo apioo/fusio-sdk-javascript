@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Message} from "./Message";
 
@@ -13,7 +13,7 @@ export default class BackendAppByAppIdTokenAndTokenIdResource extends ResourceAb
     private app_id: string;
     private token_id: string;
 
-    public constructor(app_id: string, token_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(app_id: string, token_id: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
         this.app_id = app_id;
@@ -23,11 +23,15 @@ export default class BackendAppByAppIdTokenAndTokenIdResource extends ResourceAb
     }
 
     /**
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public backendActionAppDeleteToken(): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "DELETE",
+    public async backendActionAppDeleteToken(): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'DELETE',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.delete(this.url, params);

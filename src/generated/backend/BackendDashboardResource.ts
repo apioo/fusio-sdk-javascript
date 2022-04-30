@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Dashboard} from "./Dashboard";
 
@@ -11,7 +11,7 @@ export default class BackendDashboardResource extends ResourceAbstract {
     private url: string;
 
 
-    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
 
@@ -19,11 +19,15 @@ export default class BackendDashboardResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {AxiosPromise<Dashboard>}
+     * @returns {Promise<AxiosResponse<Dashboard>>}
      */
-    public backendActionDashboardGetAll(): AxiosPromise<Dashboard> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionDashboardGetAll(): Promise<AxiosResponse<Dashboard>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Dashboard>(this.url, params);

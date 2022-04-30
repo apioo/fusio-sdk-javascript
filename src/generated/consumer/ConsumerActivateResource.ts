@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {User_Activate} from "./User_Activate";
 import {Message} from "./Message";
@@ -12,7 +12,7 @@ export default class ConsumerActivateResource extends ResourceAbstract {
     private url: string;
 
 
-    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
 
@@ -21,11 +21,15 @@ export default class ConsumerActivateResource extends ResourceAbstract {
 
     /**
      * @param {User_Activate} data
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public consumerActionUserActivate(data?: User_Activate): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "POST",
+    public async consumerActionUserActivate(data?: User_Activate): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'POST',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.post<Message>(this.url, data, params);

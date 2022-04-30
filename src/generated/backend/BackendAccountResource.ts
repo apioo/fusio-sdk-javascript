@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {User} from "./User";
 import {User_Update} from "./User_Update";
@@ -13,7 +13,7 @@ export default class BackendAccountResource extends ResourceAbstract {
     private url: string;
 
 
-    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
 
@@ -21,11 +21,15 @@ export default class BackendAccountResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {AxiosPromise<User>}
+     * @returns {Promise<AxiosResponse<User>>}
      */
-    public backendActionAccountGet(): AxiosPromise<User> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionAccountGet(): Promise<AxiosResponse<User>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<User>(this.url, params);
@@ -33,11 +37,15 @@ export default class BackendAccountResource extends ResourceAbstract {
 
     /**
      * @param {User_Update} data
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public backendActionAccountUpdate(data?: User_Update): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "PUT",
+    public async backendActionAccountUpdate(data?: User_Update): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'PUT',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);

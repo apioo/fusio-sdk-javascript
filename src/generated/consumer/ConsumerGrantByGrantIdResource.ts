@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 
 export default class ConsumerGrantByGrantIdResource extends ResourceAbstract {
@@ -11,7 +11,7 @@ export default class ConsumerGrantByGrantIdResource extends ResourceAbstract {
 
     private grant_id: string;
 
-    public constructor(grant_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(grant_id: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
         this.grant_id = grant_id;
@@ -20,11 +20,15 @@ export default class ConsumerGrantByGrantIdResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {AxiosPromise<void>}
+     * @returns {Promise<AxiosResponse<void>>}
      */
-    public consumerActionGrantDelete() {
-        let params = {
-            method: <Method> "DELETE",
+    public async consumerActionGrantDelete() {
+        let params: AxiosRequestConfig = {
+            method: 'DELETE',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.delete(this.url, params);

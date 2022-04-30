@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Account_ChangePassword} from "./Account_ChangePassword";
 import {Message} from "./Message";
@@ -12,7 +12,7 @@ export default class ConsumerAccountChangePasswordResource extends ResourceAbstr
     private url: string;
 
 
-    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
 
@@ -21,11 +21,15 @@ export default class ConsumerAccountChangePasswordResource extends ResourceAbstr
 
     /**
      * @param {Account_ChangePassword} data
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public consumerActionUserChangePassword(data?: Account_ChangePassword): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "PUT",
+    public async consumerActionUserChangePassword(data?: Account_ChangePassword): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'PUT',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);

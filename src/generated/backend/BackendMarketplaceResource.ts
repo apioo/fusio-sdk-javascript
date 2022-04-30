@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Marketplace_Collection} from "./Marketplace_Collection";
 import {Marketplace_Install} from "./Marketplace_Install";
@@ -12,7 +12,7 @@ export default class BackendMarketplaceResource extends ResourceAbstract {
     private url: string;
 
 
-    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
 
@@ -20,11 +20,15 @@ export default class BackendMarketplaceResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {AxiosPromise<Marketplace_Collection>}
+     * @returns {Promise<AxiosResponse<Marketplace_Collection>>}
      */
-    public backendActionMarketplaceGetAll(): AxiosPromise<Marketplace_Collection> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionMarketplaceGetAll(): Promise<AxiosResponse<Marketplace_Collection>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Marketplace_Collection>(this.url, params);
@@ -32,11 +36,15 @@ export default class BackendMarketplaceResource extends ResourceAbstract {
 
     /**
      * @param {Marketplace_Install} data
-     * @returns {AxiosPromise<Marketplace_Install>}
+     * @returns {Promise<AxiosResponse<Marketplace_Install>>}
      */
-    public backendActionMarketplaceInstall(data?: Marketplace_Install): AxiosPromise<Marketplace_Install> {
-        let params = {
-            method: <Method> "POST",
+    public async backendActionMarketplaceInstall(data?: Marketplace_Install): Promise<AxiosResponse<Marketplace_Install>> {
+        let params: AxiosRequestConfig = {
+            method: 'POST',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.post<Marketplace_Install>(this.url, data, params);

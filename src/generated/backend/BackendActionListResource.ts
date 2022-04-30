@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Action_Index} from "./Action_Index";
 
@@ -11,7 +11,7 @@ export default class BackendActionListResource extends ResourceAbstract {
     private url: string;
 
 
-    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
 
@@ -19,11 +19,15 @@ export default class BackendActionListResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {AxiosPromise<Action_Index>}
+     * @returns {Promise<AxiosResponse<Action_Index>>}
      */
-    public backendActionActionGetIndex(): AxiosPromise<Action_Index> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionActionGetIndex(): Promise<AxiosResponse<Action_Index>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Action_Index>(this.url, params);

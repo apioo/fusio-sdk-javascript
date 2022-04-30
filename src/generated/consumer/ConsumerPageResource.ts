@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Collection_Query} from "./Collection_Query";
 import {Page_Collection} from "./Page_Collection";
@@ -12,7 +12,7 @@ export default class ConsumerPageResource extends ResourceAbstract {
     private url: string;
 
 
-    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
 
@@ -21,12 +21,16 @@ export default class ConsumerPageResource extends ResourceAbstract {
 
     /**
      * @param {Collection_Query} query
-     * @returns {AxiosPromise<Page_Collection>}
+     * @returns {Promise<AxiosResponse<Page_Collection>>}
      */
-    public consumerActionPageGetAll(query?: Collection_Query): AxiosPromise<Page_Collection> {
-        let params = {
-            method: <Method> "GET",
+    public async consumerActionPageGetAll(query?: Collection_Query): Promise<AxiosResponse<Page_Collection>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
             params: query,
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Page_Collection>(this.url, params);

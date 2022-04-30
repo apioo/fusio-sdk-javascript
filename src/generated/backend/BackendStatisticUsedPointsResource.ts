@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Backend_Plan_Usage_Collection_Query} from "./Backend_Plan_Usage_Collection_Query";
 import {Statistic_Count} from "./Statistic_Count";
@@ -12,7 +12,7 @@ export default class BackendStatisticUsedPointsResource extends ResourceAbstract
     private url: string;
 
 
-    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
 
@@ -21,12 +21,16 @@ export default class BackendStatisticUsedPointsResource extends ResourceAbstract
 
     /**
      * @param {Backend_Plan_Usage_Collection_Query} query
-     * @returns {AxiosPromise<Statistic_Count>}
+     * @returns {Promise<AxiosResponse<Statistic_Count>>}
      */
-    public backendActionStatisticGetUsedPoints(query?: Backend_Plan_Usage_Collection_Query): AxiosPromise<Statistic_Count> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionStatisticGetUsedPoints(query?: Backend_Plan_Usage_Collection_Query): Promise<AxiosResponse<Statistic_Count>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
             params: query,
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Statistic_Count>(this.url, params);

@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Action_Execute_Request} from "./Action_Execute_Request";
 import {Action_Execute_Response} from "./Action_Execute_Response";
@@ -13,7 +13,7 @@ export default class BackendActionExecuteByActionIdResource extends ResourceAbst
 
     private action_id: string;
 
-    public constructor(action_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(action_id: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
         this.action_id = action_id;
@@ -23,11 +23,15 @@ export default class BackendActionExecuteByActionIdResource extends ResourceAbst
 
     /**
      * @param {Action_Execute_Request} data
-     * @returns {AxiosPromise<Action_Execute_Response>}
+     * @returns {Promise<AxiosResponse<Action_Execute_Response>>}
      */
-    public backendActionActionExecute(data?: Action_Execute_Request): AxiosPromise<Action_Execute_Response> {
-        let params = {
-            method: <Method> "POST",
+    public async backendActionActionExecute(data?: Action_Execute_Request): Promise<AxiosResponse<Action_Execute_Response>> {
+        let params: AxiosRequestConfig = {
+            method: 'POST',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.post<Action_Execute_Response>(this.url, data, params);

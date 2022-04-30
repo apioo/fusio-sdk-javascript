@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Backend_Transaction_Collection_Query} from "./Backend_Transaction_Collection_Query";
 import {Transaction_Collection} from "./Transaction_Collection";
@@ -12,7 +12,7 @@ export default class BackendTransactionResource extends ResourceAbstract {
     private url: string;
 
 
-    public constructor(baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
 
@@ -21,12 +21,16 @@ export default class BackendTransactionResource extends ResourceAbstract {
 
     /**
      * @param {Backend_Transaction_Collection_Query} query
-     * @returns {AxiosPromise<Transaction_Collection>}
+     * @returns {Promise<AxiosResponse<Transaction_Collection>>}
      */
-    public backendActionTransactionGetAll(query?: Backend_Transaction_Collection_Query): AxiosPromise<Transaction_Collection> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionTransactionGetAll(query?: Backend_Transaction_Collection_Query): Promise<AxiosResponse<Transaction_Collection>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
             params: query,
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Transaction_Collection>(this.url, params);

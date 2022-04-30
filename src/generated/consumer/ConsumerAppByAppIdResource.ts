@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {App} from "./App";
 import {App_Update} from "./App_Update";
@@ -14,7 +14,7 @@ export default class ConsumerAppByAppIdResource extends ResourceAbstract {
 
     private app_id: string;
 
-    public constructor(app_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(app_id: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
         this.app_id = app_id;
@@ -23,11 +23,15 @@ export default class ConsumerAppByAppIdResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {AxiosPromise<App>}
+     * @returns {Promise<AxiosResponse<App>>}
      */
-    public consumerActionAppGet(): AxiosPromise<App> {
-        let params = {
-            method: <Method> "GET",
+    public async consumerActionAppGet(): Promise<AxiosResponse<App>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<App>(this.url, params);
@@ -35,22 +39,30 @@ export default class ConsumerAppByAppIdResource extends ResourceAbstract {
 
     /**
      * @param {App_Update} data
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public consumerActionAppUpdate(data?: App_Update): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "PUT",
+    public async consumerActionAppUpdate(data?: App_Update): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'PUT',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
     }
 
     /**
-     * @returns {AxiosPromise<Message>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public consumerActionAppDelete(): AxiosPromise<Message> {
-        let params = {
-            method: <Method> "DELETE",
+    public async consumerActionAppDelete(): Promise<AxiosResponse<Message>> {
+        let params: AxiosRequestConfig = {
+            method: 'DELETE',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.delete(this.url, params);

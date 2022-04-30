@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Transaction_Prepare_Request} from "./Transaction_Prepare_Request";
 import {Transaction_Prepare_Response} from "./Transaction_Prepare_Response";
@@ -13,7 +13,7 @@ export default class ConsumerTransactionPrepareByProviderResource extends Resour
 
     private provider: string;
 
-    public constructor(provider: string, baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(provider: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
         this.provider = provider;
@@ -23,11 +23,15 @@ export default class ConsumerTransactionPrepareByProviderResource extends Resour
 
     /**
      * @param {Transaction_Prepare_Request} data
-     * @returns {AxiosPromise<Transaction_Prepare_Response>}
+     * @returns {Promise<AxiosResponse<Transaction_Prepare_Response>>}
      */
-    public consumerActionTransactionPrepare(data?: Transaction_Prepare_Request): AxiosPromise<Transaction_Prepare_Response> {
-        let params = {
-            method: <Method> "POST",
+    public async consumerActionTransactionPrepare(data?: Transaction_Prepare_Request): Promise<AxiosResponse<Transaction_Prepare_Response>> {
+        let params: AxiosRequestConfig = {
+            method: 'POST',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.post<Transaction_Prepare_Response>(this.url, data, params);

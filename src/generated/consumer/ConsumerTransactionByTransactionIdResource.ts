@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Transaction} from "./Transaction";
 
@@ -12,7 +12,7 @@ export default class ConsumerTransactionByTransactionIdResource extends Resource
 
     private transaction_id: string;
 
-    public constructor(transaction_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(transaction_id: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
         this.transaction_id = transaction_id;
@@ -21,11 +21,15 @@ export default class ConsumerTransactionByTransactionIdResource extends Resource
     }
 
     /**
-     * @returns {AxiosPromise<Transaction>}
+     * @returns {Promise<AxiosResponse<Transaction>>}
      */
-    public consumerActionTransactionGet(): AxiosPromise<Transaction> {
-        let params = {
-            method: <Method> "GET",
+    public async consumerActionTransactionGet(): Promise<AxiosResponse<Transaction>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<Transaction>(this.url, params);

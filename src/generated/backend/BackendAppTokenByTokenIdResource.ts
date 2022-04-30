@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {AxiosInstance, AxiosPromise, Method} from "axios";
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {App_Token} from "./App_Token";
 
@@ -12,7 +12,7 @@ export default class BackendAppTokenByTokenIdResource extends ResourceAbstract {
 
     private token_id: string;
 
-    public constructor(token_id: string, baseUrl: string, httpClient?: AxiosInstance) {
+    public constructor(token_id: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
         this.token_id = token_id;
@@ -21,11 +21,15 @@ export default class BackendAppTokenByTokenIdResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {AxiosPromise<App_Token>}
+     * @returns {Promise<AxiosResponse<App_Token>>}
      */
-    public backendActionAppTokenGet(): AxiosPromise<App_Token> {
-        let params = {
-            method: <Method> "GET",
+    public async backendActionAppTokenGet(): Promise<AxiosResponse<App_Token>> {
+        let params: AxiosRequestConfig = {
+            method: 'GET',
+            responseType: 'json',
+            headers: {
+                Accept: 'application/json',
+            },
         };
 
         return this.httpClient.get<App_Token>(this.url, params);
