@@ -1,5 +1,5 @@
 /**
- * ConsumerGrantGroup generated on 2022-04-30
+ * ConsumerGrantGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -10,8 +10,6 @@ import ConsumerGrantResource from "./ConsumerGrantResource";
 export default class ConsumerGrantGroup extends ResourceAbstract {
     /**
      * Endpoint: /consumer/grant/$grant_id<[0-9]+>
-     *
-     * @returns ConsumerGrantByGrantIdResource
      */
     public getConsumerGrantByGrantId(grant_id: string): ConsumerGrantByGrantIdResource
     {
@@ -24,8 +22,6 @@ export default class ConsumerGrantGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /consumer/grant
-     *
-     * @returns ConsumerGrantResource
      */
     public getConsumerGrant(): ConsumerGrantResource
     {

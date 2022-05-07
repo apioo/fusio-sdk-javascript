@@ -1,5 +1,5 @@
 /**
- * BackendConnectionFormResource generated on 2022-04-30
+ * BackendConnectionFormResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -24,10 +24,6 @@ export default class BackendConnectionFormResource extends ResourceAbstract {
     public async backendActionConnectionGetForm(): Promise<AxiosResponse<Form_Container>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Form_Container>(this.url, params);

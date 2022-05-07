@@ -1,5 +1,5 @@
 /**
- * BackendActionExecuteByActionIdResource generated on 2022-04-30
+ * BackendActionExecuteByActionIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -25,13 +25,9 @@ export default class BackendActionExecuteByActionIdResource extends ResourceAbst
      * @param {Action_Execute_Request} data
      * @returns {Promise<AxiosResponse<Action_Execute_Response>>}
      */
-    public async backendActionActionExecute(data?: Action_Execute_Request): Promise<AxiosResponse<Action_Execute_Response>> {
+    public async backendActionActionExecute(data: Action_Execute_Request): Promise<AxiosResponse<Action_Execute_Response>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.post<Action_Execute_Response>(this.url, data, params);

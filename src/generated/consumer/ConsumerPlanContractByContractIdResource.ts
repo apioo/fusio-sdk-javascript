@@ -1,5 +1,5 @@
 /**
- * ConsumerPlanContractByContractIdResource generated on 2022-04-30
+ * ConsumerPlanContractByContractIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -26,10 +26,6 @@ export default class ConsumerPlanContractByContractIdResource extends ResourceAb
     public async consumerActionPlanContractGet(): Promise<AxiosResponse<Plan_Contract>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Plan_Contract>(this.url, params);

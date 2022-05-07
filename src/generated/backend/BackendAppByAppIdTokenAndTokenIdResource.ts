@@ -1,5 +1,5 @@
 /**
- * BackendAppByAppIdTokenAndTokenIdResource generated on 2022-04-30
+ * BackendAppByAppIdTokenAndTokenIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -28,10 +28,6 @@ export default class BackendAppByAppIdTokenAndTokenIdResource extends ResourceAb
     public async backendActionAppDeleteToken(): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'DELETE',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.delete(this.url, params);

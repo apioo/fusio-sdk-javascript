@@ -1,5 +1,5 @@
 /**
- * BackendActionByActionIdResource generated on 2022-04-30
+ * BackendActionByActionIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -28,10 +28,6 @@ export default class BackendActionByActionIdResource extends ResourceAbstract {
     public async backendActionActionGet(): Promise<AxiosResponse<Action>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Action>(this.url, params);
@@ -41,13 +37,9 @@ export default class BackendActionByActionIdResource extends ResourceAbstract {
      * @param {Action_Update} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionActionUpdate(data?: Action_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionActionUpdate(data: Action_Update): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
@@ -59,10 +51,6 @@ export default class BackendActionByActionIdResource extends ResourceAbstract {
     public async backendActionActionDelete(): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'DELETE',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.delete(this.url, params);

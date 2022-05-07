@@ -1,5 +1,5 @@
 /**
- * ConsumerSubscriptionGroup generated on 2022-04-30
+ * ConsumerSubscriptionGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -10,8 +10,6 @@ import ConsumerSubscriptionResource from "./ConsumerSubscriptionResource";
 export default class ConsumerSubscriptionGroup extends ResourceAbstract {
     /**
      * Endpoint: /consumer/subscription/$subscription_id<[0-9]+>
-     *
-     * @returns ConsumerSubscriptionBySubscriptionIdResource
      */
     public getConsumerSubscriptionBySubscriptionId(subscription_id: string): ConsumerSubscriptionBySubscriptionIdResource
     {
@@ -24,8 +22,6 @@ export default class ConsumerSubscriptionGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /consumer/subscription
-     *
-     * @returns ConsumerSubscriptionResource
      */
     public getConsumerSubscription(): ConsumerSubscriptionResource
     {

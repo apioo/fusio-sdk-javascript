@@ -1,5 +1,5 @@
 /**
- * BackendScopeGroup generated on 2022-04-30
+ * BackendScopeGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -11,8 +11,6 @@ import BackendScopeResource from "./BackendScopeResource";
 export default class BackendScopeGroup extends ResourceAbstract {
     /**
      * Endpoint: /backend/scope/$scope_id<[0-9]+|^~>
-     *
-     * @returns BackendScopeByScopeIdResource
      */
     public getBackendScopeByScopeId(scope_id: string): BackendScopeByScopeIdResource
     {
@@ -25,8 +23,6 @@ export default class BackendScopeGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/scope/categories
-     *
-     * @returns BackendScopeCategoriesResource
      */
     public getBackendScopeCategories(): BackendScopeCategoriesResource
     {
@@ -38,8 +34,6 @@ export default class BackendScopeGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/scope
-     *
-     * @returns BackendScopeResource
      */
     public getBackendScope(): BackendScopeResource
     {

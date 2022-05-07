@@ -1,5 +1,5 @@
 /**
- * BackendStatisticMostUsedAppsResource generated on 2022-04-30
+ * BackendStatisticMostUsedAppsResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -27,10 +27,6 @@ export default class BackendStatisticMostUsedAppsResource extends ResourceAbstra
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Statistic_Count>(this.url, params);

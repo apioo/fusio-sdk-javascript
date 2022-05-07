@@ -1,5 +1,5 @@
 /**
- * BackendUserGroup generated on 2022-04-30
+ * BackendUserGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -10,8 +10,6 @@ import BackendUserResource from "./BackendUserResource";
 export default class BackendUserGroup extends ResourceAbstract {
     /**
      * Endpoint: /backend/user/$user_id<[0-9]+>
-     *
-     * @returns BackendUserByUserIdResource
      */
     public getBackendUserByUserId(user_id: string): BackendUserByUserIdResource
     {
@@ -24,8 +22,6 @@ export default class BackendUserGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/user
-     *
-     * @returns BackendUserResource
      */
     public getBackendUser(): BackendUserResource
     {

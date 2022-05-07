@@ -1,5 +1,5 @@
 /**
- * BackendMarketplaceByAppNameResource generated on 2022-04-30
+ * BackendMarketplaceByAppNameResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -27,10 +27,6 @@ export default class BackendMarketplaceByAppNameResource extends ResourceAbstrac
     public async backendActionMarketplaceGet(): Promise<AxiosResponse<Marketplace_Local_App>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Marketplace_Local_App>(this.url, params);
@@ -42,10 +38,6 @@ export default class BackendMarketplaceByAppNameResource extends ResourceAbstrac
     public async backendActionMarketplaceUpdate(): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.put<Message>(this.url, null, params);
@@ -57,10 +49,6 @@ export default class BackendMarketplaceByAppNameResource extends ResourceAbstrac
     public async backendActionMarketplaceRemove(): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'DELETE',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.delete(this.url, params);

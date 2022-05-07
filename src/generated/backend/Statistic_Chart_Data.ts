@@ -1,5 +1,5 @@
 /**
- * Statistic_Chart_Data generated on 2022-04-30
+ * Statistic_Chart_Data generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 

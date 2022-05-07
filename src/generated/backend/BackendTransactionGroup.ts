@@ -1,5 +1,5 @@
 /**
- * BackendTransactionGroup generated on 2022-04-30
+ * BackendTransactionGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -10,8 +10,6 @@ import BackendTransactionResource from "./BackendTransactionResource";
 export default class BackendTransactionGroup extends ResourceAbstract {
     /**
      * Endpoint: /backend/transaction/$transaction_id<[0-9]+>
-     *
-     * @returns BackendTransactionByTransactionIdResource
      */
     public getBackendTransactionByTransactionId(transaction_id: string): BackendTransactionByTransactionIdResource
     {
@@ -24,8 +22,6 @@ export default class BackendTransactionGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/transaction
-     *
-     * @returns BackendTransactionResource
      */
     public getBackendTransaction(): BackendTransactionResource
     {

@@ -1,5 +1,5 @@
 /**
- * BackendConnectionByConnectionIdRedirectResource generated on 2022-04-30
+ * BackendConnectionByConnectionIdRedirectResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -26,10 +26,6 @@ export default class BackendConnectionByConnectionIdRedirectResource extends Res
     public async backendActionConnectionGetRedirect(): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Message>(this.url, params);

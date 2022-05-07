@@ -1,5 +1,5 @@
 /**
- * BackendScopeByScopeIdResource generated on 2022-04-30
+ * BackendScopeByScopeIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -28,10 +28,6 @@ export default class BackendScopeByScopeIdResource extends ResourceAbstract {
     public async backendActionScopeGet(): Promise<AxiosResponse<Scope>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Scope>(this.url, params);
@@ -41,13 +37,9 @@ export default class BackendScopeByScopeIdResource extends ResourceAbstract {
      * @param {Scope_Update} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionScopeUpdate(data?: Scope_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionScopeUpdate(data: Scope_Update): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
@@ -59,10 +51,6 @@ export default class BackendScopeByScopeIdResource extends ResourceAbstract {
     public async backendActionScopeDelete(): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'DELETE',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.delete(this.url, params);

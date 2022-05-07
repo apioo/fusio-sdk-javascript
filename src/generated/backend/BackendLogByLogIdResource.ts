@@ -1,5 +1,5 @@
 /**
- * BackendLogByLogIdResource generated on 2022-04-30
+ * BackendLogByLogIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -26,10 +26,6 @@ export default class BackendLogByLogIdResource extends ResourceAbstract {
     public async backendActionLogGet(): Promise<AxiosResponse<Log>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Log>(this.url, params);

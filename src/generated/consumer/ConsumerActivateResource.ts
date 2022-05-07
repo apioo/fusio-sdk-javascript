@@ -1,5 +1,5 @@
 /**
- * ConsumerActivateResource generated on 2022-04-30
+ * ConsumerActivateResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -23,13 +23,9 @@ export default class ConsumerActivateResource extends ResourceAbstract {
      * @param {User_Activate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async consumerActionUserActivate(data?: User_Activate): Promise<AxiosResponse<Message>> {
+    public async consumerActionUserActivate(data: User_Activate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.post<Message>(this.url, data, params);

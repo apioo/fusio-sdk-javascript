@@ -1,5 +1,5 @@
 /**
- * BackendSchemaPreviewBySchemaIdResource generated on 2022-04-30
+ * BackendSchemaPreviewBySchemaIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -26,10 +26,6 @@ export default class BackendSchemaPreviewBySchemaIdResource extends ResourceAbst
     public async backendActionSchemaGetPreview(): Promise<AxiosResponse<Schema_Preview_Response>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.post<Schema_Preview_Response>(this.url, null, params);

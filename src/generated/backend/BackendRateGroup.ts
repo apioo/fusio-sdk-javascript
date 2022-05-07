@@ -1,5 +1,5 @@
 /**
- * BackendRateGroup generated on 2022-04-30
+ * BackendRateGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -10,8 +10,6 @@ import BackendRateResource from "./BackendRateResource";
 export default class BackendRateGroup extends ResourceAbstract {
     /**
      * Endpoint: /backend/rate/$rate_id<[0-9]+|^~>
-     *
-     * @returns BackendRateByRateIdResource
      */
     public getBackendRateByRateId(rate_id: string): BackendRateByRateIdResource
     {
@@ -24,8 +22,6 @@ export default class BackendRateGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/rate
-     *
-     * @returns BackendRateResource
      */
     public getBackendRate(): BackendRateResource
     {

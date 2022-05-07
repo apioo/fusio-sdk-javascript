@@ -1,5 +1,5 @@
 /**
- * BackendDashboardGroup generated on 2022-04-30
+ * BackendDashboardGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -9,8 +9,6 @@ import BackendDashboardResource from "./BackendDashboardResource";
 export default class BackendDashboardGroup extends ResourceAbstract {
     /**
      * Endpoint: /backend/dashboard
-     *
-     * @returns BackendDashboardResource
      */
     public getBackendDashboard(): BackendDashboardResource
     {

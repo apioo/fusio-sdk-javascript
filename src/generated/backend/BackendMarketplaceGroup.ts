@@ -1,5 +1,5 @@
 /**
- * BackendMarketplaceGroup generated on 2022-04-30
+ * BackendMarketplaceGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -10,8 +10,6 @@ import BackendMarketplaceResource from "./BackendMarketplaceResource";
 export default class BackendMarketplaceGroup extends ResourceAbstract {
     /**
      * Endpoint: /backend/marketplace/:app_name
-     *
-     * @returns BackendMarketplaceByAppNameResource
      */
     public getBackendMarketplaceByAppName(app_name: string): BackendMarketplaceByAppNameResource
     {
@@ -24,8 +22,6 @@ export default class BackendMarketplaceGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/marketplace
-     *
-     * @returns BackendMarketplaceResource
      */
     public getBackendMarketplace(): BackendMarketplaceResource
     {

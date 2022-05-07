@@ -1,5 +1,5 @@
 /**
- * ConsumerGrantByGrantIdResource generated on 2022-04-30
+ * ConsumerGrantByGrantIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -22,13 +22,9 @@ export default class ConsumerGrantByGrantIdResource extends ResourceAbstract {
     /**
      * @returns {Promise<AxiosResponse<void>>}
      */
-    public async consumerActionGrantDelete() {
+    public async consumerActionGrantDelete(): Promise<AxiosResponse<void>> {
         let params: AxiosRequestConfig = {
             method: 'DELETE',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.delete(this.url, params);

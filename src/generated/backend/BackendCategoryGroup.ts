@@ -1,5 +1,5 @@
 /**
- * BackendCategoryGroup generated on 2022-04-30
+ * BackendCategoryGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -10,8 +10,6 @@ import BackendCategoryResource from "./BackendCategoryResource";
 export default class BackendCategoryGroup extends ResourceAbstract {
     /**
      * Endpoint: /backend/category/$category_id<[0-9]+|^~>
-     *
-     * @returns BackendCategoryByCategoryIdResource
      */
     public getBackendCategoryByCategoryId(category_id: string): BackendCategoryByCategoryIdResource
     {
@@ -24,8 +22,6 @@ export default class BackendCategoryGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/category
-     *
-     * @returns BackendCategoryResource
      */
     public getBackendCategory(): BackendCategoryResource
     {

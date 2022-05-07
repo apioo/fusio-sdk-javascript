@@ -1,5 +1,5 @@
 /**
- * BackendMarketplaceResource generated on 2022-04-30
+ * BackendMarketplaceResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -25,10 +25,6 @@ export default class BackendMarketplaceResource extends ResourceAbstract {
     public async backendActionMarketplaceGetAll(): Promise<AxiosResponse<Marketplace_Collection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Marketplace_Collection>(this.url, params);
@@ -38,13 +34,9 @@ export default class BackendMarketplaceResource extends ResourceAbstract {
      * @param {Marketplace_Install} data
      * @returns {Promise<AxiosResponse<Marketplace_Install>>}
      */
-    public async backendActionMarketplaceInstall(data?: Marketplace_Install): Promise<AxiosResponse<Marketplace_Install>> {
+    public async backendActionMarketplaceInstall(data: Marketplace_Install): Promise<AxiosResponse<Marketplace_Install>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.post<Marketplace_Install>(this.url, data, params);

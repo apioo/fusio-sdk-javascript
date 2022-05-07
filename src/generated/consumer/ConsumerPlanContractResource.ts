@@ -1,5 +1,5 @@
 /**
- * ConsumerPlanContractResource generated on 2022-04-30
+ * ConsumerPlanContractResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -29,10 +29,6 @@ export default class ConsumerPlanContractResource extends ResourceAbstract {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Plan_Contract_Collection>(this.url, params);
@@ -42,13 +38,9 @@ export default class ConsumerPlanContractResource extends ResourceAbstract {
      * @param {Plan_Order_Request} data
      * @returns {Promise<AxiosResponse<Plan_Order_Response>>}
      */
-    public async consumerActionPlanContractCreate(data?: Plan_Order_Request): Promise<AxiosResponse<Plan_Order_Response>> {
+    public async consumerActionPlanContractCreate(data: Plan_Order_Request): Promise<AxiosResponse<Plan_Order_Response>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.post<Plan_Order_Response>(this.url, data, params);

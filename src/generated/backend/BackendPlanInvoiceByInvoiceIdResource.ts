@@ -1,5 +1,5 @@
 /**
- * BackendPlanInvoiceByInvoiceIdResource generated on 2022-04-30
+ * BackendPlanInvoiceByInvoiceIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -28,10 +28,6 @@ export default class BackendPlanInvoiceByInvoiceIdResource extends ResourceAbstr
     public async backendActionPlanInvoiceGet(): Promise<AxiosResponse<Plan_Invoice>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Plan_Invoice>(this.url, params);
@@ -41,13 +37,9 @@ export default class BackendPlanInvoiceByInvoiceIdResource extends ResourceAbstr
      * @param {Plan_Invoice_Update} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionPlanInvoiceUpdate(data?: Plan_Invoice_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionPlanInvoiceUpdate(data: Plan_Invoice_Update): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
@@ -59,10 +51,6 @@ export default class BackendPlanInvoiceByInvoiceIdResource extends ResourceAbstr
     public async backendActionPlanInvoiceDelete(): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'DELETE',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.delete(this.url, params);

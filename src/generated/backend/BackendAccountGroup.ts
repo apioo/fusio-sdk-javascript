@@ -1,5 +1,5 @@
 /**
- * BackendAccountGroup generated on 2022-04-30
+ * BackendAccountGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -10,8 +10,6 @@ import BackendAccountResource from "./BackendAccountResource";
 export default class BackendAccountGroup extends ResourceAbstract {
     /**
      * Endpoint: /backend/account/change_password
-     *
-     * @returns BackendAccountChangePasswordResource
      */
     public getBackendAccountChangePassword(): BackendAccountChangePasswordResource
     {
@@ -23,8 +21,6 @@ export default class BackendAccountGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/account
-     *
-     * @returns BackendAccountResource
      */
     public getBackendAccount(): BackendAccountResource
     {

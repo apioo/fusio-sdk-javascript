@@ -1,5 +1,5 @@
 /**
- * ConsumerPasswordResetResource generated on 2022-04-30
+ * ConsumerPasswordResetResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -24,13 +24,9 @@ export default class ConsumerPasswordResetResource extends ResourceAbstract {
      * @param {User_Email} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async consumerActionUserResetPasswordRequest(data?: User_Email): Promise<AxiosResponse<Message>> {
+    public async consumerActionUserResetPasswordRequest(data: User_Email): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.post<Message>(this.url, data, params);
@@ -40,13 +36,9 @@ export default class ConsumerPasswordResetResource extends ResourceAbstract {
      * @param {User_PasswordReset} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async consumerActionUserResetPasswordExecute(data?: User_PasswordReset): Promise<AxiosResponse<Message>> {
+    public async consumerActionUserResetPasswordExecute(data: User_PasswordReset): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);

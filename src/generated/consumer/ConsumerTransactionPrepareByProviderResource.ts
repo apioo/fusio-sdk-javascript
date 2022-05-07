@@ -1,5 +1,5 @@
 /**
- * ConsumerTransactionPrepareByProviderResource generated on 2022-04-30
+ * ConsumerTransactionPrepareByProviderResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -25,13 +25,9 @@ export default class ConsumerTransactionPrepareByProviderResource extends Resour
      * @param {Transaction_Prepare_Request} data
      * @returns {Promise<AxiosResponse<Transaction_Prepare_Response>>}
      */
-    public async consumerActionTransactionPrepare(data?: Transaction_Prepare_Request): Promise<AxiosResponse<Transaction_Prepare_Response>> {
+    public async consumerActionTransactionPrepare(data: Transaction_Prepare_Request): Promise<AxiosResponse<Transaction_Prepare_Response>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.post<Transaction_Prepare_Response>(this.url, data, params);

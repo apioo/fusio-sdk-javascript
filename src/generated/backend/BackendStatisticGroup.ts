@@ -1,5 +1,5 @@
 /**
- * BackendStatisticGroup generated on 2022-04-30
+ * BackendStatisticGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -18,8 +18,6 @@ import BackendStatisticCountRequestsResource from "./BackendStatisticCountReques
 export default class BackendStatisticGroup extends ResourceAbstract {
     /**
      * Endpoint: /backend/statistic/used_points
-     *
-     * @returns BackendStatisticUsedPointsResource
      */
     public getBackendStatisticUsedPoints(): BackendStatisticUsedPointsResource
     {
@@ -31,8 +29,6 @@ export default class BackendStatisticGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/statistic/time_per_route
-     *
-     * @returns BackendStatisticTimePerRouteResource
      */
     public getBackendStatisticTimePerRoute(): BackendStatisticTimePerRouteResource
     {
@@ -44,8 +40,6 @@ export default class BackendStatisticGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/statistic/time_average
-     *
-     * @returns BackendStatisticTimeAverageResource
      */
     public getBackendStatisticTimeAverage(): BackendStatisticTimeAverageResource
     {
@@ -57,8 +51,6 @@ export default class BackendStatisticGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/statistic/most_used_routes
-     *
-     * @returns BackendStatisticMostUsedRoutesResource
      */
     public getBackendStatisticMostUsedRoutes(): BackendStatisticMostUsedRoutesResource
     {
@@ -70,8 +62,6 @@ export default class BackendStatisticGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/statistic/most_used_apps
-     *
-     * @returns BackendStatisticMostUsedAppsResource
      */
     public getBackendStatisticMostUsedApps(): BackendStatisticMostUsedAppsResource
     {
@@ -83,8 +73,6 @@ export default class BackendStatisticGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/statistic/issued_tokens
-     *
-     * @returns BackendStatisticIssuedTokensResource
      */
     public getBackendStatisticIssuedTokens(): BackendStatisticIssuedTokensResource
     {
@@ -96,8 +84,6 @@ export default class BackendStatisticGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/statistic/incoming_transactions
-     *
-     * @returns BackendStatisticIncomingTransactionsResource
      */
     public getBackendStatisticIncomingTransactions(): BackendStatisticIncomingTransactionsResource
     {
@@ -109,8 +95,6 @@ export default class BackendStatisticGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/statistic/incoming_requests
-     *
-     * @returns BackendStatisticIncomingRequestsResource
      */
     public getBackendStatisticIncomingRequests(): BackendStatisticIncomingRequestsResource
     {
@@ -122,8 +106,6 @@ export default class BackendStatisticGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/statistic/errors_per_route
-     *
-     * @returns BackendStatisticErrorsPerRouteResource
      */
     public getBackendStatisticErrorsPerRoute(): BackendStatisticErrorsPerRouteResource
     {
@@ -135,8 +117,6 @@ export default class BackendStatisticGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/statistic/count_requests
-     *
-     * @returns BackendStatisticCountRequestsResource
      */
     public getBackendStatisticCountRequests(): BackendStatisticCountRequestsResource
     {

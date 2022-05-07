@@ -1,5 +1,5 @@
 /**
- * BackendPlanInvoiceResource generated on 2022-04-30
+ * BackendPlanInvoiceResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -29,10 +29,6 @@ export default class BackendPlanInvoiceResource extends ResourceAbstract {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Plan_Invoice_Collection>(this.url, params);
@@ -42,13 +38,9 @@ export default class BackendPlanInvoiceResource extends ResourceAbstract {
      * @param {Plan_Invoice_Create} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionPlanInvoiceCreate(data?: Plan_Invoice_Create): Promise<AxiosResponse<Message>> {
+    public async backendActionPlanInvoiceCreate(data: Plan_Invoice_Create): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.post<Message>(this.url, data, params);

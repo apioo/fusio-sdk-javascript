@@ -1,5 +1,5 @@
 /**
- * ConsumerRegisterResource generated on 2022-04-30
+ * ConsumerRegisterResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -23,13 +23,9 @@ export default class ConsumerRegisterResource extends ResourceAbstract {
      * @param {User_Register} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async consumerActionUserRegister(data?: User_Register): Promise<AxiosResponse<Message>> {
+    public async consumerActionUserRegister(data: User_Register): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.post<Message>(this.url, data, params);

@@ -1,5 +1,5 @@
 /**
- * BackendPlanContractByContractIdResource generated on 2022-04-30
+ * BackendPlanContractByContractIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -28,10 +28,6 @@ export default class BackendPlanContractByContractIdResource extends ResourceAbs
     public async backendActionPlanContractGet(): Promise<AxiosResponse<Plan_Contract>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Plan_Contract>(this.url, params);
@@ -41,13 +37,9 @@ export default class BackendPlanContractByContractIdResource extends ResourceAbs
      * @param {Plan_Contract_Update} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionPlanContractUpdate(data?: Plan_Contract_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionPlanContractUpdate(data: Plan_Contract_Update): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
@@ -59,10 +51,6 @@ export default class BackendPlanContractByContractIdResource extends ResourceAbs
     public async backendActionPlanContractDelete(): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'DELETE',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.delete(this.url, params);

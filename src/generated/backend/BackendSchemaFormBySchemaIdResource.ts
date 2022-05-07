@@ -1,5 +1,5 @@
 /**
- * BackendSchemaFormBySchemaIdResource generated on 2022-04-30
+ * BackendSchemaFormBySchemaIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -25,13 +25,9 @@ export default class BackendSchemaFormBySchemaIdResource extends ResourceAbstrac
      * @param {Schema_Form} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionSchemaForm(data?: Schema_Form): Promise<AxiosResponse<Message>> {
+    public async backendActionSchemaForm(data: Schema_Form): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);

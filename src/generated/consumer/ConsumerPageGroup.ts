@@ -1,5 +1,5 @@
 /**
- * ConsumerPageGroup generated on 2022-04-30
+ * ConsumerPageGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -10,8 +10,6 @@ import ConsumerPageResource from "./ConsumerPageResource";
 export default class ConsumerPageGroup extends ResourceAbstract {
     /**
      * Endpoint: /consumer/page/:page_id
-     *
-     * @returns ConsumerPageByPageIdResource
      */
     public getConsumerPageByPageId(page_id: string): ConsumerPageByPageIdResource
     {
@@ -24,8 +22,6 @@ export default class ConsumerPageGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /consumer/page
-     *
-     * @returns ConsumerPageResource
      */
     public getConsumerPage(): ConsumerPageResource
     {

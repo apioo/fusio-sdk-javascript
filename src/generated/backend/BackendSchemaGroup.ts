@@ -1,5 +1,5 @@
 /**
- * BackendSchemaGroup generated on 2022-04-30
+ * BackendSchemaGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -12,8 +12,6 @@ import BackendSchemaResource from "./BackendSchemaResource";
 export default class BackendSchemaGroup extends ResourceAbstract {
     /**
      * Endpoint: /backend/schema/$schema_id<[0-9]+|^~>
-     *
-     * @returns BackendSchemaBySchemaIdResource
      */
     public getBackendSchemaBySchemaId(schema_id: string): BackendSchemaBySchemaIdResource
     {
@@ -26,8 +24,6 @@ export default class BackendSchemaGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/schema/form/$schema_id<[0-9]+>
-     *
-     * @returns BackendSchemaFormBySchemaIdResource
      */
     public getBackendSchemaFormBySchemaId(schema_id: string): BackendSchemaFormBySchemaIdResource
     {
@@ -40,8 +36,6 @@ export default class BackendSchemaGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/schema/preview/:schema_id
-     *
-     * @returns BackendSchemaPreviewBySchemaIdResource
      */
     public getBackendSchemaPreviewBySchemaId(schema_id: string): BackendSchemaPreviewBySchemaIdResource
     {
@@ -54,8 +48,6 @@ export default class BackendSchemaGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/schema
-     *
-     * @returns BackendSchemaResource
      */
     public getBackendSchema(): BackendSchemaResource
     {

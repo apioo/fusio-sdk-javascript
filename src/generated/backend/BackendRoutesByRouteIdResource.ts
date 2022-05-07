@@ -1,5 +1,5 @@
 /**
- * BackendRoutesByRouteIdResource generated on 2022-04-30
+ * BackendRoutesByRouteIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -28,10 +28,6 @@ export default class BackendRoutesByRouteIdResource extends ResourceAbstract {
     public async backendActionRouteGet(): Promise<AxiosResponse<Route>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Route>(this.url, params);
@@ -41,13 +37,9 @@ export default class BackendRoutesByRouteIdResource extends ResourceAbstract {
      * @param {Route_Update} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionRouteUpdate(data?: Route_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionRouteUpdate(data: Route_Update): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
@@ -59,10 +51,6 @@ export default class BackendRoutesByRouteIdResource extends ResourceAbstract {
     public async backendActionRouteDelete(): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'DELETE',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.delete(this.url, params);

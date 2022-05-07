@@ -1,5 +1,5 @@
 /**
- * BackendActionGroup generated on 2022-04-30
+ * BackendActionGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -13,8 +13,6 @@ import BackendActionResource from "./BackendActionResource";
 export default class BackendActionGroup extends ResourceAbstract {
     /**
      * Endpoint: /backend/action/$action_id<[0-9]+|^~>
-     *
-     * @returns BackendActionByActionIdResource
      */
     public getBackendActionByActionId(action_id: string): BackendActionByActionIdResource
     {
@@ -27,8 +25,6 @@ export default class BackendActionGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/action/execute/:action_id
-     *
-     * @returns BackendActionExecuteByActionIdResource
      */
     public getBackendActionExecuteByActionId(action_id: string): BackendActionExecuteByActionIdResource
     {
@@ -41,8 +37,6 @@ export default class BackendActionGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/action/form
-     *
-     * @returns BackendActionFormResource
      */
     public getBackendActionForm(): BackendActionFormResource
     {
@@ -54,8 +48,6 @@ export default class BackendActionGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/action/list
-     *
-     * @returns BackendActionListResource
      */
     public getBackendActionList(): BackendActionListResource
     {
@@ -67,8 +59,6 @@ export default class BackendActionGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/action
-     *
-     * @returns BackendActionResource
      */
     public getBackendAction(): BackendActionResource
     {

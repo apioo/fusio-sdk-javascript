@@ -1,5 +1,5 @@
 /**
- * ConsumerAppGroup generated on 2022-04-30
+ * ConsumerAppGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -10,8 +10,6 @@ import ConsumerAppResource from "./ConsumerAppResource";
 export default class ConsumerAppGroup extends ResourceAbstract {
     /**
      * Endpoint: /consumer/app/$app_id<[0-9]+>
-     *
-     * @returns ConsumerAppByAppIdResource
      */
     public getConsumerAppByAppId(app_id: string): ConsumerAppByAppIdResource
     {
@@ -24,8 +22,6 @@ export default class ConsumerAppGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /consumer/app
-     *
-     * @returns ConsumerAppResource
      */
     public getConsumerApp(): ConsumerAppResource
     {

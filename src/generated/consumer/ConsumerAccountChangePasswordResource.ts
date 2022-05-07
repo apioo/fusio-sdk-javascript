@@ -1,5 +1,5 @@
 /**
- * ConsumerAccountChangePasswordResource generated on 2022-04-30
+ * ConsumerAccountChangePasswordResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -23,13 +23,9 @@ export default class ConsumerAccountChangePasswordResource extends ResourceAbstr
      * @param {Account_ChangePassword} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async consumerActionUserChangePassword(data?: Account_ChangePassword): Promise<AxiosResponse<Message>> {
+    public async consumerActionUserChangePassword(data: Account_ChangePassword): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);

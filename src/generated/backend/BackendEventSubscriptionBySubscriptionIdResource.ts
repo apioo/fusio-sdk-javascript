@@ -1,5 +1,5 @@
 /**
- * BackendEventSubscriptionBySubscriptionIdResource generated on 2022-04-30
+ * BackendEventSubscriptionBySubscriptionIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -28,10 +28,6 @@ export default class BackendEventSubscriptionBySubscriptionIdResource extends Re
     public async backendActionEventSubscriptionGet(): Promise<AxiosResponse<Event_Subscription>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Event_Subscription>(this.url, params);
@@ -41,13 +37,9 @@ export default class BackendEventSubscriptionBySubscriptionIdResource extends Re
      * @param {Event_Subscription_Update} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionEventSubscriptionUpdate(data?: Event_Subscription_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionEventSubscriptionUpdate(data: Event_Subscription_Update): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
@@ -59,10 +51,6 @@ export default class BackendEventSubscriptionBySubscriptionIdResource extends Re
     public async backendActionEventSubscriptionDelete(): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'DELETE',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.delete(this.url, params);

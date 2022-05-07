@@ -1,5 +1,5 @@
 /**
- * ConsumerTransactionExecuteByTransactionIdResource generated on 2022-04-30
+ * ConsumerTransactionExecuteByTransactionIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -22,13 +22,9 @@ export default class ConsumerTransactionExecuteByTransactionIdResource extends R
     /**
      * @returns {Promise<AxiosResponse<void>>}
      */
-    public async consumerActionTransactionExecute() {
+    public async consumerActionTransactionExecute(): Promise<AxiosResponse<void>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get(this.url, params);

@@ -1,5 +1,5 @@
 /**
- * BackendPageGroup generated on 2022-04-30
+ * BackendPageGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -10,8 +10,6 @@ import BackendPageResource from "./BackendPageResource";
 export default class BackendPageGroup extends ResourceAbstract {
     /**
      * Endpoint: /backend/page/$page_id<[0-9]+|^~>
-     *
-     * @returns BackendPageByPageIdResource
      */
     public getBackendPageByPageId(page_id: string): BackendPageByPageIdResource
     {
@@ -24,8 +22,6 @@ export default class BackendPageGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/page
-     *
-     * @returns BackendPageResource
      */
     public getBackendPage(): BackendPageResource
     {

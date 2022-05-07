@@ -1,5 +1,5 @@
 /**
- * BackendCategoryResource generated on 2022-04-30
+ * BackendCategoryResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -29,10 +29,6 @@ export default class BackendCategoryResource extends ResourceAbstract {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Category_Collection>(this.url, params);
@@ -42,13 +38,9 @@ export default class BackendCategoryResource extends ResourceAbstract {
      * @param {Category_Create} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionCategoryCreate(data?: Category_Create): Promise<AxiosResponse<Message>> {
+    public async backendActionCategoryCreate(data: Category_Create): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.post<Message>(this.url, data, params);

@@ -1,5 +1,5 @@
 /**
- * BackendAuditGroup generated on 2022-04-30
+ * BackendAuditGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -10,8 +10,6 @@ import BackendAuditResource from "./BackendAuditResource";
 export default class BackendAuditGroup extends ResourceAbstract {
     /**
      * Endpoint: /backend/audit/$audit_id<[0-9]+>
-     *
-     * @returns BackendAuditByAuditIdResource
      */
     public getBackendAuditByAuditId(audit_id: string): BackendAuditByAuditIdResource
     {
@@ -24,8 +22,6 @@ export default class BackendAuditGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/audit
-     *
-     * @returns BackendAuditResource
      */
     public getBackendAudit(): BackendAuditResource
     {

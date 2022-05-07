@@ -1,5 +1,5 @@
 /**
- * BackendConnectionResource generated on 2022-04-30
+ * BackendConnectionResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -29,10 +29,6 @@ export default class BackendConnectionResource extends ResourceAbstract {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Connection_Collection>(this.url, params);
@@ -42,13 +38,9 @@ export default class BackendConnectionResource extends ResourceAbstract {
      * @param {Connection_Create} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionConnectionCreate(data?: Connection_Create): Promise<AxiosResponse<Message>> {
+    public async backendActionConnectionCreate(data: Connection_Create): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.post<Message>(this.url, data, params);

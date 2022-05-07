@@ -1,5 +1,5 @@
 /**
- * BackendRoleGroup generated on 2022-04-30
+ * BackendRoleGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -10,8 +10,6 @@ import BackendRoleResource from "./BackendRoleResource";
 export default class BackendRoleGroup extends ResourceAbstract {
     /**
      * Endpoint: /backend/role/$role_id<[0-9]+|^~>
-     *
-     * @returns BackendRoleByRoleIdResource
      */
     public getBackendRoleByRoleId(role_id: string): BackendRoleByRoleIdResource
     {
@@ -24,8 +22,6 @@ export default class BackendRoleGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/role
-     *
-     * @returns BackendRoleResource
      */
     public getBackendRole(): BackendRoleResource
     {

@@ -1,5 +1,5 @@
 /**
- * ConsumerEventGroup generated on 2022-04-30
+ * ConsumerEventGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -9,8 +9,6 @@ import ConsumerEventResource from "./ConsumerEventResource";
 export default class ConsumerEventGroup extends ResourceAbstract {
     /**
      * Endpoint: /consumer/event
-     *
-     * @returns ConsumerEventResource
      */
     public getConsumerEvent(): ConsumerEventResource
     {

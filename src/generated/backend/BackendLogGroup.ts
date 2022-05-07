@@ -1,5 +1,5 @@
 /**
- * BackendLogGroup generated on 2022-04-30
+ * BackendLogGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -12,8 +12,6 @@ import BackendLogErrorResource from "./BackendLogErrorResource";
 export default class BackendLogGroup extends ResourceAbstract {
     /**
      * Endpoint: /backend/log/$log_id<[0-9]+>
-     *
-     * @returns BackendLogByLogIdResource
      */
     public getBackendLogByLogId(log_id: string): BackendLogByLogIdResource
     {
@@ -26,8 +24,6 @@ export default class BackendLogGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/log
-     *
-     * @returns BackendLogResource
      */
     public getBackendLog(): BackendLogResource
     {
@@ -39,8 +35,6 @@ export default class BackendLogGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/log/error/$error_id<[0-9]+>
-     *
-     * @returns BackendLogErrorByErrorIdResource
      */
     public getBackendLogErrorByErrorId(error_id: string): BackendLogErrorByErrorIdResource
     {
@@ -53,8 +47,6 @@ export default class BackendLogGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/log/error
-     *
-     * @returns BackendLogErrorResource
      */
     public getBackendLogError(): BackendLogErrorResource
     {

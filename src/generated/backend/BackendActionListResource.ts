@@ -1,5 +1,5 @@
 /**
- * BackendActionListResource generated on 2022-04-30
+ * BackendActionListResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -24,10 +24,6 @@ export default class BackendActionListResource extends ResourceAbstract {
     public async backendActionActionGetIndex(): Promise<AxiosResponse<Action_Index>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Action_Index>(this.url, params);

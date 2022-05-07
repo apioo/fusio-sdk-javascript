@@ -1,5 +1,5 @@
 /**
- * BackendRoutesProviderByProviderResource generated on 2022-04-30
+ * BackendRoutesProviderByProviderResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -30,10 +30,6 @@ export default class BackendRoutesProviderByProviderResource extends ResourceAbs
     public async backendActionRouteProviderForm(): Promise<AxiosResponse<Form_Container>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Form_Container>(this.url, params);
@@ -43,13 +39,9 @@ export default class BackendRoutesProviderByProviderResource extends ResourceAbs
      * @param {Route_Provider} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionRouteProviderCreate(data?: Route_Provider): Promise<AxiosResponse<Message>> {
+    public async backendActionRouteProviderCreate(data: Route_Provider): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.post<Message>(this.url, data, params);
@@ -59,13 +51,9 @@ export default class BackendRoutesProviderByProviderResource extends ResourceAbs
      * @param {Route_Provider_Config} data
      * @returns {Promise<AxiosResponse<Route_Provider_Changelog>>}
      */
-    public async backendActionRouteProviderChangelog(data?: Route_Provider_Config): Promise<AxiosResponse<Route_Provider_Changelog>> {
+    public async backendActionRouteProviderChangelog(data: Route_Provider_Config): Promise<AxiosResponse<Route_Provider_Changelog>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.put<Route_Provider_Changelog>(this.url, data, params);

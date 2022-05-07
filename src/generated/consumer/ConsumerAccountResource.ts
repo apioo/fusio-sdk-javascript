@@ -1,5 +1,5 @@
 /**
- * ConsumerAccountResource generated on 2022-04-30
+ * ConsumerAccountResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -25,10 +25,6 @@ export default class ConsumerAccountResource extends ResourceAbstract {
     public async consumerActionUserGet(): Promise<AxiosResponse<User_Account>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<User_Account>(this.url, params);
@@ -38,13 +34,9 @@ export default class ConsumerAccountResource extends ResourceAbstract {
      * @param {User_Account} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async consumerActionUserUpdate(data?: User_Account): Promise<AxiosResponse<Message>> {
+    public async consumerActionUserUpdate(data: User_Account): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);

@@ -1,5 +1,5 @@
 /**
- * BackendPageByPageIdResource generated on 2022-04-30
+ * BackendPageByPageIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -28,10 +28,6 @@ export default class BackendPageByPageIdResource extends ResourceAbstract {
     public async backendActionPageGet(): Promise<AxiosResponse<Page>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Page>(this.url, params);
@@ -41,13 +37,9 @@ export default class BackendPageByPageIdResource extends ResourceAbstract {
      * @param {Page_Update} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionPageUpdate(data?: Page_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionPageUpdate(data: Page_Update): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
@@ -59,10 +51,6 @@ export default class BackendPageByPageIdResource extends ResourceAbstract {
     public async backendActionPageDelete(): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'DELETE',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.delete(this.url, params);

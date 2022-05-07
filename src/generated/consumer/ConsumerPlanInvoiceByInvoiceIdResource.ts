@@ -1,5 +1,5 @@
 /**
- * ConsumerPlanInvoiceByInvoiceIdResource generated on 2022-04-30
+ * ConsumerPlanInvoiceByInvoiceIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -26,10 +26,6 @@ export default class ConsumerPlanInvoiceByInvoiceIdResource extends ResourceAbst
     public async consumerActionPlanInvoiceGet(): Promise<AxiosResponse<Plan_Invoice>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Plan_Invoice>(this.url, params);

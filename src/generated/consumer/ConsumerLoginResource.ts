@@ -1,5 +1,5 @@
 /**
- * ConsumerLoginResource generated on 2022-04-30
+ * ConsumerLoginResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -24,13 +24,9 @@ export default class ConsumerLoginResource extends ResourceAbstract {
      * @param {User_Login} data
      * @returns {Promise<AxiosResponse<User_JWT>>}
      */
-    public async consumerActionUserLogin(data?: User_Login): Promise<AxiosResponse<User_JWT>> {
+    public async consumerActionUserLogin(data: User_Login): Promise<AxiosResponse<User_JWT>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.post<User_JWT>(this.url, data, params);
@@ -40,13 +36,9 @@ export default class ConsumerLoginResource extends ResourceAbstract {
      * @param {User_Refresh} data
      * @returns {Promise<AxiosResponse<User_JWT>>}
      */
-    public async consumerActionUserRefresh(data?: User_Refresh): Promise<AxiosResponse<User_JWT>> {
+    public async consumerActionUserRefresh(data: User_Refresh): Promise<AxiosResponse<User_JWT>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.put<User_JWT>(this.url, data, params);

@@ -1,5 +1,5 @@
 /**
- * BackendAuditByAuditIdResource generated on 2022-04-30
+ * BackendAuditByAuditIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -26,10 +26,6 @@ export default class BackendAuditByAuditIdResource extends ResourceAbstract {
     public async backendActionAuditGet(): Promise<AxiosResponse<Audit>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Audit>(this.url, params);

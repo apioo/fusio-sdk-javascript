@@ -1,5 +1,5 @@
 /**
- * BackendPlanByPlanIdResource generated on 2022-04-30
+ * BackendPlanByPlanIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -28,10 +28,6 @@ export default class BackendPlanByPlanIdResource extends ResourceAbstract {
     public async backendActionPlanGet(): Promise<AxiosResponse<Plan>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Plan>(this.url, params);
@@ -41,13 +37,9 @@ export default class BackendPlanByPlanIdResource extends ResourceAbstract {
      * @param {Plan_Update} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionPlanUpdate(data?: Plan_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionPlanUpdate(data: Plan_Update): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
@@ -59,10 +51,6 @@ export default class BackendPlanByPlanIdResource extends ResourceAbstract {
     public async backendActionPlanDelete(): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'DELETE',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.delete(this.url, params);

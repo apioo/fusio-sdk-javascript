@@ -1,5 +1,5 @@
 /**
- * BackendDashboardResource generated on 2022-04-30
+ * BackendDashboardResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -24,10 +24,6 @@ export default class BackendDashboardResource extends ResourceAbstract {
     public async backendActionDashboardGetAll(): Promise<AxiosResponse<Dashboard>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Dashboard>(this.url, params);

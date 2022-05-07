@@ -1,5 +1,5 @@
 /**
- * ConsumerUserGroup generated on 2022-04-30
+ * ConsumerUserGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -16,8 +16,6 @@ import ConsumerAccountResource from "./ConsumerAccountResource";
 export default class ConsumerUserGroup extends ResourceAbstract {
     /**
      * Endpoint: /consumer/password_reset
-     *
-     * @returns ConsumerPasswordResetResource
      */
     public getConsumerPasswordReset(): ConsumerPasswordResetResource
     {
@@ -29,8 +27,6 @@ export default class ConsumerUserGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /consumer/register
-     *
-     * @returns ConsumerRegisterResource
      */
     public getConsumerRegister(): ConsumerRegisterResource
     {
@@ -42,8 +38,6 @@ export default class ConsumerUserGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /consumer/provider/:provider
-     *
-     * @returns ConsumerProviderByProviderResource
      */
     public getConsumerProviderByProvider(provider: string): ConsumerProviderByProviderResource
     {
@@ -56,8 +50,6 @@ export default class ConsumerUserGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /consumer/login
-     *
-     * @returns ConsumerLoginResource
      */
     public getConsumerLogin(): ConsumerLoginResource
     {
@@ -69,8 +61,6 @@ export default class ConsumerUserGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /consumer/authorize
-     *
-     * @returns ConsumerAuthorizeResource
      */
     public getConsumerAuthorize(): ConsumerAuthorizeResource
     {
@@ -82,8 +72,6 @@ export default class ConsumerUserGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /consumer/activate
-     *
-     * @returns ConsumerActivateResource
      */
     public getConsumerActivate(): ConsumerActivateResource
     {
@@ -95,8 +83,6 @@ export default class ConsumerUserGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /consumer/account/change_password
-     *
-     * @returns ConsumerAccountChangePasswordResource
      */
     public getConsumerAccountChangePassword(): ConsumerAccountChangePasswordResource
     {
@@ -108,8 +94,6 @@ export default class ConsumerUserGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /consumer/account
-     *
-     * @returns ConsumerAccountResource
      */
     public getConsumerAccount(): ConsumerAccountResource
     {

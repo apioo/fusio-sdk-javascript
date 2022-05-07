@@ -1,5 +1,5 @@
 /**
- * ConsumerProviderByProviderResource generated on 2022-04-30
+ * ConsumerProviderByProviderResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -25,13 +25,9 @@ export default class ConsumerProviderByProviderResource extends ResourceAbstract
      * @param {User_Provider} data
      * @returns {Promise<AxiosResponse<User_JWT>>}
      */
-    public async consumerActionUserProvider(data?: User_Provider): Promise<AxiosResponse<User_JWT>> {
+    public async consumerActionUserProvider(data: User_Provider): Promise<AxiosResponse<User_JWT>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.post<User_JWT>(this.url, data, params);

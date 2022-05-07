@@ -1,5 +1,5 @@
 /**
- * BackendAppGroup generated on 2022-04-30
+ * BackendAppGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -13,8 +13,6 @@ import BackendAppTokenResource from "./BackendAppTokenResource";
 export default class BackendAppGroup extends ResourceAbstract {
     /**
      * Endpoint: /backend/app/$app_id<[0-9]+>/token/:token_id
-     *
-     * @returns BackendAppByAppIdTokenAndTokenIdResource
      */
     public getBackendAppByAppIdTokenAndTokenId(app_id: string, token_id: string): BackendAppByAppIdTokenAndTokenIdResource
     {
@@ -28,8 +26,6 @@ export default class BackendAppGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/app/$app_id<[0-9]+>
-     *
-     * @returns BackendAppByAppIdResource
      */
     public getBackendAppByAppId(app_id: string): BackendAppByAppIdResource
     {
@@ -42,8 +38,6 @@ export default class BackendAppGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/app
-     *
-     * @returns BackendAppResource
      */
     public getBackendApp(): BackendAppResource
     {
@@ -55,8 +49,6 @@ export default class BackendAppGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/app/token/$token_id<[0-9]+>
-     *
-     * @returns BackendAppTokenByTokenIdResource
      */
     public getBackendAppTokenByTokenId(token_id: string): BackendAppTokenByTokenIdResource
     {
@@ -69,8 +61,6 @@ export default class BackendAppGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/app/token
-     *
-     * @returns BackendAppTokenResource
      */
     public getBackendAppToken(): BackendAppTokenResource
     {

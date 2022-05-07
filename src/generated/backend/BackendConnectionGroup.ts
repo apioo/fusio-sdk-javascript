@@ -1,5 +1,5 @@
 /**
- * BackendConnectionGroup generated on 2022-04-30
+ * BackendConnectionGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -13,8 +13,6 @@ import BackendConnectionResource from "./BackendConnectionResource";
 export default class BackendConnectionGroup extends ResourceAbstract {
     /**
      * Endpoint: /backend/connection/$connection_id<[0-9]+|^~>/redirect
-     *
-     * @returns BackendConnectionByConnectionIdRedirectResource
      */
     public getBackendConnectionByConnectionIdRedirect(connection_id: string): BackendConnectionByConnectionIdRedirectResource
     {
@@ -27,8 +25,6 @@ export default class BackendConnectionGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/connection/$connection_id<[0-9]+|^~>
-     *
-     * @returns BackendConnectionByConnectionIdResource
      */
     public getBackendConnectionByConnectionId(connection_id: string): BackendConnectionByConnectionIdResource
     {
@@ -41,8 +37,6 @@ export default class BackendConnectionGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/connection/form
-     *
-     * @returns BackendConnectionFormResource
      */
     public getBackendConnectionForm(): BackendConnectionFormResource
     {
@@ -54,8 +48,6 @@ export default class BackendConnectionGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/connection/list
-     *
-     * @returns BackendConnectionListResource
      */
     public getBackendConnectionList(): BackendConnectionListResource
     {
@@ -67,8 +59,6 @@ export default class BackendConnectionGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/connection
-     *
-     * @returns BackendConnectionResource
      */
     public getBackendConnection(): BackendConnectionResource
     {

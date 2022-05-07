@@ -1,5 +1,5 @@
 /**
- * ConsumerAuthorizeResource generated on 2022-04-30
+ * ConsumerAuthorizeResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -26,10 +26,6 @@ export default class ConsumerAuthorizeResource extends ResourceAbstract {
     public async consumerActionUserGetApp(): Promise<AxiosResponse<Authorize_Meta>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Authorize_Meta>(this.url, params);
@@ -39,13 +35,9 @@ export default class ConsumerAuthorizeResource extends ResourceAbstract {
      * @param {Authorize_Request} data
      * @returns {Promise<AxiosResponse<Authorize_Response>>}
      */
-    public async consumerActionUserAuthorize(data?: Authorize_Request): Promise<AxiosResponse<Authorize_Response>> {
+    public async consumerActionUserAuthorize(data: Authorize_Request): Promise<AxiosResponse<Authorize_Response>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.post<Authorize_Response>(this.url, data, params);

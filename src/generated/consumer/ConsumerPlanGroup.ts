@@ -1,5 +1,5 @@
 /**
- * ConsumerPlanGroup generated on 2022-04-30
+ * ConsumerPlanGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -14,8 +14,6 @@ import ConsumerPlanContractResource from "./ConsumerPlanContractResource";
 export default class ConsumerPlanGroup extends ResourceAbstract {
     /**
      * Endpoint: /consumer/plan/$plan_id<[0-9]+>
-     *
-     * @returns ConsumerPlanByPlanIdResource
      */
     public getConsumerPlanByPlanId(plan_id: string): ConsumerPlanByPlanIdResource
     {
@@ -28,8 +26,6 @@ export default class ConsumerPlanGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /consumer/plan
-     *
-     * @returns ConsumerPlanResource
      */
     public getConsumerPlan(): ConsumerPlanResource
     {
@@ -41,8 +37,6 @@ export default class ConsumerPlanGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /consumer/plan/invoice/$invoice_id<[0-9]+>
-     *
-     * @returns ConsumerPlanInvoiceByInvoiceIdResource
      */
     public getConsumerPlanInvoiceByInvoiceId(invoice_id: string): ConsumerPlanInvoiceByInvoiceIdResource
     {
@@ -55,8 +49,6 @@ export default class ConsumerPlanGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /consumer/plan/invoice
-     *
-     * @returns ConsumerPlanInvoiceResource
      */
     public getConsumerPlanInvoice(): ConsumerPlanInvoiceResource
     {
@@ -68,8 +60,6 @@ export default class ConsumerPlanGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /consumer/plan/contract/$contract_id<[0-9]+>
-     *
-     * @returns ConsumerPlanContractByContractIdResource
      */
     public getConsumerPlanContractByContractId(contract_id: string): ConsumerPlanContractByContractIdResource
     {
@@ -82,8 +72,6 @@ export default class ConsumerPlanGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /consumer/plan/contract
-     *
-     * @returns ConsumerPlanContractResource
      */
     public getConsumerPlanContract(): ConsumerPlanContractResource
     {

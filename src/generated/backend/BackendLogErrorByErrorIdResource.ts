@@ -1,5 +1,5 @@
 /**
- * BackendLogErrorByErrorIdResource generated on 2022-04-30
+ * BackendLogErrorByErrorIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -26,10 +26,6 @@ export default class BackendLogErrorByErrorIdResource extends ResourceAbstract {
     public async backendActionLogErrorGet(): Promise<AxiosResponse<Log_Error>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Log_Error>(this.url, params);

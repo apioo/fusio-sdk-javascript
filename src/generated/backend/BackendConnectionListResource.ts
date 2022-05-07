@@ -1,5 +1,5 @@
 /**
- * BackendConnectionListResource generated on 2022-04-30
+ * BackendConnectionListResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -24,10 +24,6 @@ export default class BackendConnectionListResource extends ResourceAbstract {
     public async backendActionConnectionGetIndex(): Promise<AxiosResponse<Connection_Index>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Connection_Index>(this.url, params);

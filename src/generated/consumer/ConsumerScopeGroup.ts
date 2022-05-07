@@ -1,5 +1,5 @@
 /**
- * ConsumerScopeGroup generated on 2022-04-30
+ * ConsumerScopeGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -9,8 +9,6 @@ import ConsumerScopeResource from "./ConsumerScopeResource";
 export default class ConsumerScopeGroup extends ResourceAbstract {
     /**
      * Endpoint: /consumer/scope
-     *
-     * @returns ConsumerScopeResource
      */
     public getConsumerScope(): ConsumerScopeResource
     {

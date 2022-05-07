@@ -1,5 +1,5 @@
 /**
- * BackendCronjobByCronjobIdResource generated on 2022-04-30
+ * BackendCronjobByCronjobIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -28,10 +28,6 @@ export default class BackendCronjobByCronjobIdResource extends ResourceAbstract 
     public async backendActionCronjobGet(): Promise<AxiosResponse<Cronjob>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Cronjob>(this.url, params);
@@ -41,13 +37,9 @@ export default class BackendCronjobByCronjobIdResource extends ResourceAbstract 
      * @param {Cronjob_Update} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionCronjobUpdate(data?: Cronjob_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionCronjobUpdate(data: Cronjob_Update): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);
@@ -59,10 +51,6 @@ export default class BackendCronjobByCronjobIdResource extends ResourceAbstract 
     public async backendActionCronjobDelete(): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'DELETE',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.delete(this.url, params);

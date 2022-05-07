@@ -1,5 +1,5 @@
 /**
- * Transaction_Collection_Query generated on 2022-04-30
+ * Transaction_Collection_Query generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 

@@ -1,5 +1,5 @@
 /**
- * ConsumerTransactionGroup generated on 2022-04-30
+ * ConsumerTransactionGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -12,8 +12,6 @@ import ConsumerTransactionResource from "./ConsumerTransactionResource";
 export default class ConsumerTransactionGroup extends ResourceAbstract {
     /**
      * Endpoint: /consumer/transaction/$transaction_id<[0-9]+>
-     *
-     * @returns ConsumerTransactionByTransactionIdResource
      */
     public getConsumerTransactionByTransactionId(transaction_id: string): ConsumerTransactionByTransactionIdResource
     {
@@ -26,8 +24,6 @@ export default class ConsumerTransactionGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /consumer/transaction/prepare/:provider
-     *
-     * @returns ConsumerTransactionPrepareByProviderResource
      */
     public getConsumerTransactionPrepareByProvider(provider: string): ConsumerTransactionPrepareByProviderResource
     {
@@ -40,8 +36,6 @@ export default class ConsumerTransactionGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /consumer/transaction/execute/:transaction_id
-     *
-     * @returns ConsumerTransactionExecuteByTransactionIdResource
      */
     public getConsumerTransactionExecuteByTransactionId(transaction_id: string): ConsumerTransactionExecuteByTransactionIdResource
     {
@@ -54,8 +48,6 @@ export default class ConsumerTransactionGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /consumer/transaction
-     *
-     * @returns ConsumerTransactionResource
      */
     public getConsumerTransaction(): ConsumerTransactionResource
     {

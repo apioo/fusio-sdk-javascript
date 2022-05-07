@@ -1,5 +1,5 @@
 /**
- * BackendScopeCategoriesResource generated on 2022-04-30
+ * BackendScopeCategoriesResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -24,10 +24,6 @@ export default class BackendScopeCategoriesResource extends ResourceAbstract {
     public async backendActionScopeGetCategories(): Promise<AxiosResponse<Scope_Categories>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Scope_Categories>(this.url, params);

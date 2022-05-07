@@ -1,5 +1,5 @@
 /**
- * BackendEventGroup generated on 2022-04-30
+ * BackendEventGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -12,8 +12,6 @@ import BackendEventSubscriptionResource from "./BackendEventSubscriptionResource
 export default class BackendEventGroup extends ResourceAbstract {
     /**
      * Endpoint: /backend/event/$event_id<[0-9]+|^~>
-     *
-     * @returns BackendEventByEventIdResource
      */
     public getBackendEventByEventId(event_id: string): BackendEventByEventIdResource
     {
@@ -26,8 +24,6 @@ export default class BackendEventGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/event
-     *
-     * @returns BackendEventResource
      */
     public getBackendEvent(): BackendEventResource
     {
@@ -39,8 +35,6 @@ export default class BackendEventGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/event/subscription/$subscription_id<[0-9]+>
-     *
-     * @returns BackendEventSubscriptionBySubscriptionIdResource
      */
     public getBackendEventSubscriptionBySubscriptionId(subscription_id: string): BackendEventSubscriptionBySubscriptionIdResource
     {
@@ -53,8 +47,6 @@ export default class BackendEventGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/event/subscription
-     *
-     * @returns BackendEventSubscriptionResource
      */
     public getBackendEventSubscription(): BackendEventSubscriptionResource
     {

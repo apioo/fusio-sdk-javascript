@@ -1,5 +1,5 @@
 /**
- * BackendSdkResource generated on 2022-04-30
+ * BackendSdkResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -26,10 +26,6 @@ export default class BackendSdkResource extends ResourceAbstract {
     public async backendActionSdkGetAll(): Promise<AxiosResponse<Sdk_Types>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Sdk_Types>(this.url, params);
@@ -39,13 +35,9 @@ export default class BackendSdkResource extends ResourceAbstract {
      * @param {Sdk_Generate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionSdkGenerate(data?: Sdk_Generate): Promise<AxiosResponse<Message>> {
+    public async backendActionSdkGenerate(data: Sdk_Generate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.post<Message>(this.url, data, params);

@@ -1,5 +1,5 @@
 /**
- * BackendAppTokenByTokenIdResource generated on 2022-04-30
+ * BackendAppTokenByTokenIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -26,10 +26,6 @@ export default class BackendAppTokenByTokenIdResource extends ResourceAbstract {
     public async backendActionAppTokenGet(): Promise<AxiosResponse<App_Token>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<App_Token>(this.url, params);

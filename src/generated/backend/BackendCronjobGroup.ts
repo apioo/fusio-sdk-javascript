@@ -1,5 +1,5 @@
 /**
- * BackendCronjobGroup generated on 2022-04-30
+ * BackendCronjobGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -10,8 +10,6 @@ import BackendCronjobResource from "./BackendCronjobResource";
 export default class BackendCronjobGroup extends ResourceAbstract {
     /**
      * Endpoint: /backend/cronjob/$cronjob_id<[0-9]+|^~>
-     *
-     * @returns BackendCronjobByCronjobIdResource
      */
     public getBackendCronjobByCronjobId(cronjob_id: string): BackendCronjobByCronjobIdResource
     {
@@ -24,8 +22,6 @@ export default class BackendCronjobGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/cronjob
-     *
-     * @returns BackendCronjobResource
      */
     public getBackendCronjob(): BackendCronjobResource
     {

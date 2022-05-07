@@ -1,5 +1,5 @@
 /**
- * BackendConfigByConfigIdResource generated on 2022-04-30
+ * BackendConfigByConfigIdResource generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -28,10 +28,6 @@ export default class BackendConfigByConfigIdResource extends ResourceAbstract {
     public async backendActionConfigGet(): Promise<AxiosResponse<Config>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.get<Config>(this.url, params);
@@ -41,13 +37,9 @@ export default class BackendConfigByConfigIdResource extends ResourceAbstract {
      * @param {Config_Update} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionConfigUpdate(data?: Config_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionConfigUpdate(data: Config_Update): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
-            responseType: 'json',
-            headers: {
-                Accept: 'application/json',
-            },
         };
 
         return this.httpClient.put<Message>(this.url, data, params);

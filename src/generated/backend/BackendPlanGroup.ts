@@ -1,5 +1,5 @@
 /**
- * BackendPlanGroup generated on 2022-04-30
+ * BackendPlanGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -14,8 +14,6 @@ import BackendPlanContractResource from "./BackendPlanContractResource";
 export default class BackendPlanGroup extends ResourceAbstract {
     /**
      * Endpoint: /backend/plan/$plan_id<[0-9]+|^~>
-     *
-     * @returns BackendPlanByPlanIdResource
      */
     public getBackendPlanByPlanId(plan_id: string): BackendPlanByPlanIdResource
     {
@@ -28,8 +26,6 @@ export default class BackendPlanGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/plan
-     *
-     * @returns BackendPlanResource
      */
     public getBackendPlan(): BackendPlanResource
     {
@@ -41,8 +37,6 @@ export default class BackendPlanGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/plan/invoice/$invoice_id<[0-9]+>
-     *
-     * @returns BackendPlanInvoiceByInvoiceIdResource
      */
     public getBackendPlanInvoiceByInvoiceId(invoice_id: string): BackendPlanInvoiceByInvoiceIdResource
     {
@@ -55,8 +49,6 @@ export default class BackendPlanGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/plan/invoice
-     *
-     * @returns BackendPlanInvoiceResource
      */
     public getBackendPlanInvoice(): BackendPlanInvoiceResource
     {
@@ -68,8 +60,6 @@ export default class BackendPlanGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/plan/contract/$contract_id<[0-9]+>
-     *
-     * @returns BackendPlanContractByContractIdResource
      */
     public getBackendPlanContractByContractId(contract_id: string): BackendPlanContractByContractIdResource
     {
@@ -82,8 +72,6 @@ export default class BackendPlanGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/plan/contract
-     *
-     * @returns BackendPlanContractResource
      */
     public getBackendPlanContract(): BackendPlanContractResource
     {

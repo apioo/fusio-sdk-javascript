@@ -1,5 +1,5 @@
 /**
- * BackendRouteGroup generated on 2022-04-30
+ * BackendRouteGroup generated on 2022-05-07
  * {@link https://sdkgen.app}
  */
 
@@ -12,8 +12,6 @@ import BackendRoutesResource from "./BackendRoutesResource";
 export default class BackendRouteGroup extends ResourceAbstract {
     /**
      * Endpoint: /backend/routes/$route_id<[0-9]+>
-     *
-     * @returns BackendRoutesByRouteIdResource
      */
     public getBackendRoutesByRouteId(route_id: string): BackendRoutesByRouteIdResource
     {
@@ -26,8 +24,6 @@ export default class BackendRouteGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/routes/provider/:provider
-     *
-     * @returns BackendRoutesProviderByProviderResource
      */
     public getBackendRoutesProviderByProvider(provider: string): BackendRoutesProviderByProviderResource
     {
@@ -40,8 +36,6 @@ export default class BackendRouteGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/routes/provider
-     *
-     * @returns BackendRoutesProviderResource
      */
     public getBackendRoutesProvider(): BackendRoutesProviderResource
     {
@@ -53,8 +47,6 @@ export default class BackendRouteGroup extends ResourceAbstract {
 
     /**
      * Endpoint: /backend/routes
-     *
-     * @returns BackendRoutesResource
      */
     public getBackendRoutes(): BackendRoutesResource
     {
