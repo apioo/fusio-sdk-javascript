@@ -1,5 +1,5 @@
 /**
- * BackendConnectionFormResource generated on 2022-05-07
+ * BackendConnectionFormResource generated on 2022-06-05
  * {@link https://sdkgen.app}
  */
 

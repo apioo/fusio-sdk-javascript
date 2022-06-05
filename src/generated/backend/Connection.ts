@@ -1,5 +1,5 @@
 /**
- * Connection generated on 2022-05-07
+ * Connection generated on 2022-06-05
  * {@link https://sdkgen.app}
  */
 

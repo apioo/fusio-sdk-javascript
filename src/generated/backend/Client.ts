@@ -1,11 +1,12 @@
 /**
- * Client generated on 2022-05-07
+ * Client generated on 2022-06-05
  * {@link https://sdkgen.app}
  */
 
 import {ClientAbstract, CredentialsInterface, TokenStoreInterface} from "sdkgen-client"
 
 import BackendUserGroup from "./BackendUserGroup";
+import BackendTrashGroup from "./BackendTrashGroup";
 import BackendTransactionGroup from "./BackendTransactionGroup";
 import BackendStatisticGroup from "./BackendStatisticGroup";
 import BackendSdkGroup from "./BackendSdkGroup";
@@ -40,6 +41,17 @@ export default class Client extends ClientAbstract {
     public async backendUser(): Promise<BackendUserGroup>
     {
         return new BackendUserGroup(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Tag: backend.trash
+     */
+    public async backendTrash(): Promise<BackendTrashGroup>
+    {
+        return new BackendTrashGroup(
             this.baseUrl,
             await this.newHttpClient()
         );

@@ -1,5 +1,5 @@
 /**
- * Client generated on 2022-05-07
+ * Client generated on 2022-06-05
  * {@link https://sdkgen.app}
  */
 
@@ -10,6 +10,7 @@ import ConsumerTransactionGroup from "./ConsumerTransactionGroup";
 import ConsumerSubscriptionGroup from "./ConsumerSubscriptionGroup";
 import ConsumerScopeGroup from "./ConsumerScopeGroup";
 import ConsumerPlanGroup from "./ConsumerPlanGroup";
+import ConsumerPaymentGroup from "./ConsumerPaymentGroup";
 import ConsumerPageGroup from "./ConsumerPageGroup";
 import ConsumerLogGroup from "./ConsumerLogGroup";
 import ConsumerGrantGroup from "./ConsumerGrantGroup";
@@ -71,6 +72,17 @@ export default class Client extends ClientAbstract {
     public async consumerPlan(): Promise<ConsumerPlanGroup>
     {
         return new ConsumerPlanGroup(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Tag: consumer.payment
+     */
+    public async consumerPayment(): Promise<ConsumerPaymentGroup>
+    {
+        return new ConsumerPaymentGroup(
             this.baseUrl,
             await this.newHttpClient()
         );

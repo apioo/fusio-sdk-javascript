@@ -1,11 +1,12 @@
 /**
- * User_Account generated on 2022-05-07
+ * User_Account generated on 2022-06-05
  * {@link https://sdkgen.app}
  */
 
 import {User_Attributes} from "./User_Attributes";
 export interface User_Account {
     id?: number
+    planId?: number
     status?: number
     name?: string
     email?: string

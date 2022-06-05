@@ -1,5 +1,5 @@
 /**
- * Plan generated on 2022-05-07
+ * Plan generated on 2022-06-05
  * {@link https://sdkgen.app}
  */
 
@@ -10,4 +10,6 @@ export interface Plan {
     price?: number
     points?: number
     period?: number
+    externalId?: string
+    scopes?: Array<string>
 }
