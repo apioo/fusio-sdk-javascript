@@ -5,6 +5,7 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
+import {Form_Query} from "./Form_Query";
 import {Form_Container} from "./Form_Container";
 
 export default class BackendActionFormResource extends ResourceAbstract {
@@ -19,11 +20,13 @@ export default class BackendActionFormResource extends ResourceAbstract {
     }
 
     /**
+     * @param {Form_Query} query
      * @returns {Promise<AxiosResponse<Form_Container>>}
      */
-    public async backendActionActionGetForm(): Promise<AxiosResponse<Form_Container>> {
+    public async backendActionActionGetForm(query?: Form_Query): Promise<AxiosResponse<Form_Container>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
+            params: query,
         };
 
         return this.httpClient.get<Form_Container>(this.url, params);
