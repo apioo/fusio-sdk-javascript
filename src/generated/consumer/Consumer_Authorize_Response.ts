@@ -1,5 +1,5 @@
 /**
- * Consumer_Authorize_Response generated on 2022-06-05
+ * Consumer_Authorize_Response generated on 2022-06-23
  * {@link https://sdkgen.app}
  */
 

@@ -1,9 +1,10 @@
 /**
- * Log_Error generated on 2022-06-05
+ * Log_Error generated on 2022-06-23
  * {@link https://sdkgen.app}
  */
 
 export interface Log_Error {
+    id?: number
     message?: number
     trace?: string
     file?: string

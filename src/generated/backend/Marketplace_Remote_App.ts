@@ -1,5 +1,5 @@
 /**
- * Marketplace_Remote_App generated on 2022-06-05
+ * Marketplace_Remote_App generated on 2022-06-23
  * {@link https://sdkgen.app}
  */
 

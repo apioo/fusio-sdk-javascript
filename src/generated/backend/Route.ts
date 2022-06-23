@@ -1,5 +1,5 @@
 /**
- * Route generated on 2022-06-05
+ * Route generated on 2022-06-23
  * {@link https://sdkgen.app}
  */
 

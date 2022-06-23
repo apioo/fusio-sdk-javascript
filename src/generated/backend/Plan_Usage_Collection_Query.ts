@@ -1,5 +1,5 @@
 /**
- * Plan_Usage_Collection_Query generated on 2022-06-05
+ * Plan_Usage_Collection_Query generated on 2022-06-23
  * {@link https://sdkgen.app}
  */
 

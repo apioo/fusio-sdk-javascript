@@ -1,5 +1,5 @@
 /**
- * ConsumerPaymentProviderCheckoutPath generated on 2022-06-05
+ * ConsumerPaymentProviderCheckoutPath generated on 2022-06-23
  * {@link https://sdkgen.app}
  */
 
