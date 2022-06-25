@@ -1,11 +1,11 @@
 /**
- * BackendSdkResource generated on 2022-06-23
+ * BackendSdkResource generated on 2022-06-25
  * {@link https://sdkgen.app}
  */
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Sdk_Types} from "./Sdk_Types";
+import {Sdk_Response} from "./Sdk_Response";
 import {Sdk_Generate} from "./Sdk_Generate";
 import {Message} from "./Message";
 
@@ -21,14 +21,14 @@ export default class BackendSdkResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {Promise<AxiosResponse<Sdk_Types>>}
+     * @returns {Promise<AxiosResponse<Sdk_Response>>}
      */
-    public async backendActionSdkGetAll(): Promise<AxiosResponse<Sdk_Types>> {
+    public async backendActionSdkGetAll(): Promise<AxiosResponse<Sdk_Response>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
         };
 
-        return this.httpClient.get<Sdk_Types>(this.url, params);
+        return this.httpClient.get<Sdk_Response>(this.url, params);
     }
 
     /**

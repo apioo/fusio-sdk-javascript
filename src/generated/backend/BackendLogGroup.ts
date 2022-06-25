@@ -1,5 +1,5 @@
 /**
- * BackendLogGroup generated on 2022-06-23
+ * BackendLogGroup generated on 2022-06-25
  * {@link https://sdkgen.app}
  */
 

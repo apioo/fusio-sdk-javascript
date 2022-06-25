@@ -1,5 +1,5 @@
 /**
- * Rate_Update generated on 2022-06-23
+ * Rate_Update generated on 2022-06-25
  * {@link https://sdkgen.app}
  */
 

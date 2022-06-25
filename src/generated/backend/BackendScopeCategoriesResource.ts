@@ -1,5 +1,5 @@
 /**
- * BackendScopeCategoriesResource generated on 2022-06-23
+ * BackendScopeCategoriesResource generated on 2022-06-25
  * {@link https://sdkgen.app}
  */
 

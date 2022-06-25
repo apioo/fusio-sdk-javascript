@@ -1,5 +1,5 @@
 /**
- * Consumer_Log_Collection generated on 2022-06-23
+ * Consumer_Log_Collection generated on 2022-06-25
  * {@link https://sdkgen.app}
  */
 

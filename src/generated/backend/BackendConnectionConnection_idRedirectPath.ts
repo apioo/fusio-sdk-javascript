@@ -1,5 +1,5 @@
 /**
- * BackendConnectionConnection_idRedirectPath generated on 2022-06-23
+ * BackendConnectionConnection_idRedirectPath generated on 2022-06-25
  * {@link https://sdkgen.app}
  */
 

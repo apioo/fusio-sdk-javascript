@@ -1,5 +1,5 @@
 /**
- * ConsumerRegisterResource generated on 2022-06-23
+ * ConsumerRegisterResource generated on 2022-06-25
  * {@link https://sdkgen.app}
  */
 

@@ -1,5 +1,5 @@
 /**
- * Backend_Log_Collection_Query generated on 2022-06-23
+ * Backend_Log_Collection_Query generated on 2022-06-25
  * {@link https://sdkgen.app}
  */
 

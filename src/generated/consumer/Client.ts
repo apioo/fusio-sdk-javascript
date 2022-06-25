@@ -1,5 +1,5 @@
 /**
- * Client generated on 2022-06-23
+ * Client generated on 2022-06-25
  * {@link https://sdkgen.app}
  */
 

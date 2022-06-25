@@ -1,5 +1,5 @@
 /**
- * ConsumerScopeResource generated on 2022-06-23
+ * ConsumerScopeResource generated on 2022-06-25
  * {@link https://sdkgen.app}
  */
 
