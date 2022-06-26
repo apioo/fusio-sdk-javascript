@@ -1,6 +1,6 @@
 {
   "name": "fusio-sdk",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "SDK to talk to the Fusio API",
   "keywords": [
     "API",
@@ -14,6 +14,7 @@
   "homepage": "https://www.fusio-project.org/",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": ["/dist"],
   "scripts": {
     "build": "tsc"
   },
