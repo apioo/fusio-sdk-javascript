@@ -1,5 +1,5 @@
 /**
- * BackendRateResource generated on 2022-06-25
+ * BackendRateResource generated on 2022-07-01
  * {@link https://sdkgen.app}
  */
 

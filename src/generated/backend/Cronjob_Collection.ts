@@ -1,5 +1,5 @@
 /**
- * Cronjob_Collection generated on 2022-06-25
+ * Cronjob_Collection generated on 2022-07-01
  * {@link https://sdkgen.app}
  */
 
