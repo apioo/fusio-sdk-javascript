@@ -1,12 +1,12 @@
 /**
- * BackendStatisticIssuedTokensResource generated on 2022-07-01
+ * BackendStatisticIssuedTokensResource generated on 2022-07-09
  * {@link https://sdkgen.app}
  */
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Backend_App_Token_Collection_Query} from "./Backend_App_Token_Collection_Query";
-import {Statistic_Count} from "./Statistic_Count";
+import {Statistic_Chart} from "./Statistic_Chart";
 
 export default class BackendStatisticIssuedTokensResource extends ResourceAbstract {
     private url: string;
@@ -21,15 +21,15 @@ export default class BackendStatisticIssuedTokensResource extends ResourceAbstra
 
     /**
      * @param {Backend_App_Token_Collection_Query} query
-     * @returns {Promise<AxiosResponse<Statistic_Count>>}
+     * @returns {Promise<AxiosResponse<Statistic_Chart>>}
      */
-    public async backendActionStatisticGetIssuedTokens(query?: Backend_App_Token_Collection_Query): Promise<AxiosResponse<Statistic_Count>> {
+    public async backendActionStatisticGetIssuedTokens(query?: Backend_App_Token_Collection_Query): Promise<AxiosResponse<Statistic_Chart>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Statistic_Count>(this.url, params);
+        return this.httpClient.get<Statistic_Chart>(this.url, params);
     }
 
 }
