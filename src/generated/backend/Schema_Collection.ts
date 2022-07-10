@@ -1,5 +1,5 @@
 /**
- * Schema_Collection generated on 2022-07-09
+ * Schema_Collection generated on 2022-07-10
  * {@link https://sdkgen.app}
  */
 

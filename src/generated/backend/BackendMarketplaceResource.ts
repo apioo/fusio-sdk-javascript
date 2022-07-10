@@ -1,5 +1,5 @@
 /**
- * BackendMarketplaceResource generated on 2022-07-09
+ * BackendMarketplaceResource generated on 2022-07-10
  * {@link https://sdkgen.app}
  */
 
@@ -7,6 +7,7 @@ import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Marketplace_Collection} from "./Marketplace_Collection";
 import {Marketplace_Install} from "./Marketplace_Install";
+import {Message} from "./Message";
 
 export default class BackendMarketplaceResource extends ResourceAbstract {
     private url: string;
@@ -32,14 +33,14 @@ export default class BackendMarketplaceResource extends ResourceAbstract {
 
     /**
      * @param {Marketplace_Install} data
-     * @returns {Promise<AxiosResponse<Marketplace_Install>>}
+     * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionMarketplaceInstall(data: Marketplace_Install): Promise<AxiosResponse<Marketplace_Install>> {
+    public async backendActionMarketplaceInstall(data: Marketplace_Install): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };
 
-        return this.httpClient.post<Marketplace_Install>(this.url, data, params);
+        return this.httpClient.post<Message>(this.url, data, params);
     }
 
 }

@@ -1,5 +1,5 @@
 /**
- * BackendTrashByTypeResource generated on 2022-07-09
+ * BackendTrashByTypeResource generated on 2022-07-10
  * {@link https://sdkgen.app}
  */
 
@@ -7,6 +7,7 @@ import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Collection_Query} from "./Collection_Query";
 import {Trash_Data_Collection} from "./Trash_Data_Collection";
+import {Trash_Restore} from "./Trash_Restore";
 import {Message} from "./Message";
 
 export default class BackendTrashByTypeResource extends ResourceAbstract {
@@ -36,14 +37,15 @@ export default class BackendTrashByTypeResource extends ResourceAbstract {
     }
 
     /**
+     * @param {Trash_Restore} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionTrashRestore(): Promise<AxiosResponse<Message>> {
+    public async backendActionTrashRestore(data: Trash_Restore): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };
 
-        return this.httpClient.post<Message>(this.url, null, params);
+        return this.httpClient.post<Message>(this.url, data, params);
     }
 
 }
