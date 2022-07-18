@@ -1,5 +1,5 @@
 /**
- * Backend_Statistic_Count generated on 2022-07-10
+ * Backend_Statistic_Count generated on 2022-07-18
  * {@link https://sdkgen.app}
  */
 

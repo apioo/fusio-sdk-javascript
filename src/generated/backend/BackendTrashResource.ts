@@ -1,5 +1,5 @@
 /**
- * BackendTrashResource generated on 2022-07-10
+ * BackendTrashResource generated on 2022-07-18
  * {@link https://sdkgen.app}
  */
 

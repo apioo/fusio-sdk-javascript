@@ -1,17 +1,17 @@
 /**
- * BackendRoutesProviderByProviderResource generated on 2022-07-10
+ * BackendGeneratorByProviderResource generated on 2022-07-18
  * {@link https://sdkgen.app}
  */
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Form_Container} from "./Form_Container";
-import {Route_Provider} from "./Route_Provider";
+import {Generator_Provider} from "./Generator_Provider";
 import {Message} from "./Message";
-import {Route_Provider_Config} from "./Route_Provider_Config";
-import {Route_Provider_Changelog} from "./Route_Provider_Changelog";
+import {Generator_Provider_Config} from "./Generator_Provider_Config";
+import {Generator_Provider_Changelog} from "./Generator_Provider_Changelog";
 
-export default class BackendRoutesProviderByProviderResource extends ResourceAbstract {
+export default class BackendGeneratorByProviderResource extends ResourceAbstract {
     private url: string;
 
     private provider: string;
@@ -21,13 +21,13 @@ export default class BackendRoutesProviderByProviderResource extends ResourceAbs
 
         this.provider = provider;
 
-        this.url = baseUrl + "/backend/routes/provider/"+provider+"";
+        this.url = baseUrl + "/backend/generator/"+provider+"";
     }
 
     /**
      * @returns {Promise<AxiosResponse<Form_Container>>}
      */
-    public async backendActionRouteProviderForm(): Promise<AxiosResponse<Form_Container>> {
+    public async backendActionGeneratorForm(): Promise<AxiosResponse<Form_Container>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
         };
@@ -36,10 +36,10 @@ export default class BackendRoutesProviderByProviderResource extends ResourceAbs
     }
 
     /**
-     * @param {Route_Provider} data
+     * @param {Generator_Provider} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionRouteProviderCreate(data: Route_Provider): Promise<AxiosResponse<Message>> {
+    public async backendActionGeneratorCreate(data: Generator_Provider): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };
@@ -48,15 +48,15 @@ export default class BackendRoutesProviderByProviderResource extends ResourceAbs
     }
 
     /**
-     * @param {Route_Provider_Config} data
-     * @returns {Promise<AxiosResponse<Route_Provider_Changelog>>}
+     * @param {Generator_Provider_Config} data
+     * @returns {Promise<AxiosResponse<Generator_Provider_Changelog>>}
      */
-    public async backendActionRouteProviderChangelog(data: Route_Provider_Config): Promise<AxiosResponse<Route_Provider_Changelog>> {
+    public async backendActionGeneratorChangelog(data: Generator_Provider_Config): Promise<AxiosResponse<Generator_Provider_Changelog>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
         };
 
-        return this.httpClient.put<Route_Provider_Changelog>(this.url, data, params);
+        return this.httpClient.put<Generator_Provider_Changelog>(this.url, data, params);
     }
 
 }

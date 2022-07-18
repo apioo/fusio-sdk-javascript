@@ -1,5 +1,5 @@
 /**
- * BackendStatisticMostUsedAppsResource generated on 2022-07-10
+ * BackendStatisticMostUsedAppsResource generated on 2022-07-18
  * {@link https://sdkgen.app}
  */
 

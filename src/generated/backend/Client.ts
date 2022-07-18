@@ -1,5 +1,5 @@
 /**
- * Client generated on 2022-07-10
+ * Client generated on 2022-07-18
  * {@link https://sdkgen.app}
  */
 
@@ -19,6 +19,7 @@ import BackendPlanGroup from "./BackendPlanGroup";
 import BackendPageGroup from "./BackendPageGroup";
 import BackendMarketplaceGroup from "./BackendMarketplaceGroup";
 import BackendLogGroup from "./BackendLogGroup";
+import BackendGeneratorGroup from "./BackendGeneratorGroup";
 import BackendEventGroup from "./BackendEventGroup";
 import BackendDashboardGroup from "./BackendDashboardGroup";
 import BackendCronjobGroup from "./BackendCronjobGroup";
@@ -184,6 +185,17 @@ export default class Client extends ClientAbstract {
     public async backendLog(): Promise<BackendLogGroup>
     {
         return new BackendLogGroup(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Tag: backend.generator
+     */
+    public async backendGenerator(): Promise<BackendGeneratorGroup>
+    {
+        return new BackendGeneratorGroup(
             this.baseUrl,
             await this.newHttpClient()
         );
