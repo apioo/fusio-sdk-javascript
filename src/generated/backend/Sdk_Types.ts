@@ -1,5 +1,5 @@
 /**
- * Sdk_Types generated on 2022-07-18
+ * Sdk_Types generated on 2022-07-26
  * {@link https://sdkgen.app}
  */
 

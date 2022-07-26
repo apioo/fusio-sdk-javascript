@@ -1,5 +1,5 @@
 /**
- * Log_Error_Collection generated on 2022-07-18
+ * Log_Error_Collection generated on 2022-07-26
  * {@link https://sdkgen.app}
  */
 

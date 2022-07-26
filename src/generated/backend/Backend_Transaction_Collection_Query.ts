@@ -1,5 +1,5 @@
 /**
- * Backend_Transaction_Collection_Query generated on 2022-07-18
+ * Backend_Transaction_Collection_Query generated on 2022-07-26
  * {@link https://sdkgen.app}
  */
 

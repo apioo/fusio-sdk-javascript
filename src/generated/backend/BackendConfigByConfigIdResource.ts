@@ -1,5 +1,5 @@
 /**
- * BackendConfigByConfigIdResource generated on 2022-07-18
+ * BackendConfigByConfigIdResource generated on 2022-07-26
  * {@link https://sdkgen.app}
  */
 
