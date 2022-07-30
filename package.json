@@ -1,6 +1,6 @@
 {
   "name": "fusio-sdk",
-  "version": "2.1.7",
+  "version": "2.1.8",
   "description": "SDK to talk to the Fusio API",
   "keywords": [
     "API",
@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
-    "sdkgen-client": "^0.2.0"
+    "sdkgen-client": "^0.3.0"
   },
   "devDependencies": {
     "typescript": "^4.3"
