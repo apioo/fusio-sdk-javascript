@@ -1,5 +1,5 @@
 /**
- * BackendRoleResource generated on 2022-07-26
+ * BackendRoleResource generated on 2022-07-31
  * {@link https://sdkgen.app}
  */
 

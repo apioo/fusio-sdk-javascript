@@ -1,5 +1,5 @@
 /**
- * BackendAppTokenResource generated on 2022-07-26
+ * BackendAppTokenResource generated on 2022-07-31
  * {@link https://sdkgen.app}
  */
 
