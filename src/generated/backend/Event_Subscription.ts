@@ -3,9 +3,11 @@
  * {@link https://sdkgen.app}
  */
 
+import {Event_Subscription_Response} from "./Event_Subscription_Response";
 export interface Event_Subscription {
     id?: number
     eventId?: number
     userId?: number
     endpoint?: string
+    responses?: Array<Event_Subscription_Response>
 }
