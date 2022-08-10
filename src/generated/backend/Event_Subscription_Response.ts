@@ -6,6 +6,7 @@
 export interface Event_Subscription_Response {
     id?: number
     status?: number
+    code?: number
     attempts?: number
     error?: string
     executeDate?: string
