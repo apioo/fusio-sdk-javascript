@@ -6,6 +6,7 @@
 import {Route_Version} from "./Route_Version";
 export interface Route {
     id?: number
+    status?: number
     priority?: number
     path?: string
     controller?: string

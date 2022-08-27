@@ -6,5 +6,6 @@
 export interface Collection<T> {
     totalResults?: number
     startIndex?: number
+    itemsPerPage?: number
     entry?: Array<T>
 }
