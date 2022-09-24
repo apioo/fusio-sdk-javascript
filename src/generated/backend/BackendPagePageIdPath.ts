@@ -4,5 +4,5 @@
  */
 
 export interface BackendPagePageIdPath {
-    pageId?: string
+    page_id?: string
 }

@@ -4,5 +4,5 @@
  */
 
 export interface BackendCategoryCategoryIdPath {
-    categoryId?: string
+    category_id?: string
 }

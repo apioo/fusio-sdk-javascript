@@ -4,5 +4,5 @@
  */
 
 export interface BackendScopeScopeIdPath {
-    scopeId?: string
+    scope_id?: string
 }

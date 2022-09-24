@@ -4,5 +4,5 @@
  */
 
 export interface BackendRateRateIdPath {
-    rateId?: string
+    rate_id?: string
 }

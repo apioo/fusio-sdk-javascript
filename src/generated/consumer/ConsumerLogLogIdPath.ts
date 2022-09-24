@@ -4,5 +4,5 @@
  */
 
 export interface ConsumerLogLogIdPath {
-    logId?: string
+    log_id?: string
 }

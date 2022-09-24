@@ -4,5 +4,5 @@
  */
 
 export interface BackendMarketplaceAppNamePath {
-    appName?: string
+    app_name?: string
 }

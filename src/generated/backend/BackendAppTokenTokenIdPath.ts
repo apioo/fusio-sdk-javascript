@@ -4,5 +4,5 @@
  */
 
 export interface BackendAppTokenTokenIdPath {
-    tokenId?: string
+    token_id?: string
 }

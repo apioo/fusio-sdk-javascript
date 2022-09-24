@@ -9,5 +9,5 @@ export interface MarketplaceApp {
     screenshot?: string
     website?: string
     downloadUrl?: string
-    shaHash?: string
+    sha1Hash?: string
 }

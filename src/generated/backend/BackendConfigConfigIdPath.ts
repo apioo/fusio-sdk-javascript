@@ -4,5 +4,5 @@
  */
 
 export interface BackendConfigConfigIdPath {
-    configId?: string
+    config_id?: string
 }

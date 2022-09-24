@@ -4,5 +4,5 @@
  */
 
 export interface ConsumerTransactionTransactionIdPath {
-    transactionId?: string
+    transaction_id?: string
 }

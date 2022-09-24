@@ -4,5 +4,5 @@
  */
 
 export interface UserRefresh {
-    refreshToken?: string
+    refresh_token?: string
 }

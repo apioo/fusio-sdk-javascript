@@ -4,5 +4,5 @@
  */
 
 export interface BackendLogErrorErrorIdPath {
-    errorId?: string
+    error_id?: string
 }

@@ -4,5 +4,5 @@
  */
 
 export interface BackendRoutesRouteIdPath {
-    routeId?: string
+    route_id?: string
 }

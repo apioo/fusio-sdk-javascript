@@ -4,5 +4,5 @@
  */
 
 export interface BackendSchemaPreviewSchemaIdPath {
-    schemaId?: string
+    schema_id?: string
 }

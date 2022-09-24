@@ -4,5 +4,5 @@
  */
 
 export interface BackendEventSubscriptionSubscriptionIdPath {
-    subscriptionId?: string
+    subscription_id?: string
 }

@@ -4,5 +4,5 @@
  */
 
 export interface BackendLogLogIdPath {
-    logId?: string
+    log_id?: string
 }

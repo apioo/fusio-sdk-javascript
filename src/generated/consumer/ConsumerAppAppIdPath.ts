@@ -4,5 +4,5 @@
  */
 
 export interface ConsumerAppAppIdPath {
-    appId?: string
+    app_id?: string
 }

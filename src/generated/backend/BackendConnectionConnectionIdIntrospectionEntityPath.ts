@@ -4,6 +4,6 @@
  */
 
 export interface BackendConnectionConnectionIdIntrospectionEntityPath {
-    connectionId?: string
+    connection_id?: string
     entity?: string
 }

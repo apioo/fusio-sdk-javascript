@@ -4,5 +4,5 @@
  */
 
 export interface BackendActionExecuteActionIdPath {
-    actionId?: string
+    action_id?: string
 }

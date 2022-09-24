@@ -4,5 +4,5 @@
  */
 
 export interface BackendCronjobCronjobIdPath {
-    cronjobId?: string
+    cronjob_id?: string
 }

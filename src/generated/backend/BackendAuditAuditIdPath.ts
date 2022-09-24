@@ -4,5 +4,5 @@
  */
 
 export interface BackendAuditAuditIdPath {
-    auditId?: string
+    audit_id?: string
 }

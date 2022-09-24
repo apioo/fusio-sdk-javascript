@@ -4,5 +4,5 @@
  */
 
 export interface BackendUserUserIdPath {
-    userId?: string
+    user_id?: string
 }

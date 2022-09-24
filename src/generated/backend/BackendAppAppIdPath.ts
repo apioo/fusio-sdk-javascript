@@ -4,5 +4,5 @@
  */
 
 export interface BackendAppAppIdPath {
-    appId?: string
+    app_id?: string
 }

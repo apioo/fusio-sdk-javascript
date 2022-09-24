@@ -4,5 +4,5 @@
  */
 
 export interface BackendConnectionConnectionIdIntrospectionPath {
-    connectionId?: string
+    connection_id?: string
 }

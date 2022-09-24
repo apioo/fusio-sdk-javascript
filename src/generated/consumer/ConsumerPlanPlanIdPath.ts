@@ -4,5 +4,5 @@
  */
 
 export interface ConsumerPlanPlanIdPath {
-    planId?: string
+    plan_id?: string
 }

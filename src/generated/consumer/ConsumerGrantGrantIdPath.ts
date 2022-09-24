@@ -4,5 +4,5 @@
  */
 
 export interface ConsumerGrantGrantIdPath {
-    grantId?: string
+    grant_id?: string
 }

@@ -4,5 +4,5 @@
  */
 
 export interface BackendPlanPlanIdPath {
-    planId?: string
+    plan_id?: string
 }

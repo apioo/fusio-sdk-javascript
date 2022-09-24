@@ -4,5 +4,5 @@
  */
 
 export interface BackendRoleRoleIdPath {
-    roleId?: string
+    role_id?: string
 }

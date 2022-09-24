@@ -4,5 +4,5 @@
  */
 
 export interface ConsumerPagePageIdPath {
-    pageId?: string
+    page_id?: string
 }

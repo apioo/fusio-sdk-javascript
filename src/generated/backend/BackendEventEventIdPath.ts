@@ -4,5 +4,5 @@
  */
 
 export interface BackendEventEventIdPath {
-    eventId?: string
+    event_id?: string
 }

@@ -4,5 +4,5 @@
  */
 
 export interface ConsumerSubscriptionSubscriptionIdPath {
-    subscriptionId?: string
+    subscription_id?: string
 }

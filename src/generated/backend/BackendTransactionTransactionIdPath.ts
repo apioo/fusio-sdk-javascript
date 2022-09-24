@@ -4,5 +4,5 @@
  */
 
 export interface BackendTransactionTransactionIdPath {
-    transactionId?: string
+    transaction_id?: string
 }

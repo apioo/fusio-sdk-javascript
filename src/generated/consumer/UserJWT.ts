@@ -5,7 +5,7 @@
 
 export interface UserJWT {
     token?: string
-    expiresIn?: number
-    refreshToken?: string
+    expires_in?: number
+    refresh_token?: string
     scope?: string
 }
