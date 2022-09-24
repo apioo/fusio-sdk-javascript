@@ -1,6 +1,6 @@
 import Client from "../src/Client";
-import {Action_Config} from "../src/generated/backend/Action_Config";
-import {Action_Create} from "../src/generated/backend/Action_Create";
+import {ActionConfig} from "../src/generated/backend/ActionConfig";
+import {ActionCreate} from "../src/generated/backend/ActionCreate";
 
 // @TODO set correct client credentials
 let client = new Client(
@@ -9,18 +9,18 @@ let client = new Client(
     'test1234'
 );
 
-client.backend().backendAction().then(async (backend) => {
-    let config: Action_Config = {
+client.backend().getBackendAction().then(async (resource) => {
+    let config: ActionConfig = {
         response: JSON.stringify({hello: 'world'})
     };
 
-    let create: Action_Create = {
+    let create: ActionCreate = {
         name: 'my-new-action',
         class: 'Fusio\\Adapter\\Util\\Action\\UtilStaticResponse',
         config: config
     };
 
-    let response = await backend.getBackendAction().backendActionActionCreate(create);
+    let response = await resource.backendActionActionCreate(create);
     if (!response.data.message) {
         return;
     }

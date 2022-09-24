@@ -1,5 +1,5 @@
 import Client from "../src/Client";
-import {Account_ChangePassword} from "../src/generated/consumer/Account_ChangePassword";
+import {AccountChangePassword} from "../src/generated/consumer/AccountChangePassword";
 
 // @TODO set correct client credentials
 let client = new Client(
@@ -8,14 +8,14 @@ let client = new Client(
     'test1234'
 );
 
-client.consumer().consumerUser().then(async (consumer) => {
-    let changePassword: Account_ChangePassword = {
+client.consumer().getConsumerAccountChangePassword().then(async (resource) => {
+    let changePassword: AccountChangePassword = {
         oldPassword: 'test1234',
         newPassword: 'test1234!',
         verifyPassword: 'test1234!'
     };
 
-    let response = await consumer.getConsumerAccountChangePassword().consumerActionUserChangePassword(changePassword);
+    let response = await resource.consumerActionUserChangePassword(changePassword);
     if (!response.data.message) {
         return;
     }

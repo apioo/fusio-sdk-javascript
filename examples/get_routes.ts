@@ -7,8 +7,8 @@ let client = new Client(
     'test1234'
 );
 
-client.backend().backendRoute().then(async (backend) => {
-    let response = await backend.getBackendRoutes().backendActionRouteGetAll();
+client.backend().getBackendRoutes().then(async (resource) => {
+    let response = await resource.backendActionRouteGetAll();
     if (!response.data.entry) {
         return;
     }
