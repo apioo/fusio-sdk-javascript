@@ -6,7 +6,7 @@
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {User} from "./User";
-import {User_Update} from "./User_Update";
+import {UserUpdate} from "./UserUpdate";
 import {Message} from "./Message";
 
 export default class BackendAccountResource extends ResourceAbstract {
@@ -32,10 +32,10 @@ export default class BackendAccountResource extends ResourceAbstract {
     }
 
     /**
-     * @param {User_Update} data
+     * @param {UserUpdate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionAccountUpdate(data: User_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionAccountUpdate(data: UserUpdate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
         };

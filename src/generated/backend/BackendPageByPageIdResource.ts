@@ -6,20 +6,20 @@
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Page} from "./Page";
-import {Page_Update} from "./Page_Update";
+import {PageUpdate} from "./PageUpdate";
 import {Message} from "./Message";
 
 export default class BackendPageByPageIdResource extends ResourceAbstract {
     private url: string;
 
-    private page_id: string;
+    private pageId: string;
 
-    public constructor(page_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(pageId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.page_id = page_id;
+        this.pageId = pageId;
 
-        this.url = baseUrl + "/backend/page/"+page_id+"";
+        this.url = baseUrl + "/backend/page/"+pageId+"";
     }
 
     /**
@@ -34,10 +34,10 @@ export default class BackendPageByPageIdResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Page_Update} data
+     * @param {PageUpdate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionPageUpdate(data: Page_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionPageUpdate(data: PageUpdate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
         };

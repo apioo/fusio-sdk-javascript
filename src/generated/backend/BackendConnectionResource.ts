@@ -5,9 +5,9 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Collection_Query} from "./Collection_Query";
-import {Connection_Collection} from "./Connection_Collection";
-import {Connection_Create} from "./Connection_Create";
+import {CollectionQuery} from "./CollectionQuery";
+import {ConnectionCollection} from "./ConnectionCollection";
+import {ConnectionCreate} from "./ConnectionCreate";
 import {Message} from "./Message";
 
 export default class BackendConnectionResource extends ResourceAbstract {
@@ -22,23 +22,23 @@ export default class BackendConnectionResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Collection_Query} query
-     * @returns {Promise<AxiosResponse<Connection_Collection>>}
+     * @param {CollectionQuery} query
+     * @returns {Promise<AxiosResponse<ConnectionCollection>>}
      */
-    public async backendActionConnectionGetAll(query?: Collection_Query): Promise<AxiosResponse<Connection_Collection>> {
+    public async backendActionConnectionGetAll(query?: CollectionQuery): Promise<AxiosResponse<ConnectionCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Connection_Collection>(this.url, params);
+        return this.httpClient.get<ConnectionCollection>(this.url, params);
     }
 
     /**
-     * @param {Connection_Create} data
+     * @param {ConnectionCreate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionConnectionCreate(data: Connection_Create): Promise<AxiosResponse<Message>> {
+    public async backendActionConnectionCreate(data: ConnectionCreate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };

@@ -5,8 +5,8 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Payment_Checkout_Request} from "./Payment_Checkout_Request";
-import {Payment_Checkout_Response} from "./Payment_Checkout_Response";
+import {PaymentCheckoutRequest} from "./PaymentCheckoutRequest";
+import {PaymentCheckoutResponse} from "./PaymentCheckoutResponse";
 
 export default class ConsumerPaymentByProviderCheckoutResource extends ResourceAbstract {
     private url: string;
@@ -22,15 +22,15 @@ export default class ConsumerPaymentByProviderCheckoutResource extends ResourceA
     }
 
     /**
-     * @param {Payment_Checkout_Request} data
-     * @returns {Promise<AxiosResponse<Payment_Checkout_Response>>}
+     * @param {PaymentCheckoutRequest} data
+     * @returns {Promise<AxiosResponse<PaymentCheckoutResponse>>}
      */
-    public async consumerActionPaymentCheckout(data: Payment_Checkout_Request): Promise<AxiosResponse<Payment_Checkout_Response>> {
+    public async consumerActionPaymentCheckout(data: PaymentCheckoutRequest): Promise<AxiosResponse<PaymentCheckoutResponse>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };
 
-        return this.httpClient.post<Payment_Checkout_Response>(this.url, data, params);
+        return this.httpClient.post<PaymentCheckoutResponse>(this.url, data, params);
     }
 
 }

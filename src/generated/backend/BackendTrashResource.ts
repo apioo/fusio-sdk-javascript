@@ -5,7 +5,7 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Trash_Types} from "./Trash_Types";
+import {TrashTypes} from "./TrashTypes";
 
 export default class BackendTrashResource extends ResourceAbstract {
     private url: string;
@@ -19,14 +19,14 @@ export default class BackendTrashResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {Promise<AxiosResponse<Trash_Types>>}
+     * @returns {Promise<AxiosResponse<TrashTypes>>}
      */
-    public async backendActionTrashGetTypes(): Promise<AxiosResponse<Trash_Types>> {
+    public async backendActionTrashGetTypes(): Promise<AxiosResponse<TrashTypes>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
         };
 
-        return this.httpClient.get<Trash_Types>(this.url, params);
+        return this.httpClient.get<TrashTypes>(this.url, params);
     }
 
 }

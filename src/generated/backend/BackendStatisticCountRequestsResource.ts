@@ -5,8 +5,8 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Backend_Log_Collection_Query} from "./Backend_Log_Collection_Query";
-import {Statistic_Count} from "./Statistic_Count";
+import {BackendLogCollectionQuery} from "./BackendLogCollectionQuery";
+import {StatisticCount} from "./StatisticCount";
 
 export default class BackendStatisticCountRequestsResource extends ResourceAbstract {
     private url: string;
@@ -20,16 +20,16 @@ export default class BackendStatisticCountRequestsResource extends ResourceAbstr
     }
 
     /**
-     * @param {Backend_Log_Collection_Query} query
-     * @returns {Promise<AxiosResponse<Statistic_Count>>}
+     * @param {BackendLogCollectionQuery} query
+     * @returns {Promise<AxiosResponse<StatisticCount>>}
      */
-    public async backendActionStatisticGetCountRequests(query?: Backend_Log_Collection_Query): Promise<AxiosResponse<Statistic_Count>> {
+    public async backendActionStatisticGetCountRequests(query?: BackendLogCollectionQuery): Promise<AxiosResponse<StatisticCount>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Statistic_Count>(this.url, params);
+        return this.httpClient.get<StatisticCount>(this.url, params);
     }
 
 }

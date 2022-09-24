@@ -5,8 +5,8 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Backend_App_Token_Collection_Query} from "./Backend_App_Token_Collection_Query";
-import {Statistic_Chart} from "./Statistic_Chart";
+import {BackendAppTokenCollectionQuery} from "./BackendAppTokenCollectionQuery";
+import {StatisticChart} from "./StatisticChart";
 
 export default class BackendStatisticIssuedTokensResource extends ResourceAbstract {
     private url: string;
@@ -20,16 +20,16 @@ export default class BackendStatisticIssuedTokensResource extends ResourceAbstra
     }
 
     /**
-     * @param {Backend_App_Token_Collection_Query} query
-     * @returns {Promise<AxiosResponse<Statistic_Chart>>}
+     * @param {BackendAppTokenCollectionQuery} query
+     * @returns {Promise<AxiosResponse<StatisticChart>>}
      */
-    public async backendActionStatisticGetIssuedTokens(query?: Backend_App_Token_Collection_Query): Promise<AxiosResponse<Statistic_Chart>> {
+    public async backendActionStatisticGetIssuedTokens(query?: BackendAppTokenCollectionQuery): Promise<AxiosResponse<StatisticChart>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Statistic_Chart>(this.url, params);
+        return this.httpClient.get<StatisticChart>(this.url, params);
     }
 
 }

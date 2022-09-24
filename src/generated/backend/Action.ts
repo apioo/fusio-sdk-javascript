@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {Action_Config} from "./Action_Config";
+import {ActionConfig} from "./ActionConfig";
 export interface Action {
     id?: number
     status?: number
@@ -11,5 +11,5 @@ export interface Action {
     class?: string
     async?: boolean
     engine?: string
-    config?: Action_Config
+    config?: ActionConfig
 }

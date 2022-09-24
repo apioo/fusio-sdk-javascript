@@ -5,8 +5,8 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Backend_Log_Collection_Query} from "./Backend_Log_Collection_Query";
-import {Log_Collection} from "./Log_Collection";
+import {BackendLogCollectionQuery} from "./BackendLogCollectionQuery";
+import {LogCollection} from "./LogCollection";
 
 export default class BackendLogResource extends ResourceAbstract {
     private url: string;
@@ -20,16 +20,16 @@ export default class BackendLogResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Backend_Log_Collection_Query} query
-     * @returns {Promise<AxiosResponse<Log_Collection>>}
+     * @param {BackendLogCollectionQuery} query
+     * @returns {Promise<AxiosResponse<LogCollection>>}
      */
-    public async backendActionLogGetAll(query?: Backend_Log_Collection_Query): Promise<AxiosResponse<Log_Collection>> {
+    public async backendActionLogGetAll(query?: BackendLogCollectionQuery): Promise<AxiosResponse<LogCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Log_Collection>(this.url, params);
+        return this.httpClient.get<LogCollection>(this.url, params);
     }
 
 }

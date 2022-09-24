@@ -5,9 +5,9 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Authorize_Meta} from "./Authorize_Meta";
-import {Authorize_Request} from "./Authorize_Request";
-import {Authorize_Response} from "./Authorize_Response";
+import {AuthorizeMeta} from "./AuthorizeMeta";
+import {AuthorizeRequest} from "./AuthorizeRequest";
+import {AuthorizeResponse} from "./AuthorizeResponse";
 
 export default class ConsumerAuthorizeResource extends ResourceAbstract {
     private url: string;
@@ -21,26 +21,26 @@ export default class ConsumerAuthorizeResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {Promise<AxiosResponse<Authorize_Meta>>}
+     * @returns {Promise<AxiosResponse<AuthorizeMeta>>}
      */
-    public async consumerActionUserGetApp(): Promise<AxiosResponse<Authorize_Meta>> {
+    public async consumerActionUserGetApp(): Promise<AxiosResponse<AuthorizeMeta>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
         };
 
-        return this.httpClient.get<Authorize_Meta>(this.url, params);
+        return this.httpClient.get<AuthorizeMeta>(this.url, params);
     }
 
     /**
-     * @param {Authorize_Request} data
-     * @returns {Promise<AxiosResponse<Authorize_Response>>}
+     * @param {AuthorizeRequest} data
+     * @returns {Promise<AxiosResponse<AuthorizeResponse>>}
      */
-    public async consumerActionUserAuthorize(data: Authorize_Request): Promise<AxiosResponse<Authorize_Response>> {
+    public async consumerActionUserAuthorize(data: AuthorizeRequest): Promise<AxiosResponse<AuthorizeResponse>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };
 
-        return this.httpClient.post<Authorize_Response>(this.url, data, params);
+        return this.httpClient.post<AuthorizeResponse>(this.url, data, params);
     }
 
 }

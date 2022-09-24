@@ -5,8 +5,8 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Collection_Query} from "./Collection_Query";
-import {Transaction_Collection} from "./Transaction_Collection";
+import {CollectionQuery} from "./CollectionQuery";
+import {TransactionCollection} from "./TransactionCollection";
 
 export default class ConsumerTransactionResource extends ResourceAbstract {
     private url: string;
@@ -20,16 +20,16 @@ export default class ConsumerTransactionResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Collection_Query} query
-     * @returns {Promise<AxiosResponse<Transaction_Collection>>}
+     * @param {CollectionQuery} query
+     * @returns {Promise<AxiosResponse<TransactionCollection>>}
      */
-    public async consumerActionTransactionGetAll(query?: Collection_Query): Promise<AxiosResponse<Transaction_Collection>> {
+    public async consumerActionTransactionGetAll(query?: CollectionQuery): Promise<AxiosResponse<TransactionCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Transaction_Collection>(this.url, params);
+        return this.httpClient.get<TransactionCollection>(this.url, params);
     }
 
 }

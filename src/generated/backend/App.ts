@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {App_Token} from "./App_Token";
+import {AppToken} from "./AppToken";
 export interface App {
     id?: number
     userId?: number
@@ -15,5 +15,5 @@ export interface App {
     appSecret?: string
     date?: string
     scopes?: Array<string>
-    tokens?: Array<App_Token>
+    tokens?: Array<AppToken>
 }

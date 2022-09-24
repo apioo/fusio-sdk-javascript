@@ -5,8 +5,8 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Collection_Query} from "./Collection_Query";
-import {Event_Collection} from "./Event_Collection";
+import {CollectionQuery} from "./CollectionQuery";
+import {EventCollection} from "./EventCollection";
 
 export default class ConsumerEventResource extends ResourceAbstract {
     private url: string;
@@ -20,16 +20,16 @@ export default class ConsumerEventResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Collection_Query} query
-     * @returns {Promise<AxiosResponse<Event_Collection>>}
+     * @param {CollectionQuery} query
+     * @returns {Promise<AxiosResponse<EventCollection>>}
      */
-    public async consumerActionEventGetAll(query?: Collection_Query): Promise<AxiosResponse<Event_Collection>> {
+    public async consumerActionEventGetAll(query?: CollectionQuery): Promise<AxiosResponse<EventCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Event_Collection>(this.url, params);
+        return this.httpClient.get<EventCollection>(this.url, params);
     }
 
 }

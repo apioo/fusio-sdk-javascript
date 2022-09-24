@@ -5,27 +5,27 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Schema_Form} from "./Schema_Form";
+import {SchemaForm} from "./SchemaForm";
 import {Message} from "./Message";
 
 export default class BackendSchemaFormBySchemaIdResource extends ResourceAbstract {
     private url: string;
 
-    private schema_id: string;
+    private schemaId: string;
 
-    public constructor(schema_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(schemaId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.schema_id = schema_id;
+        this.schemaId = schemaId;
 
-        this.url = baseUrl + "/backend/schema/form/"+schema_id+"";
+        this.url = baseUrl + "/backend/schema/form/"+schemaId+"";
     }
 
     /**
-     * @param {Schema_Form} data
+     * @param {SchemaForm} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionSchemaForm(data: Schema_Form): Promise<AxiosResponse<Message>> {
+    public async backendActionSchemaForm(data: SchemaForm): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
         };

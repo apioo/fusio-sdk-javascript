@@ -5,9 +5,9 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Collection_Query} from "./Collection_Query";
-import {App_Collection} from "./App_Collection";
-import {App_Create} from "./App_Create";
+import {CollectionQuery} from "./CollectionQuery";
+import {AppCollection} from "./AppCollection";
+import {AppCreate} from "./AppCreate";
 import {Message} from "./Message";
 
 export default class ConsumerAppResource extends ResourceAbstract {
@@ -22,23 +22,23 @@ export default class ConsumerAppResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Collection_Query} query
-     * @returns {Promise<AxiosResponse<App_Collection>>}
+     * @param {CollectionQuery} query
+     * @returns {Promise<AxiosResponse<AppCollection>>}
      */
-    public async consumerActionAppGetAll(query?: Collection_Query): Promise<AxiosResponse<App_Collection>> {
+    public async consumerActionAppGetAll(query?: CollectionQuery): Promise<AxiosResponse<AppCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<App_Collection>(this.url, params);
+        return this.httpClient.get<AppCollection>(this.url, params);
     }
 
     /**
-     * @param {App_Create} data
+     * @param {AppCreate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async consumerActionAppCreate(data: App_Create): Promise<AxiosResponse<Message>> {
+    public async consumerActionAppCreate(data: AppCreate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };

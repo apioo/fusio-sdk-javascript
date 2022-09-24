@@ -6,20 +6,20 @@
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Plan} from "./Plan";
-import {Plan_Update} from "./Plan_Update";
+import {PlanUpdate} from "./PlanUpdate";
 import {Message} from "./Message";
 
 export default class BackendPlanByPlanIdResource extends ResourceAbstract {
     private url: string;
 
-    private plan_id: string;
+    private planId: string;
 
-    public constructor(plan_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(planId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.plan_id = plan_id;
+        this.planId = planId;
 
-        this.url = baseUrl + "/backend/plan/"+plan_id+"";
+        this.url = baseUrl + "/backend/plan/"+planId+"";
     }
 
     /**
@@ -34,10 +34,10 @@ export default class BackendPlanByPlanIdResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Plan_Update} data
+     * @param {PlanUpdate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionPlanUpdate(data: Plan_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionPlanUpdate(data: PlanUpdate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
         };

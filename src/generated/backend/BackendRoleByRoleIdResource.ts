@@ -6,20 +6,20 @@
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Role} from "./Role";
-import {Role_Update} from "./Role_Update";
+import {RoleUpdate} from "./RoleUpdate";
 import {Message} from "./Message";
 
 export default class BackendRoleByRoleIdResource extends ResourceAbstract {
     private url: string;
 
-    private role_id: string;
+    private roleId: string;
 
-    public constructor(role_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(roleId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.role_id = role_id;
+        this.roleId = roleId;
 
-        this.url = baseUrl + "/backend/role/"+role_id+"";
+        this.url = baseUrl + "/backend/role/"+roleId+"";
     }
 
     /**
@@ -34,10 +34,10 @@ export default class BackendRoleByRoleIdResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Role_Update} data
+     * @param {RoleUpdate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionRoleUpdate(data: Role_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionRoleUpdate(data: RoleUpdate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
         };

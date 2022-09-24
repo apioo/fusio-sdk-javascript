@@ -5,7 +5,7 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Action_Index} from "./Action_Index";
+import {ActionIndex} from "./ActionIndex";
 
 export default class BackendActionListResource extends ResourceAbstract {
     private url: string;
@@ -19,14 +19,14 @@ export default class BackendActionListResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {Promise<AxiosResponse<Action_Index>>}
+     * @returns {Promise<AxiosResponse<ActionIndex>>}
      */
-    public async backendActionActionGetIndex(): Promise<AxiosResponse<Action_Index>> {
+    public async backendActionActionGetIndex(): Promise<AxiosResponse<ActionIndex>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
         };
 
-        return this.httpClient.get<Action_Index>(this.url, params);
+        return this.httpClient.get<ActionIndex>(this.url, params);
     }
 
 }

@@ -5,7 +5,8 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Payment_Portal_Response} from "./Payment_Portal_Response";
+import {PaymentPortalRequest} from "./PaymentPortalRequest";
+import {PaymentPortalResponse} from "./PaymentPortalResponse";
 
 export default class ConsumerPaymentByProviderPortalResource extends ResourceAbstract {
     private url: string;
@@ -21,14 +22,15 @@ export default class ConsumerPaymentByProviderPortalResource extends ResourceAbs
     }
 
     /**
-     * @returns {Promise<AxiosResponse<Payment_Portal_Response>>}
+     * @param {PaymentPortalRequest} data
+     * @returns {Promise<AxiosResponse<PaymentPortalResponse>>}
      */
-    public async consumerActionPaymentPortal(): Promise<AxiosResponse<Payment_Portal_Response>> {
+    public async consumerActionPaymentPortal(data: PaymentPortalRequest): Promise<AxiosResponse<PaymentPortalResponse>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };
 
-        return this.httpClient.post<Payment_Portal_Response>(this.url, null, params);
+        return this.httpClient.post<PaymentPortalResponse>(this.url, data, params);
     }
 
 }

@@ -5,9 +5,9 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Collection_Query} from "./Collection_Query";
-import {Role_Collection} from "./Role_Collection";
-import {Role_Create} from "./Role_Create";
+import {CollectionQuery} from "./CollectionQuery";
+import {RoleCollection} from "./RoleCollection";
+import {RoleCreate} from "./RoleCreate";
 import {Message} from "./Message";
 
 export default class BackendRoleResource extends ResourceAbstract {
@@ -22,23 +22,23 @@ export default class BackendRoleResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Collection_Query} query
-     * @returns {Promise<AxiosResponse<Role_Collection>>}
+     * @param {CollectionQuery} query
+     * @returns {Promise<AxiosResponse<RoleCollection>>}
      */
-    public async backendActionRoleGetAll(query?: Collection_Query): Promise<AxiosResponse<Role_Collection>> {
+    public async backendActionRoleGetAll(query?: CollectionQuery): Promise<AxiosResponse<RoleCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Role_Collection>(this.url, params);
+        return this.httpClient.get<RoleCollection>(this.url, params);
     }
 
     /**
-     * @param {Role_Create} data
+     * @param {RoleCreate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionRoleCreate(data: Role_Create): Promise<AxiosResponse<Message>> {
+    public async backendActionRoleCreate(data: RoleCreate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };

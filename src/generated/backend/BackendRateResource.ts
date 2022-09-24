@@ -5,9 +5,9 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Collection_Query} from "./Collection_Query";
-import {Rate_Collection} from "./Rate_Collection";
-import {Rate_Create} from "./Rate_Create";
+import {CollectionQuery} from "./CollectionQuery";
+import {RateCollection} from "./RateCollection";
+import {RateCreate} from "./RateCreate";
 import {Message} from "./Message";
 
 export default class BackendRateResource extends ResourceAbstract {
@@ -22,23 +22,23 @@ export default class BackendRateResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Collection_Query} query
-     * @returns {Promise<AxiosResponse<Rate_Collection>>}
+     * @param {CollectionQuery} query
+     * @returns {Promise<AxiosResponse<RateCollection>>}
      */
-    public async backendActionRateGetAll(query?: Collection_Query): Promise<AxiosResponse<Rate_Collection>> {
+    public async backendActionRateGetAll(query?: CollectionQuery): Promise<AxiosResponse<RateCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Rate_Collection>(this.url, params);
+        return this.httpClient.get<RateCollection>(this.url, params);
     }
 
     /**
-     * @param {Rate_Create} data
+     * @param {RateCreate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionRateCreate(data: Rate_Create): Promise<AxiosResponse<Message>> {
+    public async backendActionRateCreate(data: RateCreate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };

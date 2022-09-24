@@ -5,9 +5,9 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Collection_Category_Query} from "./Collection_Category_Query";
-import {Event_Collection} from "./Event_Collection";
-import {Event_Create} from "./Event_Create";
+import {CollectionCategoryQuery} from "./CollectionCategoryQuery";
+import {EventCollection} from "./EventCollection";
+import {EventCreate} from "./EventCreate";
 import {Message} from "./Message";
 
 export default class BackendEventResource extends ResourceAbstract {
@@ -22,23 +22,23 @@ export default class BackendEventResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Collection_Category_Query} query
-     * @returns {Promise<AxiosResponse<Event_Collection>>}
+     * @param {CollectionCategoryQuery} query
+     * @returns {Promise<AxiosResponse<EventCollection>>}
      */
-    public async backendActionEventGetAll(query?: Collection_Category_Query): Promise<AxiosResponse<Event_Collection>> {
+    public async backendActionEventGetAll(query?: CollectionCategoryQuery): Promise<AxiosResponse<EventCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Event_Collection>(this.url, params);
+        return this.httpClient.get<EventCollection>(this.url, params);
     }
 
     /**
-     * @param {Event_Create} data
+     * @param {EventCreate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionEventCreate(data: Event_Create): Promise<AxiosResponse<Message>> {
+    public async backendActionEventCreate(data: EventCreate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };

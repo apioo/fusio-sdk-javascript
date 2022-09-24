@@ -5,8 +5,8 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Backend_Transaction_Collection_Query} from "./Backend_Transaction_Collection_Query";
-import {Statistic_Chart} from "./Statistic_Chart";
+import {BackendTransactionCollectionQuery} from "./BackendTransactionCollectionQuery";
+import {StatisticChart} from "./StatisticChart";
 
 export default class BackendStatisticIncomingTransactionsResource extends ResourceAbstract {
     private url: string;
@@ -20,16 +20,16 @@ export default class BackendStatisticIncomingTransactionsResource extends Resour
     }
 
     /**
-     * @param {Backend_Transaction_Collection_Query} query
-     * @returns {Promise<AxiosResponse<Statistic_Chart>>}
+     * @param {BackendTransactionCollectionQuery} query
+     * @returns {Promise<AxiosResponse<StatisticChart>>}
      */
-    public async backendActionStatisticGetIncomingTransactions(query?: Backend_Transaction_Collection_Query): Promise<AxiosResponse<Statistic_Chart>> {
+    public async backendActionStatisticGetIncomingTransactions(query?: BackendTransactionCollectionQuery): Promise<AxiosResponse<StatisticChart>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Statistic_Chart>(this.url, params);
+        return this.httpClient.get<StatisticChart>(this.url, params);
     }
 
 }

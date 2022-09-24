@@ -5,8 +5,8 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Collection_Query} from "./Collection_Query";
-import {Grant_Collection} from "./Grant_Collection";
+import {CollectionQuery} from "./CollectionQuery";
+import {GrantCollection} from "./GrantCollection";
 
 export default class ConsumerGrantResource extends ResourceAbstract {
     private url: string;
@@ -20,16 +20,16 @@ export default class ConsumerGrantResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Collection_Query} query
-     * @returns {Promise<AxiosResponse<Grant_Collection>>}
+     * @param {CollectionQuery} query
+     * @returns {Promise<AxiosResponse<GrantCollection>>}
      */
-    public async consumerActionGrantGetAll(query?: Collection_Query): Promise<AxiosResponse<Grant_Collection>> {
+    public async consumerActionGrantGetAll(query?: CollectionQuery): Promise<AxiosResponse<GrantCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Grant_Collection>(this.url, params);
+        return this.httpClient.get<GrantCollection>(this.url, params);
     }
 
 }

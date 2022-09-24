@@ -3,12 +3,12 @@
  * {@link https://sdkgen.app}
  */
 
-import {Rate_Allocation} from "./Rate_Allocation";
+import {RateAllocation} from "./RateAllocation";
 export interface Rate {
     id?: number
     priority?: number
     name?: string
     rateLimit?: number
     timespan?: string
-    allocation?: Array<Rate_Allocation>
+    allocation?: Array<RateAllocation>
 }

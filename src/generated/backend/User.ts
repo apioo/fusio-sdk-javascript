@@ -4,7 +4,7 @@
  */
 
 import {App} from "./App";
-import {User_Attributes} from "./User_Attributes";
+import {UserAttributes} from "./UserAttributes";
 export interface User {
     id?: number
     roleId?: number
@@ -15,6 +15,6 @@ export interface User {
     points?: number
     scopes?: Array<string>
     apps?: Array<App>
-    attributes?: User_Attributes
+    attributes?: UserAttributes
     date?: string
 }

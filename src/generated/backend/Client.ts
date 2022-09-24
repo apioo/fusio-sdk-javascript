@@ -5,31 +5,80 @@
 
 import {ClientAbstract, CredentialsInterface, TokenStoreInterface} from "sdkgen-client"
 
-import BackendUserGroup from "./BackendUserGroup";
-import BackendTrashGroup from "./BackendTrashGroup";
-import BackendTransactionGroup from "./BackendTransactionGroup";
-import BackendStatisticGroup from "./BackendStatisticGroup";
-import BackendSdkGroup from "./BackendSdkGroup";
-import BackendScopeGroup from "./BackendScopeGroup";
-import BackendSchemaGroup from "./BackendSchemaGroup";
-import BackendRouteGroup from "./BackendRouteGroup";
-import BackendRoleGroup from "./BackendRoleGroup";
-import BackendRateGroup from "./BackendRateGroup";
-import BackendPlanGroup from "./BackendPlanGroup";
-import BackendPageGroup from "./BackendPageGroup";
-import BackendMarketplaceGroup from "./BackendMarketplaceGroup";
-import BackendLogGroup from "./BackendLogGroup";
-import BackendGeneratorGroup from "./BackendGeneratorGroup";
-import BackendEventGroup from "./BackendEventGroup";
-import BackendDashboardGroup from "./BackendDashboardGroup";
-import BackendCronjobGroup from "./BackendCronjobGroup";
-import BackendConnectionGroup from "./BackendConnectionGroup";
-import BackendConfigGroup from "./BackendConfigGroup";
-import BackendCategoryGroup from "./BackendCategoryGroup";
-import BackendAuditGroup from "./BackendAuditGroup";
-import BackendAppGroup from "./BackendAppGroup";
-import BackendActionGroup from "./BackendActionGroup";
-import BackendAccountGroup from "./BackendAccountGroup";
+import BackendUserByUserIdResource from "./BackendUserByUserIdResource";
+import BackendUserResource from "./BackendUserResource";
+import BackendTrashByTypeResource from "./BackendTrashByTypeResource";
+import BackendTrashResource from "./BackendTrashResource";
+import BackendTransactionByTransactionIdResource from "./BackendTransactionByTransactionIdResource";
+import BackendTransactionResource from "./BackendTransactionResource";
+import BackendStatisticUsedPointsResource from "./BackendStatisticUsedPointsResource";
+import BackendStatisticTimePerRouteResource from "./BackendStatisticTimePerRouteResource";
+import BackendStatisticTimeAverageResource from "./BackendStatisticTimeAverageResource";
+import BackendStatisticMostUsedRoutesResource from "./BackendStatisticMostUsedRoutesResource";
+import BackendStatisticMostUsedAppsResource from "./BackendStatisticMostUsedAppsResource";
+import BackendStatisticIssuedTokensResource from "./BackendStatisticIssuedTokensResource";
+import BackendStatisticIncomingTransactionsResource from "./BackendStatisticIncomingTransactionsResource";
+import BackendStatisticIncomingRequestsResource from "./BackendStatisticIncomingRequestsResource";
+import BackendStatisticErrorsPerRouteResource from "./BackendStatisticErrorsPerRouteResource";
+import BackendStatisticCountRequestsResource from "./BackendStatisticCountRequestsResource";
+import BackendSdkResource from "./BackendSdkResource";
+import BackendScopeByScopeIdResource from "./BackendScopeByScopeIdResource";
+import BackendScopeCategoriesResource from "./BackendScopeCategoriesResource";
+import BackendScopeResource from "./BackendScopeResource";
+import BackendSchemaBySchemaIdResource from "./BackendSchemaBySchemaIdResource";
+import BackendSchemaFormBySchemaIdResource from "./BackendSchemaFormBySchemaIdResource";
+import BackendSchemaPreviewBySchemaIdResource from "./BackendSchemaPreviewBySchemaIdResource";
+import BackendSchemaResource from "./BackendSchemaResource";
+import BackendRoutesByRouteIdResource from "./BackendRoutesByRouteIdResource";
+import BackendRoutesResource from "./BackendRoutesResource";
+import BackendRoleByRoleIdResource from "./BackendRoleByRoleIdResource";
+import BackendRoleResource from "./BackendRoleResource";
+import BackendRateByRateIdResource from "./BackendRateByRateIdResource";
+import BackendRateResource from "./BackendRateResource";
+import BackendPlanByPlanIdResource from "./BackendPlanByPlanIdResource";
+import BackendPlanResource from "./BackendPlanResource";
+import BackendPageByPageIdResource from "./BackendPageByPageIdResource";
+import BackendPageResource from "./BackendPageResource";
+import BackendMarketplaceByAppNameResource from "./BackendMarketplaceByAppNameResource";
+import BackendMarketplaceResource from "./BackendMarketplaceResource";
+import BackendLogByLogIdResource from "./BackendLogByLogIdResource";
+import BackendLogResource from "./BackendLogResource";
+import BackendLogErrorByErrorIdResource from "./BackendLogErrorByErrorIdResource";
+import BackendLogErrorResource from "./BackendLogErrorResource";
+import BackendGeneratorByProviderResource from "./BackendGeneratorByProviderResource";
+import BackendGeneratorResource from "./BackendGeneratorResource";
+import BackendEventByEventIdResource from "./BackendEventByEventIdResource";
+import BackendEventResource from "./BackendEventResource";
+import BackendEventSubscriptionBySubscriptionIdResource from "./BackendEventSubscriptionBySubscriptionIdResource";
+import BackendEventSubscriptionResource from "./BackendEventSubscriptionResource";
+import BackendDashboardResource from "./BackendDashboardResource";
+import BackendCronjobByCronjobIdResource from "./BackendCronjobByCronjobIdResource";
+import BackendCronjobResource from "./BackendCronjobResource";
+import BackendConnectionByConnectionIdIntrospectionAndEntityResource from "./BackendConnectionByConnectionIdIntrospectionAndEntityResource";
+import BackendConnectionByConnectionIdIntrospectionResource from "./BackendConnectionByConnectionIdIntrospectionResource";
+import BackendConnectionByConnectionIdRedirectResource from "./BackendConnectionByConnectionIdRedirectResource";
+import BackendConnectionByConnectionIdResource from "./BackendConnectionByConnectionIdResource";
+import BackendConnectionFormResource from "./BackendConnectionFormResource";
+import BackendConnectionListResource from "./BackendConnectionListResource";
+import BackendConnectionResource from "./BackendConnectionResource";
+import BackendConfigByConfigIdResource from "./BackendConfigByConfigIdResource";
+import BackendConfigResource from "./BackendConfigResource";
+import BackendCategoryByCategoryIdResource from "./BackendCategoryByCategoryIdResource";
+import BackendCategoryResource from "./BackendCategoryResource";
+import BackendAuditByAuditIdResource from "./BackendAuditByAuditIdResource";
+import BackendAuditResource from "./BackendAuditResource";
+import BackendAppByAppIdTokenAndTokenIdResource from "./BackendAppByAppIdTokenAndTokenIdResource";
+import BackendAppByAppIdResource from "./BackendAppByAppIdResource";
+import BackendAppResource from "./BackendAppResource";
+import BackendAppTokenByTokenIdResource from "./BackendAppTokenByTokenIdResource";
+import BackendAppTokenResource from "./BackendAppTokenResource";
+import BackendActionByActionIdResource from "./BackendActionByActionIdResource";
+import BackendActionExecuteByActionIdResource from "./BackendActionExecuteByActionIdResource";
+import BackendActionFormResource from "./BackendActionFormResource";
+import BackendActionListResource from "./BackendActionListResource";
+import BackendActionResource from "./BackendActionResource";
+import BackendAccountChangePasswordResource from "./BackendAccountChangePasswordResource";
+import BackendAccountResource from "./BackendAccountResource";
 
 export default class Client extends ClientAbstract {
     public constructor(baseUrl: string, credentials: CredentialsInterface|null = null, tokenStore: TokenStoreInterface|null = null, scopes: Array<string>|null = []) {
@@ -37,275 +86,995 @@ export default class Client extends ClientAbstract {
     }
 
     /**
-     * Tag: backend.user
+     * Endpoint: /backend/user/$user_id<[0-9]+>
+     *
+     * 
      */
-    public async backendUser(): Promise<BackendUserGroup>
+    public async getBackendUserByUserId(userId: string): Promise<BackendUserByUserIdResource>
     {
-        return new BackendUserGroup(
+        return new BackendUserByUserIdResource(
+            userId,
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.trash
+     * Endpoint: /backend/user
+     *
+     * 
      */
-    public async backendTrash(): Promise<BackendTrashGroup>
+    public async getBackendUser(): Promise<BackendUserResource>
     {
-        return new BackendTrashGroup(
+        return new BackendUserResource(
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.transaction
+     * Endpoint: /backend/trash/:type
+     *
+     * 
      */
-    public async backendTransaction(): Promise<BackendTransactionGroup>
+    public async getBackendTrashByType(type: string): Promise<BackendTrashByTypeResource>
     {
-        return new BackendTransactionGroup(
+        return new BackendTrashByTypeResource(
+            type,
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.statistic
+     * Endpoint: /backend/trash
+     *
+     * 
      */
-    public async backendStatistic(): Promise<BackendStatisticGroup>
+    public async getBackendTrash(): Promise<BackendTrashResource>
     {
-        return new BackendStatisticGroup(
+        return new BackendTrashResource(
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.sdk
+     * Endpoint: /backend/transaction/$transaction_id<[0-9]+>
+     *
+     * 
      */
-    public async backendSdk(): Promise<BackendSdkGroup>
+    public async getBackendTransactionByTransactionId(transactionId: string): Promise<BackendTransactionByTransactionIdResource>
     {
-        return new BackendSdkGroup(
+        return new BackendTransactionByTransactionIdResource(
+            transactionId,
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.scope
+     * Endpoint: /backend/transaction
+     *
+     * 
      */
-    public async backendScope(): Promise<BackendScopeGroup>
+    public async getBackendTransaction(): Promise<BackendTransactionResource>
     {
-        return new BackendScopeGroup(
+        return new BackendTransactionResource(
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.schema
+     * Endpoint: /backend/statistic/used_points
+     *
+     * 
      */
-    public async backendSchema(): Promise<BackendSchemaGroup>
+    public async getBackendStatisticUsedPoints(): Promise<BackendStatisticUsedPointsResource>
     {
-        return new BackendSchemaGroup(
+        return new BackendStatisticUsedPointsResource(
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.route
+     * Endpoint: /backend/statistic/time_per_route
+     *
+     * 
      */
-    public async backendRoute(): Promise<BackendRouteGroup>
+    public async getBackendStatisticTimePerRoute(): Promise<BackendStatisticTimePerRouteResource>
     {
-        return new BackendRouteGroup(
+        return new BackendStatisticTimePerRouteResource(
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.role
+     * Endpoint: /backend/statistic/time_average
+     *
+     * 
      */
-    public async backendRole(): Promise<BackendRoleGroup>
+    public async getBackendStatisticTimeAverage(): Promise<BackendStatisticTimeAverageResource>
     {
-        return new BackendRoleGroup(
+        return new BackendStatisticTimeAverageResource(
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.rate
+     * Endpoint: /backend/statistic/most_used_routes
+     *
+     * 
      */
-    public async backendRate(): Promise<BackendRateGroup>
+    public async getBackendStatisticMostUsedRoutes(): Promise<BackendStatisticMostUsedRoutesResource>
     {
-        return new BackendRateGroup(
+        return new BackendStatisticMostUsedRoutesResource(
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.plan
+     * Endpoint: /backend/statistic/most_used_apps
+     *
+     * 
      */
-    public async backendPlan(): Promise<BackendPlanGroup>
+    public async getBackendStatisticMostUsedApps(): Promise<BackendStatisticMostUsedAppsResource>
     {
-        return new BackendPlanGroup(
+        return new BackendStatisticMostUsedAppsResource(
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.page
+     * Endpoint: /backend/statistic/issued_tokens
+     *
+     * 
      */
-    public async backendPage(): Promise<BackendPageGroup>
+    public async getBackendStatisticIssuedTokens(): Promise<BackendStatisticIssuedTokensResource>
     {
-        return new BackendPageGroup(
+        return new BackendStatisticIssuedTokensResource(
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.marketplace
+     * Endpoint: /backend/statistic/incoming_transactions
+     *
+     * 
      */
-    public async backendMarketplace(): Promise<BackendMarketplaceGroup>
+    public async getBackendStatisticIncomingTransactions(): Promise<BackendStatisticIncomingTransactionsResource>
     {
-        return new BackendMarketplaceGroup(
+        return new BackendStatisticIncomingTransactionsResource(
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.log
+     * Endpoint: /backend/statistic/incoming_requests
+     *
+     * 
      */
-    public async backendLog(): Promise<BackendLogGroup>
+    public async getBackendStatisticIncomingRequests(): Promise<BackendStatisticIncomingRequestsResource>
     {
-        return new BackendLogGroup(
+        return new BackendStatisticIncomingRequestsResource(
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.generator
+     * Endpoint: /backend/statistic/errors_per_route
+     *
+     * 
      */
-    public async backendGenerator(): Promise<BackendGeneratorGroup>
+    public async getBackendStatisticErrorsPerRoute(): Promise<BackendStatisticErrorsPerRouteResource>
     {
-        return new BackendGeneratorGroup(
+        return new BackendStatisticErrorsPerRouteResource(
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.event
+     * Endpoint: /backend/statistic/count_requests
+     *
+     * 
      */
-    public async backendEvent(): Promise<BackendEventGroup>
+    public async getBackendStatisticCountRequests(): Promise<BackendStatisticCountRequestsResource>
     {
-        return new BackendEventGroup(
+        return new BackendStatisticCountRequestsResource(
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.dashboard
+     * Endpoint: /backend/sdk
+     *
+     * 
      */
-    public async backendDashboard(): Promise<BackendDashboardGroup>
+    public async getBackendSdk(): Promise<BackendSdkResource>
     {
-        return new BackendDashboardGroup(
+        return new BackendSdkResource(
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.cronjob
+     * Endpoint: /backend/scope/$scope_id<[0-9]+|^~>
+     *
+     * 
      */
-    public async backendCronjob(): Promise<BackendCronjobGroup>
+    public async getBackendScopeByScopeId(scopeId: string): Promise<BackendScopeByScopeIdResource>
     {
-        return new BackendCronjobGroup(
+        return new BackendScopeByScopeIdResource(
+            scopeId,
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.connection
+     * Endpoint: /backend/scope/categories
+     *
+     * 
      */
-    public async backendConnection(): Promise<BackendConnectionGroup>
+    public async getBackendScopeCategories(): Promise<BackendScopeCategoriesResource>
     {
-        return new BackendConnectionGroup(
+        return new BackendScopeCategoriesResource(
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.config
+     * Endpoint: /backend/scope
+     *
+     * 
      */
-    public async backendConfig(): Promise<BackendConfigGroup>
+    public async getBackendScope(): Promise<BackendScopeResource>
     {
-        return new BackendConfigGroup(
+        return new BackendScopeResource(
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.category
+     * Endpoint: /backend/schema/$schema_id<[0-9]+|^~>
+     *
+     * 
      */
-    public async backendCategory(): Promise<BackendCategoryGroup>
+    public async getBackendSchemaBySchemaId(schemaId: string): Promise<BackendSchemaBySchemaIdResource>
     {
-        return new BackendCategoryGroup(
+        return new BackendSchemaBySchemaIdResource(
+            schemaId,
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.audit
+     * Endpoint: /backend/schema/form/$schema_id<[0-9]+>
+     *
+     * 
      */
-    public async backendAudit(): Promise<BackendAuditGroup>
+    public async getBackendSchemaFormBySchemaId(schemaId: string): Promise<BackendSchemaFormBySchemaIdResource>
     {
-        return new BackendAuditGroup(
+        return new BackendSchemaFormBySchemaIdResource(
+            schemaId,
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.app
+     * Endpoint: /backend/schema/preview/:schema_id
+     *
+     * 
      */
-    public async backendApp(): Promise<BackendAppGroup>
+    public async getBackendSchemaPreviewBySchemaId(schemaId: string): Promise<BackendSchemaPreviewBySchemaIdResource>
     {
-        return new BackendAppGroup(
+        return new BackendSchemaPreviewBySchemaIdResource(
+            schemaId,
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.action
+     * Endpoint: /backend/schema
+     *
+     * 
      */
-    public async backendAction(): Promise<BackendActionGroup>
+    public async getBackendSchema(): Promise<BackendSchemaResource>
     {
-        return new BackendActionGroup(
+        return new BackendSchemaResource(
             this.baseUrl,
             await this.newHttpClient()
         );
     }
 
     /**
-     * Tag: backend.account
+     * Endpoint: /backend/routes/$route_id<[0-9]+>
+     *
+     * 
      */
-    public async backendAccount(): Promise<BackendAccountGroup>
+    public async getBackendRoutesByRouteId(routeId: string): Promise<BackendRoutesByRouteIdResource>
     {
-        return new BackendAccountGroup(
+        return new BackendRoutesByRouteIdResource(
+            routeId,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/routes
+     *
+     * 
+     */
+    public async getBackendRoutes(): Promise<BackendRoutesResource>
+    {
+        return new BackendRoutesResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/role/$role_id<[0-9]+|^~>
+     *
+     * 
+     */
+    public async getBackendRoleByRoleId(roleId: string): Promise<BackendRoleByRoleIdResource>
+    {
+        return new BackendRoleByRoleIdResource(
+            roleId,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/role
+     *
+     * 
+     */
+    public async getBackendRole(): Promise<BackendRoleResource>
+    {
+        return new BackendRoleResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/rate/$rate_id<[0-9]+|^~>
+     *
+     * 
+     */
+    public async getBackendRateByRateId(rateId: string): Promise<BackendRateByRateIdResource>
+    {
+        return new BackendRateByRateIdResource(
+            rateId,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/rate
+     *
+     * 
+     */
+    public async getBackendRate(): Promise<BackendRateResource>
+    {
+        return new BackendRateResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/plan/$plan_id<[0-9]+|^~>
+     *
+     * 
+     */
+    public async getBackendPlanByPlanId(planId: string): Promise<BackendPlanByPlanIdResource>
+    {
+        return new BackendPlanByPlanIdResource(
+            planId,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/plan
+     *
+     * 
+     */
+    public async getBackendPlan(): Promise<BackendPlanResource>
+    {
+        return new BackendPlanResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/page/$page_id<[0-9]+|^~>
+     *
+     * 
+     */
+    public async getBackendPageByPageId(pageId: string): Promise<BackendPageByPageIdResource>
+    {
+        return new BackendPageByPageIdResource(
+            pageId,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/page
+     *
+     * 
+     */
+    public async getBackendPage(): Promise<BackendPageResource>
+    {
+        return new BackendPageResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/marketplace/:app_name
+     *
+     * 
+     */
+    public async getBackendMarketplaceByAppName(appName: string): Promise<BackendMarketplaceByAppNameResource>
+    {
+        return new BackendMarketplaceByAppNameResource(
+            appName,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/marketplace
+     *
+     * 
+     */
+    public async getBackendMarketplace(): Promise<BackendMarketplaceResource>
+    {
+        return new BackendMarketplaceResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/log/$log_id<[0-9]+>
+     *
+     * 
+     */
+    public async getBackendLogByLogId(logId: string): Promise<BackendLogByLogIdResource>
+    {
+        return new BackendLogByLogIdResource(
+            logId,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/log
+     *
+     * 
+     */
+    public async getBackendLog(): Promise<BackendLogResource>
+    {
+        return new BackendLogResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/log/error/$error_id<[0-9]+>
+     *
+     * 
+     */
+    public async getBackendLogErrorByErrorId(errorId: string): Promise<BackendLogErrorByErrorIdResource>
+    {
+        return new BackendLogErrorByErrorIdResource(
+            errorId,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/log/error
+     *
+     * 
+     */
+    public async getBackendLogError(): Promise<BackendLogErrorResource>
+    {
+        return new BackendLogErrorResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/generator/:provider
+     *
+     * 
+     */
+    public async getBackendGeneratorByProvider(provider: string): Promise<BackendGeneratorByProviderResource>
+    {
+        return new BackendGeneratorByProviderResource(
+            provider,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/generator
+     *
+     * 
+     */
+    public async getBackendGenerator(): Promise<BackendGeneratorResource>
+    {
+        return new BackendGeneratorResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/event/$event_id<[0-9]+|^~>
+     *
+     * 
+     */
+    public async getBackendEventByEventId(eventId: string): Promise<BackendEventByEventIdResource>
+    {
+        return new BackendEventByEventIdResource(
+            eventId,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/event
+     *
+     * 
+     */
+    public async getBackendEvent(): Promise<BackendEventResource>
+    {
+        return new BackendEventResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/event/subscription/$subscription_id<[0-9]+>
+     *
+     * 
+     */
+    public async getBackendEventSubscriptionBySubscriptionId(subscriptionId: string): Promise<BackendEventSubscriptionBySubscriptionIdResource>
+    {
+        return new BackendEventSubscriptionBySubscriptionIdResource(
+            subscriptionId,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/event/subscription
+     *
+     * 
+     */
+    public async getBackendEventSubscription(): Promise<BackendEventSubscriptionResource>
+    {
+        return new BackendEventSubscriptionResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/dashboard
+     *
+     * 
+     */
+    public async getBackendDashboard(): Promise<BackendDashboardResource>
+    {
+        return new BackendDashboardResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/cronjob/$cronjob_id<[0-9]+|^~>
+     *
+     * 
+     */
+    public async getBackendCronjobByCronjobId(cronjobId: string): Promise<BackendCronjobByCronjobIdResource>
+    {
+        return new BackendCronjobByCronjobIdResource(
+            cronjobId,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/cronjob
+     *
+     * 
+     */
+    public async getBackendCronjob(): Promise<BackendCronjobResource>
+    {
+        return new BackendCronjobResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/connection/$connection_id<[0-9]+|^~>/introspection/:entity
+     *
+     * 
+     */
+    public async getBackendConnectionByConnectionIdIntrospectionAndEntity(connectionId: string, entity: string): Promise<BackendConnectionByConnectionIdIntrospectionAndEntityResource>
+    {
+        return new BackendConnectionByConnectionIdIntrospectionAndEntityResource(
+            connectionId,
+            entity,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/connection/$connection_id<[0-9]+|^~>/introspection
+     *
+     * 
+     */
+    public async getBackendConnectionByConnectionIdIntrospection(connectionId: string): Promise<BackendConnectionByConnectionIdIntrospectionResource>
+    {
+        return new BackendConnectionByConnectionIdIntrospectionResource(
+            connectionId,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/connection/$connection_id<[0-9]+|^~>/redirect
+     *
+     * 
+     */
+    public async getBackendConnectionByConnectionIdRedirect(connectionId: string): Promise<BackendConnectionByConnectionIdRedirectResource>
+    {
+        return new BackendConnectionByConnectionIdRedirectResource(
+            connectionId,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/connection/$connection_id<[0-9]+|^~>
+     *
+     * 
+     */
+    public async getBackendConnectionByConnectionId(connectionId: string): Promise<BackendConnectionByConnectionIdResource>
+    {
+        return new BackendConnectionByConnectionIdResource(
+            connectionId,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/connection/form
+     *
+     * 
+     */
+    public async getBackendConnectionForm(): Promise<BackendConnectionFormResource>
+    {
+        return new BackendConnectionFormResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/connection/list
+     *
+     * 
+     */
+    public async getBackendConnectionList(): Promise<BackendConnectionListResource>
+    {
+        return new BackendConnectionListResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/connection
+     *
+     * 
+     */
+    public async getBackendConnection(): Promise<BackendConnectionResource>
+    {
+        return new BackendConnectionResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/config/$config_id<[0-9]+|^~>
+     *
+     * 
+     */
+    public async getBackendConfigByConfigId(configId: string): Promise<BackendConfigByConfigIdResource>
+    {
+        return new BackendConfigByConfigIdResource(
+            configId,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/config
+     *
+     * 
+     */
+    public async getBackendConfig(): Promise<BackendConfigResource>
+    {
+        return new BackendConfigResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/category/$category_id<[0-9]+|^~>
+     *
+     * 
+     */
+    public async getBackendCategoryByCategoryId(categoryId: string): Promise<BackendCategoryByCategoryIdResource>
+    {
+        return new BackendCategoryByCategoryIdResource(
+            categoryId,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/category
+     *
+     * 
+     */
+    public async getBackendCategory(): Promise<BackendCategoryResource>
+    {
+        return new BackendCategoryResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/audit/$audit_id<[0-9]+>
+     *
+     * 
+     */
+    public async getBackendAuditByAuditId(auditId: string): Promise<BackendAuditByAuditIdResource>
+    {
+        return new BackendAuditByAuditIdResource(
+            auditId,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/audit
+     *
+     * 
+     */
+    public async getBackendAudit(): Promise<BackendAuditResource>
+    {
+        return new BackendAuditResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/app/$app_id<[0-9]+>/token/:token_id
+     *
+     * 
+     */
+    public async getBackendAppByAppIdTokenAndTokenId(appId: string, tokenId: string): Promise<BackendAppByAppIdTokenAndTokenIdResource>
+    {
+        return new BackendAppByAppIdTokenAndTokenIdResource(
+            appId,
+            tokenId,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/app/$app_id<[0-9]+>
+     *
+     * 
+     */
+    public async getBackendAppByAppId(appId: string): Promise<BackendAppByAppIdResource>
+    {
+        return new BackendAppByAppIdResource(
+            appId,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/app
+     *
+     * 
+     */
+    public async getBackendApp(): Promise<BackendAppResource>
+    {
+        return new BackendAppResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/app/token/$token_id<[0-9]+>
+     *
+     * 
+     */
+    public async getBackendAppTokenByTokenId(tokenId: string): Promise<BackendAppTokenByTokenIdResource>
+    {
+        return new BackendAppTokenByTokenIdResource(
+            tokenId,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/app/token
+     *
+     * 
+     */
+    public async getBackendAppToken(): Promise<BackendAppTokenResource>
+    {
+        return new BackendAppTokenResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/action/$action_id<[0-9]+|^~>
+     *
+     * 
+     */
+    public async getBackendActionByActionId(actionId: string): Promise<BackendActionByActionIdResource>
+    {
+        return new BackendActionByActionIdResource(
+            actionId,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/action/execute/:action_id
+     *
+     * 
+     */
+    public async getBackendActionExecuteByActionId(actionId: string): Promise<BackendActionExecuteByActionIdResource>
+    {
+        return new BackendActionExecuteByActionIdResource(
+            actionId,
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/action/form
+     *
+     * 
+     */
+    public async getBackendActionForm(): Promise<BackendActionFormResource>
+    {
+        return new BackendActionFormResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/action/list
+     *
+     * 
+     */
+    public async getBackendActionList(): Promise<BackendActionListResource>
+    {
+        return new BackendActionListResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/action
+     *
+     * 
+     */
+    public async getBackendAction(): Promise<BackendActionResource>
+    {
+        return new BackendActionResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/account/change_password
+     *
+     * 
+     */
+    public async getBackendAccountChangePassword(): Promise<BackendAccountChangePasswordResource>
+    {
+        return new BackendAccountChangePasswordResource(
+            this.baseUrl,
+            await this.newHttpClient()
+        );
+    }
+
+    /**
+     * Endpoint: /backend/account
+     *
+     * 
+     */
+    public async getBackendAccount(): Promise<BackendAccountResource>
+    {
+        return new BackendAccountResource(
             this.baseUrl,
             await this.newHttpClient()
         );

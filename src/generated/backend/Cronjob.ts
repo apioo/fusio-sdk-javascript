@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {Cronjob_Error} from "./Cronjob_Error";
+import {CronjobError} from "./CronjobError";
 export interface Cronjob {
     id?: number
     name?: string
@@ -11,5 +11,5 @@ export interface Cronjob {
     action?: string
     executeDate?: string
     exitCode?: number
-    errors?: Array<Cronjob_Error>
+    errors?: Array<CronjobError>
 }

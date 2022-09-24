@@ -5,9 +5,9 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Collection_Query} from "./Collection_Query";
-import {Plan_Collection} from "./Plan_Collection";
-import {Plan_Create} from "./Plan_Create";
+import {CollectionQuery} from "./CollectionQuery";
+import {PlanCollection} from "./PlanCollection";
+import {PlanCreate} from "./PlanCreate";
 import {Message} from "./Message";
 
 export default class BackendPlanResource extends ResourceAbstract {
@@ -22,23 +22,23 @@ export default class BackendPlanResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Collection_Query} query
-     * @returns {Promise<AxiosResponse<Plan_Collection>>}
+     * @param {CollectionQuery} query
+     * @returns {Promise<AxiosResponse<PlanCollection>>}
      */
-    public async backendActionPlanGetAll(query?: Collection_Query): Promise<AxiosResponse<Plan_Collection>> {
+    public async backendActionPlanGetAll(query?: CollectionQuery): Promise<AxiosResponse<PlanCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Plan_Collection>(this.url, params);
+        return this.httpClient.get<PlanCollection>(this.url, params);
     }
 
     /**
-     * @param {Plan_Create} data
+     * @param {PlanCreate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionPlanCreate(data: Plan_Create): Promise<AxiosResponse<Message>> {
+    public async backendActionPlanCreate(data: PlanCreate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };

@@ -5,9 +5,9 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {User_Login} from "./User_Login";
-import {User_JWT} from "./User_JWT";
-import {User_Refresh} from "./User_Refresh";
+import {UserLogin} from "./UserLogin";
+import {UserJWT} from "./UserJWT";
+import {UserRefresh} from "./UserRefresh";
 
 export default class ConsumerLoginResource extends ResourceAbstract {
     private url: string;
@@ -21,27 +21,27 @@ export default class ConsumerLoginResource extends ResourceAbstract {
     }
 
     /**
-     * @param {User_Login} data
-     * @returns {Promise<AxiosResponse<User_JWT>>}
+     * @param {UserLogin} data
+     * @returns {Promise<AxiosResponse<UserJWT>>}
      */
-    public async consumerActionUserLogin(data: User_Login): Promise<AxiosResponse<User_JWT>> {
+    public async consumerActionUserLogin(data: UserLogin): Promise<AxiosResponse<UserJWT>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };
 
-        return this.httpClient.post<User_JWT>(this.url, data, params);
+        return this.httpClient.post<UserJWT>(this.url, data, params);
     }
 
     /**
-     * @param {User_Refresh} data
-     * @returns {Promise<AxiosResponse<User_JWT>>}
+     * @param {UserRefresh} data
+     * @returns {Promise<AxiosResponse<UserJWT>>}
      */
-    public async consumerActionUserRefresh(data: User_Refresh): Promise<AxiosResponse<User_JWT>> {
+    public async consumerActionUserRefresh(data: UserRefresh): Promise<AxiosResponse<UserJWT>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
         };
 
-        return this.httpClient.put<User_JWT>(this.url, data, params);
+        return this.httpClient.put<UserJWT>(this.url, data, params);
     }
 
 }

@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {Route_Version} from "./Route_Version";
+import {RouteVersion} from "./RouteVersion";
 export interface Route {
     id?: number
     status?: number
@@ -11,5 +11,5 @@ export interface Route {
     path?: string
     controller?: string
     scopes?: Array<string>
-    config?: Array<Route_Version>
+    config?: Array<RouteVersion>
 }

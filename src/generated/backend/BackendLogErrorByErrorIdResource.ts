@@ -5,30 +5,30 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Log_Error} from "./Log_Error";
+import {LogError} from "./LogError";
 
 export default class BackendLogErrorByErrorIdResource extends ResourceAbstract {
     private url: string;
 
-    private error_id: string;
+    private errorId: string;
 
-    public constructor(error_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(errorId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.error_id = error_id;
+        this.errorId = errorId;
 
-        this.url = baseUrl + "/backend/log/error/"+error_id+"";
+        this.url = baseUrl + "/backend/log/error/"+errorId+"";
     }
 
     /**
-     * @returns {Promise<AxiosResponse<Log_Error>>}
+     * @returns {Promise<AxiosResponse<LogError>>}
      */
-    public async backendActionLogErrorGet(): Promise<AxiosResponse<Log_Error>> {
+    public async backendActionLogErrorGet(): Promise<AxiosResponse<LogError>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
         };
 
-        return this.httpClient.get<Log_Error>(this.url, params);
+        return this.httpClient.get<LogError>(this.url, params);
     }
 
 }

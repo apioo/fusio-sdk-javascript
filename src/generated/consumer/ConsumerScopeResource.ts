@@ -5,8 +5,8 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Collection_Query} from "./Collection_Query";
-import {Scope_Collection} from "./Scope_Collection";
+import {CollectionQuery} from "./CollectionQuery";
+import {ScopeCollection} from "./ScopeCollection";
 
 export default class ConsumerScopeResource extends ResourceAbstract {
     private url: string;
@@ -20,16 +20,16 @@ export default class ConsumerScopeResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Collection_Query} query
-     * @returns {Promise<AxiosResponse<Scope_Collection>>}
+     * @param {CollectionQuery} query
+     * @returns {Promise<AxiosResponse<ScopeCollection>>}
      */
-    public async consumerActionScopeGetAll(query?: Collection_Query): Promise<AxiosResponse<Scope_Collection>> {
+    public async consumerActionScopeGetAll(query?: CollectionQuery): Promise<AxiosResponse<ScopeCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Scope_Collection>(this.url, params);
+        return this.httpClient.get<ScopeCollection>(this.url, params);
     }
 
 }

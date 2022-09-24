@@ -5,30 +5,30 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Schema_Preview_Response} from "./Schema_Preview_Response";
+import {SchemaPreviewResponse} from "./SchemaPreviewResponse";
 
 export default class BackendSchemaPreviewBySchemaIdResource extends ResourceAbstract {
     private url: string;
 
-    private schema_id: string;
+    private schemaId: string;
 
-    public constructor(schema_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(schemaId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.schema_id = schema_id;
+        this.schemaId = schemaId;
 
-        this.url = baseUrl + "/backend/schema/preview/"+schema_id+"";
+        this.url = baseUrl + "/backend/schema/preview/"+schemaId+"";
     }
 
     /**
-     * @returns {Promise<AxiosResponse<Schema_Preview_Response>>}
+     * @returns {Promise<AxiosResponse<SchemaPreviewResponse>>}
      */
-    public async backendActionSchemaGetPreview(): Promise<AxiosResponse<Schema_Preview_Response>> {
+    public async backendActionSchemaGetPreview(): Promise<AxiosResponse<SchemaPreviewResponse>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };
 
-        return this.httpClient.post<Schema_Preview_Response>(this.url, null, params);
+        return this.httpClient.post<SchemaPreviewResponse>(this.url, null, params);
     }
 
 }

@@ -6,20 +6,20 @@
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Scope} from "./Scope";
-import {Scope_Update} from "./Scope_Update";
+import {ScopeUpdate} from "./ScopeUpdate";
 import {Message} from "./Message";
 
 export default class BackendScopeByScopeIdResource extends ResourceAbstract {
     private url: string;
 
-    private scope_id: string;
+    private scopeId: string;
 
-    public constructor(scope_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(scopeId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.scope_id = scope_id;
+        this.scopeId = scopeId;
 
-        this.url = baseUrl + "/backend/scope/"+scope_id+"";
+        this.url = baseUrl + "/backend/scope/"+scopeId+"";
     }
 
     /**
@@ -34,10 +34,10 @@ export default class BackendScopeByScopeIdResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Scope_Update} data
+     * @param {ScopeUpdate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionScopeUpdate(data: Scope_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionScopeUpdate(data: ScopeUpdate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
         };

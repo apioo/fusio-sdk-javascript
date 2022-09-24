@@ -5,9 +5,9 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Collection_Category_Query} from "./Collection_Category_Query";
-import {Route_Collection} from "./Route_Collection";
-import {Route_Create} from "./Route_Create";
+import {CollectionCategoryQuery} from "./CollectionCategoryQuery";
+import {RouteCollection} from "./RouteCollection";
+import {RouteCreate} from "./RouteCreate";
 import {Message} from "./Message";
 
 export default class BackendRoutesResource extends ResourceAbstract {
@@ -22,23 +22,23 @@ export default class BackendRoutesResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Collection_Category_Query} query
-     * @returns {Promise<AxiosResponse<Route_Collection>>}
+     * @param {CollectionCategoryQuery} query
+     * @returns {Promise<AxiosResponse<RouteCollection>>}
      */
-    public async backendActionRouteGetAll(query?: Collection_Category_Query): Promise<AxiosResponse<Route_Collection>> {
+    public async backendActionRouteGetAll(query?: CollectionCategoryQuery): Promise<AxiosResponse<RouteCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Route_Collection>(this.url, params);
+        return this.httpClient.get<RouteCollection>(this.url, params);
     }
 
     /**
-     * @param {Route_Create} data
+     * @param {RouteCreate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionRouteCreate(data: Route_Create): Promise<AxiosResponse<Message>> {
+    public async backendActionRouteCreate(data: RouteCreate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };

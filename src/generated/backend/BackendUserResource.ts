@@ -5,9 +5,9 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Collection_Query} from "./Collection_Query";
-import {User_Collection} from "./User_Collection";
-import {User_Create} from "./User_Create";
+import {CollectionQuery} from "./CollectionQuery";
+import {UserCollection} from "./UserCollection";
+import {UserCreate} from "./UserCreate";
 import {Message} from "./Message";
 
 export default class BackendUserResource extends ResourceAbstract {
@@ -22,23 +22,23 @@ export default class BackendUserResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Collection_Query} query
-     * @returns {Promise<AxiosResponse<User_Collection>>}
+     * @param {CollectionQuery} query
+     * @returns {Promise<AxiosResponse<UserCollection>>}
      */
-    public async backendActionUserGetAll(query?: Collection_Query): Promise<AxiosResponse<User_Collection>> {
+    public async backendActionUserGetAll(query?: CollectionQuery): Promise<AxiosResponse<UserCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<User_Collection>(this.url, params);
+        return this.httpClient.get<UserCollection>(this.url, params);
     }
 
     /**
-     * @param {User_Create} data
+     * @param {UserCreate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionUserCreate(data: User_Create): Promise<AxiosResponse<Message>> {
+    public async backendActionUserCreate(data: UserCreate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };

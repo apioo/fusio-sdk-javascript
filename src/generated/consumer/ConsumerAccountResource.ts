@@ -5,7 +5,7 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {User_Account} from "./User_Account";
+import {UserAccount} from "./UserAccount";
 import {Message} from "./Message";
 
 export default class ConsumerAccountResource extends ResourceAbstract {
@@ -20,21 +20,21 @@ export default class ConsumerAccountResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {Promise<AxiosResponse<User_Account>>}
+     * @returns {Promise<AxiosResponse<UserAccount>>}
      */
-    public async consumerActionUserGet(): Promise<AxiosResponse<User_Account>> {
+    public async consumerActionUserGet(): Promise<AxiosResponse<UserAccount>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
         };
 
-        return this.httpClient.get<User_Account>(this.url, params);
+        return this.httpClient.get<UserAccount>(this.url, params);
     }
 
     /**
-     * @param {User_Account} data
+     * @param {UserAccount} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async consumerActionUserUpdate(data: User_Account): Promise<AxiosResponse<Message>> {
+    public async consumerActionUserUpdate(data: UserAccount): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
         };

@@ -5,8 +5,8 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Collection_Query} from "./Collection_Query";
-import {Page_Collection} from "./Page_Collection";
+import {CollectionQuery} from "./CollectionQuery";
+import {PageCollection} from "./PageCollection";
 
 export default class ConsumerPageResource extends ResourceAbstract {
     private url: string;
@@ -20,16 +20,16 @@ export default class ConsumerPageResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Collection_Query} query
-     * @returns {Promise<AxiosResponse<Page_Collection>>}
+     * @param {CollectionQuery} query
+     * @returns {Promise<AxiosResponse<PageCollection>>}
      */
-    public async consumerActionPageGetAll(query?: Collection_Query): Promise<AxiosResponse<Page_Collection>> {
+    public async consumerActionPageGetAll(query?: CollectionQuery): Promise<AxiosResponse<PageCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Page_Collection>(this.url, params);
+        return this.httpClient.get<PageCollection>(this.url, params);
     }
 
 }

@@ -6,20 +6,20 @@
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Config} from "./Config";
-import {Config_Update} from "./Config_Update";
+import {ConfigUpdate} from "./ConfigUpdate";
 import {Message} from "./Message";
 
 export default class BackendConfigByConfigIdResource extends ResourceAbstract {
     private url: string;
 
-    private config_id: string;
+    private configId: string;
 
-    public constructor(config_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(configId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.config_id = config_id;
+        this.configId = configId;
 
-        this.url = baseUrl + "/backend/config/"+config_id+"";
+        this.url = baseUrl + "/backend/config/"+configId+"";
     }
 
     /**
@@ -34,10 +34,10 @@ export default class BackendConfigByConfigIdResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Config_Update} data
+     * @param {ConfigUpdate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionConfigUpdate(data: Config_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionConfigUpdate(data: ConfigUpdate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
         };

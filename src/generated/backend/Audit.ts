@@ -5,7 +5,7 @@
 
 import {App} from "./App";
 import {User} from "./User";
-import {Audit_Object} from "./Audit_Object";
+import {AuditObject} from "./AuditObject";
 export interface Audit {
     id?: number
     app?: App
@@ -13,6 +13,6 @@ export interface Audit {
     event?: string
     ip?: string
     message?: string
-    content?: Audit_Object
+    content?: AuditObject
     date?: string
 }

@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {Log_Error} from "./Log_Error";
+import {LogError} from "./LogError";
 export interface Log {
     id?: number
     ip?: string
@@ -13,5 +13,5 @@ export interface Log {
     header?: string
     body?: string
     date?: string
-    errors?: Array<Log_Error>
+    errors?: Array<LogError>
 }

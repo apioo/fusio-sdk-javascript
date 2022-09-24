@@ -6,20 +6,20 @@
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Event} from "./Event";
-import {Event_Update} from "./Event_Update";
+import {EventUpdate} from "./EventUpdate";
 import {Message} from "./Message";
 
 export default class BackendEventByEventIdResource extends ResourceAbstract {
     private url: string;
 
-    private event_id: string;
+    private eventId: string;
 
-    public constructor(event_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(eventId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.event_id = event_id;
+        this.eventId = eventId;
 
-        this.url = baseUrl + "/backend/event/"+event_id+"";
+        this.url = baseUrl + "/backend/event/"+eventId+"";
     }
 
     /**
@@ -34,10 +34,10 @@ export default class BackendEventByEventIdResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Event_Update} data
+     * @param {EventUpdate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionEventUpdate(data: Event_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionEventUpdate(data: EventUpdate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
         };

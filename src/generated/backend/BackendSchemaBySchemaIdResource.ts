@@ -6,20 +6,20 @@
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Schema} from "./Schema";
-import {Schema_Update} from "./Schema_Update";
+import {SchemaUpdate} from "./SchemaUpdate";
 import {Message} from "./Message";
 
 export default class BackendSchemaBySchemaIdResource extends ResourceAbstract {
     private url: string;
 
-    private schema_id: string;
+    private schemaId: string;
 
-    public constructor(schema_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(schemaId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.schema_id = schema_id;
+        this.schemaId = schemaId;
 
-        this.url = baseUrl + "/backend/schema/"+schema_id+"";
+        this.url = baseUrl + "/backend/schema/"+schemaId+"";
     }
 
     /**
@@ -34,10 +34,10 @@ export default class BackendSchemaBySchemaIdResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Schema_Update} data
+     * @param {SchemaUpdate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionSchemaUpdate(data: Schema_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionSchemaUpdate(data: SchemaUpdate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
         };

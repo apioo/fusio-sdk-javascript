@@ -10,14 +10,14 @@ import {Log} from "./Log";
 export default class BackendLogByLogIdResource extends ResourceAbstract {
     private url: string;
 
-    private log_id: string;
+    private logId: string;
 
-    public constructor(log_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(logId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.log_id = log_id;
+        this.logId = logId;
 
-        this.url = baseUrl + "/backend/log/"+log_id+"";
+        this.url = baseUrl + "/backend/log/"+logId+"";
     }
 
     /**

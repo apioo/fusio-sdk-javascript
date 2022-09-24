@@ -5,8 +5,8 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Backend_App_Token_Collection_Query} from "./Backend_App_Token_Collection_Query";
-import {App_Token_Collection} from "./App_Token_Collection";
+import {BackendAppTokenCollectionQuery} from "./BackendAppTokenCollectionQuery";
+import {AppTokenCollection} from "./AppTokenCollection";
 
 export default class BackendAppTokenResource extends ResourceAbstract {
     private url: string;
@@ -20,16 +20,16 @@ export default class BackendAppTokenResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Backend_App_Token_Collection_Query} query
-     * @returns {Promise<AxiosResponse<App_Token_Collection>>}
+     * @param {BackendAppTokenCollectionQuery} query
+     * @returns {Promise<AxiosResponse<AppTokenCollection>>}
      */
-    public async backendActionAppTokenGetAll(query?: Backend_App_Token_Collection_Query): Promise<AxiosResponse<App_Token_Collection>> {
+    public async backendActionAppTokenGetAll(query?: BackendAppTokenCollectionQuery): Promise<AxiosResponse<AppTokenCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<App_Token_Collection>(this.url, params);
+        return this.httpClient.get<AppTokenCollection>(this.url, params);
     }
 
 }

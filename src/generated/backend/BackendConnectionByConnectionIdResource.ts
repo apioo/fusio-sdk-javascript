@@ -6,20 +6,20 @@
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Connection} from "./Connection";
-import {Connection_Update} from "./Connection_Update";
+import {ConnectionUpdate} from "./ConnectionUpdate";
 import {Message} from "./Message";
 
 export default class BackendConnectionByConnectionIdResource extends ResourceAbstract {
     private url: string;
 
-    private connection_id: string;
+    private connectionId: string;
 
-    public constructor(connection_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(connectionId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.connection_id = connection_id;
+        this.connectionId = connectionId;
 
-        this.url = baseUrl + "/backend/connection/"+connection_id+"";
+        this.url = baseUrl + "/backend/connection/"+connectionId+"";
     }
 
     /**
@@ -34,10 +34,10 @@ export default class BackendConnectionByConnectionIdResource extends ResourceAbs
     }
 
     /**
-     * @param {Connection_Update} data
+     * @param {ConnectionUpdate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionConnectionUpdate(data: Connection_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionConnectionUpdate(data: ConnectionUpdate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
         };

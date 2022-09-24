@@ -5,31 +5,31 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Marketplace_Local_App} from "./Marketplace_Local_App";
+import {MarketplaceLocalApp} from "./MarketplaceLocalApp";
 import {Message} from "./Message";
 
 export default class BackendMarketplaceByAppNameResource extends ResourceAbstract {
     private url: string;
 
-    private app_name: string;
+    private appName: string;
 
-    public constructor(app_name: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(appName: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.app_name = app_name;
+        this.appName = appName;
 
-        this.url = baseUrl + "/backend/marketplace/"+app_name+"";
+        this.url = baseUrl + "/backend/marketplace/"+appName+"";
     }
 
     /**
-     * @returns {Promise<AxiosResponse<Marketplace_Local_App>>}
+     * @returns {Promise<AxiosResponse<MarketplaceLocalApp>>}
      */
-    public async backendActionMarketplaceGet(): Promise<AxiosResponse<Marketplace_Local_App>> {
+    public async backendActionMarketplaceGet(): Promise<AxiosResponse<MarketplaceLocalApp>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
         };
 
-        return this.httpClient.get<Marketplace_Local_App>(this.url, params);
+        return this.httpClient.get<MarketplaceLocalApp>(this.url, params);
     }
 
     /**

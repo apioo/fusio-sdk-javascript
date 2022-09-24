@@ -5,9 +5,9 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Collection_Category_Query} from "./Collection_Category_Query";
-import {Action_Collection} from "./Action_Collection";
-import {Action_Create} from "./Action_Create";
+import {CollectionCategoryQuery} from "./CollectionCategoryQuery";
+import {ActionCollection} from "./ActionCollection";
+import {ActionCreate} from "./ActionCreate";
 import {Message} from "./Message";
 
 export default class BackendActionResource extends ResourceAbstract {
@@ -22,23 +22,23 @@ export default class BackendActionResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Collection_Category_Query} query
-     * @returns {Promise<AxiosResponse<Action_Collection>>}
+     * @param {CollectionCategoryQuery} query
+     * @returns {Promise<AxiosResponse<ActionCollection>>}
      */
-    public async backendActionActionGetAll(query?: Collection_Category_Query): Promise<AxiosResponse<Action_Collection>> {
+    public async backendActionActionGetAll(query?: CollectionCategoryQuery): Promise<AxiosResponse<ActionCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Action_Collection>(this.url, params);
+        return this.httpClient.get<ActionCollection>(this.url, params);
     }
 
     /**
-     * @param {Action_Create} data
+     * @param {ActionCreate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionActionCreate(data: Action_Create): Promise<AxiosResponse<Message>> {
+    public async backendActionActionCreate(data: ActionCreate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };

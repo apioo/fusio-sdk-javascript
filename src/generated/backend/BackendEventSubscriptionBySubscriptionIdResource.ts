@@ -5,39 +5,39 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Event_Subscription} from "./Event_Subscription";
-import {Event_Subscription_Update} from "./Event_Subscription_Update";
+import {EventSubscription} from "./EventSubscription";
+import {EventSubscriptionUpdate} from "./EventSubscriptionUpdate";
 import {Message} from "./Message";
 
 export default class BackendEventSubscriptionBySubscriptionIdResource extends ResourceAbstract {
     private url: string;
 
-    private subscription_id: string;
+    private subscriptionId: string;
 
-    public constructor(subscription_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(subscriptionId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.subscription_id = subscription_id;
+        this.subscriptionId = subscriptionId;
 
-        this.url = baseUrl + "/backend/event/subscription/"+subscription_id+"";
+        this.url = baseUrl + "/backend/event/subscription/"+subscriptionId+"";
     }
 
     /**
-     * @returns {Promise<AxiosResponse<Event_Subscription>>}
+     * @returns {Promise<AxiosResponse<EventSubscription>>}
      */
-    public async backendActionEventSubscriptionGet(): Promise<AxiosResponse<Event_Subscription>> {
+    public async backendActionEventSubscriptionGet(): Promise<AxiosResponse<EventSubscription>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
         };
 
-        return this.httpClient.get<Event_Subscription>(this.url, params);
+        return this.httpClient.get<EventSubscription>(this.url, params);
     }
 
     /**
-     * @param {Event_Subscription_Update} data
+     * @param {EventSubscriptionUpdate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionEventSubscriptionUpdate(data: Event_Subscription_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionEventSubscriptionUpdate(data: EventSubscriptionUpdate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
         };

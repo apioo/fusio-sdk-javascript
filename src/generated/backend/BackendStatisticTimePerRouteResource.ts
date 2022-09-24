@@ -5,8 +5,8 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Backend_Log_Collection_Query} from "./Backend_Log_Collection_Query";
-import {Statistic_Chart} from "./Statistic_Chart";
+import {BackendLogCollectionQuery} from "./BackendLogCollectionQuery";
+import {StatisticChart} from "./StatisticChart";
 
 export default class BackendStatisticTimePerRouteResource extends ResourceAbstract {
     private url: string;
@@ -20,16 +20,16 @@ export default class BackendStatisticTimePerRouteResource extends ResourceAbstra
     }
 
     /**
-     * @param {Backend_Log_Collection_Query} query
-     * @returns {Promise<AxiosResponse<Statistic_Chart>>}
+     * @param {BackendLogCollectionQuery} query
+     * @returns {Promise<AxiosResponse<StatisticChart>>}
      */
-    public async backendActionStatisticGetTimePerRoute(query?: Backend_Log_Collection_Query): Promise<AxiosResponse<Statistic_Chart>> {
+    public async backendActionStatisticGetTimePerRoute(query?: BackendLogCollectionQuery): Promise<AxiosResponse<StatisticChart>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Statistic_Chart>(this.url, params);
+        return this.httpClient.get<StatisticChart>(this.url, params);
     }
 
 }

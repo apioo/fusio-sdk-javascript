@@ -5,32 +5,32 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Connection_Introspection_Entity} from "./Connection_Introspection_Entity";
+import {ConnectionIntrospectionEntity} from "./ConnectionIntrospectionEntity";
 
 export default class BackendConnectionByConnectionIdIntrospectionAndEntityResource extends ResourceAbstract {
     private url: string;
 
-    private connection_id: string;
+    private connectionId: string;
     private entity: string;
 
-    public constructor(connection_id: string, entity: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(connectionId: string, entity: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.connection_id = connection_id;
+        this.connectionId = connectionId;
         this.entity = entity;
 
-        this.url = baseUrl + "/backend/connection/"+connection_id+"/introspection/"+entity+"";
+        this.url = baseUrl + "/backend/connection/"+connectionId+"/introspection/"+entity+"";
     }
 
     /**
-     * @returns {Promise<AxiosResponse<Connection_Introspection_Entity>>}
+     * @returns {Promise<AxiosResponse<ConnectionIntrospectionEntity>>}
      */
-    public async backendActionConnectionIntrospectionGetEntity(): Promise<AxiosResponse<Connection_Introspection_Entity>> {
+    public async backendActionConnectionIntrospectionGetEntity(): Promise<AxiosResponse<ConnectionIntrospectionEntity>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
         };
 
-        return this.httpClient.get<Connection_Introspection_Entity>(this.url, params);
+        return this.httpClient.get<ConnectionIntrospectionEntity>(this.url, params);
     }
 
 }

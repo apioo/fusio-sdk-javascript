@@ -10,14 +10,14 @@ import {Message} from "./Message";
 export default class BackendConnectionByConnectionIdRedirectResource extends ResourceAbstract {
     private url: string;
 
-    private connection_id: string;
+    private connectionId: string;
 
-    public constructor(connection_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(connectionId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.connection_id = connection_id;
+        this.connectionId = connectionId;
 
-        this.url = baseUrl + "/backend/connection/"+connection_id+"/redirect";
+        this.url = baseUrl + "/backend/connection/"+connectionId+"/redirect";
     }
 
     /**

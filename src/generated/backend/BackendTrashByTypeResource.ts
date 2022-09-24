@@ -5,9 +5,9 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Collection_Query} from "./Collection_Query";
-import {Trash_Data_Collection} from "./Trash_Data_Collection";
-import {Trash_Restore} from "./Trash_Restore";
+import {CollectionQuery} from "./CollectionQuery";
+import {TrashDataCollection} from "./TrashDataCollection";
+import {TrashRestore} from "./TrashRestore";
 import {Message} from "./Message";
 
 export default class BackendTrashByTypeResource extends ResourceAbstract {
@@ -24,23 +24,23 @@ export default class BackendTrashByTypeResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Collection_Query} query
-     * @returns {Promise<AxiosResponse<Trash_Data_Collection>>}
+     * @param {CollectionQuery} query
+     * @returns {Promise<AxiosResponse<TrashDataCollection>>}
      */
-    public async backendActionTrashGetAll(query?: Collection_Query): Promise<AxiosResponse<Trash_Data_Collection>> {
+    public async backendActionTrashGetAll(query?: CollectionQuery): Promise<AxiosResponse<TrashDataCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Trash_Data_Collection>(this.url, params);
+        return this.httpClient.get<TrashDataCollection>(this.url, params);
     }
 
     /**
-     * @param {Trash_Restore} data
+     * @param {TrashRestore} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionTrashRestore(data: Trash_Restore): Promise<AxiosResponse<Message>> {
+    public async backendActionTrashRestore(data: TrashRestore): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };

@@ -5,8 +5,8 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {User_Provider} from "./User_Provider";
-import {User_JWT} from "./User_JWT";
+import {UserProvider} from "./UserProvider";
+import {UserJWT} from "./UserJWT";
 
 export default class ConsumerProviderByProviderResource extends ResourceAbstract {
     private url: string;
@@ -22,15 +22,15 @@ export default class ConsumerProviderByProviderResource extends ResourceAbstract
     }
 
     /**
-     * @param {User_Provider} data
-     * @returns {Promise<AxiosResponse<User_JWT>>}
+     * @param {UserProvider} data
+     * @returns {Promise<AxiosResponse<UserJWT>>}
      */
-    public async consumerActionUserProvider(data: User_Provider): Promise<AxiosResponse<User_JWT>> {
+    public async consumerActionUserProvider(data: UserProvider): Promise<AxiosResponse<UserJWT>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };
 
-        return this.httpClient.post<User_JWT>(this.url, data, params);
+        return this.httpClient.post<UserJWT>(this.url, data, params);
     }
 
 }

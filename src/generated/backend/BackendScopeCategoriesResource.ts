@@ -5,7 +5,7 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Scope_Categories} from "./Scope_Categories";
+import {ScopeCategories} from "./ScopeCategories";
 
 export default class BackendScopeCategoriesResource extends ResourceAbstract {
     private url: string;
@@ -19,14 +19,14 @@ export default class BackendScopeCategoriesResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {Promise<AxiosResponse<Scope_Categories>>}
+     * @returns {Promise<AxiosResponse<ScopeCategories>>}
      */
-    public async backendActionScopeGetCategories(): Promise<AxiosResponse<Scope_Categories>> {
+    public async backendActionScopeGetCategories(): Promise<AxiosResponse<ScopeCategories>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
         };
 
-        return this.httpClient.get<Scope_Categories>(this.url, params);
+        return this.httpClient.get<ScopeCategories>(this.url, params);
     }
 
 }

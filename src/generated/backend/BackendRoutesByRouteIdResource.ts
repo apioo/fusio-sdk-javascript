@@ -6,20 +6,20 @@
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Route} from "./Route";
-import {Route_Update} from "./Route_Update";
+import {RouteUpdate} from "./RouteUpdate";
 import {Message} from "./Message";
 
 export default class BackendRoutesByRouteIdResource extends ResourceAbstract {
     private url: string;
 
-    private route_id: string;
+    private routeId: string;
 
-    public constructor(route_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(routeId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.route_id = route_id;
+        this.routeId = routeId;
 
-        this.url = baseUrl + "/backend/routes/"+route_id+"";
+        this.url = baseUrl + "/backend/routes/"+routeId+"";
     }
 
     /**
@@ -34,10 +34,10 @@ export default class BackendRoutesByRouteIdResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Route_Update} data
+     * @param {RouteUpdate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionRouteUpdate(data: Route_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionRouteUpdate(data: RouteUpdate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
         };

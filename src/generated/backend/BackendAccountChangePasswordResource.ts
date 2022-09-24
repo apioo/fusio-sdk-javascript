@@ -5,7 +5,7 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Account_ChangePassword} from "./Account_ChangePassword";
+import {AccountChangePassword} from "./AccountChangePassword";
 import {Message} from "./Message";
 
 export default class BackendAccountChangePasswordResource extends ResourceAbstract {
@@ -20,10 +20,10 @@ export default class BackendAccountChangePasswordResource extends ResourceAbstra
     }
 
     /**
-     * @param {Account_ChangePassword} data
+     * @param {AccountChangePassword} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionAccountChangePassword(data: Account_ChangePassword): Promise<AxiosResponse<Message>> {
+    public async backendActionAccountChangePassword(data: AccountChangePassword): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
         };

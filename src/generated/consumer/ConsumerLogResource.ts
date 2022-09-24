@@ -5,8 +5,8 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Collection_Query} from "./Collection_Query";
-import {Log_Collection} from "./Log_Collection";
+import {CollectionQuery} from "./CollectionQuery";
+import {LogCollection} from "./LogCollection";
 
 export default class ConsumerLogResource extends ResourceAbstract {
     private url: string;
@@ -20,16 +20,16 @@ export default class ConsumerLogResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Collection_Query} query
-     * @returns {Promise<AxiosResponse<Log_Collection>>}
+     * @param {CollectionQuery} query
+     * @returns {Promise<AxiosResponse<LogCollection>>}
      */
-    public async consumerActionLogGetAll(query?: Collection_Query): Promise<AxiosResponse<Log_Collection>> {
+    public async consumerActionLogGetAll(query?: CollectionQuery): Promise<AxiosResponse<LogCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Log_Collection>(this.url, params);
+        return this.httpClient.get<LogCollection>(this.url, params);
     }
 
 }

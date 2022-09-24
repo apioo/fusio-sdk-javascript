@@ -5,8 +5,8 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Backend_Audit_Collection_Query} from "./Backend_Audit_Collection_Query";
-import {Audit_Collection} from "./Audit_Collection";
+import {BackendAuditCollectionQuery} from "./BackendAuditCollectionQuery";
+import {AuditCollection} from "./AuditCollection";
 
 export default class BackendAuditResource extends ResourceAbstract {
     private url: string;
@@ -20,16 +20,16 @@ export default class BackendAuditResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Backend_Audit_Collection_Query} query
-     * @returns {Promise<AxiosResponse<Audit_Collection>>}
+     * @param {BackendAuditCollectionQuery} query
+     * @returns {Promise<AxiosResponse<AuditCollection>>}
      */
-    public async backendActionAuditGetAll(query?: Backend_Audit_Collection_Query): Promise<AxiosResponse<Audit_Collection>> {
+    public async backendActionAuditGetAll(query?: BackendAuditCollectionQuery): Promise<AxiosResponse<AuditCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Audit_Collection>(this.url, params);
+        return this.httpClient.get<AuditCollection>(this.url, params);
     }
 
 }

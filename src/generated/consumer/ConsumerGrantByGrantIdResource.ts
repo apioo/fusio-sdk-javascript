@@ -9,14 +9,14 @@ import {ResourceAbstract} from "sdkgen-client"
 export default class ConsumerGrantByGrantIdResource extends ResourceAbstract {
     private url: string;
 
-    private grant_id: string;
+    private grantId: string;
 
-    public constructor(grant_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(grantId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.grant_id = grant_id;
+        this.grantId = grantId;
 
-        this.url = baseUrl + "/consumer/grant/"+grant_id+"";
+        this.url = baseUrl + "/consumer/grant/"+grantId+"";
     }
 
     /**

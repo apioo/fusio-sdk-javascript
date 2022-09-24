@@ -6,20 +6,20 @@
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Rate} from "./Rate";
-import {Rate_Update} from "./Rate_Update";
+import {RateUpdate} from "./RateUpdate";
 import {Message} from "./Message";
 
 export default class BackendRateByRateIdResource extends ResourceAbstract {
     private url: string;
 
-    private rate_id: string;
+    private rateId: string;
 
-    public constructor(rate_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(rateId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.rate_id = rate_id;
+        this.rateId = rateId;
 
-        this.url = baseUrl + "/backend/rate/"+rate_id+"";
+        this.url = baseUrl + "/backend/rate/"+rateId+"";
     }
 
     /**
@@ -34,10 +34,10 @@ export default class BackendRateByRateIdResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Rate_Update} data
+     * @param {RateUpdate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionRateUpdate(data: Rate_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionRateUpdate(data: RateUpdate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
         };

@@ -5,9 +5,9 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Collection_Category_Query} from "./Collection_Category_Query";
-import {Cronjob_Collection} from "./Cronjob_Collection";
-import {Cronjob_Create} from "./Cronjob_Create";
+import {CollectionCategoryQuery} from "./CollectionCategoryQuery";
+import {CronjobCollection} from "./CronjobCollection";
+import {CronjobCreate} from "./CronjobCreate";
 import {Message} from "./Message";
 
 export default class BackendCronjobResource extends ResourceAbstract {
@@ -22,23 +22,23 @@ export default class BackendCronjobResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Collection_Category_Query} query
-     * @returns {Promise<AxiosResponse<Cronjob_Collection>>}
+     * @param {CollectionCategoryQuery} query
+     * @returns {Promise<AxiosResponse<CronjobCollection>>}
      */
-    public async backendActionCronjobGetAll(query?: Collection_Category_Query): Promise<AxiosResponse<Cronjob_Collection>> {
+    public async backendActionCronjobGetAll(query?: CollectionCategoryQuery): Promise<AxiosResponse<CronjobCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Cronjob_Collection>(this.url, params);
+        return this.httpClient.get<CronjobCollection>(this.url, params);
     }
 
     /**
-     * @param {Cronjob_Create} data
+     * @param {CronjobCreate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionCronjobCreate(data: Cronjob_Create): Promise<AxiosResponse<Message>> {
+    public async backendActionCronjobCreate(data: CronjobCreate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };

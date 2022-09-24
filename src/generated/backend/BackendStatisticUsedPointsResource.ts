@@ -5,8 +5,8 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Backend_Plan_Usage_Collection_Query} from "./Backend_Plan_Usage_Collection_Query";
-import {Statistic_Chart} from "./Statistic_Chart";
+import {BackendPlanUsageCollectionQuery} from "./BackendPlanUsageCollectionQuery";
+import {StatisticChart} from "./StatisticChart";
 
 export default class BackendStatisticUsedPointsResource extends ResourceAbstract {
     private url: string;
@@ -20,16 +20,16 @@ export default class BackendStatisticUsedPointsResource extends ResourceAbstract
     }
 
     /**
-     * @param {Backend_Plan_Usage_Collection_Query} query
-     * @returns {Promise<AxiosResponse<Statistic_Chart>>}
+     * @param {BackendPlanUsageCollectionQuery} query
+     * @returns {Promise<AxiosResponse<StatisticChart>>}
      */
-    public async backendActionStatisticGetUsedPoints(query?: Backend_Plan_Usage_Collection_Query): Promise<AxiosResponse<Statistic_Chart>> {
+    public async backendActionStatisticGetUsedPoints(query?: BackendPlanUsageCollectionQuery): Promise<AxiosResponse<StatisticChart>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Statistic_Chart>(this.url, params);
+        return this.httpClient.get<StatisticChart>(this.url, params);
     }
 
 }

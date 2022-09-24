@@ -5,7 +5,7 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Generator_Index_Providers} from "./Generator_Index_Providers";
+import {GeneratorIndexProviders} from "./GeneratorIndexProviders";
 
 export default class BackendGeneratorResource extends ResourceAbstract {
     private url: string;
@@ -19,14 +19,14 @@ export default class BackendGeneratorResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {Promise<AxiosResponse<Generator_Index_Providers>>}
+     * @returns {Promise<AxiosResponse<GeneratorIndexProviders>>}
      */
-    public async backendActionGeneratorIndex(): Promise<AxiosResponse<Generator_Index_Providers>> {
+    public async backendActionGeneratorIndex(): Promise<AxiosResponse<GeneratorIndexProviders>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
         };
 
-        return this.httpClient.get<Generator_Index_Providers>(this.url, params);
+        return this.httpClient.get<GeneratorIndexProviders>(this.url, params);
     }
 
 }

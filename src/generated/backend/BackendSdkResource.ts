@@ -5,8 +5,8 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Sdk_Response} from "./Sdk_Response";
-import {Sdk_Generate} from "./Sdk_Generate";
+import {SdkResponse} from "./SdkResponse";
+import {SdkGenerate} from "./SdkGenerate";
 import {Message} from "./Message";
 
 export default class BackendSdkResource extends ResourceAbstract {
@@ -21,21 +21,21 @@ export default class BackendSdkResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {Promise<AxiosResponse<Sdk_Response>>}
+     * @returns {Promise<AxiosResponse<SdkResponse>>}
      */
-    public async backendActionSdkGetAll(): Promise<AxiosResponse<Sdk_Response>> {
+    public async backendActionSdkGetAll(): Promise<AxiosResponse<SdkResponse>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
         };
 
-        return this.httpClient.get<Sdk_Response>(this.url, params);
+        return this.httpClient.get<SdkResponse>(this.url, params);
     }
 
     /**
-     * @param {Sdk_Generate} data
+     * @param {SdkGenerate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionSdkGenerate(data: Sdk_Generate): Promise<AxiosResponse<Message>> {
+    public async backendActionSdkGenerate(data: SdkGenerate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };

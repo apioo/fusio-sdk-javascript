@@ -5,9 +5,9 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Collection_Query} from "./Collection_Query";
-import {Page_Collection} from "./Page_Collection";
-import {Page_Create} from "./Page_Create";
+import {CollectionQuery} from "./CollectionQuery";
+import {PageCollection} from "./PageCollection";
+import {PageCreate} from "./PageCreate";
 import {Message} from "./Message";
 
 export default class BackendPageResource extends ResourceAbstract {
@@ -22,23 +22,23 @@ export default class BackendPageResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Collection_Query} query
-     * @returns {Promise<AxiosResponse<Page_Collection>>}
+     * @param {CollectionQuery} query
+     * @returns {Promise<AxiosResponse<PageCollection>>}
      */
-    public async backendActionPageGetAll(query?: Collection_Query): Promise<AxiosResponse<Page_Collection>> {
+    public async backendActionPageGetAll(query?: CollectionQuery): Promise<AxiosResponse<PageCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Page_Collection>(this.url, params);
+        return this.httpClient.get<PageCollection>(this.url, params);
     }
 
     /**
-     * @param {Page_Create} data
+     * @param {PageCreate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionPageCreate(data: Page_Create): Promise<AxiosResponse<Message>> {
+    public async backendActionPageCreate(data: PageCreate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };

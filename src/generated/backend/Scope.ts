@@ -3,10 +3,10 @@
  * {@link https://sdkgen.app}
  */
 
-import {Scope_Route} from "./Scope_Route";
+import {ScopeRoute} from "./ScopeRoute";
 export interface Scope {
     id?: number
     name?: string
     description?: string
-    routes?: Array<Scope_Route>
+    routes?: Array<ScopeRoute>
 }

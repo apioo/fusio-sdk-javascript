@@ -6,20 +6,20 @@
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Cronjob} from "./Cronjob";
-import {Cronjob_Update} from "./Cronjob_Update";
+import {CronjobUpdate} from "./CronjobUpdate";
 import {Message} from "./Message";
 
 export default class BackendCronjobByCronjobIdResource extends ResourceAbstract {
     private url: string;
 
-    private cronjob_id: string;
+    private cronjobId: string;
 
-    public constructor(cronjob_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(cronjobId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.cronjob_id = cronjob_id;
+        this.cronjobId = cronjobId;
 
-        this.url = baseUrl + "/backend/cronjob/"+cronjob_id+"";
+        this.url = baseUrl + "/backend/cronjob/"+cronjobId+"";
     }
 
     /**
@@ -34,10 +34,10 @@ export default class BackendCronjobByCronjobIdResource extends ResourceAbstract 
     }
 
     /**
-     * @param {Cronjob_Update} data
+     * @param {CronjobUpdate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionCronjobUpdate(data: Cronjob_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionCronjobUpdate(data: CronjobUpdate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
         };

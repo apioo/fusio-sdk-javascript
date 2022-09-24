@@ -10,14 +10,14 @@ import {Page} from "./Page";
 export default class ConsumerPageByPageIdResource extends ResourceAbstract {
     private url: string;
 
-    private page_id: string;
+    private pageId: string;
 
-    public constructor(page_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(pageId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.page_id = page_id;
+        this.pageId = pageId;
 
-        this.url = baseUrl + "/consumer/page/"+page_id+"";
+        this.url = baseUrl + "/consumer/page/"+pageId+"";
     }
 
     /**

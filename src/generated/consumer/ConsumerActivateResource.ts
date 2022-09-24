@@ -5,7 +5,7 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {User_Activate} from "./User_Activate";
+import {UserActivate} from "./UserActivate";
 import {Message} from "./Message";
 
 export default class ConsumerActivateResource extends ResourceAbstract {
@@ -20,10 +20,10 @@ export default class ConsumerActivateResource extends ResourceAbstract {
     }
 
     /**
-     * @param {User_Activate} data
+     * @param {UserActivate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async consumerActionUserActivate(data: User_Activate): Promise<AxiosResponse<Message>> {
+    public async consumerActionUserActivate(data: UserActivate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };

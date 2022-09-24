@@ -5,9 +5,9 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {User_Email} from "./User_Email";
+import {UserEmail} from "./UserEmail";
 import {Message} from "./Message";
-import {User_PasswordReset} from "./User_PasswordReset";
+import {UserPasswordReset} from "./UserPasswordReset";
 
 export default class ConsumerPasswordResetResource extends ResourceAbstract {
     private url: string;
@@ -21,10 +21,10 @@ export default class ConsumerPasswordResetResource extends ResourceAbstract {
     }
 
     /**
-     * @param {User_Email} data
+     * @param {UserEmail} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async consumerActionUserResetPasswordRequest(data: User_Email): Promise<AxiosResponse<Message>> {
+    public async consumerActionUserResetPasswordRequest(data: UserEmail): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };
@@ -33,10 +33,10 @@ export default class ConsumerPasswordResetResource extends ResourceAbstract {
     }
 
     /**
-     * @param {User_PasswordReset} data
+     * @param {UserPasswordReset} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async consumerActionUserResetPasswordExecute(data: User_PasswordReset): Promise<AxiosResponse<Message>> {
+    public async consumerActionUserResetPasswordExecute(data: UserPasswordReset): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
         };

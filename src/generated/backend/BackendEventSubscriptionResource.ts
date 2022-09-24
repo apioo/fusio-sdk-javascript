@@ -5,9 +5,9 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Collection_Query} from "./Collection_Query";
-import {Event_Subscription_Collection} from "./Event_Subscription_Collection";
-import {Event_Subscription_Create} from "./Event_Subscription_Create";
+import {CollectionQuery} from "./CollectionQuery";
+import {EventSubscriptionCollection} from "./EventSubscriptionCollection";
+import {EventSubscriptionCreate} from "./EventSubscriptionCreate";
 import {Message} from "./Message";
 
 export default class BackendEventSubscriptionResource extends ResourceAbstract {
@@ -22,23 +22,23 @@ export default class BackendEventSubscriptionResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Collection_Query} query
-     * @returns {Promise<AxiosResponse<Event_Subscription_Collection>>}
+     * @param {CollectionQuery} query
+     * @returns {Promise<AxiosResponse<EventSubscriptionCollection>>}
      */
-    public async backendActionEventSubscriptionGetAll(query?: Collection_Query): Promise<AxiosResponse<Event_Subscription_Collection>> {
+    public async backendActionEventSubscriptionGetAll(query?: CollectionQuery): Promise<AxiosResponse<EventSubscriptionCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Event_Subscription_Collection>(this.url, params);
+        return this.httpClient.get<EventSubscriptionCollection>(this.url, params);
     }
 
     /**
-     * @param {Event_Subscription_Create} data
+     * @param {EventSubscriptionCreate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionEventSubscriptionCreate(data: Event_Subscription_Create): Promise<AxiosResponse<Message>> {
+    public async backendActionEventSubscriptionCreate(data: EventSubscriptionCreate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };

@@ -10,14 +10,14 @@ import {Transaction} from "./Transaction";
 export default class ConsumerTransactionByTransactionIdResource extends ResourceAbstract {
     private url: string;
 
-    private transaction_id: string;
+    private transactionId: string;
 
-    public constructor(transaction_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(transactionId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.transaction_id = transaction_id;
+        this.transactionId = transactionId;
 
-        this.url = baseUrl + "/consumer/transaction/"+transaction_id+"";
+        this.url = baseUrl + "/consumer/transaction/"+transactionId+"";
     }
 
     /**

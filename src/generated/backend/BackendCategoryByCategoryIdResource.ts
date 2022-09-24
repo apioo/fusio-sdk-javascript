@@ -6,20 +6,20 @@
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {Category} from "./Category";
-import {Category_Update} from "./Category_Update";
+import {CategoryUpdate} from "./CategoryUpdate";
 import {Message} from "./Message";
 
 export default class BackendCategoryByCategoryIdResource extends ResourceAbstract {
     private url: string;
 
-    private category_id: string;
+    private categoryId: string;
 
-    public constructor(category_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(categoryId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.category_id = category_id;
+        this.categoryId = categoryId;
 
-        this.url = baseUrl + "/backend/category/"+category_id+"";
+        this.url = baseUrl + "/backend/category/"+categoryId+"";
     }
 
     /**
@@ -34,10 +34,10 @@ export default class BackendCategoryByCategoryIdResource extends ResourceAbstrac
     }
 
     /**
-     * @param {Category_Update} data
+     * @param {CategoryUpdate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionCategoryUpdate(data: Category_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionCategoryUpdate(data: CategoryUpdate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
         };

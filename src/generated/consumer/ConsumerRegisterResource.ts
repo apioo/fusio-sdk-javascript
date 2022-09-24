@@ -5,7 +5,7 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {User_Register} from "./User_Register";
+import {UserRegister} from "./UserRegister";
 import {Message} from "./Message";
 
 export default class ConsumerRegisterResource extends ResourceAbstract {
@@ -20,10 +20,10 @@ export default class ConsumerRegisterResource extends ResourceAbstract {
     }
 
     /**
-     * @param {User_Register} data
+     * @param {UserRegister} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async consumerActionUserRegister(data: User_Register): Promise<AxiosResponse<Message>> {
+    public async consumerActionUserRegister(data: UserRegister): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };

@@ -10,14 +10,14 @@ import {Audit} from "./Audit";
 export default class BackendAuditByAuditIdResource extends ResourceAbstract {
     private url: string;
 
-    private audit_id: string;
+    private auditId: string;
 
-    public constructor(audit_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(auditId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.audit_id = audit_id;
+        this.auditId = auditId;
 
-        this.url = baseUrl + "/backend/audit/"+audit_id+"";
+        this.url = baseUrl + "/backend/audit/"+auditId+"";
     }
 
     /**

@@ -5,8 +5,8 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Marketplace_Collection} from "./Marketplace_Collection";
-import {Marketplace_Install} from "./Marketplace_Install";
+import {MarketplaceCollection} from "./MarketplaceCollection";
+import {MarketplaceInstall} from "./MarketplaceInstall";
 import {Message} from "./Message";
 
 export default class BackendMarketplaceResource extends ResourceAbstract {
@@ -21,21 +21,21 @@ export default class BackendMarketplaceResource extends ResourceAbstract {
     }
 
     /**
-     * @returns {Promise<AxiosResponse<Marketplace_Collection>>}
+     * @returns {Promise<AxiosResponse<MarketplaceCollection>>}
      */
-    public async backendActionMarketplaceGetAll(): Promise<AxiosResponse<Marketplace_Collection>> {
+    public async backendActionMarketplaceGetAll(): Promise<AxiosResponse<MarketplaceCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
         };
 
-        return this.httpClient.get<Marketplace_Collection>(this.url, params);
+        return this.httpClient.get<MarketplaceCollection>(this.url, params);
     }
 
     /**
-     * @param {Marketplace_Install} data
+     * @param {MarketplaceInstall} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionMarketplaceInstall(data: Marketplace_Install): Promise<AxiosResponse<Message>> {
+    public async backendActionMarketplaceInstall(data: MarketplaceInstall): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };

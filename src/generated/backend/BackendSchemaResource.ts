@@ -5,9 +5,9 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Collection_Category_Query} from "./Collection_Category_Query";
-import {Schema_Collection} from "./Schema_Collection";
-import {Schema_Create} from "./Schema_Create";
+import {CollectionCategoryQuery} from "./CollectionCategoryQuery";
+import {SchemaCollection} from "./SchemaCollection";
+import {SchemaCreate} from "./SchemaCreate";
 import {Message} from "./Message";
 
 export default class BackendSchemaResource extends ResourceAbstract {
@@ -22,23 +22,23 @@ export default class BackendSchemaResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Collection_Category_Query} query
-     * @returns {Promise<AxiosResponse<Schema_Collection>>}
+     * @param {CollectionCategoryQuery} query
+     * @returns {Promise<AxiosResponse<SchemaCollection>>}
      */
-    public async backendActionSchemaGetAll(query?: Collection_Category_Query): Promise<AxiosResponse<Schema_Collection>> {
+    public async backendActionSchemaGetAll(query?: CollectionCategoryQuery): Promise<AxiosResponse<SchemaCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Schema_Collection>(this.url, params);
+        return this.httpClient.get<SchemaCollection>(this.url, params);
     }
 
     /**
-     * @param {Schema_Create} data
+     * @param {SchemaCreate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionSchemaCreate(data: Schema_Create): Promise<AxiosResponse<Message>> {
+    public async backendActionSchemaCreate(data: SchemaCreate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };

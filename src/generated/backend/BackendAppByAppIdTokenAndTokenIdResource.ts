@@ -10,16 +10,16 @@ import {Message} from "./Message";
 export default class BackendAppByAppIdTokenAndTokenIdResource extends ResourceAbstract {
     private url: string;
 
-    private app_id: string;
-    private token_id: string;
+    private appId: string;
+    private tokenId: string;
 
-    public constructor(app_id: string, token_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(appId: string, tokenId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.app_id = app_id;
-        this.token_id = token_id;
+        this.appId = appId;
+        this.tokenId = tokenId;
 
-        this.url = baseUrl + "/backend/app/"+app_id+"/token/"+token_id+"";
+        this.url = baseUrl + "/backend/app/"+appId+"/token/"+tokenId+"";
     }
 
     /**

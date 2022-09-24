@@ -6,20 +6,20 @@
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
 import {User} from "./User";
-import {User_Update} from "./User_Update";
+import {UserUpdate} from "./UserUpdate";
 import {Message} from "./Message";
 
 export default class BackendUserByUserIdResource extends ResourceAbstract {
     private url: string;
 
-    private user_id: string;
+    private userId: string;
 
-    public constructor(user_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(userId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.user_id = user_id;
+        this.userId = userId;
 
-        this.url = baseUrl + "/backend/user/"+user_id+"";
+        this.url = baseUrl + "/backend/user/"+userId+"";
     }
 
     /**
@@ -34,10 +34,10 @@ export default class BackendUserByUserIdResource extends ResourceAbstract {
     }
 
     /**
-     * @param {User_Update} data
+     * @param {UserUpdate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionUserUpdate(data: User_Update): Promise<AxiosResponse<Message>> {
+    public async backendActionUserUpdate(data: UserUpdate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'PUT',
         };

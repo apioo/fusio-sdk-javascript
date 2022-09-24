@@ -10,14 +10,14 @@ import {Plan} from "./Plan";
 export default class ConsumerPlanByPlanIdResource extends ResourceAbstract {
     private url: string;
 
-    private plan_id: string;
+    private planId: string;
 
-    public constructor(plan_id: string, baseUrl: string, httpClient: AxiosInstance) {
+    public constructor(planId: string, baseUrl: string, httpClient: AxiosInstance) {
         super(baseUrl, httpClient);
 
-        this.plan_id = plan_id;
+        this.planId = planId;
 
-        this.url = baseUrl + "/consumer/plan/"+plan_id+"";
+        this.url = baseUrl + "/consumer/plan/"+planId+"";
     }
 
     /**

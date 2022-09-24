@@ -5,9 +5,9 @@
 
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {ResourceAbstract} from "sdkgen-client"
-import {Collection_Category_Query} from "./Collection_Category_Query";
-import {Scope_Collection} from "./Scope_Collection";
-import {Scope_Create} from "./Scope_Create";
+import {CollectionCategoryQuery} from "./CollectionCategoryQuery";
+import {ScopeCollection} from "./ScopeCollection";
+import {ScopeCreate} from "./ScopeCreate";
 import {Message} from "./Message";
 
 export default class BackendScopeResource extends ResourceAbstract {
@@ -22,23 +22,23 @@ export default class BackendScopeResource extends ResourceAbstract {
     }
 
     /**
-     * @param {Collection_Category_Query} query
-     * @returns {Promise<AxiosResponse<Scope_Collection>>}
+     * @param {CollectionCategoryQuery} query
+     * @returns {Promise<AxiosResponse<ScopeCollection>>}
      */
-    public async backendActionScopeGetAll(query?: Collection_Category_Query): Promise<AxiosResponse<Scope_Collection>> {
+    public async backendActionScopeGetAll(query?: CollectionCategoryQuery): Promise<AxiosResponse<ScopeCollection>> {
         let params: AxiosRequestConfig = {
             method: 'GET',
             params: query,
         };
 
-        return this.httpClient.get<Scope_Collection>(this.url, params);
+        return this.httpClient.get<ScopeCollection>(this.url, params);
     }
 
     /**
-     * @param {Scope_Create} data
+     * @param {ScopeCreate} data
      * @returns {Promise<AxiosResponse<Message>>}
      */
-    public async backendActionScopeCreate(data: Scope_Create): Promise<AxiosResponse<Message>> {
+    public async backendActionScopeCreate(data: ScopeCreate): Promise<AxiosResponse<Message>> {
         let params: AxiosRequestConfig = {
             method: 'POST',
         };
