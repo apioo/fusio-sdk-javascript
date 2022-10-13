@@ -4,6 +4,7 @@
  */
 
 import {ActionConfig} from "./ActionConfig";
+import {Metadata} from "./Metadata";
 export interface Action {
     id?: number
     status?: number
@@ -12,4 +13,5 @@ export interface Action {
     async?: boolean
     engine?: string
     config?: ActionConfig
+    metadata?: Metadata
 }

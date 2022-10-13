@@ -4,9 +4,11 @@
  */
 
 import {ConnectionConfig} from "./ConnectionConfig";
+import {Metadata} from "./Metadata";
 export interface Connection {
     id?: number
     name?: string
     class?: string
     config?: ConnectionConfig
+    metadata?: Metadata
 }

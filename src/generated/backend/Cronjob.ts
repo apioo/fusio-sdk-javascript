@@ -3,6 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
+import {Metadata} from "./Metadata";
 import {CronjobError} from "./CronjobError";
 export interface Cronjob {
     id?: number
@@ -11,5 +12,6 @@ export interface Cronjob {
     action?: string
     executeDate?: string
     exitCode?: number
+    metadata?: Metadata
     errors?: Array<CronjobError>
 }

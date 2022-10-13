@@ -3,8 +3,10 @@
  * {@link https://sdkgen.app}
  */
 
+import {Metadata} from "./Metadata";
 export interface Scope {
     id?: number
     name?: string
     description?: string
+    metadata?: Metadata
 }

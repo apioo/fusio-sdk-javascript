@@ -4,9 +4,11 @@
  */
 
 import {ScopeRoute} from "./ScopeRoute";
+import {Metadata} from "./Metadata";
 export interface Scope {
     id?: number
     name?: string
     description?: string
     routes?: Array<ScopeRoute>
+    metadata?: Metadata
 }

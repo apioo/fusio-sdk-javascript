@@ -4,6 +4,7 @@
  */
 
 import {RouteVersion} from "./RouteVersion";
+import {Metadata} from "./Metadata";
 export interface Route {
     id?: number
     status?: number
@@ -12,4 +13,5 @@ export interface Route {
     controller?: string
     scopes?: Array<string>
     config?: Array<RouteVersion>
+    metadata?: Metadata
 }

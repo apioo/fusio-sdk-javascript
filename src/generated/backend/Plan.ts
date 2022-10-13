@@ -3,6 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
+import {Metadata} from "./Metadata";
 export interface Plan {
     id?: number
     name?: string
@@ -12,4 +13,5 @@ export interface Plan {
     period?: number
     externalId?: string
     scopes?: Array<string>
+    metadata?: Metadata
 }

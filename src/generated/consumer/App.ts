@@ -3,6 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
+import {Metadata} from "./Metadata";
 export interface App {
     id?: number
     userId?: number
@@ -13,4 +14,5 @@ export interface App {
     appSecret?: string
     date?: string
     scopes?: Array<string>
+    metadata?: Metadata
 }

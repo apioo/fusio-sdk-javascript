@@ -3,9 +3,11 @@
  * {@link https://sdkgen.app}
  */
 
+import {Metadata} from "./Metadata";
 export interface Event {
     id?: number
     name?: string
     description?: string
     schema?: string
+    metadata?: Metadata
 }

@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {UserAttributes} from "./UserAttributes";
+import {Metadata} from "./Metadata";
 export interface UserAccount {
     id?: number
     planId?: number
@@ -12,6 +12,6 @@ export interface UserAccount {
     email?: string
     points?: number
     scopes?: Array<string>
-    attributes?: UserAttributes
+    metadata?: Metadata
     date?: string
 }

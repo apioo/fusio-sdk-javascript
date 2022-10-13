@@ -3,11 +3,16 @@
  * {@link https://sdkgen.app}
  */
 
+import {Plan} from "./Plan";
 export interface Transaction {
     id?: number
-    status?: number
+    userId?: number
+    planId?: number
+    plan?: Plan
     transactionId?: string
     amount?: number
-    updateDate?: number
-    insertDate?: number
+    points?: number
+    periodStart?: string
+    periodEnd?: string
+    insertDate?: string
 }

@@ -4,6 +4,7 @@
  */
 
 import {RateAllocation} from "./RateAllocation";
+import {Metadata} from "./Metadata";
 export interface Rate {
     id?: number
     priority?: number
@@ -11,4 +12,5 @@ export interface Rate {
     rateLimit?: number
     timespan?: string
     allocation?: Array<RateAllocation>
+    metadata?: Metadata
 }

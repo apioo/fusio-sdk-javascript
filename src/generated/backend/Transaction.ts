@@ -10,5 +10,7 @@ export interface Transaction {
     transactionId?: string
     amount?: number
     points?: number
+    periodStart?: string
+    periodEnd?: string
     insertDate?: string
 }

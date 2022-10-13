@@ -5,10 +5,12 @@
 
 import {SchemaSource} from "./SchemaSource";
 import {SchemaForm} from "./SchemaForm";
+import {Metadata} from "./Metadata";
 export interface Schema {
     id?: number
     status?: number
     name?: string
     source?: SchemaSource
     form?: SchemaForm
+    metadata?: Metadata
 }

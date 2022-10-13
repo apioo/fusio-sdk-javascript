@@ -3,10 +3,12 @@
  * {@link https://sdkgen.app}
  */
 
+import {Metadata} from "./Metadata";
 export interface Page {
     id?: number
     status?: number
     title?: string
     slug?: string
     content?: string
+    metadata?: Metadata
 }
