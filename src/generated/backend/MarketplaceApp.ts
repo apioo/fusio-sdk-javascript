@@ -10,4 +10,5 @@ export interface MarketplaceApp {
     website?: string
     downloadUrl?: string
     sha1Hash?: string
+    startUrl?: string
 }
