@@ -9,11 +9,11 @@ import {DashboardRequests} from "./DashboardRequests";
 import {DashboardUsers} from "./DashboardUsers";
 import {DashboardTransactions} from "./DashboardTransactions";
 export interface Dashboard {
-    errorsPerRoute?: StatisticChart
+    errorsPerOperation?: StatisticChart
     incomingRequests?: StatisticChart
     incomingTransactions?: StatisticChart
-    mostUsedRoutes?: StatisticChart
-    timePerRoute?: StatisticChart
+    mostUsedOperations?: StatisticChart
+    timePerOperation?: StatisticChart
     latestApps?: DashboardApps
     latestRequests?: DashboardRequests
     latestUsers?: DashboardUsers

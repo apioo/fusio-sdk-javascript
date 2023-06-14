@@ -3,386 +3,100 @@
  * {@link https://sdkgen.app}
  */
 
-import {ClientAbstract, CredentialsInterface, TokenStoreInterface} from "sdkgen-client"
+import axios, {AxiosRequestConfig} from "axios";
+import {ClientAbstract, TokenStoreInterface} from "sdkgen-client"
+import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
-import ConsumerPasswordResetResource from "./ConsumerPasswordResetResource";
-import ConsumerRegisterResource from "./ConsumerRegisterResource";
-import ConsumerProviderByProviderResource from "./ConsumerProviderByProviderResource";
-import ConsumerLoginResource from "./ConsumerLoginResource";
-import ConsumerAuthorizeResource from "./ConsumerAuthorizeResource";
-import ConsumerActivateResource from "./ConsumerActivateResource";
-import ConsumerAccountChangePasswordResource from "./ConsumerAccountChangePasswordResource";
-import ConsumerAccountResource from "./ConsumerAccountResource";
-import ConsumerTransactionByTransactionIdResource from "./ConsumerTransactionByTransactionIdResource";
-import ConsumerTransactionResource from "./ConsumerTransactionResource";
-import ConsumerSubscriptionBySubscriptionIdResource from "./ConsumerSubscriptionBySubscriptionIdResource";
-import ConsumerSubscriptionResource from "./ConsumerSubscriptionResource";
-import ConsumerScopeResource from "./ConsumerScopeResource";
-import ConsumerPlanByPlanIdResource from "./ConsumerPlanByPlanIdResource";
-import ConsumerPlanResource from "./ConsumerPlanResource";
-import ConsumerPaymentByProviderCheckoutResource from "./ConsumerPaymentByProviderCheckoutResource";
-import ConsumerPaymentByProviderPortalResource from "./ConsumerPaymentByProviderPortalResource";
-import ConsumerPageByPageIdResource from "./ConsumerPageByPageIdResource";
-import ConsumerPageResource from "./ConsumerPageResource";
-import ConsumerLogByLogIdResource from "./ConsumerLogByLogIdResource";
-import ConsumerLogResource from "./ConsumerLogResource";
-import ConsumerGrantByGrantIdResource from "./ConsumerGrantByGrantIdResource";
-import ConsumerGrantResource from "./ConsumerGrantResource";
-import ConsumerEventResource from "./ConsumerEventResource";
-import ConsumerAppByAppIdResource from "./ConsumerAppByAppIdResource";
-import ConsumerAppResource from "./ConsumerAppResource";
 
 export default class Client extends ClientAbstract {
-    public constructor(baseUrl: string, credentials: CredentialsInterface|null = null, tokenStore: TokenStoreInterface|null = null, scopes: Array<string>|null = []) {
-        super(baseUrl, credentials, tokenStore, scopes);
-    }
-
-    /**
-     * Endpoint: /consumer/password_reset
-     *
-     * 
-     */
-    public async getConsumerPasswordReset(): Promise<ConsumerPasswordResetResource>
+    public consumerAccount(): ConsumerAccountTag
     {
-        return new ConsumerPasswordResetResource(
-            this.baseUrl,
-            await this.newHttpClient()
+        return new ConsumerAccountTag(
+            this.httpClient,
+            this.parser
         );
     }
 
-    /**
-     * Endpoint: /consumer/register
-     *
-     * 
-     */
-    public async getConsumerRegister(): Promise<ConsumerRegisterResource>
+    public consumerTransaction(): ConsumerTransactionTag
     {
-        return new ConsumerRegisterResource(
-            this.baseUrl,
-            await this.newHttpClient()
+        return new ConsumerTransactionTag(
+            this.httpClient,
+            this.parser
         );
     }
 
-    /**
-     * Endpoint: /consumer/provider/:provider
-     *
-     * 
-     */
-    public async getConsumerProviderByProvider(provider: string): Promise<ConsumerProviderByProviderResource>
+    public consumerSubscription(): ConsumerSubscriptionTag
     {
-        return new ConsumerProviderByProviderResource(
-            provider,
-            this.baseUrl,
-            await this.newHttpClient()
+        return new ConsumerSubscriptionTag(
+            this.httpClient,
+            this.parser
         );
     }
 
-    /**
-     * Endpoint: /consumer/login
-     *
-     * 
-     */
-    public async getConsumerLogin(): Promise<ConsumerLoginResource>
+    public consumerScope(): ConsumerScopeTag
     {
-        return new ConsumerLoginResource(
-            this.baseUrl,
-            await this.newHttpClient()
+        return new ConsumerScopeTag(
+            this.httpClient,
+            this.parser
         );
     }
 
-    /**
-     * Endpoint: /consumer/authorize
-     *
-     * 
-     */
-    public async getConsumerAuthorize(): Promise<ConsumerAuthorizeResource>
+    public consumerPlan(): ConsumerPlanTag
     {
-        return new ConsumerAuthorizeResource(
-            this.baseUrl,
-            await this.newHttpClient()
+        return new ConsumerPlanTag(
+            this.httpClient,
+            this.parser
         );
     }
 
-    /**
-     * Endpoint: /consumer/activate
-     *
-     * 
-     */
-    public async getConsumerActivate(): Promise<ConsumerActivateResource>
+    public consumerPayment(): ConsumerPaymentTag
     {
-        return new ConsumerActivateResource(
-            this.baseUrl,
-            await this.newHttpClient()
+        return new ConsumerPaymentTag(
+            this.httpClient,
+            this.parser
         );
     }
 
-    /**
-     * Endpoint: /consumer/account/change_password
-     *
-     * 
-     */
-    public async getConsumerAccountChangePassword(): Promise<ConsumerAccountChangePasswordResource>
+    public consumerPage(): ConsumerPageTag
     {
-        return new ConsumerAccountChangePasswordResource(
-            this.baseUrl,
-            await this.newHttpClient()
+        return new ConsumerPageTag(
+            this.httpClient,
+            this.parser
         );
     }
 
-    /**
-     * Endpoint: /consumer/account
-     *
-     * 
-     */
-    public async getConsumerAccount(): Promise<ConsumerAccountResource>
+    public consumerLog(): ConsumerLogTag
     {
-        return new ConsumerAccountResource(
-            this.baseUrl,
-            await this.newHttpClient()
+        return new ConsumerLogTag(
+            this.httpClient,
+            this.parser
         );
     }
 
-    /**
-     * Endpoint: /consumer/transaction/$transaction_id<[0-9]+>
-     *
-     * 
-     */
-    public async getConsumerTransactionByTransactionId(transactionId: string): Promise<ConsumerTransactionByTransactionIdResource>
+    public consumerGrant(): ConsumerGrantTag
     {
-        return new ConsumerTransactionByTransactionIdResource(
-            transactionId,
-            this.baseUrl,
-            await this.newHttpClient()
+        return new ConsumerGrantTag(
+            this.httpClient,
+            this.parser
         );
     }
 
-    /**
-     * Endpoint: /consumer/transaction
-     *
-     * 
-     */
-    public async getConsumerTransaction(): Promise<ConsumerTransactionResource>
+    public consumerEvent(): ConsumerEventTag
     {
-        return new ConsumerTransactionResource(
-            this.baseUrl,
-            await this.newHttpClient()
+        return new ConsumerEventTag(
+            this.httpClient,
+            this.parser
         );
     }
 
-    /**
-     * Endpoint: /consumer/subscription/$subscription_id<[0-9]+>
-     *
-     * 
-     */
-    public async getConsumerSubscriptionBySubscriptionId(subscriptionId: string): Promise<ConsumerSubscriptionBySubscriptionIdResource>
+    public consumerApp(): ConsumerAppTag
     {
-        return new ConsumerSubscriptionBySubscriptionIdResource(
-            subscriptionId,
-            this.baseUrl,
-            await this.newHttpClient()
+        return new ConsumerAppTag(
+            this.httpClient,
+            this.parser
         );
     }
 
-    /**
-     * Endpoint: /consumer/subscription
-     *
-     * 
-     */
-    public async getConsumerSubscription(): Promise<ConsumerSubscriptionResource>
-    {
-        return new ConsumerSubscriptionResource(
-            this.baseUrl,
-            await this.newHttpClient()
-        );
-    }
 
-    /**
-     * Endpoint: /consumer/scope
-     *
-     * 
-     */
-    public async getConsumerScope(): Promise<ConsumerScopeResource>
-    {
-        return new ConsumerScopeResource(
-            this.baseUrl,
-            await this.newHttpClient()
-        );
-    }
-
-    /**
-     * Endpoint: /consumer/plan/$plan_id<[0-9]+>
-     *
-     * 
-     */
-    public async getConsumerPlanByPlanId(planId: string): Promise<ConsumerPlanByPlanIdResource>
-    {
-        return new ConsumerPlanByPlanIdResource(
-            planId,
-            this.baseUrl,
-            await this.newHttpClient()
-        );
-    }
-
-    /**
-     * Endpoint: /consumer/plan
-     *
-     * 
-     */
-    public async getConsumerPlan(): Promise<ConsumerPlanResource>
-    {
-        return new ConsumerPlanResource(
-            this.baseUrl,
-            await this.newHttpClient()
-        );
-    }
-
-    /**
-     * Endpoint: /consumer/payment/:provider/checkout
-     *
-     * 
-     */
-    public async getConsumerPaymentByProviderCheckout(provider: string): Promise<ConsumerPaymentByProviderCheckoutResource>
-    {
-        return new ConsumerPaymentByProviderCheckoutResource(
-            provider,
-            this.baseUrl,
-            await this.newHttpClient()
-        );
-    }
-
-    /**
-     * Endpoint: /consumer/payment/:provider/portal
-     *
-     * 
-     */
-    public async getConsumerPaymentByProviderPortal(provider: string): Promise<ConsumerPaymentByProviderPortalResource>
-    {
-        return new ConsumerPaymentByProviderPortalResource(
-            provider,
-            this.baseUrl,
-            await this.newHttpClient()
-        );
-    }
-
-    /**
-     * Endpoint: /consumer/page/:page_id
-     *
-     * 
-     */
-    public async getConsumerPageByPageId(pageId: string): Promise<ConsumerPageByPageIdResource>
-    {
-        return new ConsumerPageByPageIdResource(
-            pageId,
-            this.baseUrl,
-            await this.newHttpClient()
-        );
-    }
-
-    /**
-     * Endpoint: /consumer/page
-     *
-     * 
-     */
-    public async getConsumerPage(): Promise<ConsumerPageResource>
-    {
-        return new ConsumerPageResource(
-            this.baseUrl,
-            await this.newHttpClient()
-        );
-    }
-
-    /**
-     * Endpoint: /consumer/log/$log_id<[0-9]+>
-     *
-     * 
-     */
-    public async getConsumerLogByLogId(logId: string): Promise<ConsumerLogByLogIdResource>
-    {
-        return new ConsumerLogByLogIdResource(
-            logId,
-            this.baseUrl,
-            await this.newHttpClient()
-        );
-    }
-
-    /**
-     * Endpoint: /consumer/log
-     *
-     * 
-     */
-    public async getConsumerLog(): Promise<ConsumerLogResource>
-    {
-        return new ConsumerLogResource(
-            this.baseUrl,
-            await this.newHttpClient()
-        );
-    }
-
-    /**
-     * Endpoint: /consumer/grant/$grant_id<[0-9]+>
-     *
-     * 
-     */
-    public async getConsumerGrantByGrantId(grantId: string): Promise<ConsumerGrantByGrantIdResource>
-    {
-        return new ConsumerGrantByGrantIdResource(
-            grantId,
-            this.baseUrl,
-            await this.newHttpClient()
-        );
-    }
-
-    /**
-     * Endpoint: /consumer/grant
-     *
-     * 
-     */
-    public async getConsumerGrant(): Promise<ConsumerGrantResource>
-    {
-        return new ConsumerGrantResource(
-            this.baseUrl,
-            await this.newHttpClient()
-        );
-    }
-
-    /**
-     * Endpoint: /consumer/event
-     *
-     * 
-     */
-    public async getConsumerEvent(): Promise<ConsumerEventResource>
-    {
-        return new ConsumerEventResource(
-            this.baseUrl,
-            await this.newHttpClient()
-        );
-    }
-
-    /**
-     * Endpoint: /consumer/app/$app_id<[0-9]+>
-     *
-     * 
-     */
-    public async getConsumerAppByAppId(appId: string): Promise<ConsumerAppByAppIdResource>
-    {
-        return new ConsumerAppByAppIdResource(
-            appId,
-            this.baseUrl,
-            await this.newHttpClient()
-        );
-    }
-
-    /**
-     * Endpoint: /consumer/app
-     *
-     * 
-     */
-    public async getConsumerApp(): Promise<ConsumerAppResource>
-    {
-        return new ConsumerAppResource(
-            this.baseUrl,
-            await this.newHttpClient()
-        );
-    }
 
 }

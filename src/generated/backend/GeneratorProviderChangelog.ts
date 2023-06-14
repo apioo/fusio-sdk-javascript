@@ -5,9 +5,9 @@
 
 import {Schema} from "./Schema";
 import {Action} from "./Action";
-import {Route} from "./Route";
+import {Operation} from "./Operation";
 export interface GeneratorProviderChangelog {
     schemas?: Array<Schema>
     actions?: Array<Action>
-    routes?: Array<Route>
+    operations?: Array<Operation>
 }

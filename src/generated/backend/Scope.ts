@@ -3,12 +3,12 @@
  * {@link https://sdkgen.app}
  */
 
-import {ScopeRoute} from "./ScopeRoute";
+import {ScopeOperation} from "./ScopeOperation";
 import {Metadata} from "./Metadata";
 export interface Scope {
     id?: number
     name?: string
     description?: string
-    routes?: Array<ScopeRoute>
+    operations?: Array<ScopeOperation>
     metadata?: Metadata
 }

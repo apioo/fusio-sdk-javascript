@@ -6,4 +6,5 @@
 export interface Message {
     success?: boolean
     message?: string
+    id?: string
 }

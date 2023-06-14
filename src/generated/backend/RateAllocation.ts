@@ -5,7 +5,7 @@
 
 export interface RateAllocation {
     id?: number
-    routeId?: number
+    operationId?: number
     userId?: number
     planId?: number
     appId?: number
