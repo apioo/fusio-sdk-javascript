@@ -1,39 +1,36 @@
-
 import ClientBackend from './generated/backend/Client';
 import ClientConsumer from './generated/consumer/Client';
-import {ClientCredentials, CredentialsInterface, MemoryTokenStore, TokenStoreInterface} from "sdkgen-client";
+import {CredentialsInterface, OAuth2, TokenStoreInterface} from "sdkgen-client";
 
 export default class Client {
     private readonly baseUrl: string;
     private readonly credentials: CredentialsInterface;
-    private readonly scopes: Array<string>|null;
-    private readonly tokenStore: TokenStoreInterface;
 
     public constructor(baseUrl: string, clientId: string, clientSecret: string, scopes?: Array<string>|null, tokenStore?: TokenStoreInterface) {
         this.baseUrl = baseUrl;
-        this.credentials = this.newCredentials(clientId, clientSecret);
-        this.scopes = scopes || [];
-        this.tokenStore = tokenStore || new MemoryTokenStore();
+        this.credentials = this.newCredentials(clientId, clientSecret, tokenStore, scopes);
     }
 
     public backend(): ClientBackend {
-        return new ClientBackend(this.baseUrl, this.credentials, this.tokenStore, this.scopes);
+        return new ClientBackend(this.baseUrl, this.credentials);
     }
 
     public consumer(): ClientConsumer  {
-        return new ClientConsumer(this.baseUrl, this.credentials, this.tokenStore, this.scopes);
+        return new ClientConsumer(this.baseUrl, this.credentials);
     }
 
-    public getTokenStore(): TokenStoreInterface {
-        return this.tokenStore;
+    public getCredentials(): CredentialsInterface {
+        return this.credentials;
     }
 
-    private newCredentials(clientId: string, clientSecret: string): CredentialsInterface {
-        return new ClientCredentials(
+    private newCredentials(clientId: string, clientSecret: string, tokenStore?: TokenStoreInterface, scopes?: Array<string>|null): CredentialsInterface {
+        return new OAuth2(
             clientId,
             clientSecret,
             this.baseUrl + '/authorization/token',
-            ''
+            '',
+            tokenStore,
+            scopes
         );
     }
 }
