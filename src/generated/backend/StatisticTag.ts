@@ -15,7 +15,7 @@ export class StatisticTag extends TagAbstract {
      * @returns {Promise<StatisticChart>}
      * @throws {ClientException}
      */
-    public async getUsedPoints(): Promise<StatisticChart> {
+    public async getUsedPoints(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
         const url = this.parser.url('/backend/statistic/used_points', {
         });
 
@@ -23,6 +23,20 @@ export class StatisticTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
+                'from': from,
+                'to': to,
+                'routeId': routeId,
+                'appId': appId,
+                'userId': userId,
+                'ip': ip,
+                'userAgent': userAgent,
+                'method': method,
+                'path': path,
+                'header': header,
+                'body': body,
             }),
         };
 
@@ -45,7 +59,7 @@ export class StatisticTag extends TagAbstract {
      * @returns {Promise<StatisticChart>}
      * @throws {ClientException}
      */
-    public async getTimePerRoute(): Promise<StatisticChart> {
+    public async getTimePerRoute(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
         const url = this.parser.url('/backend/statistic/time_per_route', {
         });
 
@@ -53,6 +67,20 @@ export class StatisticTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
+                'from': from,
+                'to': to,
+                'routeId': routeId,
+                'appId': appId,
+                'userId': userId,
+                'ip': ip,
+                'userAgent': userAgent,
+                'method': method,
+                'path': path,
+                'header': header,
+                'body': body,
             }),
         };
 
@@ -75,7 +103,7 @@ export class StatisticTag extends TagAbstract {
      * @returns {Promise<StatisticChart>}
      * @throws {ClientException}
      */
-    public async getTimeAverage(): Promise<StatisticChart> {
+    public async getTimeAverage(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
         const url = this.parser.url('/backend/statistic/time_average', {
         });
 
@@ -83,6 +111,20 @@ export class StatisticTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
+                'from': from,
+                'to': to,
+                'routeId': routeId,
+                'appId': appId,
+                'userId': userId,
+                'ip': ip,
+                'userAgent': userAgent,
+                'method': method,
+                'path': path,
+                'header': header,
+                'body': body,
             }),
         };
 
@@ -105,7 +147,7 @@ export class StatisticTag extends TagAbstract {
      * @returns {Promise<StatisticChart>}
      * @throws {ClientException}
      */
-    public async getMostUsedRoutes(): Promise<StatisticChart> {
+    public async getMostUsedRoutes(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
         const url = this.parser.url('/backend/statistic/most_used_routes', {
         });
 
@@ -113,6 +155,20 @@ export class StatisticTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
+                'from': from,
+                'to': to,
+                'routeId': routeId,
+                'appId': appId,
+                'userId': userId,
+                'ip': ip,
+                'userAgent': userAgent,
+                'method': method,
+                'path': path,
+                'header': header,
+                'body': body,
             }),
         };
 
@@ -135,7 +191,7 @@ export class StatisticTag extends TagAbstract {
      * @returns {Promise<StatisticChart>}
      * @throws {ClientException}
      */
-    public async getMostUsedApps(): Promise<StatisticChart> {
+    public async getMostUsedApps(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
         const url = this.parser.url('/backend/statistic/most_used_apps', {
         });
 
@@ -143,6 +199,20 @@ export class StatisticTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
+                'from': from,
+                'to': to,
+                'routeId': routeId,
+                'appId': appId,
+                'userId': userId,
+                'ip': ip,
+                'userAgent': userAgent,
+                'method': method,
+                'path': path,
+                'header': header,
+                'body': body,
             }),
         };
 
@@ -165,7 +235,7 @@ export class StatisticTag extends TagAbstract {
      * @returns {Promise<StatisticChart>}
      * @throws {ClientException}
      */
-    public async getIssuedTokens(): Promise<StatisticChart> {
+    public async getIssuedTokens(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
         const url = this.parser.url('/backend/statistic/issued_tokens', {
         });
 
@@ -173,6 +243,20 @@ export class StatisticTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
+                'from': from,
+                'to': to,
+                'routeId': routeId,
+                'appId': appId,
+                'userId': userId,
+                'ip': ip,
+                'userAgent': userAgent,
+                'method': method,
+                'path': path,
+                'header': header,
+                'body': body,
             }),
         };
 
@@ -195,7 +279,7 @@ export class StatisticTag extends TagAbstract {
      * @returns {Promise<StatisticChart>}
      * @throws {ClientException}
      */
-    public async getIncomingTransactions(): Promise<StatisticChart> {
+    public async getIncomingTransactions(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
         const url = this.parser.url('/backend/statistic/incoming_transactions', {
         });
 
@@ -203,6 +287,20 @@ export class StatisticTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
+                'from': from,
+                'to': to,
+                'routeId': routeId,
+                'appId': appId,
+                'userId': userId,
+                'ip': ip,
+                'userAgent': userAgent,
+                'method': method,
+                'path': path,
+                'header': header,
+                'body': body,
             }),
         };
 
@@ -225,7 +323,7 @@ export class StatisticTag extends TagAbstract {
      * @returns {Promise<StatisticChart>}
      * @throws {ClientException}
      */
-    public async getIncomingRequests(): Promise<StatisticChart> {
+    public async getIncomingRequests(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
         const url = this.parser.url('/backend/statistic/incoming_requests', {
         });
 
@@ -233,6 +331,20 @@ export class StatisticTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
+                'from': from,
+                'to': to,
+                'routeId': routeId,
+                'appId': appId,
+                'userId': userId,
+                'ip': ip,
+                'userAgent': userAgent,
+                'method': method,
+                'path': path,
+                'header': header,
+                'body': body,
             }),
         };
 
@@ -255,7 +367,7 @@ export class StatisticTag extends TagAbstract {
      * @returns {Promise<StatisticChart>}
      * @throws {ClientException}
      */
-    public async getErrorsPerRoute(): Promise<StatisticChart> {
+    public async getErrorsPerRoute(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
         const url = this.parser.url('/backend/statistic/errors_per_route', {
         });
 
@@ -263,6 +375,20 @@ export class StatisticTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
+                'from': from,
+                'to': to,
+                'routeId': routeId,
+                'appId': appId,
+                'userId': userId,
+                'ip': ip,
+                'userAgent': userAgent,
+                'method': method,
+                'path': path,
+                'header': header,
+                'body': body,
             }),
         };
 
@@ -285,7 +411,7 @@ export class StatisticTag extends TagAbstract {
      * @returns {Promise<StatisticCount>}
      * @throws {ClientException}
      */
-    public async getCountRequests(): Promise<StatisticCount> {
+    public async getCountRequests(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticCount> {
         const url = this.parser.url('/backend/statistic/count_requests', {
         });
 
@@ -293,6 +419,20 @@ export class StatisticTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
+                'from': from,
+                'to': to,
+                'routeId': routeId,
+                'appId': appId,
+                'userId': userId,
+                'ip': ip,
+                'userAgent': userAgent,
+                'method': method,
+                'path': path,
+                'header': header,
+                'body': body,
             }),
         };
 

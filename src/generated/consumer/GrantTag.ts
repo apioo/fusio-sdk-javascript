@@ -46,7 +46,7 @@ export class GrantTag extends TagAbstract {
      * @returns {Promise<GrantCollection>}
      * @throws {ClientException}
      */
-    public async getAll(): Promise<GrantCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string): Promise<GrantCollection> {
         const url = this.parser.url('/consumer/grant', {
         });
 
@@ -54,6 +54,9 @@ export class GrantTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
             }),
         };
 

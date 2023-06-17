@@ -143,7 +143,7 @@ export class SubscriptionTag extends TagAbstract {
      * @returns {Promise<EventSubscriptionCollection>}
      * @throws {ClientException}
      */
-    public async getAll(): Promise<EventSubscriptionCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string): Promise<EventSubscriptionCollection> {
         const url = this.parser.url('/consumer/subscription', {
         });
 
@@ -151,6 +151,9 @@ export class SubscriptionTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
             }),
         };
 

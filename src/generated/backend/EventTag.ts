@@ -147,7 +147,7 @@ export class EventTag extends TagAbstract {
      * @returns {Promise<EventCollection>}
      * @throws {ClientException}
      */
-    public async getAll(): Promise<EventCollection> {
+    public async getAll(categoryId?: number, startIndex?: number, count?: number, search?: string): Promise<EventCollection> {
         const url = this.parser.url('/backend/event', {
         });
 
@@ -155,6 +155,10 @@ export class EventTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'categoryId': categoryId,
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
             }),
         };
 
@@ -302,7 +306,7 @@ export class EventTag extends TagAbstract {
      * @returns {Promise<EventSubscriptionCollection>}
      * @throws {ClientException}
      */
-    public async getAllSubscriptions(): Promise<EventSubscriptionCollection> {
+    public async getAllSubscriptions(startIndex?: number, count?: number, search?: string): Promise<EventSubscriptionCollection> {
         const url = this.parser.url('/backend/event/subscription', {
         });
 
@@ -310,6 +314,9 @@ export class EventTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
             }),
         };
 

@@ -143,7 +143,7 @@ export class AppTag extends TagAbstract {
      * @returns {Promise<AppCollection>}
      * @throws {ClientException}
      */
-    public async getAll(): Promise<AppCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string): Promise<AppCollection> {
         const url = this.parser.url('/consumer/app', {
         });
 
@@ -151,6 +151,9 @@ export class AppTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
             }),
         };
 

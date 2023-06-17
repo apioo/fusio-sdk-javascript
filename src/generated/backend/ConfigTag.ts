@@ -80,7 +80,7 @@ export class ConfigTag extends TagAbstract {
      * @returns {Promise<ConfigCollection>}
      * @throws {ClientException}
      */
-    public async getAll(): Promise<ConfigCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string): Promise<ConfigCollection> {
         const url = this.parser.url('/backend/config', {
         });
 
@@ -88,6 +88,9 @@ export class ConfigTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
             }),
         };
 

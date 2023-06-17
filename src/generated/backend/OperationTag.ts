@@ -143,7 +143,7 @@ export class OperationTag extends TagAbstract {
      * @returns {Promise<OperationCollection>}
      * @throws {ClientException}
      */
-    public async getAll(): Promise<OperationCollection> {
+    public async getAll(categoryId?: number, startIndex?: number, count?: number, search?: string): Promise<OperationCollection> {
         const url = this.parser.url('/backend/operation', {
         });
 
@@ -151,6 +151,10 @@ export class OperationTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'categoryId': categoryId,
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
             }),
         };
 

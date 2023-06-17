@@ -46,7 +46,7 @@ export class LogTag extends TagAbstract {
      * @returns {Promise<LogCollection>}
      * @throws {ClientException}
      */
-    public async getAll(): Promise<LogCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string): Promise<LogCollection> {
         const url = this.parser.url('/consumer/log', {
         });
 
@@ -54,6 +54,9 @@ export class LogTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
             }),
         };
 

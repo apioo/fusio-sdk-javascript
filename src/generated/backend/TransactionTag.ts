@@ -46,7 +46,7 @@ export class TransactionTag extends TagAbstract {
      * @returns {Promise<TransactionCollection>}
      * @throws {ClientException}
      */
-    public async getAll(): Promise<TransactionCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string, from?: string, to?: string, planId?: number, userId?: number, appId?: number, status?: string, provider?: string): Promise<TransactionCollection> {
         const url = this.parser.url('/backend/transaction', {
         });
 
@@ -54,6 +54,16 @@ export class TransactionTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
+                'from': from,
+                'to': to,
+                'planId': planId,
+                'userId': userId,
+                'appId': appId,
+                'status': status,
+                'provider': provider,
             }),
         };
 

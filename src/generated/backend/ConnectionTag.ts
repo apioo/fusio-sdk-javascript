@@ -210,7 +210,7 @@ export class ConnectionTag extends TagAbstract {
      * @returns {Promise<FormContainer>}
      * @throws {ClientException}
      */
-    public async getForm(): Promise<FormContainer> {
+    public async getForm(_class?: string): Promise<FormContainer> {
         const url = this.parser.url('/backend/connection/form', {
         });
 
@@ -218,6 +218,7 @@ export class ConnectionTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'class': _class,
             }),
         };
 
@@ -301,7 +302,7 @@ export class ConnectionTag extends TagAbstract {
      * @returns {Promise<ConnectionCollection>}
      * @throws {ClientException}
      */
-    public async getAll(): Promise<ConnectionCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string): Promise<ConnectionCollection> {
         const url = this.parser.url('/backend/connection', {
         });
 
@@ -309,6 +310,9 @@ export class ConnectionTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
             }),
         };
 

@@ -143,7 +143,7 @@ export class RateTag extends TagAbstract {
      * @returns {Promise<RateCollection>}
      * @throws {ClientException}
      */
-    public async getAll(): Promise<RateCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string): Promise<RateCollection> {
         const url = this.parser.url('/backend/rate', {
         });
 
@@ -151,6 +151,9 @@ export class RateTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
             }),
         };
 

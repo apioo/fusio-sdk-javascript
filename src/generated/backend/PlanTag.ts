@@ -143,7 +143,7 @@ export class PlanTag extends TagAbstract {
      * @returns {Promise<PlanCollection>}
      * @throws {ClientException}
      */
-    public async getAll(): Promise<PlanCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string): Promise<PlanCollection> {
         const url = this.parser.url('/backend/plan', {
         });
 
@@ -151,6 +151,9 @@ export class PlanTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
             }),
         };
 

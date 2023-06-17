@@ -143,7 +143,7 @@ export class CronjobTag extends TagAbstract {
      * @returns {Promise<CronjobCollection>}
      * @throws {ClientException}
      */
-    public async getAll(): Promise<CronjobCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string): Promise<CronjobCollection> {
         const url = this.parser.url('/backend/cronjob', {
         });
 
@@ -151,6 +151,9 @@ export class CronjobTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
             }),
         };
 

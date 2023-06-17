@@ -143,7 +143,7 @@ export class CategoryTag extends TagAbstract {
      * @returns {Promise<CategoryCollection>}
      * @throws {ClientException}
      */
-    public async getAll(): Promise<CategoryCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string): Promise<CategoryCollection> {
         const url = this.parser.url('/backend/category', {
         });
 
@@ -151,6 +151,9 @@ export class CategoryTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
             }),
         };
 

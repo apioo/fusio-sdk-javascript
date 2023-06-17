@@ -14,7 +14,7 @@ export class ScopeTag extends TagAbstract {
      * @returns {Promise<ScopeCollection>}
      * @throws {ClientException}
      */
-    public async getAll(): Promise<ScopeCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string): Promise<ScopeCollection> {
         const url = this.parser.url('/consumer/scope', {
         });
 
@@ -22,6 +22,9 @@ export class ScopeTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
             }),
         };
 

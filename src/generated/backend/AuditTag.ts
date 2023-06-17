@@ -46,7 +46,7 @@ export class AuditTag extends TagAbstract {
      * @returns {Promise<AuditCollection>}
      * @throws {ClientException}
      */
-    public async getAll(): Promise<AuditCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string, from?: string, to?: string, appId?: number, userId?: number, event?: string, ip?: string, message?: string): Promise<AuditCollection> {
         const url = this.parser.url('/backend/audit', {
         });
 
@@ -54,6 +54,16 @@ export class AuditTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
+                'from': from,
+                'to': to,
+                'appId': appId,
+                'userId': userId,
+                'event': event,
+                'ip': ip,
+                'message': message,
             }),
         };
 

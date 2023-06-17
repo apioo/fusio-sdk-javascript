@@ -48,7 +48,7 @@ export class LogTag extends TagAbstract {
      * @returns {Promise<LogCollection>}
      * @throws {ClientException}
      */
-    public async getAll(): Promise<LogCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<LogCollection> {
         const url = this.parser.url('/backend/log', {
         });
 
@@ -56,6 +56,20 @@ export class LogTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
+                'from': from,
+                'to': to,
+                'routeId': routeId,
+                'appId': appId,
+                'userId': userId,
+                'ip': ip,
+                'userAgent': userAgent,
+                'method': method,
+                'path': path,
+                'header': header,
+                'body': body,
             }),
         };
 
@@ -109,7 +123,7 @@ export class LogTag extends TagAbstract {
      * @returns {Promise<LogErrorCollection>}
      * @throws {ClientException}
      */
-    public async getAllErrors(): Promise<LogErrorCollection> {
+    public async getAllErrors(startIndex?: number, count?: number, search?: string): Promise<LogErrorCollection> {
         const url = this.parser.url('/backend/log/error', {
         });
 
@@ -117,6 +131,9 @@ export class LogTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
             }),
         };
 

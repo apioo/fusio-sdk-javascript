@@ -49,7 +49,7 @@ export class TrashTag extends TagAbstract {
      * @returns {Promise<TrashDataCollection>}
      * @throws {ClientException}
      */
-    public async getAllByType(type: string): Promise<TrashDataCollection> {
+    public async getAllByType(type: string, startIndex?: number, count?: number, search?: string): Promise<TrashDataCollection> {
         const url = this.parser.url('/backend/trash/:type', {
             'type': type,
         });
@@ -58,6 +58,9 @@ export class TrashTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
             }),
         };
 

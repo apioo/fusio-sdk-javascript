@@ -143,7 +143,7 @@ export class UserTag extends TagAbstract {
      * @returns {Promise<UserCollection>}
      * @throws {ClientException}
      */
-    public async getAll(): Promise<UserCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string): Promise<UserCollection> {
         const url = this.parser.url('/backend/user', {
         });
 
@@ -151,6 +151,9 @@ export class UserTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
             }),
         };
 

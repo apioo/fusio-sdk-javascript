@@ -143,7 +143,7 @@ export class RoleTag extends TagAbstract {
      * @returns {Promise<RoleCollection>}
      * @throws {ClientException}
      */
-    public async getAll(): Promise<RoleCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string): Promise<RoleCollection> {
         const url = this.parser.url('/backend/role', {
         });
 
@@ -151,6 +151,9 @@ export class RoleTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
             }),
         };
 

@@ -177,7 +177,7 @@ export class AppTag extends TagAbstract {
      * @returns {Promise<AppCollection>}
      * @throws {ClientException}
      */
-    public async getAll(): Promise<AppCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string): Promise<AppCollection> {
         const url = this.parser.url('/backend/app', {
         });
 
@@ -185,6 +185,9 @@ export class AppTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
             }),
         };
 
@@ -238,7 +241,7 @@ export class AppTag extends TagAbstract {
      * @returns {Promise<AppTokenCollection>}
      * @throws {ClientException}
      */
-    public async getAllTokens(): Promise<AppTokenCollection> {
+    public async getAllTokens(startIndex?: number, count?: number, search?: string, from?: string, to?: string, appId?: number, userId?: number, status?: number, scope?: string, ip?: string): Promise<AppTokenCollection> {
         const url = this.parser.url('/backend/app/token', {
         });
 
@@ -246,6 +249,16 @@ export class AppTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
+                'from': from,
+                'to': to,
+                'appId': appId,
+                'userId': userId,
+                'status': status,
+                'scope': scope,
+                'ip': ip,
             }),
         };
 

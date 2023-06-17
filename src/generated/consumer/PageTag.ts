@@ -46,7 +46,7 @@ export class PageTag extends TagAbstract {
      * @returns {Promise<PageCollection>}
      * @throws {ClientException}
      */
-    public async getAll(): Promise<PageCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string): Promise<PageCollection> {
         const url = this.parser.url('/consumer/page', {
         });
 
@@ -54,6 +54,9 @@ export class PageTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
             }),
         };
 
