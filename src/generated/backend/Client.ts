@@ -7,203 +7,228 @@ import axios, {AxiosRequestConfig} from "axios";
 import {ClientAbstract, TokenStoreInterface} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
+import {UserTag} from "./UserTag";
+import {TrashTag} from "./TrashTag";
+import {TransactionTag} from "./TransactionTag";
+import {StatisticTag} from "./StatisticTag";
+import {SdkTag} from "./SdkTag";
+import {ScopeTag} from "./ScopeTag";
+import {SchemaTag} from "./SchemaTag";
+import {OperationTag} from "./OperationTag";
+import {RoleTag} from "./RoleTag";
+import {RateTag} from "./RateTag";
+import {PlanTag} from "./PlanTag";
+import {PageTag} from "./PageTag";
+import {MarketplaceTag} from "./MarketplaceTag";
+import {LogTag} from "./LogTag";
+import {GeneratorTag} from "./GeneratorTag";
+import {EventTag} from "./EventTag";
+import {DashboardTag} from "./DashboardTag";
+import {CronjobTag} from "./CronjobTag";
+import {ConnectionTag} from "./ConnectionTag";
+import {ConfigTag} from "./ConfigTag";
+import {CategoryTag} from "./CategoryTag";
+import {AuditTag} from "./AuditTag";
+import {AppTag} from "./AppTag";
+import {ActionTag} from "./ActionTag";
+import {AccountTag} from "./AccountTag";
 
-export default class Client extends ClientAbstract {
-    public backendUser(): BackendUserTag
+export class Client extends ClientAbstract {
+    public user(): UserTag
     {
-        return new BackendUserTag(
+        return new UserTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendTrash(): BackendTrashTag
+    public trash(): TrashTag
     {
-        return new BackendTrashTag(
+        return new TrashTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendTransaction(): BackendTransactionTag
+    public transaction(): TransactionTag
     {
-        return new BackendTransactionTag(
+        return new TransactionTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendStatistic(): BackendStatisticTag
+    public statistic(): StatisticTag
     {
-        return new BackendStatisticTag(
+        return new StatisticTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendSdk(): BackendSdkTag
+    public sdk(): SdkTag
     {
-        return new BackendSdkTag(
+        return new SdkTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendScope(): BackendScopeTag
+    public scope(): ScopeTag
     {
-        return new BackendScopeTag(
+        return new ScopeTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendSchema(): BackendSchemaTag
+    public schema(): SchemaTag
     {
-        return new BackendSchemaTag(
+        return new SchemaTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendOperation(): BackendOperationTag
+    public operation(): OperationTag
     {
-        return new BackendOperationTag(
+        return new OperationTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendRole(): BackendRoleTag
+    public role(): RoleTag
     {
-        return new BackendRoleTag(
+        return new RoleTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendRate(): BackendRateTag
+    public rate(): RateTag
     {
-        return new BackendRateTag(
+        return new RateTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendPlan(): BackendPlanTag
+    public plan(): PlanTag
     {
-        return new BackendPlanTag(
+        return new PlanTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendPage(): BackendPageTag
+    public page(): PageTag
     {
-        return new BackendPageTag(
+        return new PageTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendMarketplace(): BackendMarketplaceTag
+    public marketplace(): MarketplaceTag
     {
-        return new BackendMarketplaceTag(
+        return new MarketplaceTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendLog(): BackendLogTag
+    public log(): LogTag
     {
-        return new BackendLogTag(
+        return new LogTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendGenerator(): BackendGeneratorTag
+    public generator(): GeneratorTag
     {
-        return new BackendGeneratorTag(
+        return new GeneratorTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendEvent(): BackendEventTag
+    public event(): EventTag
     {
-        return new BackendEventTag(
+        return new EventTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendDashboard(): BackendDashboardTag
+    public dashboard(): DashboardTag
     {
-        return new BackendDashboardTag(
+        return new DashboardTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendCronjob(): BackendCronjobTag
+    public cronjob(): CronjobTag
     {
-        return new BackendCronjobTag(
+        return new CronjobTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendConnection(): BackendConnectionTag
+    public connection(): ConnectionTag
     {
-        return new BackendConnectionTag(
+        return new ConnectionTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendConfig(): BackendConfigTag
+    public config(): ConfigTag
     {
-        return new BackendConfigTag(
+        return new ConfigTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendCategory(): BackendCategoryTag
+    public category(): CategoryTag
     {
-        return new BackendCategoryTag(
+        return new CategoryTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendAudit(): BackendAuditTag
+    public audit(): AuditTag
     {
-        return new BackendAuditTag(
+        return new AuditTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendApp(): BackendAppTag
+    public app(): AppTag
     {
-        return new BackendAppTag(
+        return new AppTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendAction(): BackendActionTag
+    public action(): ActionTag
     {
-        return new BackendActionTag(
+        return new ActionTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public backendAccount(): BackendAccountTag
+    public account(): AccountTag
     {
-        return new BackendAccountTag(
+        return new AccountTag(
             this.httpClient,
             this.parser
         );

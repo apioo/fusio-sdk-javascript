@@ -7,91 +7,102 @@ import axios, {AxiosRequestConfig} from "axios";
 import {ClientAbstract, TokenStoreInterface} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
+import {AccountTag} from "./AccountTag";
+import {TransactionTag} from "./TransactionTag";
+import {SubscriptionTag} from "./SubscriptionTag";
+import {ScopeTag} from "./ScopeTag";
+import {PlanTag} from "./PlanTag";
+import {PaymentTag} from "./PaymentTag";
+import {PageTag} from "./PageTag";
+import {LogTag} from "./LogTag";
+import {GrantTag} from "./GrantTag";
+import {EventTag} from "./EventTag";
+import {AppTag} from "./AppTag";
 
-export default class Client extends ClientAbstract {
-    public consumerAccount(): ConsumerAccountTag
+export class Client extends ClientAbstract {
+    public account(): AccountTag
     {
-        return new ConsumerAccountTag(
+        return new AccountTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public consumerTransaction(): ConsumerTransactionTag
+    public transaction(): TransactionTag
     {
-        return new ConsumerTransactionTag(
+        return new TransactionTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public consumerSubscription(): ConsumerSubscriptionTag
+    public subscription(): SubscriptionTag
     {
-        return new ConsumerSubscriptionTag(
+        return new SubscriptionTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public consumerScope(): ConsumerScopeTag
+    public scope(): ScopeTag
     {
-        return new ConsumerScopeTag(
+        return new ScopeTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public consumerPlan(): ConsumerPlanTag
+    public plan(): PlanTag
     {
-        return new ConsumerPlanTag(
+        return new PlanTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public consumerPayment(): ConsumerPaymentTag
+    public payment(): PaymentTag
     {
-        return new ConsumerPaymentTag(
+        return new PaymentTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public consumerPage(): ConsumerPageTag
+    public page(): PageTag
     {
-        return new ConsumerPageTag(
+        return new PageTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public consumerLog(): ConsumerLogTag
+    public log(): LogTag
     {
-        return new ConsumerLogTag(
+        return new LogTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public consumerGrant(): ConsumerGrantTag
+    public grant(): GrantTag
     {
-        return new ConsumerGrantTag(
+        return new GrantTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public consumerEvent(): ConsumerEventTag
+    public event(): EventTag
     {
-        return new ConsumerEventTag(
+        return new EventTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public consumerApp(): ConsumerAppTag
+    public app(): AppTag
     {
-        return new ConsumerAppTag(
+        return new AppTag(
             this.httpClient,
             this.parser
         );

@@ -1,5 +1,5 @@
-import ClientBackend from './generated/backend/Client';
-import ClientConsumer from './generated/consumer/Client';
+import {Client as ClientBackend} from './generated/backend/Client';
+import {Client as ClientConsumer} from './generated/consumer/Client';
 import {CredentialsInterface, OAuth2, TokenStoreInterface} from "sdkgen-client";
 
 export default class Client {
