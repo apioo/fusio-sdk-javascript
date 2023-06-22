@@ -185,7 +185,7 @@ export class EventTag extends TagAbstract {
      * @throws {MessageException}
      * @throws {ClientException}
      */
-    public async getAll(categoryId?: number, startIndex?: number, count?: number, search?: string): Promise<EventCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string): Promise<EventCollection> {
         const url = this.parser.url('/backend/event', {
         });
 
@@ -193,7 +193,6 @@ export class EventTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-                'categoryId': categoryId,
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,

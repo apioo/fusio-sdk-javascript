@@ -262,7 +262,7 @@ export class SchemaTag extends TagAbstract {
      * @throws {MessageException}
      * @throws {ClientException}
      */
-    public async getAll(categoryId?: number, startIndex?: number, count?: number, search?: string): Promise<SchemaCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string): Promise<SchemaCollection> {
         const url = this.parser.url('/backend/schema', {
         });
 
@@ -270,7 +270,6 @@ export class SchemaTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-                'categoryId': categoryId,
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,

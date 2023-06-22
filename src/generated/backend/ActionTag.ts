@@ -293,7 +293,7 @@ export class ActionTag extends TagAbstract {
      * @throws {MessageException}
      * @throws {ClientException}
      */
-    public async getAll(startIndex?: number, count?: number, categoryId?: number): Promise<ActionCollection> {
+    public async getAll(startIndex?: number, count?: number): Promise<ActionCollection> {
         const url = this.parser.url('/backend/action', {
         });
 
@@ -303,7 +303,6 @@ export class ActionTag extends TagAbstract {
             params: this.parser.query({
                 'startIndex': startIndex,
                 'count': count,
-                'categoryId': categoryId,
             }),
         };
 
