@@ -7,11 +7,14 @@ import axios, {AxiosRequestConfig} from "axios";
 import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
+import {Message} from "./Message";
+import {MessageException} from "./MessageException";
 import {ScopeCollection} from "./ScopeCollection";
 
 export class ScopeTag extends TagAbstract {
     /**
      * @returns {Promise<ScopeCollection>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<ScopeCollection> {
@@ -34,6 +37,10 @@ export class ScopeTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }

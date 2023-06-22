@@ -11,10 +11,13 @@ import {Log} from "./Log";
 import {LogCollection} from "./LogCollection";
 import {LogError} from "./LogError";
 import {LogErrorCollection} from "./LogErrorCollection";
+import {Message} from "./Message";
+import {MessageException} from "./MessageException";
 
 export class LogTag extends TagAbstract {
     /**
      * @returns {Promise<Log>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async get(logId: string): Promise<Log> {
@@ -35,6 +38,14 @@ export class LogTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 404:
+                        throw new MessageException(error.response.data);
+                    case 410:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -46,6 +57,7 @@ export class LogTag extends TagAbstract {
 
     /**
      * @returns {Promise<LogCollection>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<LogCollection> {
@@ -79,6 +91,10 @@ export class LogTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -90,6 +106,7 @@ export class LogTag extends TagAbstract {
 
     /**
      * @returns {Promise<LogError>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getError(errorId: string): Promise<LogError> {
@@ -110,6 +127,10 @@ export class LogTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -121,6 +142,7 @@ export class LogTag extends TagAbstract {
 
     /**
      * @returns {Promise<LogErrorCollection>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getAllErrors(startIndex?: number, count?: number, search?: string): Promise<LogErrorCollection> {
@@ -143,6 +165,10 @@ export class LogTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }

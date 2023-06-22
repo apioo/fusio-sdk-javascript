@@ -8,6 +8,7 @@ import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {Message} from "./Message";
+import {MessageException} from "./MessageException";
 import {User} from "./User";
 import {UserCollection} from "./UserCollection";
 import {UserCreate} from "./UserCreate";
@@ -16,6 +17,7 @@ import {UserUpdate} from "./UserUpdate";
 export class UserTag extends TagAbstract {
     /**
      * @returns {Promise<Message>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async delete(userId: string): Promise<Message> {
@@ -36,6 +38,14 @@ export class UserTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 404:
+                        throw new MessageException(error.response.data);
+                    case 410:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -47,6 +57,7 @@ export class UserTag extends TagAbstract {
 
     /**
      * @returns {Promise<Message>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async update(userId: string, payload: UserUpdate): Promise<Message> {
@@ -68,6 +79,16 @@ export class UserTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new MessageException(error.response.data);
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 404:
+                        throw new MessageException(error.response.data);
+                    case 410:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -79,6 +100,7 @@ export class UserTag extends TagAbstract {
 
     /**
      * @returns {Promise<User>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async get(userId: string): Promise<User> {
@@ -99,6 +121,14 @@ export class UserTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 404:
+                        throw new MessageException(error.response.data);
+                    case 410:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -110,6 +140,7 @@ export class UserTag extends TagAbstract {
 
     /**
      * @returns {Promise<Message>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async create(payload: UserCreate): Promise<Message> {
@@ -130,6 +161,12 @@ export class UserTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new MessageException(error.response.data);
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -141,6 +178,7 @@ export class UserTag extends TagAbstract {
 
     /**
      * @returns {Promise<UserCollection>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<UserCollection> {
@@ -163,6 +201,10 @@ export class UserTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }

@@ -7,6 +7,8 @@ import axios, {AxiosRequestConfig} from "axios";
 import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
+import {Message} from "./Message";
+import {MessageException} from "./MessageException";
 import {PaymentCheckoutRequest} from "./PaymentCheckoutRequest";
 import {PaymentCheckoutResponse} from "./PaymentCheckoutResponse";
 import {PaymentPortalRequest} from "./PaymentPortalRequest";
@@ -15,6 +17,7 @@ import {PaymentPortalResponse} from "./PaymentPortalResponse";
 export class PaymentTag extends TagAbstract {
     /**
      * @returns {Promise<PaymentCheckoutResponse>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async checkout(provider: string, payload: PaymentCheckoutRequest): Promise<PaymentCheckoutResponse> {
@@ -36,6 +39,10 @@ export class PaymentTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -47,6 +54,7 @@ export class PaymentTag extends TagAbstract {
 
     /**
      * @returns {Promise<PaymentPortalResponse>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async portal(provider: string, payload: PaymentPortalRequest): Promise<PaymentPortalResponse> {
@@ -68,6 +76,10 @@ export class PaymentTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }

@@ -11,10 +11,12 @@ import {MarketplaceCollection} from "./MarketplaceCollection";
 import {MarketplaceInstall} from "./MarketplaceInstall";
 import {MarketplaceLocalApp} from "./MarketplaceLocalApp";
 import {Message} from "./Message";
+import {MessageException} from "./MessageException";
 
 export class MarketplaceTag extends TagAbstract {
     /**
      * @returns {Promise<Message>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async remove(appName: string): Promise<Message> {
@@ -35,6 +37,12 @@ export class MarketplaceTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new MessageException(error.response.data);
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -46,6 +54,7 @@ export class MarketplaceTag extends TagAbstract {
 
     /**
      * @returns {Promise<Message>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async update(appName: string): Promise<Message> {
@@ -66,6 +75,16 @@ export class MarketplaceTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new MessageException(error.response.data);
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 404:
+                        throw new MessageException(error.response.data);
+                    case 410:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -77,6 +96,7 @@ export class MarketplaceTag extends TagAbstract {
 
     /**
      * @returns {Promise<MarketplaceLocalApp>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async get(appName: string): Promise<MarketplaceLocalApp> {
@@ -97,6 +117,14 @@ export class MarketplaceTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 404:
+                        throw new MessageException(error.response.data);
+                    case 410:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -108,6 +136,7 @@ export class MarketplaceTag extends TagAbstract {
 
     /**
      * @returns {Promise<Message>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async install(payload: MarketplaceInstall): Promise<Message> {
@@ -128,6 +157,12 @@ export class MarketplaceTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new MessageException(error.response.data);
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -139,6 +174,7 @@ export class MarketplaceTag extends TagAbstract {
 
     /**
      * @returns {Promise<MarketplaceCollection>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getAll(): Promise<MarketplaceCollection> {
@@ -158,6 +194,10 @@ export class MarketplaceTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }

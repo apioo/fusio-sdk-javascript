@@ -8,6 +8,7 @@ import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {Message} from "./Message";
+import {MessageException} from "./MessageException";
 import {Operation} from "./Operation";
 import {OperationCollection} from "./OperationCollection";
 import {OperationCreate} from "./OperationCreate";
@@ -16,6 +17,7 @@ import {OperationUpdate} from "./OperationUpdate";
 export class OperationTag extends TagAbstract {
     /**
      * @returns {Promise<Message>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async delete(operationId: string): Promise<Message> {
@@ -36,6 +38,14 @@ export class OperationTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 404:
+                        throw new MessageException(error.response.data);
+                    case 410:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -47,6 +57,7 @@ export class OperationTag extends TagAbstract {
 
     /**
      * @returns {Promise<Message>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async update(operationId: string, payload: OperationUpdate): Promise<Message> {
@@ -68,6 +79,16 @@ export class OperationTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new MessageException(error.response.data);
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 404:
+                        throw new MessageException(error.response.data);
+                    case 410:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -79,6 +100,7 @@ export class OperationTag extends TagAbstract {
 
     /**
      * @returns {Promise<Operation>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async get(operationId: string): Promise<Operation> {
@@ -99,6 +121,14 @@ export class OperationTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 404:
+                        throw new MessageException(error.response.data);
+                    case 410:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -110,6 +140,7 @@ export class OperationTag extends TagAbstract {
 
     /**
      * @returns {Promise<Message>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async create(payload: OperationCreate): Promise<Message> {
@@ -130,6 +161,12 @@ export class OperationTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new MessageException(error.response.data);
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -141,6 +178,7 @@ export class OperationTag extends TagAbstract {
 
     /**
      * @returns {Promise<OperationCollection>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getAll(categoryId?: number, startIndex?: number, count?: number, search?: string): Promise<OperationCollection> {
@@ -164,6 +202,10 @@ export class OperationTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }

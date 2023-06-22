@@ -12,10 +12,12 @@ import {CronjobCollection} from "./CronjobCollection";
 import {CronjobCreate} from "./CronjobCreate";
 import {CronjobUpdate} from "./CronjobUpdate";
 import {Message} from "./Message";
+import {MessageException} from "./MessageException";
 
 export class CronjobTag extends TagAbstract {
     /**
      * @returns {Promise<Message>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async delete(cronjobId: string): Promise<Message> {
@@ -36,6 +38,14 @@ export class CronjobTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 404:
+                        throw new MessageException(error.response.data);
+                    case 410:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -47,6 +57,7 @@ export class CronjobTag extends TagAbstract {
 
     /**
      * @returns {Promise<Message>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async update(cronjobId: string, payload: CronjobUpdate): Promise<Message> {
@@ -68,6 +79,16 @@ export class CronjobTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new MessageException(error.response.data);
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 404:
+                        throw new MessageException(error.response.data);
+                    case 410:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -79,6 +100,7 @@ export class CronjobTag extends TagAbstract {
 
     /**
      * @returns {Promise<Cronjob>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async get(cronjobId: string): Promise<Cronjob> {
@@ -99,6 +121,14 @@ export class CronjobTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 404:
+                        throw new MessageException(error.response.data);
+                    case 410:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -110,6 +140,7 @@ export class CronjobTag extends TagAbstract {
 
     /**
      * @returns {Promise<Message>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async create(payload: CronjobCreate): Promise<Message> {
@@ -130,6 +161,12 @@ export class CronjobTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new MessageException(error.response.data);
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -141,6 +178,7 @@ export class CronjobTag extends TagAbstract {
 
     /**
      * @returns {Promise<CronjobCollection>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<CronjobCollection> {
@@ -163,6 +201,10 @@ export class CronjobTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }

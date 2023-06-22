@@ -7,12 +7,15 @@ import axios, {AxiosRequestConfig} from "axios";
 import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
+import {Message} from "./Message";
+import {MessageException} from "./MessageException";
 import {StatisticChart} from "./StatisticChart";
 import {StatisticCount} from "./StatisticCount";
 
 export class StatisticTag extends TagAbstract {
     /**
      * @returns {Promise<StatisticChart>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getUsedPoints(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
@@ -46,6 +49,10 @@ export class StatisticTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -57,6 +64,7 @@ export class StatisticTag extends TagAbstract {
 
     /**
      * @returns {Promise<StatisticChart>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getTimePerRoute(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
@@ -90,6 +98,10 @@ export class StatisticTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -101,6 +113,7 @@ export class StatisticTag extends TagAbstract {
 
     /**
      * @returns {Promise<StatisticChart>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getTimeAverage(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
@@ -134,6 +147,10 @@ export class StatisticTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -145,6 +162,7 @@ export class StatisticTag extends TagAbstract {
 
     /**
      * @returns {Promise<StatisticChart>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getMostUsedRoutes(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
@@ -178,6 +196,10 @@ export class StatisticTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -189,6 +211,7 @@ export class StatisticTag extends TagAbstract {
 
     /**
      * @returns {Promise<StatisticChart>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getMostUsedApps(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
@@ -222,6 +245,10 @@ export class StatisticTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -233,6 +260,7 @@ export class StatisticTag extends TagAbstract {
 
     /**
      * @returns {Promise<StatisticChart>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getIssuedTokens(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
@@ -266,6 +294,10 @@ export class StatisticTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -277,6 +309,7 @@ export class StatisticTag extends TagAbstract {
 
     /**
      * @returns {Promise<StatisticChart>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getIncomingTransactions(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
@@ -310,6 +343,10 @@ export class StatisticTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -321,6 +358,7 @@ export class StatisticTag extends TagAbstract {
 
     /**
      * @returns {Promise<StatisticChart>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getIncomingRequests(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
@@ -354,6 +392,10 @@ export class StatisticTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -365,6 +407,7 @@ export class StatisticTag extends TagAbstract {
 
     /**
      * @returns {Promise<StatisticChart>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getErrorsPerRoute(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
@@ -398,6 +441,10 @@ export class StatisticTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -409,6 +456,7 @@ export class StatisticTag extends TagAbstract {
 
     /**
      * @returns {Promise<StatisticCount>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getCountRequests(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticCount> {
@@ -442,6 +490,10 @@ export class StatisticTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }

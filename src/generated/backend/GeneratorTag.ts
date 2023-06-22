@@ -13,10 +13,12 @@ import {GeneratorProvider} from "./GeneratorProvider";
 import {GeneratorProviderChangelog} from "./GeneratorProviderChangelog";
 import {GeneratorProviderConfig} from "./GeneratorProviderConfig";
 import {Message} from "./Message";
+import {MessageException} from "./MessageException";
 
 export class GeneratorTag extends TagAbstract {
     /**
      * @returns {Promise<GeneratorProviderChangelog>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getChangelog(provider: string, payload: GeneratorProviderConfig): Promise<GeneratorProviderChangelog> {
@@ -38,6 +40,10 @@ export class GeneratorTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -49,6 +55,7 @@ export class GeneratorTag extends TagAbstract {
 
     /**
      * @returns {Promise<Message>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async executeProvider(provider: string, payload: GeneratorProvider): Promise<Message> {
@@ -70,6 +77,10 @@ export class GeneratorTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -81,6 +92,7 @@ export class GeneratorTag extends TagAbstract {
 
     /**
      * @returns {Promise<FormContainer>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getProviderForm(provider: string): Promise<FormContainer> {
@@ -101,6 +113,10 @@ export class GeneratorTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -112,6 +128,7 @@ export class GeneratorTag extends TagAbstract {
 
     /**
      * @returns {Promise<GeneratorIndexProviders>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getProviders(): Promise<GeneratorIndexProviders> {
@@ -131,6 +148,10 @@ export class GeneratorTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }

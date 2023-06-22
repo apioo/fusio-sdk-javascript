@@ -9,10 +9,12 @@ import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {GrantCollection} from "./GrantCollection";
 import {Message} from "./Message";
+import {MessageException} from "./MessageException";
 
 export class GrantTag extends TagAbstract {
     /**
      * @returns {Promise<Message>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async delete(grantId: string): Promise<Message> {
@@ -33,6 +35,14 @@ export class GrantTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 404:
+                        throw new MessageException(error.response.data);
+                    case 410:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -44,6 +54,7 @@ export class GrantTag extends TagAbstract {
 
     /**
      * @returns {Promise<GrantCollection>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<GrantCollection> {
@@ -66,6 +77,10 @@ export class GrantTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }

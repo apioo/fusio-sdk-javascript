@@ -7,12 +7,15 @@ import axios, {AxiosRequestConfig} from "axios";
 import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
+import {Message} from "./Message";
+import {MessageException} from "./MessageException";
 import {Transaction} from "./Transaction";
 import {TransactionCollection} from "./TransactionCollection";
 
 export class TransactionTag extends TagAbstract {
     /**
      * @returns {Promise<Transaction>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async get(transactionId: string): Promise<Transaction> {
@@ -33,6 +36,14 @@ export class TransactionTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 404:
+                        throw new MessageException(error.response.data);
+                    case 410:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -44,6 +55,7 @@ export class TransactionTag extends TagAbstract {
 
     /**
      * @returns {Promise<TransactionCollection>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string, from?: string, to?: string, planId?: number, userId?: number, appId?: number, status?: string, provider?: string): Promise<TransactionCollection> {
@@ -73,6 +85,10 @@ export class TransactionTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }

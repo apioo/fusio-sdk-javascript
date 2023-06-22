@@ -8,6 +8,7 @@ import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {Message} from "./Message";
+import {MessageException} from "./MessageException";
 import {TrashDataCollection} from "./TrashDataCollection";
 import {TrashRestore} from "./TrashRestore";
 import {TrashTypes} from "./TrashTypes";
@@ -15,6 +16,7 @@ import {TrashTypes} from "./TrashTypes";
 export class TrashTag extends TagAbstract {
     /**
      * @returns {Promise<Message>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async restore(type: string, payload: TrashRestore): Promise<Message> {
@@ -36,6 +38,12 @@ export class TrashTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new MessageException(error.response.data);
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -47,6 +55,7 @@ export class TrashTag extends TagAbstract {
 
     /**
      * @returns {Promise<TrashDataCollection>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getAllByType(type: string, startIndex?: number, count?: number, search?: string): Promise<TrashDataCollection> {
@@ -70,6 +79,10 @@ export class TrashTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -81,6 +94,7 @@ export class TrashTag extends TagAbstract {
 
     /**
      * @returns {Promise<TrashTypes>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getTypes(): Promise<TrashTypes> {
@@ -100,6 +114,10 @@ export class TrashTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }

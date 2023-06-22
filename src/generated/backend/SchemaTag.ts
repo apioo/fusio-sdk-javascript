@@ -8,6 +8,7 @@ import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {Message} from "./Message";
+import {MessageException} from "./MessageException";
 import {Schema} from "./Schema";
 import {SchemaCollection} from "./SchemaCollection";
 import {SchemaCreate} from "./SchemaCreate";
@@ -18,6 +19,7 @@ import {SchemaUpdate} from "./SchemaUpdate";
 export class SchemaTag extends TagAbstract {
     /**
      * @returns {Promise<Message>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async delete(schemaId: string): Promise<Message> {
@@ -38,6 +40,14 @@ export class SchemaTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 404:
+                        throw new MessageException(error.response.data);
+                    case 410:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -49,6 +59,7 @@ export class SchemaTag extends TagAbstract {
 
     /**
      * @returns {Promise<Message>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async update(schemaId: string, payload: SchemaUpdate): Promise<Message> {
@@ -70,6 +81,16 @@ export class SchemaTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new MessageException(error.response.data);
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 404:
+                        throw new MessageException(error.response.data);
+                    case 410:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -81,6 +102,7 @@ export class SchemaTag extends TagAbstract {
 
     /**
      * @returns {Promise<Schema>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async get(schemaId: string): Promise<Schema> {
@@ -101,6 +123,14 @@ export class SchemaTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 404:
+                        throw new MessageException(error.response.data);
+                    case 410:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -112,6 +142,7 @@ export class SchemaTag extends TagAbstract {
 
     /**
      * @returns {Promise<Message>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async updateForm(schemaId: string, payload: SchemaForm): Promise<Message> {
@@ -133,6 +164,16 @@ export class SchemaTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new MessageException(error.response.data);
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 404:
+                        throw new MessageException(error.response.data);
+                    case 410:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -144,6 +185,7 @@ export class SchemaTag extends TagAbstract {
 
     /**
      * @returns {Promise<SchemaPreviewResponse>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getPreview(schemaId: string): Promise<SchemaPreviewResponse> {
@@ -164,6 +206,10 @@ export class SchemaTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -175,6 +221,7 @@ export class SchemaTag extends TagAbstract {
 
     /**
      * @returns {Promise<Message>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async create(payload: SchemaCreate): Promise<Message> {
@@ -195,6 +242,12 @@ export class SchemaTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new MessageException(error.response.data);
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
@@ -206,6 +259,7 @@ export class SchemaTag extends TagAbstract {
 
     /**
      * @returns {Promise<SchemaCollection>}
+     * @throws {MessageException}
      * @throws {ClientException}
      */
     public async getAll(categoryId?: number, startIndex?: number, count?: number, search?: string): Promise<SchemaCollection> {
@@ -229,6 +283,10 @@ export class SchemaTag extends TagAbstract {
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
