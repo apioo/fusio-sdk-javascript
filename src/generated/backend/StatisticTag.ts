@@ -18,7 +18,7 @@ export class StatisticTag extends TagAbstract {
      * @throws {MessageException}
      * @throws {ClientException}
      */
-    public async getUsedPoints(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
+    public async getUsedPoints(startIndex?: number, count?: number, search?: string, from?: string, to?: string, operationId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
         const url = this.parser.url('/backend/statistic/used_points', {
         });
 
@@ -31,7 +31,7 @@ export class StatisticTag extends TagAbstract {
                 'search': search,
                 'from': from,
                 'to': to,
-                'routeId': routeId,
+                'operationId': operationId,
                 'appId': appId,
                 'userId': userId,
                 'ip': ip,
@@ -67,8 +67,8 @@ export class StatisticTag extends TagAbstract {
      * @throws {MessageException}
      * @throws {ClientException}
      */
-    public async getTimePerRoute(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
-        const url = this.parser.url('/backend/statistic/time_per_route', {
+    public async getTimePerOperation(startIndex?: number, count?: number, search?: string, from?: string, to?: string, operationId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
+        const url = this.parser.url('/backend/statistic/time_per_operation', {
         });
 
         let params: AxiosRequestConfig = {
@@ -80,7 +80,7 @@ export class StatisticTag extends TagAbstract {
                 'search': search,
                 'from': from,
                 'to': to,
-                'routeId': routeId,
+                'operationId': operationId,
                 'appId': appId,
                 'userId': userId,
                 'ip': ip,
@@ -116,7 +116,7 @@ export class StatisticTag extends TagAbstract {
      * @throws {MessageException}
      * @throws {ClientException}
      */
-    public async getTimeAverage(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
+    public async getTimeAverage(startIndex?: number, count?: number, search?: string, from?: string, to?: string, operationId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
         const url = this.parser.url('/backend/statistic/time_average', {
         });
 
@@ -129,7 +129,7 @@ export class StatisticTag extends TagAbstract {
                 'search': search,
                 'from': from,
                 'to': to,
-                'routeId': routeId,
+                'operationId': operationId,
                 'appId': appId,
                 'userId': userId,
                 'ip': ip,
@@ -165,8 +165,8 @@ export class StatisticTag extends TagAbstract {
      * @throws {MessageException}
      * @throws {ClientException}
      */
-    public async getMostUsedRoutes(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
-        const url = this.parser.url('/backend/statistic/most_used_routes', {
+    public async getMostUsedOperations(startIndex?: number, count?: number, search?: string, from?: string, to?: string, operationId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
+        const url = this.parser.url('/backend/statistic/most_used_operations', {
         });
 
         let params: AxiosRequestConfig = {
@@ -178,7 +178,7 @@ export class StatisticTag extends TagAbstract {
                 'search': search,
                 'from': from,
                 'to': to,
-                'routeId': routeId,
+                'operationId': operationId,
                 'appId': appId,
                 'userId': userId,
                 'ip': ip,
@@ -214,7 +214,7 @@ export class StatisticTag extends TagAbstract {
      * @throws {MessageException}
      * @throws {ClientException}
      */
-    public async getMostUsedApps(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
+    public async getMostUsedApps(startIndex?: number, count?: number, search?: string, from?: string, to?: string, operationId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
         const url = this.parser.url('/backend/statistic/most_used_apps', {
         });
 
@@ -227,7 +227,7 @@ export class StatisticTag extends TagAbstract {
                 'search': search,
                 'from': from,
                 'to': to,
-                'routeId': routeId,
+                'operationId': operationId,
                 'appId': appId,
                 'userId': userId,
                 'ip': ip,
@@ -263,7 +263,7 @@ export class StatisticTag extends TagAbstract {
      * @throws {MessageException}
      * @throws {ClientException}
      */
-    public async getIssuedTokens(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
+    public async getIssuedTokens(startIndex?: number, count?: number, search?: string, from?: string, to?: string, operationId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
         const url = this.parser.url('/backend/statistic/issued_tokens', {
         });
 
@@ -276,7 +276,7 @@ export class StatisticTag extends TagAbstract {
                 'search': search,
                 'from': from,
                 'to': to,
-                'routeId': routeId,
+                'operationId': operationId,
                 'appId': appId,
                 'userId': userId,
                 'ip': ip,
@@ -312,7 +312,7 @@ export class StatisticTag extends TagAbstract {
      * @throws {MessageException}
      * @throws {ClientException}
      */
-    public async getIncomingTransactions(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
+    public async getIncomingTransactions(startIndex?: number, count?: number, search?: string, from?: string, to?: string, operationId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
         const url = this.parser.url('/backend/statistic/incoming_transactions', {
         });
 
@@ -325,7 +325,7 @@ export class StatisticTag extends TagAbstract {
                 'search': search,
                 'from': from,
                 'to': to,
-                'routeId': routeId,
+                'operationId': operationId,
                 'appId': appId,
                 'userId': userId,
                 'ip': ip,
@@ -361,7 +361,7 @@ export class StatisticTag extends TagAbstract {
      * @throws {MessageException}
      * @throws {ClientException}
      */
-    public async getIncomingRequests(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
+    public async getIncomingRequests(startIndex?: number, count?: number, search?: string, from?: string, to?: string, operationId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
         const url = this.parser.url('/backend/statistic/incoming_requests', {
         });
 
@@ -374,7 +374,7 @@ export class StatisticTag extends TagAbstract {
                 'search': search,
                 'from': from,
                 'to': to,
-                'routeId': routeId,
+                'operationId': operationId,
                 'appId': appId,
                 'userId': userId,
                 'ip': ip,
@@ -410,8 +410,8 @@ export class StatisticTag extends TagAbstract {
      * @throws {MessageException}
      * @throws {ClientException}
      */
-    public async getErrorsPerRoute(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
-        const url = this.parser.url('/backend/statistic/errors_per_route', {
+    public async getErrorsPerOperation(startIndex?: number, count?: number, search?: string, from?: string, to?: string, operationId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticChart> {
+        const url = this.parser.url('/backend/statistic/errors_per_operation', {
         });
 
         let params: AxiosRequestConfig = {
@@ -423,7 +423,7 @@ export class StatisticTag extends TagAbstract {
                 'search': search,
                 'from': from,
                 'to': to,
-                'routeId': routeId,
+                'operationId': operationId,
                 'appId': appId,
                 'userId': userId,
                 'ip': ip,
@@ -459,7 +459,7 @@ export class StatisticTag extends TagAbstract {
      * @throws {MessageException}
      * @throws {ClientException}
      */
-    public async getCountRequests(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticCount> {
+    public async getCountRequests(startIndex?: number, count?: number, search?: string, from?: string, to?: string, operationId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<StatisticCount> {
         const url = this.parser.url('/backend/statistic/count_requests', {
         });
 
@@ -472,7 +472,7 @@ export class StatisticTag extends TagAbstract {
                 'search': search,
                 'from': from,
                 'to': to,
-                'routeId': routeId,
+                'operationId': operationId,
                 'appId': appId,
                 'userId': userId,
                 'ip': ip,

@@ -11,7 +11,6 @@ export interface Action {
     name?: string
     class?: string
     async?: boolean
-    engine?: string
     config?: ActionConfig
     metadata?: Metadata
 }

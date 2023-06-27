@@ -6,5 +6,4 @@
 export interface ScopeOperation {
     operationId?: number
     allow?: boolean
-    methods?: string
 }
