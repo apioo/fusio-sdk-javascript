@@ -143,7 +143,7 @@ export class CategoryTag extends TagAbstract {
      * @throws {MessageException}
      * @throws {ClientException}
      */
-    public async insert(payload: CategoryCreate): Promise<Message> {
+    public async create(payload: CategoryCreate): Promise<Message> {
         const url = this.parser.url('/backend/category', {
         });
 
