@@ -230,6 +230,8 @@ export class AccountTag extends TagAbstract {
                 switch (error.response.status) {
                     case 400:
                         throw new MessageException(error.response.data);
+                    case 401:
+                        throw new MessageException(error.response.data);
                     case 500:
                         throw new MessageException(error.response.data);
                     default:
