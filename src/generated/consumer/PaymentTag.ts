@@ -37,7 +37,9 @@ export class PaymentTag extends TagAbstract {
             const response = await this.httpClient.request<PaymentCheckoutResponse>(params);
             return response.data;
         } catch (error) {
-            if (axios.isAxiosError(error) && error.response) {
+            if (error instanceof ClientException) {
+                throw error;
+            } else if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
                     case 401:
                         throw new MessageException(error.response.data);
@@ -46,9 +48,9 @@ export class PaymentTag extends TagAbstract {
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
+            } else {
+                throw new ClientException('An unknown error occurred: ' + String(error));
             }
-
-            throw new ClientException('An unknown error occurred: ' + String(error));
         }
     }
 
@@ -74,7 +76,9 @@ export class PaymentTag extends TagAbstract {
             const response = await this.httpClient.request<PaymentPortalResponse>(params);
             return response.data;
         } catch (error) {
-            if (axios.isAxiosError(error) && error.response) {
+            if (error instanceof ClientException) {
+                throw error;
+            } else if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
                     case 401:
                         throw new MessageException(error.response.data);
@@ -83,9 +87,9 @@ export class PaymentTag extends TagAbstract {
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
+            } else {
+                throw new ClientException('An unknown error occurred: ' + String(error));
             }
-
-            throw new ClientException('An unknown error occurred: ' + String(error));
         }
     }
 

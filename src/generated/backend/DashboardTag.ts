@@ -32,7 +32,9 @@ export class DashboardTag extends TagAbstract {
             const response = await this.httpClient.request<Dashboard>(params);
             return response.data;
         } catch (error) {
-            if (axios.isAxiosError(error) && error.response) {
+            if (error instanceof ClientException) {
+                throw error;
+            } else if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
                     case 401:
                         throw new MessageException(error.response.data);
@@ -41,9 +43,9 @@ export class DashboardTag extends TagAbstract {
                     default:
                         throw new UnknownStatusCodeException('The server returned an unknown status code');
                 }
+            } else {
+                throw new ClientException('An unknown error occurred: ' + String(error));
             }
-
-            throw new ClientException('An unknown error occurred: ' + String(error));
         }
     }
 
