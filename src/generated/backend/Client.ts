@@ -21,6 +21,7 @@ import {PlanTag} from "./PlanTag";
 import {PageTag} from "./PageTag";
 import {MarketplaceTag} from "./MarketplaceTag";
 import {LogTag} from "./LogTag";
+import {IdentityTag} from "./IdentityTag";
 import {GeneratorTag} from "./GeneratorTag";
 import {EventTag} from "./EventTag";
 import {DashboardTag} from "./DashboardTag";
@@ -141,6 +142,14 @@ export class Client extends ClientAbstract {
     public log(): LogTag
     {
         return new LogTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public identity(): IdentityTag
+    {
+        return new IdentityTag(
             this.httpClient,
             this.parser
         );

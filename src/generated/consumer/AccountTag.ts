@@ -19,7 +19,6 @@ import {UserEmail} from "./UserEmail";
 import {UserJWT} from "./UserJWT";
 import {UserLogin} from "./UserLogin";
 import {UserPasswordReset} from "./UserPasswordReset";
-import {UserProvider} from "./UserProvider";
 import {UserRefresh} from "./UserRefresh";
 import {UserRegister} from "./UserRegister";
 
@@ -119,45 +118,6 @@ export class AccountTag extends TagAbstract {
 
         try {
             const response = await this.httpClient.request<Message>(params);
-            return response.data;
-        } catch (error) {
-            if (error instanceof ClientException) {
-                throw error;
-            } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 400:
-                        throw new MessageException(error.response.data);
-                    case 500:
-                        throw new MessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
-                }
-            } else {
-                throw new ClientException('An unknown error occurred: ' + String(error));
-            }
-        }
-    }
-
-    /**
-     * @returns {Promise<UserJWT>}
-     * @throws {MessageException}
-     * @throws {ClientException}
-     */
-    public async provider(provider: string, payload: UserProvider): Promise<UserJWT> {
-        const url = this.parser.url('/consumer/provider/:provider', {
-            'provider': provider,
-        });
-
-        let params: AxiosRequestConfig = {
-            url: url,
-            method: 'POST',
-            params: this.parser.query({
-            }),
-            data: payload
-        };
-
-        try {
-            const response = await this.httpClient.request<UserJWT>(params);
             return response.data;
         } catch (error) {
             if (error instanceof ClientException) {

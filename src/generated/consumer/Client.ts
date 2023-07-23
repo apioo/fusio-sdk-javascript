@@ -7,6 +7,7 @@ import axios, {AxiosRequestConfig} from "axios";
 import {ClientAbstract, TokenStoreInterface} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
+import {IdentityTag} from "./IdentityTag";
 import {AccountTag} from "./AccountTag";
 import {TransactionTag} from "./TransactionTag";
 import {SubscriptionTag} from "./SubscriptionTag";
@@ -20,6 +21,14 @@ import {EventTag} from "./EventTag";
 import {AppTag} from "./AppTag";
 
 export class Client extends ClientAbstract {
+    public identity(): IdentityTag
+    {
+        return new IdentityTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
     public account(): AccountTag
     {
         return new AccountTag(
