@@ -7,17 +7,18 @@ import axios, {AxiosRequestConfig} from "axios";
 import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
+import {IdentityCollection} from "./IdentityCollection";
 import {Message} from "./Message";
 import {MessageException} from "./MessageException";
-import {UserJWT} from "./UserJWT";
+import {Passthru} from "./Passthru";
 
 export class IdentityTag extends TagAbstract {
     /**
-     * @returns {Promise<UserJWT>}
+     * @returns {Promise<Passthru>}
      * @throws {MessageException}
      * @throws {ClientException}
      */
-    public async redirect(identity: string): Promise<UserJWT> {
+    public async redirect(identity: string): Promise<Passthru> {
         const url = this.parser.url('/consumer/identity/:identity/redirect', {
             'identity': identity,
         });
@@ -30,7 +31,7 @@ export class IdentityTag extends TagAbstract {
         };
 
         try {
-            const response = await this.httpClient.request<UserJWT>(params);
+            const response = await this.httpClient.request<Passthru>(params);
             return response.data;
         } catch (error) {
             if (error instanceof ClientException) {
@@ -51,11 +52,11 @@ export class IdentityTag extends TagAbstract {
     }
 
     /**
-     * @returns {Promise<UserJWT>}
+     * @returns {Promise<Passthru>}
      * @throws {MessageException}
      * @throws {ClientException}
      */
-    public async exchange(identity: string): Promise<UserJWT> {
+    public async exchange(identity: string): Promise<Passthru> {
         const url = this.parser.url('/consumer/identity/:identity/exchange', {
             'identity': identity,
         });
@@ -68,7 +69,7 @@ export class IdentityTag extends TagAbstract {
         };
 
         try {
-            const response = await this.httpClient.request<UserJWT>(params);
+            const response = await this.httpClient.request<Passthru>(params);
             return response.data;
         } catch (error) {
             if (error instanceof ClientException) {
@@ -89,11 +90,11 @@ export class IdentityTag extends TagAbstract {
     }
 
     /**
-     * @returns {Promise<UserJWT>}
+     * @returns {Promise<IdentityCollection>}
      * @throws {MessageException}
      * @throws {ClientException}
      */
-    public async getAll(appId?: number): Promise<UserJWT> {
+    public async getAll(appId?: number): Promise<IdentityCollection> {
         const url = this.parser.url('/consumer/identity', {
         });
 
@@ -106,7 +107,7 @@ export class IdentityTag extends TagAbstract {
         };
 
         try {
-            const response = await this.httpClient.request<UserJWT>(params);
+            const response = await this.httpClient.request<IdentityCollection>(params);
             return response.data;
         } catch (error) {
             if (error instanceof ClientException) {
