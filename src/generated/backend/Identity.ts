@@ -3,6 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
+import {IdentityConfig} from "./IdentityConfig";
 export interface Identity {
     id?: number
     appId?: number
@@ -10,13 +11,6 @@ export interface Identity {
     name?: string
     icon?: string
     class?: string
-    clientId?: string
-    clientSecret?: string
-    authorizationUri?: string
-    tokenUri?: string
-    userInfoUri?: string
-    idProperty?: string
-    nameProperty?: string
-    emailProperty?: string
+    config?: IdentityConfig
     allowCreate?: boolean
 }

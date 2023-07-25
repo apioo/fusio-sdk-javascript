@@ -7,9 +7,11 @@ import axios, {AxiosRequestConfig} from "axios";
 import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
+import {FormContainer} from "./FormContainer";
 import {Identity} from "./Identity";
 import {IdentityCollection} from "./IdentityCollection";
 import {IdentityCreate} from "./IdentityCreate";
+import {IdentityIndex} from "./IdentityIndex";
 import {IdentityUpdate} from "./IdentityUpdate";
 import {Message} from "./Message";
 import {MessageException} from "./MessageException";
@@ -132,6 +134,81 @@ export class IdentityTag extends TagAbstract {
                     case 404:
                         throw new MessageException(error.response.data);
                     case 410:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
+                    default:
+                        throw new UnknownStatusCodeException('The server returned an unknown status code');
+                }
+            } else {
+                throw new ClientException('An unknown error occurred: ' + String(error));
+            }
+        }
+    }
+
+    /**
+     * @returns {Promise<FormContainer>}
+     * @throws {MessageException}
+     * @throws {ClientException}
+     */
+    public async getForm(_class?: string): Promise<FormContainer> {
+        const url = this.parser.url('/backend/identity/form', {
+        });
+
+        let params: AxiosRequestConfig = {
+            url: url,
+            method: 'GET',
+            params: this.parser.query({
+                'class': _class,
+            }),
+        };
+
+        try {
+            const response = await this.httpClient.request<FormContainer>(params);
+            return response.data;
+        } catch (error) {
+            if (error instanceof ClientException) {
+                throw error;
+            } else if (axios.isAxiosError(error) && error.response) {
+                switch (error.response.status) {
+                    case 401:
+                        throw new MessageException(error.response.data);
+                    case 500:
+                        throw new MessageException(error.response.data);
+                    default:
+                        throw new UnknownStatusCodeException('The server returned an unknown status code');
+                }
+            } else {
+                throw new ClientException('An unknown error occurred: ' + String(error));
+            }
+        }
+    }
+
+    /**
+     * @returns {Promise<IdentityIndex>}
+     * @throws {MessageException}
+     * @throws {ClientException}
+     */
+    public async getClasses(): Promise<IdentityIndex> {
+        const url = this.parser.url('/backend/identity/list', {
+        });
+
+        let params: AxiosRequestConfig = {
+            url: url,
+            method: 'GET',
+            params: this.parser.query({
+            }),
+        };
+
+        try {
+            const response = await this.httpClient.request<IdentityIndex>(params);
+            return response.data;
+        } catch (error) {
+            if (error instanceof ClientException) {
+                throw error;
+            } else if (axios.isAxiosError(error) && error.response) {
+                switch (error.response.status) {
+                    case 401:
                         throw new MessageException(error.response.data);
                     case 500:
                         throw new MessageException(error.response.data);

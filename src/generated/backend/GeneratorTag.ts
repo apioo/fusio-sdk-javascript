@@ -99,7 +99,7 @@ export class GeneratorTag extends TagAbstract {
      * @throws {MessageException}
      * @throws {ClientException}
      */
-    public async getProviderForm(provider: string): Promise<FormContainer> {
+    public async getForm(provider: string): Promise<FormContainer> {
         const url = this.parser.url('/backend/generator/:provider', {
             'provider': provider,
         });
@@ -137,7 +137,7 @@ export class GeneratorTag extends TagAbstract {
      * @throws {MessageException}
      * @throws {ClientException}
      */
-    public async getProviders(): Promise<GeneratorIndexProviders> {
+    public async getClasses(): Promise<GeneratorIndexProviders> {
         const url = this.parser.url('/backend/generator', {
         });
 
