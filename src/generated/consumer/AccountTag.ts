@@ -50,6 +50,8 @@ export class AccountTag extends TagAbstract {
                 switch (error.response.status) {
                     case 400:
                         throw new MessageException(error.response.data);
+                    case 404:
+                        throw new MessageException(error.response.data);
                     case 500:
                         throw new MessageException(error.response.data);
                     default:
@@ -87,6 +89,8 @@ export class AccountTag extends TagAbstract {
             } else if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
                     case 400:
+                        throw new MessageException(error.response.data);
+                    case 404:
                         throw new MessageException(error.response.data);
                     case 500:
                         throw new MessageException(error.response.data);
