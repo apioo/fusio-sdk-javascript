@@ -4,6 +4,6 @@
  */
 
 export interface ConsumerEventSubscriptionUpdate {
-    event: string
-    endpoint: string
+    event?: string
+    endpoint?: string
 }

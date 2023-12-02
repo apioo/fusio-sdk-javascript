@@ -4,7 +4,7 @@
  */
 
 export interface ConsumerAppUpdate {
-    name: string
-    url: string
-    scopes: Array<string>
+    name?: string
+    url?: string
+    scopes?: Array<string>
 }

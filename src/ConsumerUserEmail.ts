@@ -4,6 +4,6 @@
  */
 
 export interface ConsumerUserEmail {
-    email: string
+    email?: string
     captcha?: string
 }
