@@ -1,0 +1,8 @@
+{
+  "type": "client-typescript",
+  "require": {
+    "fusio/sdk": {
+      "target": "./src"
+    }
+  }
+}
