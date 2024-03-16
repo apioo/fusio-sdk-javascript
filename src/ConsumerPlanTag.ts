@@ -18,7 +18,7 @@ export class ConsumerPlanTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(planId: string): Promise<ConsumerPlan> {
-        const url = this.parser.url('/consumer/plan/$plan_id<[0-9]+>', {
+        const url = this.parser.url('/consumer/plan/$plan_id<[0-9]+|^~>', {
             'plan_id': planId,
         });
 

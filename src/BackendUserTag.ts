@@ -21,7 +21,7 @@ export class BackendUserTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(userId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/user/$user_id<[0-9]+>', {
+        const url = this.parser.url('/backend/user/$user_id<[0-9]+|^~>', {
             'user_id': userId,
         });
 
@@ -64,7 +64,7 @@ export class BackendUserTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(userId: string, payload: BackendUserUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/user/$user_id<[0-9]+>', {
+        const url = this.parser.url('/backend/user/$user_id<[0-9]+|^~>', {
             'user_id': userId,
         });
 
@@ -110,7 +110,7 @@ export class BackendUserTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(userId: string): Promise<BackendUser> {
-        const url = this.parser.url('/backend/user/$user_id<[0-9]+>', {
+        const url = this.parser.url('/backend/user/$user_id<[0-9]+|^~>', {
             'user_id': userId,
         });
 

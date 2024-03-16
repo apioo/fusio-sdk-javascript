@@ -21,7 +21,7 @@ export class ConsumerAppTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(appId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/consumer/app/$app_id<[0-9]+>', {
+        const url = this.parser.url('/consumer/app/$app_id<[0-9]+|^~>', {
             'app_id': appId,
         });
 
@@ -64,7 +64,7 @@ export class ConsumerAppTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(appId: string, payload: ConsumerAppUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/consumer/app/$app_id<[0-9]+>', {
+        const url = this.parser.url('/consumer/app/$app_id<[0-9]+|^~>', {
             'app_id': appId,
         });
 
@@ -110,7 +110,7 @@ export class ConsumerAppTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(appId: string): Promise<ConsumerApp> {
-        const url = this.parser.url('/consumer/app/$app_id<[0-9]+>', {
+        const url = this.parser.url('/consumer/app/$app_id<[0-9]+|^~>', {
             'app_id': appId,
         });
 

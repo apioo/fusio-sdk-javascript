@@ -18,7 +18,7 @@ export class ConsumerTransactionTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(transactionId: string): Promise<ConsumerTransaction> {
-        const url = this.parser.url('/consumer/transaction/$transaction_id<[0-9]+>', {
+        const url = this.parser.url('/consumer/transaction/$transaction_id<[0-9]+|^~>', {
             'transaction_id': transactionId,
         });
 

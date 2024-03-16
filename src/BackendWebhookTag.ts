@@ -21,7 +21,7 @@ export class BackendWebhookTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(webhookId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/webhook/$webhook_id<[0-9]+>', {
+        const url = this.parser.url('/backend/webhook/$webhook_id<[0-9]+|^~>', {
             'webhook_id': webhookId,
         });
 
@@ -64,7 +64,7 @@ export class BackendWebhookTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(webhookId: string, payload: BackendWebhookUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/webhook/$webhook_id<[0-9]+>', {
+        const url = this.parser.url('/backend/webhook/$webhook_id<[0-9]+|^~>', {
             'webhook_id': webhookId,
         });
 
@@ -110,7 +110,7 @@ export class BackendWebhookTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(webhookId: string): Promise<BackendWebhook> {
-        const url = this.parser.url('/backend/webhook/$webhook_id<[0-9]+>', {
+        const url = this.parser.url('/backend/webhook/$webhook_id<[0-9]+|^~>', {
             'webhook_id': webhookId,
         });
 
