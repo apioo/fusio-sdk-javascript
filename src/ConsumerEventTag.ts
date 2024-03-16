@@ -7,14 +7,13 @@ import axios, {AxiosRequestConfig} from "axios";
 import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
-import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 import {ConsumerEventCollection} from "./ConsumerEventCollection";
 
 export class ConsumerEventTag extends TagAbstract {
     /**
      * @returns {Promise<ConsumerEventCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<ConsumerEventCollection> {
@@ -28,7 +27,8 @@ export class ConsumerEventTag extends TagAbstract {
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,
-            }),
+            }, [
+            ]),
         };
 
         try {

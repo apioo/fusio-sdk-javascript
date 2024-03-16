@@ -16,7 +16,7 @@ import {CommonMessageException} from "./CommonMessageException";
 export class BackendMarketplaceTag extends TagAbstract {
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async remove(appName: string): Promise<CommonMessage> {
@@ -28,7 +28,8 @@ export class BackendMarketplaceTag extends TagAbstract {
             url: url,
             method: 'DELETE',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -56,7 +57,7 @@ export class BackendMarketplaceTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async update(appName: string): Promise<CommonMessage> {
@@ -68,7 +69,8 @@ export class BackendMarketplaceTag extends TagAbstract {
             url: url,
             method: 'PUT',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -100,7 +102,7 @@ export class BackendMarketplaceTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendMarketplaceLocalApp>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async get(appName: string): Promise<BackendMarketplaceLocalApp> {
@@ -112,7 +114,8 @@ export class BackendMarketplaceTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -142,7 +145,7 @@ export class BackendMarketplaceTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async install(payload: BackendMarketplaceInstall): Promise<CommonMessage> {
@@ -153,7 +156,8 @@ export class BackendMarketplaceTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -182,7 +186,7 @@ export class BackendMarketplaceTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendMarketplaceCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(): Promise<BackendMarketplaceCollection> {
@@ -193,7 +197,8 @@ export class BackendMarketplaceTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {

@@ -19,7 +19,7 @@ import {CommonMessageException} from "./CommonMessageException";
 export class BackendIdentityTag extends TagAbstract {
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async delete(identityId: string): Promise<CommonMessage> {
@@ -31,7 +31,8 @@ export class BackendIdentityTag extends TagAbstract {
             url: url,
             method: 'DELETE',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -61,7 +62,7 @@ export class BackendIdentityTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async update(identityId: string, payload: BackendIdentityUpdate): Promise<CommonMessage> {
@@ -73,7 +74,8 @@ export class BackendIdentityTag extends TagAbstract {
             url: url,
             method: 'PUT',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -106,7 +108,7 @@ export class BackendIdentityTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendIdentity>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async get(identityId: string): Promise<BackendIdentity> {
@@ -118,7 +120,8 @@ export class BackendIdentityTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -148,7 +151,7 @@ export class BackendIdentityTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonFormContainer>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getForm(_class?: string): Promise<CommonFormContainer> {
@@ -160,7 +163,8 @@ export class BackendIdentityTag extends TagAbstract {
             method: 'GET',
             params: this.parser.query({
                 'class': _class,
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -186,7 +190,7 @@ export class BackendIdentityTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendIdentityIndex>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getClasses(): Promise<BackendIdentityIndex> {
@@ -197,7 +201,8 @@ export class BackendIdentityTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -223,7 +228,7 @@ export class BackendIdentityTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async create(payload: BackendIdentityCreate): Promise<CommonMessage> {
@@ -234,7 +239,8 @@ export class BackendIdentityTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -263,7 +269,7 @@ export class BackendIdentityTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendIdentityCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<BackendIdentityCollection> {
@@ -277,7 +283,8 @@ export class BackendIdentityTag extends TagAbstract {
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,
-            }),
+            }, [
+            ]),
         };
 
         try {

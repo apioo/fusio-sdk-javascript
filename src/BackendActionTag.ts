@@ -21,7 +21,7 @@ import {CommonMessageException} from "./CommonMessageException";
 export class BackendActionTag extends TagAbstract {
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async delete(actionId: string): Promise<CommonMessage> {
@@ -33,7 +33,8 @@ export class BackendActionTag extends TagAbstract {
             url: url,
             method: 'DELETE',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -63,7 +64,7 @@ export class BackendActionTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async update(actionId: string, payload: BackendActionUpdate): Promise<CommonMessage> {
@@ -75,7 +76,8 @@ export class BackendActionTag extends TagAbstract {
             url: url,
             method: 'PUT',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -108,7 +110,7 @@ export class BackendActionTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendAction>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async get(actionId: string): Promise<BackendAction> {
@@ -120,7 +122,8 @@ export class BackendActionTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -150,7 +153,7 @@ export class BackendActionTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendActionExecuteResponse>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async execute(actionId: string, payload: BackendActionExecuteRequest): Promise<BackendActionExecuteResponse> {
@@ -162,7 +165,8 @@ export class BackendActionTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -189,7 +193,7 @@ export class BackendActionTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonFormContainer>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getForm(_class?: string): Promise<CommonFormContainer> {
@@ -201,7 +205,8 @@ export class BackendActionTag extends TagAbstract {
             method: 'GET',
             params: this.parser.query({
                 'class': _class,
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -227,7 +232,7 @@ export class BackendActionTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendActionIndex>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getClasses(): Promise<BackendActionIndex> {
@@ -238,7 +243,8 @@ export class BackendActionTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -264,7 +270,7 @@ export class BackendActionTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async create(payload: BackendActionCreate): Promise<CommonMessage> {
@@ -275,7 +281,8 @@ export class BackendActionTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -304,7 +311,7 @@ export class BackendActionTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendActionCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<BackendActionCollection> {
@@ -318,7 +325,8 @@ export class BackendActionTag extends TagAbstract {
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,
-            }),
+            }, [
+            ]),
         };
 
         try {

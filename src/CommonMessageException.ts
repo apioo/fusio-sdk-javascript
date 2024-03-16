@@ -10,7 +10,7 @@ import {CommonMessage} from "./CommonMessage";
 export class CommonMessageException extends KnownStatusCodeException {
 
     public constructor(private payload: CommonMessage) {
-        super();
+        super('The server returned an error');
     }
 
     public getPayload(): CommonMessage {

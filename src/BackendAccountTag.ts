@@ -16,7 +16,7 @@ import {CommonMessageException} from "./CommonMessageException";
 export class BackendAccountTag extends TagAbstract {
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async changePassword(payload: BackendAccountChangePassword): Promise<CommonMessage> {
@@ -27,7 +27,8 @@ export class BackendAccountTag extends TagAbstract {
             url: url,
             method: 'PUT',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -56,7 +57,7 @@ export class BackendAccountTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async update(payload: BackendUserUpdate): Promise<CommonMessage> {
@@ -67,7 +68,8 @@ export class BackendAccountTag extends TagAbstract {
             url: url,
             method: 'PUT',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -96,7 +98,7 @@ export class BackendAccountTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendUser>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async get(): Promise<BackendUser> {
@@ -107,7 +109,8 @@ export class BackendAccountTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {

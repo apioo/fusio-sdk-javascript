@@ -16,7 +16,7 @@ import {CommonMessageException} from "./CommonMessageException";
 export class BackendTrashTag extends TagAbstract {
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async restore(type: string, payload: BackendTrashRestore): Promise<CommonMessage> {
@@ -28,7 +28,8 @@ export class BackendTrashTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -57,7 +58,7 @@ export class BackendTrashTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendTrashDataCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAllByType(type: string, startIndex?: number, count?: number, search?: string): Promise<BackendTrashDataCollection> {
@@ -72,7 +73,8 @@ export class BackendTrashTag extends TagAbstract {
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -98,7 +100,7 @@ export class BackendTrashTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendTrashTypes>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getTypes(): Promise<BackendTrashTypes> {
@@ -109,7 +111,8 @@ export class BackendTrashTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {

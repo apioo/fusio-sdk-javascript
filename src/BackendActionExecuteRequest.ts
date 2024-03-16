@@ -5,7 +5,7 @@
 
 import {BackendActionExecuteRequestBody} from "./BackendActionExecuteRequestBody";
 export interface BackendActionExecuteRequest {
-    method?: string
+    method: string
     uriFragments?: string
     parameters?: string
     headers?: string

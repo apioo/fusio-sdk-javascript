@@ -7,7 +7,6 @@ import axios, {AxiosRequestConfig} from "axios";
 import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
-import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 import {ConsumerLog} from "./ConsumerLog";
 import {ConsumerLogCollection} from "./ConsumerLogCollection";
@@ -15,7 +14,7 @@ import {ConsumerLogCollection} from "./ConsumerLogCollection";
 export class ConsumerLogTag extends TagAbstract {
     /**
      * @returns {Promise<ConsumerLog>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async get(logId: string): Promise<ConsumerLog> {
@@ -27,7 +26,8 @@ export class ConsumerLogTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -57,7 +57,7 @@ export class ConsumerLogTag extends TagAbstract {
 
     /**
      * @returns {Promise<ConsumerLogCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<ConsumerLogCollection> {
@@ -71,7 +71,8 @@ export class ConsumerLogTag extends TagAbstract {
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,
-            }),
+            }, [
+            ]),
         };
 
         try {

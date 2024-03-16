@@ -17,7 +17,7 @@ import {CommonMessageException} from "./CommonMessageException";
 export class BackendRoleTag extends TagAbstract {
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async delete(roleId: string): Promise<CommonMessage> {
@@ -29,7 +29,8 @@ export class BackendRoleTag extends TagAbstract {
             url: url,
             method: 'DELETE',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -59,7 +60,7 @@ export class BackendRoleTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async update(roleId: string, payload: BackendRoleUpdate): Promise<CommonMessage> {
@@ -71,7 +72,8 @@ export class BackendRoleTag extends TagAbstract {
             url: url,
             method: 'PUT',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -104,7 +106,7 @@ export class BackendRoleTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendRole>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async get(roleId: string): Promise<BackendRole> {
@@ -116,7 +118,8 @@ export class BackendRoleTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -146,7 +149,7 @@ export class BackendRoleTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async create(payload: BackendRoleCreate): Promise<CommonMessage> {
@@ -157,7 +160,8 @@ export class BackendRoleTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -186,7 +190,7 @@ export class BackendRoleTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendRoleCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<BackendRoleCollection> {
@@ -200,7 +204,8 @@ export class BackendRoleTag extends TagAbstract {
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,
-            }),
+            }, [
+            ]),
         };
 
         try {

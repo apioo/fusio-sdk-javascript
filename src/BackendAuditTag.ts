@@ -9,13 +9,12 @@ import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {BackendAudit} from "./BackendAudit";
 import {BackendAuditCollection} from "./BackendAuditCollection";
-import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendAuditTag extends TagAbstract {
     /**
      * @returns {Promise<BackendAudit>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async get(auditId: string): Promise<BackendAudit> {
@@ -27,7 +26,8 @@ export class BackendAuditTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -57,7 +57,7 @@ export class BackendAuditTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendAuditCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string, from?: string, to?: string, appId?: number, userId?: number, event?: string, ip?: string, message?: string): Promise<BackendAuditCollection> {
@@ -78,7 +78,8 @@ export class BackendAuditTag extends TagAbstract {
                 'event': event,
                 'ip': ip,
                 'message': message,
-            }),
+            }, [
+            ]),
         };
 
         try {

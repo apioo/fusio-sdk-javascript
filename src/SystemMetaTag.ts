@@ -7,7 +7,6 @@ import axios, {AxiosRequestConfig} from "axios";
 import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
-import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 import {Passthru} from "./Passthru";
 import {SystemAbout} from "./SystemAbout";
@@ -18,7 +17,7 @@ import {SystemSchema} from "./SystemSchema";
 export class SystemMetaTag extends TagAbstract {
     /**
      * @returns {Promise<SystemSchema>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getSchema(name: string): Promise<SystemSchema> {
@@ -30,7 +29,8 @@ export class SystemMetaTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -68,7 +68,8 @@ export class SystemMetaTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -100,7 +101,8 @@ export class SystemMetaTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -132,7 +134,8 @@ export class SystemMetaTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -165,7 +168,8 @@ export class SystemMetaTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {

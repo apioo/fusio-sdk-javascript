@@ -4,6 +4,6 @@
  */
 
 export interface ConsumerUserPasswordReset {
-    token?: string
-    newPassword?: string
+    token: string
+    newPassword: string
 }

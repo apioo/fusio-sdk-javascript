@@ -10,10 +10,6 @@ import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 import {BackendEvent} from "./BackendEvent";
 import {BackendEventCollection} from "./BackendEventCollection";
 import {BackendEventCreate} from "./BackendEventCreate";
-import {BackendEventSubscription} from "./BackendEventSubscription";
-import {BackendEventSubscriptionCollection} from "./BackendEventSubscriptionCollection";
-import {BackendEventSubscriptionCreate} from "./BackendEventSubscriptionCreate";
-import {BackendEventSubscriptionUpdate} from "./BackendEventSubscriptionUpdate";
 import {BackendEventUpdate} from "./BackendEventUpdate";
 import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
@@ -21,7 +17,7 @@ import {CommonMessageException} from "./CommonMessageException";
 export class BackendEventTag extends TagAbstract {
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async delete(eventId: string): Promise<CommonMessage> {
@@ -33,7 +29,8 @@ export class BackendEventTag extends TagAbstract {
             url: url,
             method: 'DELETE',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -63,7 +60,7 @@ export class BackendEventTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async update(eventId: string, payload: BackendEventUpdate): Promise<CommonMessage> {
@@ -75,7 +72,8 @@ export class BackendEventTag extends TagAbstract {
             url: url,
             method: 'PUT',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -108,7 +106,7 @@ export class BackendEventTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendEvent>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async get(eventId: string): Promise<BackendEvent> {
@@ -120,7 +118,8 @@ export class BackendEventTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -150,7 +149,7 @@ export class BackendEventTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async create(payload: BackendEventCreate): Promise<CommonMessage> {
@@ -161,7 +160,8 @@ export class BackendEventTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -190,7 +190,7 @@ export class BackendEventTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendEventCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<BackendEventCollection> {
@@ -204,218 +204,12 @@ export class BackendEventTag extends TagAbstract {
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,
-            }),
+            }, [
+            ]),
         };
 
         try {
             const response = await this.httpClient.request<BackendEventCollection>(params);
-            return response.data;
-        } catch (error) {
-            if (error instanceof ClientException) {
-                throw error;
-            } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 401:
-                        throw new CommonMessageException(error.response.data);
-                    case 500:
-                        throw new CommonMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
-                }
-            } else {
-                throw new ClientException('An unknown error occurred: ' + String(error));
-            }
-        }
-    }
-
-    /**
-     * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async deleteSubscription(subscriptionId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/event/subscription/$subscription_id<[0-9]+>', {
-            'subscription_id': subscriptionId,
-        });
-
-        let params: AxiosRequestConfig = {
-            url: url,
-            method: 'DELETE',
-            params: this.parser.query({
-            }),
-        };
-
-        try {
-            const response = await this.httpClient.request<CommonMessage>(params);
-            return response.data;
-        } catch (error) {
-            if (error instanceof ClientException) {
-                throw error;
-            } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 401:
-                        throw new CommonMessageException(error.response.data);
-                    case 404:
-                        throw new CommonMessageException(error.response.data);
-                    case 410:
-                        throw new CommonMessageException(error.response.data);
-                    case 500:
-                        throw new CommonMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
-                }
-            } else {
-                throw new ClientException('An unknown error occurred: ' + String(error));
-            }
-        }
-    }
-
-    /**
-     * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async updateSubscription(subscriptionId: string, payload: BackendEventSubscriptionUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/event/subscription/$subscription_id<[0-9]+>', {
-            'subscription_id': subscriptionId,
-        });
-
-        let params: AxiosRequestConfig = {
-            url: url,
-            method: 'PUT',
-            params: this.parser.query({
-            }),
-            data: payload
-        };
-
-        try {
-            const response = await this.httpClient.request<CommonMessage>(params);
-            return response.data;
-        } catch (error) {
-            if (error instanceof ClientException) {
-                throw error;
-            } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 400:
-                        throw new CommonMessageException(error.response.data);
-                    case 401:
-                        throw new CommonMessageException(error.response.data);
-                    case 404:
-                        throw new CommonMessageException(error.response.data);
-                    case 410:
-                        throw new CommonMessageException(error.response.data);
-                    case 500:
-                        throw new CommonMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
-                }
-            } else {
-                throw new ClientException('An unknown error occurred: ' + String(error));
-            }
-        }
-    }
-
-    /**
-     * @returns {Promise<BackendEventSubscription>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async getSubscription(subscriptionId: string): Promise<BackendEventSubscription> {
-        const url = this.parser.url('/backend/event/subscription/$subscription_id<[0-9]+>', {
-            'subscription_id': subscriptionId,
-        });
-
-        let params: AxiosRequestConfig = {
-            url: url,
-            method: 'GET',
-            params: this.parser.query({
-            }),
-        };
-
-        try {
-            const response = await this.httpClient.request<BackendEventSubscription>(params);
-            return response.data;
-        } catch (error) {
-            if (error instanceof ClientException) {
-                throw error;
-            } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 401:
-                        throw new CommonMessageException(error.response.data);
-                    case 404:
-                        throw new CommonMessageException(error.response.data);
-                    case 500:
-                        throw new CommonMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
-                }
-            } else {
-                throw new ClientException('An unknown error occurred: ' + String(error));
-            }
-        }
-    }
-
-    /**
-     * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async createSubscription(payload: BackendEventSubscriptionCreate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/event/subscription', {
-        });
-
-        let params: AxiosRequestConfig = {
-            url: url,
-            method: 'POST',
-            params: this.parser.query({
-            }),
-            data: payload
-        };
-
-        try {
-            const response = await this.httpClient.request<CommonMessage>(params);
-            return response.data;
-        } catch (error) {
-            if (error instanceof ClientException) {
-                throw error;
-            } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 400:
-                        throw new CommonMessageException(error.response.data);
-                    case 401:
-                        throw new CommonMessageException(error.response.data);
-                    case 500:
-                        throw new CommonMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
-                }
-            } else {
-                throw new ClientException('An unknown error occurred: ' + String(error));
-            }
-        }
-    }
-
-    /**
-     * @returns {Promise<BackendEventSubscriptionCollection>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async getAllSubscriptions(startIndex?: number, count?: number, search?: string): Promise<BackendEventSubscriptionCollection> {
-        const url = this.parser.url('/backend/event/subscription', {
-        });
-
-        let params: AxiosRequestConfig = {
-            url: url,
-            method: 'GET',
-            params: this.parser.query({
-                'startIndex': startIndex,
-                'count': count,
-                'search': search,
-            }),
-        };
-
-        try {
-            const response = await this.httpClient.request<BackendEventSubscriptionCollection>(params);
             return response.data;
         } catch (error) {
             if (error instanceof ClientException) {

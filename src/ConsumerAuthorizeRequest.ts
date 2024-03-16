@@ -4,10 +4,10 @@
  */
 
 export interface ConsumerAuthorizeRequest {
-    responseType?: string
-    clientId?: string
+    responseType: string
+    clientId: string
     redirectUri?: string
-    scope?: string
+    scope: string
     state?: string
-    allow?: boolean
+    allow: boolean
 }

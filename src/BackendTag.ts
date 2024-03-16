@@ -30,11 +30,21 @@ import {BackendSchemaTag} from "./BackendSchemaTag";
 import {BackendScopeTag} from "./BackendScopeTag";
 import {BackendSdkTag} from "./BackendSdkTag";
 import {BackendStatisticTag} from "./BackendStatisticTag";
+import {BackendTenantTag} from "./BackendTenantTag";
 import {BackendTransactionTag} from "./BackendTransactionTag";
 import {BackendTrashTag} from "./BackendTrashTag";
 import {BackendUserTag} from "./BackendUserTag";
+import {BackendWebhookTag} from "./BackendWebhookTag";
 
 export class BackendTag extends TagAbstract {
+    public webhook(): BackendWebhookTag
+    {
+        return new BackendWebhookTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
     public user(): BackendUserTag
     {
         return new BackendUserTag(
@@ -54,6 +64,14 @@ export class BackendTag extends TagAbstract {
     public transaction(): BackendTransactionTag
     {
         return new BackendTransactionTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public tenant(): BackendTenantTag
+    {
+        return new BackendTenantTag(
             this.httpClient,
             this.parser
         );

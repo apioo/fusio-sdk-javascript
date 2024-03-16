@@ -19,7 +19,7 @@ import {CommonMessageException} from "./CommonMessageException";
 export class BackendSchemaTag extends TagAbstract {
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async delete(schemaId: string): Promise<CommonMessage> {
@@ -31,7 +31,8 @@ export class BackendSchemaTag extends TagAbstract {
             url: url,
             method: 'DELETE',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -61,7 +62,7 @@ export class BackendSchemaTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async update(schemaId: string, payload: BackendSchemaUpdate): Promise<CommonMessage> {
@@ -73,7 +74,8 @@ export class BackendSchemaTag extends TagAbstract {
             url: url,
             method: 'PUT',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -106,7 +108,7 @@ export class BackendSchemaTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendSchema>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async get(schemaId: string): Promise<BackendSchema> {
@@ -118,7 +120,8 @@ export class BackendSchemaTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -148,7 +151,7 @@ export class BackendSchemaTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async updateForm(schemaId: string, payload: BackendSchemaForm): Promise<CommonMessage> {
@@ -160,7 +163,8 @@ export class BackendSchemaTag extends TagAbstract {
             url: url,
             method: 'PUT',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -193,7 +197,7 @@ export class BackendSchemaTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendSchemaPreviewResponse>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getPreview(schemaId: string): Promise<BackendSchemaPreviewResponse> {
@@ -205,7 +209,8 @@ export class BackendSchemaTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -231,7 +236,7 @@ export class BackendSchemaTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async create(payload: BackendSchemaCreate): Promise<CommonMessage> {
@@ -242,7 +247,8 @@ export class BackendSchemaTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -271,7 +277,7 @@ export class BackendSchemaTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendSchemaCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<BackendSchemaCollection> {
@@ -285,7 +291,8 @@ export class BackendSchemaTag extends TagAbstract {
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,
-            }),
+            }, [
+            ]),
         };
 
         try {

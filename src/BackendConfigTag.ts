@@ -16,7 +16,7 @@ import {CommonMessageException} from "./CommonMessageException";
 export class BackendConfigTag extends TagAbstract {
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async update(configId: string, payload: BackendConfigUpdate): Promise<CommonMessage> {
@@ -28,7 +28,8 @@ export class BackendConfigTag extends TagAbstract {
             url: url,
             method: 'PUT',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -61,7 +62,7 @@ export class BackendConfigTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendConfig>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async get(configId: string): Promise<BackendConfig> {
@@ -73,7 +74,8 @@ export class BackendConfigTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -103,7 +105,7 @@ export class BackendConfigTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendConfigCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<BackendConfigCollection> {
@@ -117,7 +119,8 @@ export class BackendConfigTag extends TagAbstract {
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,
-            }),
+            }, [
+            ]),
         };
 
         try {

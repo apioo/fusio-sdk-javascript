@@ -14,7 +14,7 @@ import {CommonMessageException} from "./CommonMessageException";
 export class AuthorizationTag extends TagAbstract {
     /**
      * @returns {Promise<BackendUser>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getWhoami(): Promise<BackendUser> {
@@ -25,7 +25,8 @@ export class AuthorizationTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -49,7 +50,7 @@ export class AuthorizationTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async revoke(): Promise<CommonMessage> {
@@ -60,7 +61,8 @@ export class AuthorizationTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {

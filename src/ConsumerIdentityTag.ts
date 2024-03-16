@@ -7,7 +7,6 @@ import axios, {AxiosRequestConfig} from "axios";
 import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
-import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 import {ConsumerIdentityCollection} from "./ConsumerIdentityCollection";
 import {Passthru} from "./Passthru";
@@ -15,7 +14,7 @@ import {Passthru} from "./Passthru";
 export class ConsumerIdentityTag extends TagAbstract {
     /**
      * @returns {Promise<Passthru>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async redirect(identity: string): Promise<Passthru> {
@@ -27,7 +26,8 @@ export class ConsumerIdentityTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -53,7 +53,7 @@ export class ConsumerIdentityTag extends TagAbstract {
 
     /**
      * @returns {Promise<Passthru>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async exchange(identity: string): Promise<Passthru> {
@@ -65,7 +65,8 @@ export class ConsumerIdentityTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -91,7 +92,7 @@ export class ConsumerIdentityTag extends TagAbstract {
 
     /**
      * @returns {Promise<ConsumerIdentityCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(appId?: number): Promise<ConsumerIdentityCollection> {
@@ -103,7 +104,8 @@ export class ConsumerIdentityTag extends TagAbstract {
             method: 'GET',
             params: this.parser.query({
                 'appId': appId,
-            }),
+            }, [
+            ]),
         };
 
         try {

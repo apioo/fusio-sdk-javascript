@@ -19,7 +19,7 @@ import {CommonMessageException} from "./CommonMessageException";
 export class BackendAppTag extends TagAbstract {
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async deleteToken(appId: string, tokenId: string): Promise<CommonMessage> {
@@ -32,7 +32,8 @@ export class BackendAppTag extends TagAbstract {
             url: url,
             method: 'DELETE',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -62,7 +63,7 @@ export class BackendAppTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async delete(appId: string): Promise<CommonMessage> {
@@ -74,7 +75,8 @@ export class BackendAppTag extends TagAbstract {
             url: url,
             method: 'DELETE',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -104,7 +106,7 @@ export class BackendAppTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async update(appId: string, payload: BackendAppUpdate): Promise<CommonMessage> {
@@ -116,7 +118,8 @@ export class BackendAppTag extends TagAbstract {
             url: url,
             method: 'PUT',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -149,7 +152,7 @@ export class BackendAppTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendApp>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async get(appId: string): Promise<BackendApp> {
@@ -161,7 +164,8 @@ export class BackendAppTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -191,7 +195,7 @@ export class BackendAppTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async create(payload: BackendAppCreate): Promise<CommonMessage> {
@@ -202,7 +206,8 @@ export class BackendAppTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -231,7 +236,7 @@ export class BackendAppTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendAppCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<BackendAppCollection> {
@@ -245,7 +250,8 @@ export class BackendAppTag extends TagAbstract {
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -271,7 +277,7 @@ export class BackendAppTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendAppToken>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getToken(tokenId: string): Promise<BackendAppToken> {
@@ -283,7 +289,8 @@ export class BackendAppTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -311,7 +318,7 @@ export class BackendAppTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendAppTokenCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAllTokens(startIndex?: number, count?: number, search?: string, from?: string, to?: string, appId?: number, userId?: number, status?: number, scope?: string, ip?: string): Promise<BackendAppTokenCollection> {
@@ -332,7 +339,8 @@ export class BackendAppTag extends TagAbstract {
                 'status': status,
                 'scope': scope,
                 'ip': ip,
-            }),
+            }, [
+            ]),
         };
 
         try {

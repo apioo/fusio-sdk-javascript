@@ -17,7 +17,7 @@ import {ConsumerAppUpdate} from "./ConsumerAppUpdate";
 export class ConsumerAppTag extends TagAbstract {
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async delete(appId: string): Promise<CommonMessage> {
@@ -29,7 +29,8 @@ export class ConsumerAppTag extends TagAbstract {
             url: url,
             method: 'DELETE',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -59,7 +60,7 @@ export class ConsumerAppTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async update(appId: string, payload: ConsumerAppUpdate): Promise<CommonMessage> {
@@ -71,7 +72,8 @@ export class ConsumerAppTag extends TagAbstract {
             url: url,
             method: 'PUT',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -104,7 +106,7 @@ export class ConsumerAppTag extends TagAbstract {
 
     /**
      * @returns {Promise<ConsumerApp>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async get(appId: string): Promise<ConsumerApp> {
@@ -116,7 +118,8 @@ export class ConsumerAppTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -146,7 +149,7 @@ export class ConsumerAppTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async create(payload: ConsumerAppCreate): Promise<CommonMessage> {
@@ -157,7 +160,8 @@ export class ConsumerAppTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -186,7 +190,7 @@ export class ConsumerAppTag extends TagAbstract {
 
     /**
      * @returns {Promise<ConsumerAppCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<ConsumerAppCollection> {
@@ -200,7 +204,8 @@ export class ConsumerAppTag extends TagAbstract {
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,
-            }),
+            }, [
+            ]),
         };
 
         try {

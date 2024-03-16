@@ -4,7 +4,8 @@
  */
 
 import axios, {AxiosRequestConfig} from "axios";
-import {ClientAbstract, TokenStoreInterface} from "sdkgen-client"
+import {ClientAbstract, CredentialsInterface, TokenStoreInterface} from "sdkgen-client"
+import {OAuth2} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {AuthorizationTag} from "./AuthorizationTag";
@@ -47,4 +48,8 @@ export class Client extends ClientAbstract {
 
 
 
+    public static build(clientId: string, clientSecret: string, tokenStore: TokenStoreInterface|null, scopes: Array<string>|null): Client
+    {
+        return new Client('https://api.typehub.cloud/', new OAuth2(clientId, clientSecret, 'https://api.typehub.cloud/authorization/token', '', tokenStore, scopes));
+    }
 }

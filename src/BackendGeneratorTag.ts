@@ -18,7 +18,7 @@ import {CommonMessageException} from "./CommonMessageException";
 export class BackendGeneratorTag extends TagAbstract {
     /**
      * @returns {Promise<BackendGeneratorProviderChangelog>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getChangelog(provider: string, payload: BackendGeneratorProviderConfig): Promise<BackendGeneratorProviderChangelog> {
@@ -30,7 +30,8 @@ export class BackendGeneratorTag extends TagAbstract {
             url: url,
             method: 'PUT',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -57,7 +58,7 @@ export class BackendGeneratorTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async executeProvider(provider: string, payload: BackendGeneratorProvider): Promise<CommonMessage> {
@@ -69,7 +70,8 @@ export class BackendGeneratorTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -96,7 +98,7 @@ export class BackendGeneratorTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonFormContainer>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getForm(provider: string): Promise<CommonFormContainer> {
@@ -108,7 +110,8 @@ export class BackendGeneratorTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -134,7 +137,7 @@ export class BackendGeneratorTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendGeneratorIndexProviders>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getClasses(): Promise<BackendGeneratorIndexProviders> {
@@ -145,7 +148,8 @@ export class BackendGeneratorTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {

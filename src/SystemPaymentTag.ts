@@ -13,7 +13,7 @@ import {CommonMessageException} from "./CommonMessageException";
 export class SystemPaymentTag extends TagAbstract {
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async webhook(provider: string): Promise<CommonMessage> {
@@ -25,7 +25,8 @@ export class SystemPaymentTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {

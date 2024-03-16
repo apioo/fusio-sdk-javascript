@@ -7,7 +7,6 @@ import axios, {AxiosRequestConfig} from "axios";
 import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
-import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 import {ConsumerTransaction} from "./ConsumerTransaction";
 import {ConsumerTransactionCollection} from "./ConsumerTransactionCollection";
@@ -15,7 +14,7 @@ import {ConsumerTransactionCollection} from "./ConsumerTransactionCollection";
 export class ConsumerTransactionTag extends TagAbstract {
     /**
      * @returns {Promise<ConsumerTransaction>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async get(transactionId: string): Promise<ConsumerTransaction> {
@@ -27,7 +26,8 @@ export class ConsumerTransactionTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -57,7 +57,7 @@ export class ConsumerTransactionTag extends TagAbstract {
 
     /**
      * @returns {Promise<ConsumerTransactionCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<ConsumerTransactionCollection> {
@@ -71,7 +71,8 @@ export class ConsumerTransactionTag extends TagAbstract {
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,
-            }),
+            }, [
+            ]),
         };
 
         try {

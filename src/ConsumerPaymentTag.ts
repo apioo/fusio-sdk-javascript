@@ -7,7 +7,6 @@ import axios, {AxiosRequestConfig} from "axios";
 import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
-import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 import {ConsumerPaymentCheckoutRequest} from "./ConsumerPaymentCheckoutRequest";
 import {ConsumerPaymentCheckoutResponse} from "./ConsumerPaymentCheckoutResponse";
@@ -17,7 +16,7 @@ import {ConsumerPaymentPortalResponse} from "./ConsumerPaymentPortalResponse";
 export class ConsumerPaymentTag extends TagAbstract {
     /**
      * @returns {Promise<ConsumerPaymentCheckoutResponse>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async checkout(provider: string, payload: ConsumerPaymentCheckoutRequest): Promise<ConsumerPaymentCheckoutResponse> {
@@ -29,7 +28,8 @@ export class ConsumerPaymentTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -56,7 +56,7 @@ export class ConsumerPaymentTag extends TagAbstract {
 
     /**
      * @returns {Promise<ConsumerPaymentPortalResponse>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async portal(provider: string, payload: ConsumerPaymentPortalRequest): Promise<ConsumerPaymentPortalResponse> {
@@ -68,7 +68,8 @@ export class ConsumerPaymentTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 

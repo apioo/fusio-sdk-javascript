@@ -7,7 +7,6 @@ import axios, {AxiosRequestConfig} from "axios";
 import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
-import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 import {ConsumerPlan} from "./ConsumerPlan";
 import {ConsumerPlanCollection} from "./ConsumerPlanCollection";
@@ -15,7 +14,7 @@ import {ConsumerPlanCollection} from "./ConsumerPlanCollection";
 export class ConsumerPlanTag extends TagAbstract {
     /**
      * @returns {Promise<ConsumerPlan>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async get(planId: string): Promise<ConsumerPlan> {
@@ -27,7 +26,8 @@ export class ConsumerPlanTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -57,7 +57,7 @@ export class ConsumerPlanTag extends TagAbstract {
 
     /**
      * @returns {Promise<ConsumerPlanCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<ConsumerPlanCollection> {
@@ -71,7 +71,8 @@ export class ConsumerPlanTag extends TagAbstract {
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,
-            }),
+            }, [
+            ]),
         };
 
         try {

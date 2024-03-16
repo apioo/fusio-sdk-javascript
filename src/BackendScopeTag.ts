@@ -18,7 +18,7 @@ import {CommonMessageException} from "./CommonMessageException";
 export class BackendScopeTag extends TagAbstract {
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async delete(scopeId: string): Promise<CommonMessage> {
@@ -30,7 +30,8 @@ export class BackendScopeTag extends TagAbstract {
             url: url,
             method: 'DELETE',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -62,7 +63,7 @@ export class BackendScopeTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async update(scopeId: string, payload: BackendScopeUpdate): Promise<CommonMessage> {
@@ -74,7 +75,8 @@ export class BackendScopeTag extends TagAbstract {
             url: url,
             method: 'PUT',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -107,7 +109,7 @@ export class BackendScopeTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendScope>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async get(scopeId: string): Promise<BackendScope> {
@@ -119,7 +121,8 @@ export class BackendScopeTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -149,7 +152,7 @@ export class BackendScopeTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendScopeCategories>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getCategories(): Promise<BackendScopeCategories> {
@@ -160,7 +163,8 @@ export class BackendScopeTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -186,7 +190,7 @@ export class BackendScopeTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async create(payload: BackendScopeCreate): Promise<CommonMessage> {
@@ -197,7 +201,8 @@ export class BackendScopeTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -226,7 +231,7 @@ export class BackendScopeTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendScopeCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<BackendScopeCollection> {
@@ -240,7 +245,8 @@ export class BackendScopeTag extends TagAbstract {
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,
-            }),
+            }, [
+            ]),
         };
 
         try {

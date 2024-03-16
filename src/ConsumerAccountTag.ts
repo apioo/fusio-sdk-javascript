@@ -25,7 +25,7 @@ import {ConsumerUserRegister} from "./ConsumerUserRegister";
 export class ConsumerAccountTag extends TagAbstract {
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async executePasswordReset(payload: ConsumerUserPasswordReset): Promise<CommonMessage> {
@@ -36,7 +36,8 @@ export class ConsumerAccountTag extends TagAbstract {
             url: url,
             method: 'PUT',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -65,7 +66,7 @@ export class ConsumerAccountTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async requestPasswordReset(payload: ConsumerUserEmail): Promise<CommonMessage> {
@@ -76,7 +77,8 @@ export class ConsumerAccountTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -105,7 +107,7 @@ export class ConsumerAccountTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async register(payload: ConsumerUserRegister): Promise<CommonMessage> {
@@ -116,7 +118,8 @@ export class ConsumerAccountTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -143,7 +146,7 @@ export class ConsumerAccountTag extends TagAbstract {
 
     /**
      * @returns {Promise<ConsumerUserJWT>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async refresh(payload: ConsumerUserRefresh): Promise<ConsumerUserJWT> {
@@ -154,7 +157,8 @@ export class ConsumerAccountTag extends TagAbstract {
             url: url,
             method: 'PUT',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -181,7 +185,7 @@ export class ConsumerAccountTag extends TagAbstract {
 
     /**
      * @returns {Promise<ConsumerUserJWT>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async login(payload: ConsumerUserLogin): Promise<ConsumerUserJWT> {
@@ -192,7 +196,8 @@ export class ConsumerAccountTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -221,7 +226,7 @@ export class ConsumerAccountTag extends TagAbstract {
 
     /**
      * @returns {Promise<ConsumerAuthorizeResponse>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async authorize(payload: ConsumerAuthorizeRequest): Promise<ConsumerAuthorizeResponse> {
@@ -232,7 +237,8 @@ export class ConsumerAccountTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -261,7 +267,7 @@ export class ConsumerAccountTag extends TagAbstract {
 
     /**
      * @returns {Promise<ConsumerAuthorizeMeta>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getApp(): Promise<ConsumerAuthorizeMeta> {
@@ -272,7 +278,8 @@ export class ConsumerAccountTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -300,7 +307,7 @@ export class ConsumerAccountTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async activate(payload: ConsumerUserActivate): Promise<CommonMessage> {
@@ -311,7 +318,8 @@ export class ConsumerAccountTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -338,7 +346,7 @@ export class ConsumerAccountTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async changePassword(payload: BackendAccountChangePassword): Promise<CommonMessage> {
@@ -349,7 +357,8 @@ export class ConsumerAccountTag extends TagAbstract {
             url: url,
             method: 'PUT',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -378,7 +387,7 @@ export class ConsumerAccountTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async update(payload: ConsumerUserAccount): Promise<CommonMessage> {
@@ -389,7 +398,8 @@ export class ConsumerAccountTag extends TagAbstract {
             url: url,
             method: 'PUT',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -422,7 +432,7 @@ export class ConsumerAccountTag extends TagAbstract {
 
     /**
      * @returns {Promise<ConsumerUserAccount>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async get(): Promise<ConsumerUserAccount> {
@@ -433,7 +443,8 @@ export class ConsumerAccountTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {

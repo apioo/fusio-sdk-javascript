@@ -15,7 +15,7 @@ import {CommonMessageException} from "./CommonMessageException";
 export class BackendSdkTag extends TagAbstract {
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async generate(payload: BackendSdkGenerate): Promise<CommonMessage> {
@@ -26,7 +26,8 @@ export class BackendSdkTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -53,7 +54,7 @@ export class BackendSdkTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendSdkResponse>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(): Promise<BackendSdkResponse> {
@@ -64,7 +65,8 @@ export class BackendSdkTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {

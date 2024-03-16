@@ -21,7 +21,7 @@ import {CommonMessageException} from "./CommonMessageException";
 export class BackendConnectionTag extends TagAbstract {
     /**
      * @returns {Promise<BackendConnectionIntrospectionEntity>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getIntrospectionForEntity(connectionId: string, entity: string): Promise<BackendConnectionIntrospectionEntity> {
@@ -34,7 +34,8 @@ export class BackendConnectionTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -62,7 +63,7 @@ export class BackendConnectionTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendConnectionIntrospectionEntities>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getIntrospection(connectionId: string): Promise<BackendConnectionIntrospectionEntities> {
@@ -74,7 +75,8 @@ export class BackendConnectionTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -102,7 +104,7 @@ export class BackendConnectionTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getRedirect(connectionId: string): Promise<CommonMessage> {
@@ -114,7 +116,8 @@ export class BackendConnectionTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -140,7 +143,7 @@ export class BackendConnectionTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async delete(connectionId: string): Promise<CommonMessage> {
@@ -152,7 +155,8 @@ export class BackendConnectionTag extends TagAbstract {
             url: url,
             method: 'DELETE',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -182,7 +186,7 @@ export class BackendConnectionTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async update(connectionId: string, payload: BackendConnectionUpdate): Promise<CommonMessage> {
@@ -194,7 +198,8 @@ export class BackendConnectionTag extends TagAbstract {
             url: url,
             method: 'PUT',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -227,7 +232,7 @@ export class BackendConnectionTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendConnection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async get(connectionId: string): Promise<BackendConnection> {
@@ -239,7 +244,8 @@ export class BackendConnectionTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -269,7 +275,7 @@ export class BackendConnectionTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonFormContainer>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getForm(_class?: string): Promise<CommonFormContainer> {
@@ -281,7 +287,8 @@ export class BackendConnectionTag extends TagAbstract {
             method: 'GET',
             params: this.parser.query({
                 'class': _class,
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -307,7 +314,7 @@ export class BackendConnectionTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendConnectionIndex>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getClasses(): Promise<BackendConnectionIndex> {
@@ -318,7 +325,8 @@ export class BackendConnectionTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -344,7 +352,7 @@ export class BackendConnectionTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async create(payload: BackendConnectionCreate): Promise<CommonMessage> {
@@ -355,7 +363,8 @@ export class BackendConnectionTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -384,7 +393,7 @@ export class BackendConnectionTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendConnectionCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<BackendConnectionCollection> {
@@ -398,7 +407,8 @@ export class BackendConnectionTag extends TagAbstract {
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,
-            }),
+            }, [
+            ]),
         };
 
         try {

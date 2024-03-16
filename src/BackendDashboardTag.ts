@@ -8,13 +8,12 @@ import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {BackendDashboard} from "./BackendDashboard";
-import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendDashboardTag extends TagAbstract {
     /**
      * @returns {Promise<BackendDashboard>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(): Promise<BackendDashboard> {
@@ -25,7 +24,8 @@ export class BackendDashboardTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {

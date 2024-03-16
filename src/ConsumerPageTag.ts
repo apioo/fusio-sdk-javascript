@@ -7,7 +7,6 @@ import axios, {AxiosRequestConfig} from "axios";
 import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
-import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 import {ConsumerPage} from "./ConsumerPage";
 import {ConsumerPageCollection} from "./ConsumerPageCollection";
@@ -15,7 +14,7 @@ import {ConsumerPageCollection} from "./ConsumerPageCollection";
 export class ConsumerPageTag extends TagAbstract {
     /**
      * @returns {Promise<ConsumerPage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async get(pageId: string): Promise<ConsumerPage> {
@@ -27,7 +26,8 @@ export class ConsumerPageTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -57,7 +57,7 @@ export class ConsumerPageTag extends TagAbstract {
 
     /**
      * @returns {Promise<ConsumerPageCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<ConsumerPageCollection> {
@@ -71,7 +71,8 @@ export class ConsumerPageTag extends TagAbstract {
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,
-            }),
+            }, [
+            ]),
         };
 
         try {

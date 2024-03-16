@@ -9,13 +9,12 @@ import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {BackendTransaction} from "./BackendTransaction";
 import {BackendTransactionCollection} from "./BackendTransactionCollection";
-import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendTransactionTag extends TagAbstract {
     /**
      * @returns {Promise<BackendTransaction>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async get(transactionId: string): Promise<BackendTransaction> {
@@ -27,7 +26,8 @@ export class BackendTransactionTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -57,7 +57,7 @@ export class BackendTransactionTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendTransactionCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string, from?: string, to?: string, planId?: number, userId?: number, appId?: number, status?: string, provider?: string): Promise<BackendTransactionCollection> {
@@ -78,7 +78,8 @@ export class BackendTransactionTag extends TagAbstract {
                 'appId': appId,
                 'status': status,
                 'provider': provider,
-            }),
+            }, [
+            ]),
         };
 
         try {

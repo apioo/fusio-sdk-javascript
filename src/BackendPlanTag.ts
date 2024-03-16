@@ -17,7 +17,7 @@ import {CommonMessageException} from "./CommonMessageException";
 export class BackendPlanTag extends TagAbstract {
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async delete(planId: string): Promise<CommonMessage> {
@@ -29,7 +29,8 @@ export class BackendPlanTag extends TagAbstract {
             url: url,
             method: 'DELETE',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -59,7 +60,7 @@ export class BackendPlanTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async update(planId: string, payload: BackendPlanUpdate): Promise<CommonMessage> {
@@ -71,7 +72,8 @@ export class BackendPlanTag extends TagAbstract {
             url: url,
             method: 'PUT',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -104,7 +106,7 @@ export class BackendPlanTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendPlan>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async get(planId: string): Promise<BackendPlan> {
@@ -116,7 +118,8 @@ export class BackendPlanTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
         };
 
         try {
@@ -146,7 +149,7 @@ export class BackendPlanTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async create(payload: BackendPlanCreate): Promise<CommonMessage> {
@@ -157,7 +160,8 @@ export class BackendPlanTag extends TagAbstract {
             url: url,
             method: 'POST',
             params: this.parser.query({
-            }),
+            }, [
+            ]),
             data: payload
         };
 
@@ -186,7 +190,7 @@ export class BackendPlanTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendPlanCollection>}
-     * @throws {CommonMessageException}
+     * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<BackendPlanCollection> {
@@ -200,7 +204,8 @@ export class BackendPlanTag extends TagAbstract {
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,
-            }),
+            }, [
+            ]),
         };
 
         try {

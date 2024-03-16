@@ -4,7 +4,7 @@
  */
 
 export interface CommonFormElement {
-    element?: string
+    element: string
     name?: string
     title?: string
     help?: string
