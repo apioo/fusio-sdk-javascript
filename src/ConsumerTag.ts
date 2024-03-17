@@ -17,6 +17,7 @@ import {ConsumerPageTag} from "./ConsumerPageTag";
 import {ConsumerPaymentTag} from "./ConsumerPaymentTag";
 import {ConsumerPlanTag} from "./ConsumerPlanTag";
 import {ConsumerScopeTag} from "./ConsumerScopeTag";
+import {ConsumerTokenTag} from "./ConsumerTokenTag";
 import {ConsumerTransactionTag} from "./ConsumerTransactionTag";
 import {ConsumerWebhookTag} from "./ConsumerWebhookTag";
 
@@ -48,6 +49,14 @@ export class ConsumerTag extends TagAbstract {
     public webhook(): ConsumerWebhookTag
     {
         return new ConsumerWebhookTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public token(): ConsumerTokenTag
+    {
+        return new ConsumerTokenTag(
             this.httpClient,
             this.parser
         );
