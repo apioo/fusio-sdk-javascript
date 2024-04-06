@@ -11,6 +11,7 @@ import {CommonMessageException} from "./CommonMessageException";
 import {Passthru} from "./Passthru";
 import {SystemAbout} from "./SystemAbout";
 import {SystemHealthCheck} from "./SystemHealthCheck";
+import {SystemOAuthConfiguration} from "./SystemOAuthConfiguration";
 import {SystemRoute} from "./SystemRoute";
 import {SystemSchema} from "./SystemSchema";
 
@@ -74,6 +75,39 @@ export class SystemMetaTag extends TagAbstract {
 
         try {
             const response = await this.httpClient.request<SystemRoute>(params);
+            return response.data;
+        } catch (error) {
+            if (error instanceof ClientException) {
+                throw error;
+            } else if (axios.isAxiosError(error) && error.response) {
+                switch (error.response.status) {
+                    default:
+                        throw new UnknownStatusCodeException('The server returned an unknown status code');
+                }
+            } else {
+                throw new ClientException('An unknown error occurred: ' + String(error));
+            }
+        }
+    }
+
+    /**
+     * @returns {Promise<SystemOAuthConfiguration>}
+     * @throws {ClientException}
+     */
+    public async getOAuthConfiguration(): Promise<SystemOAuthConfiguration> {
+        const url = this.parser.url('/system/oauth-authorization-server', {
+        });
+
+        let params: AxiosRequestConfig = {
+            url: url,
+            method: 'GET',
+            params: this.parser.query({
+            }, [
+            ]),
+        };
+
+        try {
+            const response = await this.httpClient.request<SystemOAuthConfiguration>(params);
             return response.data;
         } catch (error) {
             if (error instanceof ClientException) {
