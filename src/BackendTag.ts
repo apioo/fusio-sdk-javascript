@@ -11,6 +11,7 @@ import {BackendAccountTag} from "./BackendAccountTag";
 import {BackendActionTag} from "./BackendActionTag";
 import {BackendAppTag} from "./BackendAppTag";
 import {BackendAuditTag} from "./BackendAuditTag";
+import {BackendBackupTag} from "./BackendBackupTag";
 import {BackendCategoryTag} from "./BackendCategoryTag";
 import {BackendConfigTag} from "./BackendConfigTag";
 import {BackendConnectionTag} from "./BackendConnectionTag";
@@ -185,6 +186,14 @@ export class BackendTag extends TagAbstract {
     public generator(): BackendGeneratorTag
     {
         return new BackendGeneratorTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public backup(): BackendBackupTag
+    {
+        return new BackendBackupTag(
             this.httpClient,
             this.parser
         );
