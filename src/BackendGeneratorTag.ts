@@ -43,6 +43,8 @@ export class BackendGeneratorTag extends TagAbstract {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new CommonMessageException(error.response.data);
                     case 401:
                         throw new CommonMessageException(error.response.data);
                     case 500:
@@ -83,6 +85,8 @@ export class BackendGeneratorTag extends TagAbstract {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new CommonMessageException(error.response.data);
                     case 401:
                         throw new CommonMessageException(error.response.data);
                     case 500:
@@ -122,6 +126,8 @@ export class BackendGeneratorTag extends TagAbstract {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new CommonMessageException(error.response.data);
                     case 401:
                         throw new CommonMessageException(error.response.data);
                     case 500:
