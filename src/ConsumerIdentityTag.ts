@@ -95,7 +95,7 @@ export class ConsumerIdentityTag extends TagAbstract {
      * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
-    public async getAll(appId?: number): Promise<ConsumerIdentityCollection> {
+    public async getAll(appId?: number, appKey?: string): Promise<ConsumerIdentityCollection> {
         const url = this.parser.url('/consumer/identity', {
         });
 
@@ -104,6 +104,7 @@ export class ConsumerIdentityTag extends TagAbstract {
             method: 'GET',
             params: this.parser.query({
                 'appId': appId,
+                'appKey': appKey,
             }, [
             ]),
         };
