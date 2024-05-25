@@ -9,6 +9,7 @@ export interface BackendConnection {
     id?: number
     name?: string
     class?: string
+    oauth2?: boolean
     config?: BackendConnectionConfig
     metadata?: CommonMetadata
 }
