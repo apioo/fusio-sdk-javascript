@@ -13,6 +13,7 @@ import {BackendConnectionCreate} from "./BackendConnectionCreate";
 import {BackendConnectionIndex} from "./BackendConnectionIndex";
 import {BackendConnectionIntrospectionEntities} from "./BackendConnectionIntrospectionEntities";
 import {BackendConnectionIntrospectionEntity} from "./BackendConnectionIntrospectionEntity";
+import {BackendConnectionRedirectResponse} from "./BackendConnectionRedirectResponse";
 import {BackendConnectionUpdate} from "./BackendConnectionUpdate";
 import {CommonFormContainer} from "./CommonFormContainer";
 import {CommonMessage} from "./CommonMessage";
@@ -103,11 +104,11 @@ export class BackendConnectionTag extends TagAbstract {
     }
 
     /**
-     * @returns {Promise<CommonMessage>}
+     * @returns {Promise<BackendConnectionRedirectResponse>}
      * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
-    public async getRedirect(connectionId: string): Promise<CommonMessage> {
+    public async getRedirect(connectionId: string): Promise<BackendConnectionRedirectResponse> {
         const url = this.parser.url('/backend/connection/$connection_id<[0-9]+|^~>/redirect', {
             'connection_id': connectionId,
         });
@@ -121,7 +122,7 @@ export class BackendConnectionTag extends TagAbstract {
         };
 
         try {
-            const response = await this.httpClient.request<CommonMessage>(params);
+            const response = await this.httpClient.request<BackendConnectionRedirectResponse>(params);
             return response.data;
         } catch (error) {
             if (error instanceof ClientException) {
