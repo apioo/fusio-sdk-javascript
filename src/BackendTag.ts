@@ -17,6 +17,7 @@ import {BackendConfigTag} from "./BackendConfigTag";
 import {BackendConnectionTag} from "./BackendConnectionTag";
 import {BackendCronjobTag} from "./BackendCronjobTag";
 import {BackendDashboardTag} from "./BackendDashboardTag";
+import {BackendDatabaseTag} from "./BackendDatabaseTag";
 import {BackendEventTag} from "./BackendEventTag";
 import {BackendGeneratorTag} from "./BackendGeneratorTag";
 import {BackendIdentityTag} from "./BackendIdentityTag";
@@ -202,6 +203,14 @@ export class BackendTag extends TagAbstract {
     public event(): BackendEventTag
     {
         return new BackendEventTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public database(): BackendDatabaseTag
+    {
+        return new BackendDatabaseTag(
             this.httpClient,
             this.parser
         );
