@@ -186,7 +186,7 @@ export class BackendDatabaseTag extends TagAbstract {
      * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
-    public async getRows(connectionId: string, tableName: string): Promise<BackendDatabaseRows> {
+    public async getRows(connectionId: string, tableName: string, startIndex?: number, count?: number, filterBy?: string, filterOp?: string, filterValue?: string, sortBy?: string, sortOrder?: string, columns?: string): Promise<BackendDatabaseRows> {
         const url = this.parser.url('/backend/database/:connection_id/:table_name/rows', {
             'connection_id': connectionId,
             'table_name': tableName,
@@ -196,6 +196,14 @@ export class BackendDatabaseTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'filterBy': filterBy,
+                'filterOp': filterOp,
+                'filterValue': filterValue,
+                'sortBy': sortBy,
+                'sortOrder': sortOrder,
+                'columns': columns,
             }, [
             ]),
         };
