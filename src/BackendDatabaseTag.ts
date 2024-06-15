@@ -44,7 +44,11 @@ export class BackendDatabaseTag extends TagAbstract {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new CommonMessageException(error.response.data);
                     case 401:
+                        throw new CommonMessageException(error.response.data);
+                    case 404:
                         throw new CommonMessageException(error.response.data);
                     case 500:
                         throw new CommonMessageException(error.response.data);
@@ -86,7 +90,11 @@ export class BackendDatabaseTag extends TagAbstract {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new CommonMessageException(error.response.data);
                     case 401:
+                        throw new CommonMessageException(error.response.data);
+                    case 404:
                         throw new CommonMessageException(error.response.data);
                     case 500:
                         throw new CommonMessageException(error.response.data);
@@ -127,7 +135,11 @@ export class BackendDatabaseTag extends TagAbstract {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new CommonMessageException(error.response.data);
                     case 401:
+                        throw new CommonMessageException(error.response.data);
+                    case 404:
                         throw new CommonMessageException(error.response.data);
                     case 500:
                         throw new CommonMessageException(error.response.data);
@@ -169,6 +181,8 @@ export class BackendDatabaseTag extends TagAbstract {
             } else if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
                     case 401:
+                        throw new CommonMessageException(error.response.data);
+                    case 404:
                         throw new CommonMessageException(error.response.data);
                     case 500:
                         throw new CommonMessageException(error.response.data);
@@ -218,6 +232,8 @@ export class BackendDatabaseTag extends TagAbstract {
                 switch (error.response.status) {
                     case 401:
                         throw new CommonMessageException(error.response.data);
+                    case 404:
+                        throw new CommonMessageException(error.response.data);
                     case 500:
                         throw new CommonMessageException(error.response.data);
                     default:
@@ -256,7 +272,11 @@ export class BackendDatabaseTag extends TagAbstract {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new CommonMessageException(error.response.data);
                     case 401:
+                        throw new CommonMessageException(error.response.data);
+                    case 404:
                         throw new CommonMessageException(error.response.data);
                     case 500:
                         throw new CommonMessageException(error.response.data);
@@ -297,7 +317,11 @@ export class BackendDatabaseTag extends TagAbstract {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new CommonMessageException(error.response.data);
                     case 401:
+                        throw new CommonMessageException(error.response.data);
+                    case 404:
                         throw new CommonMessageException(error.response.data);
                     case 500:
                         throw new CommonMessageException(error.response.data);
@@ -337,7 +361,11 @@ export class BackendDatabaseTag extends TagAbstract {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new CommonMessageException(error.response.data);
                     case 401:
+                        throw new CommonMessageException(error.response.data);
+                    case 404:
                         throw new CommonMessageException(error.response.data);
                     case 500:
                         throw new CommonMessageException(error.response.data);
@@ -379,6 +407,8 @@ export class BackendDatabaseTag extends TagAbstract {
                 switch (error.response.status) {
                     case 401:
                         throw new CommonMessageException(error.response.data);
+                    case 404:
+                        throw new CommonMessageException(error.response.data);
                     case 500:
                         throw new CommonMessageException(error.response.data);
                     default:
@@ -417,6 +447,8 @@ export class BackendDatabaseTag extends TagAbstract {
             } else if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
                     case 401:
+                        throw new CommonMessageException(error.response.data);
+                    case 404:
                         throw new CommonMessageException(error.response.data);
                     case 500:
                         throw new CommonMessageException(error.response.data);
