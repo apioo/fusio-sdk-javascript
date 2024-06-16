@@ -8,17 +8,17 @@ import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {BackendSdkGenerate} from "./BackendSdkGenerate";
+import {BackendSdkMessage} from "./BackendSdkMessage";
 import {BackendSdkResponse} from "./BackendSdkResponse";
-import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendSdkTag extends TagAbstract {
     /**
-     * @returns {Promise<CommonMessage>}
+     * @returns {Promise<BackendSdkMessage>}
      * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
-    public async generate(payload: BackendSdkGenerate): Promise<CommonMessage> {
+    public async generate(payload: BackendSdkGenerate): Promise<BackendSdkMessage> {
         const url = this.parser.url('/backend/sdk', {
         });
 
@@ -32,13 +32,15 @@ export class BackendSdkTag extends TagAbstract {
         };
 
         try {
-            const response = await this.httpClient.request<CommonMessage>(params);
+            const response = await this.httpClient.request<BackendSdkMessage>(params);
             return response.data;
         } catch (error) {
             if (error instanceof ClientException) {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
                 switch (error.response.status) {
+                    case 400:
+                        throw new CommonMessageException(error.response.data);
                     case 401:
                         throw new CommonMessageException(error.response.data);
                     case 500:
