@@ -5,7 +5,7 @@
 
 import axios, {AxiosRequestConfig} from "axios";
 import {ClientAbstract, CredentialsInterface, TokenStoreInterface} from "sdkgen-client"
-import {OAuth2} from "sdkgen-client"
+import {Anonymous} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {AuthorizationTag} from "./AuthorizationTag";
@@ -48,8 +48,8 @@ export class Client extends ClientAbstract {
 
 
 
-    public static build(clientId: string, clientSecret: string, tokenStore: TokenStoreInterface|null, scopes: Array<string>|null): Client
+    public static build(baseUrl: string): Client
     {
-        return new Client('http://127.0.0.1/', new OAuth2(clientId, clientSecret, 'http://127.0.0.1/authorization/token', '', tokenStore, scopes));
+        return new Client(baseUrl, new Anonymous());
     }
 }
