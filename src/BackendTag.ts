@@ -33,6 +33,7 @@ import {BackendScopeTag} from "./BackendScopeTag";
 import {BackendSdkTag} from "./BackendSdkTag";
 import {BackendStatisticTag} from "./BackendStatisticTag";
 import {BackendTenantTag} from "./BackendTenantTag";
+import {BackendTestTag} from "./BackendTestTag";
 import {BackendTokenTag} from "./BackendTokenTag";
 import {BackendTransactionTag} from "./BackendTransactionTag";
 import {BackendTrashTag} from "./BackendTrashTag";
@@ -75,6 +76,14 @@ export class BackendTag extends TagAbstract {
     public token(): BackendTokenTag
     {
         return new BackendTokenTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public test(): BackendTestTag
+    {
+        return new BackendTestTag(
             this.httpClient,
             this.parser
         );
