@@ -7,15 +7,14 @@ import {BackendStatisticChart} from "./BackendStatisticChart";
 import {BackendDashboardApps} from "./BackendDashboardApps";
 import {BackendDashboardRequests} from "./BackendDashboardRequests";
 import {BackendDashboardUsers} from "./BackendDashboardUsers";
-import {BackendDashboardTransactions} from "./BackendDashboardTransactions";
 export interface BackendDashboard {
     errorsPerOperation?: BackendStatisticChart
     incomingRequests?: BackendStatisticChart
     incomingTransactions?: BackendStatisticChart
     mostUsedOperations?: BackendStatisticChart
     timePerOperation?: BackendStatisticChart
+    testCoverage?: BackendStatisticChart
     latestApps?: BackendDashboardApps
     latestRequests?: BackendDashboardRequests
     latestUsers?: BackendDashboardUsers
-    latestTransactions?: BackendDashboardTransactions
 }
