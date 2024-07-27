@@ -173,6 +173,44 @@ export class BackendStatisticTag extends TagAbstract {
      * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
+    public async getTestCoverage(): Promise<BackendStatisticChart> {
+        const url = this.parser.url('/backend/statistic/test_coverage', {
+        });
+
+        let params: AxiosRequestConfig = {
+            url: url,
+            method: 'GET',
+            params: this.parser.query({
+            }, [
+            ]),
+        };
+
+        try {
+            const response = await this.httpClient.request<BackendStatisticChart>(params);
+            return response.data;
+        } catch (error) {
+            if (error instanceof ClientException) {
+                throw error;
+            } else if (axios.isAxiosError(error) && error.response) {
+                switch (error.response.status) {
+                    case 401:
+                        throw new CommonMessageException(error.response.data);
+                    case 500:
+                        throw new CommonMessageException(error.response.data);
+                    default:
+                        throw new UnknownStatusCodeException('The server returned an unknown status code');
+                }
+            } else {
+                throw new ClientException('An unknown error occurred: ' + String(error));
+            }
+        }
+    }
+
+    /**
+     * @returns {Promise<BackendStatisticChart>}
+     * @throws {CommonMessageExceptionException}
+     * @throws {ClientException}
+     */
     public async getMostUsedOperations(startIndex?: number, count?: number, search?: string, from?: string, to?: string, operationId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<BackendStatisticChart> {
         const url = this.parser.url('/backend/statistic/most_used_operations', {
         });
