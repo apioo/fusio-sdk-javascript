@@ -675,11 +675,11 @@ export class BackendStatisticTag extends TagAbstract {
     }
 
     /**
-     * @returns {Promise<BackendStatisticCount>}
+     * @returns {Promise<BackendStatisticChart>}
      * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
-    public async getActivitiesPerUser(startIndex?: number, count?: number, search?: string, from?: string, to?: string, operationId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<BackendStatisticCount> {
+    public async getActivitiesPerUser(startIndex?: number, count?: number, search?: string, from?: string, to?: string, operationId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<BackendStatisticChart> {
         const url = this.parser.url('/backend/statistic/activities_per_user', {
         });
 
@@ -706,7 +706,7 @@ export class BackendStatisticTag extends TagAbstract {
         };
 
         try {
-            const response = await this.httpClient.request<BackendStatisticCount>(params);
+            const response = await this.httpClient.request<BackendStatisticChart>(params);
             return response.data;
         } catch (error) {
             if (error instanceof ClientException) {
