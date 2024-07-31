@@ -9,7 +9,6 @@ import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {BackendTest} from "./BackendTest";
 import {BackendTestCollection} from "./BackendTestCollection";
-import {BackendTestConfig} from "./BackendTestConfig";
 import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 
@@ -19,7 +18,7 @@ export class BackendTestTag extends TagAbstract {
      * @throws {CommonMessageExceptionException}
      * @throws {ClientException}
      */
-    public async update(testId: string, payload: BackendTestConfig): Promise<CommonMessage> {
+    public async update(testId: string, payload: BackendTest): Promise<CommonMessage> {
         const url = this.parser.url('/backend/test/$test_id<[0-9]+>', {
             'test_id': testId,
         });
