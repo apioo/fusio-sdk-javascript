@@ -11,11 +11,13 @@ import {BackendAccountTag} from "./BackendAccountTag";
 import {BackendActionTag} from "./BackendActionTag";
 import {BackendAppTag} from "./BackendAppTag";
 import {BackendAuditTag} from "./BackendAuditTag";
+import {BackendBackupTag} from "./BackendBackupTag";
 import {BackendCategoryTag} from "./BackendCategoryTag";
 import {BackendConfigTag} from "./BackendConfigTag";
 import {BackendConnectionTag} from "./BackendConnectionTag";
 import {BackendCronjobTag} from "./BackendCronjobTag";
 import {BackendDashboardTag} from "./BackendDashboardTag";
+import {BackendDatabaseTag} from "./BackendDatabaseTag";
 import {BackendEventTag} from "./BackendEventTag";
 import {BackendGeneratorTag} from "./BackendGeneratorTag";
 import {BackendIdentityTag} from "./BackendIdentityTag";
@@ -31,6 +33,7 @@ import {BackendScopeTag} from "./BackendScopeTag";
 import {BackendSdkTag} from "./BackendSdkTag";
 import {BackendStatisticTag} from "./BackendStatisticTag";
 import {BackendTenantTag} from "./BackendTenantTag";
+import {BackendTestTag} from "./BackendTestTag";
 import {BackendTokenTag} from "./BackendTokenTag";
 import {BackendTransactionTag} from "./BackendTransactionTag";
 import {BackendTrashTag} from "./BackendTrashTag";
@@ -73,6 +76,14 @@ export class BackendTag extends TagAbstract {
     public token(): BackendTokenTag
     {
         return new BackendTokenTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public test(): BackendTestTag
+    {
+        return new BackendTestTag(
             this.httpClient,
             this.parser
         );
@@ -190,9 +201,25 @@ export class BackendTag extends TagAbstract {
         );
     }
 
+    public backup(): BackendBackupTag
+    {
+        return new BackendBackupTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
     public event(): BackendEventTag
     {
         return new BackendEventTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public database(): BackendDatabaseTag
+    {
+        return new BackendDatabaseTag(
             this.httpClient,
             this.parser
         );

@@ -7,7 +7,7 @@ export interface BackendToken {
     id?: number
     status?: number
     name?: string
-    scope?: Array<string>
+    scopes?: Array<string>
     ip?: string
     expire?: string
     date?: string

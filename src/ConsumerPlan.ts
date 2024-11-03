@@ -10,5 +10,6 @@ export interface ConsumerPlan {
     description?: string
     price?: number
     points?: number
+    period?: number
     metadata?: CommonMetadata
 }
