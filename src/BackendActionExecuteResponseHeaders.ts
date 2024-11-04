@@ -3,4 +3,6 @@
  * {@link https://sdkgen.app}
  */
 
-export type BackendActionExecuteResponseHeaders = Record<string, string>;
+export interface BackendActionExecuteResponseHeaders {
+}
+

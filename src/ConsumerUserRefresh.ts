@@ -6,3 +6,4 @@
 export interface ConsumerUserRefresh {
     refresh_token?: string
 }
+

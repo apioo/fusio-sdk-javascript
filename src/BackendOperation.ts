@@ -6,6 +6,7 @@
 import {BackendOperationParameters} from "./BackendOperationParameters";
 import {BackendOperationThrows} from "./BackendOperationThrows";
 import {CommonMetadata} from "./CommonMetadata";
+
 export interface BackendOperation {
     id?: number
     status?: number
@@ -26,3 +27,4 @@ export interface BackendOperation {
     scopes?: Array<string>
     metadata?: CommonMetadata
 }
+

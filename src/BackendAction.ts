@@ -5,6 +5,7 @@
 
 import {BackendActionConfig} from "./BackendActionConfig";
 import {CommonMetadata} from "./CommonMetadata";
+
 export interface BackendAction {
     id?: number
     status?: number
@@ -14,3 +15,4 @@ export interface BackendAction {
     config?: BackendActionConfig
     metadata?: CommonMetadata
 }
+

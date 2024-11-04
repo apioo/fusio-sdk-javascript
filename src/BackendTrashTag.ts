@@ -16,7 +16,7 @@ import {CommonMessageException} from "./CommonMessageException";
 export class BackendTrashTag extends TagAbstract {
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageExceptionException}
+     * @throws {CommonMessageException}
      * @throws {ClientException}
      */
     public async restore(type: string, payload: BackendTrashRestore): Promise<CommonMessage> {
@@ -27,6 +27,9 @@ export class BackendTrashTag extends TagAbstract {
         let params: AxiosRequestConfig = {
             url: url,
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
             params: this.parser.query({
             }, [
             ]),
@@ -40,16 +43,21 @@ export class BackendTrashTag extends TagAbstract {
             if (error instanceof ClientException) {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 400:
-                        throw new CommonMessageException(error.response.data);
-                    case 401:
-                        throw new CommonMessageException(error.response.data);
-                    case 500:
-                        throw new CommonMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
+                const statusCode = error.response.status;
+
+                if (statusCode === 400) {
+                    throw new CommonMessageException(error.response.data);
                 }
+
+                if (statusCode === 401) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                if (statusCode === 500) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
             } else {
                 throw new ClientException('An unknown error occurred: ' + String(error));
             }
@@ -58,7 +66,7 @@ export class BackendTrashTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendTrashDataCollection>}
-     * @throws {CommonMessageExceptionException}
+     * @throws {CommonMessageException}
      * @throws {ClientException}
      */
     public async getAllByType(type: string, startIndex?: number, count?: number, search?: string): Promise<BackendTrashDataCollection> {
@@ -69,6 +77,8 @@ export class BackendTrashTag extends TagAbstract {
         let params: AxiosRequestConfig = {
             url: url,
             method: 'GET',
+            headers: {
+            },
             params: this.parser.query({
                 'startIndex': startIndex,
                 'count': count,
@@ -84,14 +94,17 @@ export class BackendTrashTag extends TagAbstract {
             if (error instanceof ClientException) {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 401:
-                        throw new CommonMessageException(error.response.data);
-                    case 500:
-                        throw new CommonMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
+                const statusCode = error.response.status;
+
+                if (statusCode === 401) {
+                    throw new CommonMessageException(error.response.data);
                 }
+
+                if (statusCode === 500) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
             } else {
                 throw new ClientException('An unknown error occurred: ' + String(error));
             }
@@ -100,7 +113,7 @@ export class BackendTrashTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendTrashTypes>}
-     * @throws {CommonMessageExceptionException}
+     * @throws {CommonMessageException}
      * @throws {ClientException}
      */
     public async getTypes(): Promise<BackendTrashTypes> {
@@ -110,6 +123,8 @@ export class BackendTrashTag extends TagAbstract {
         let params: AxiosRequestConfig = {
             url: url,
             method: 'GET',
+            headers: {
+            },
             params: this.parser.query({
             }, [
             ]),
@@ -122,14 +137,17 @@ export class BackendTrashTag extends TagAbstract {
             if (error instanceof ClientException) {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 401:
-                        throw new CommonMessageException(error.response.data);
-                    case 500:
-                        throw new CommonMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
+                const statusCode = error.response.status;
+
+                if (statusCode === 401) {
+                    throw new CommonMessageException(error.response.data);
                 }
+
+                if (statusCode === 500) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
             } else {
                 throw new ClientException('An unknown error occurred: ' + String(error));
             }

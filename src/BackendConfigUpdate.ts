@@ -4,5 +4,7 @@
  */
 
 import {BackendConfig} from "./BackendConfig";
+
 export interface BackendConfigUpdate extends BackendConfig {
 }
+

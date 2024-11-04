@@ -13,7 +13,7 @@ import {CommonMessageException} from "./CommonMessageException";
 export class SystemPaymentTag extends TagAbstract {
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageExceptionException}
+     * @throws {CommonMessageException}
      * @throws {ClientException}
      */
     public async webhook(provider: string): Promise<CommonMessage> {
@@ -24,6 +24,8 @@ export class SystemPaymentTag extends TagAbstract {
         let params: AxiosRequestConfig = {
             url: url,
             method: 'POST',
+            headers: {
+            },
             params: this.parser.query({
             }, [
             ]),
@@ -36,12 +38,13 @@ export class SystemPaymentTag extends TagAbstract {
             if (error instanceof ClientException) {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 500:
-                        throw new CommonMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
+                const statusCode = error.response.status;
+
+                if (statusCode === 500) {
+                    throw new CommonMessageException(error.response.data);
                 }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
             } else {
                 throw new ClientException('An unknown error occurred: ' + String(error));
             }

@@ -4,8 +4,10 @@
  */
 
 import {ConsumerApp} from "./ConsumerApp";
+
 export interface ConsumerGrant {
     id?: number
     app?: ConsumerApp
     createDate?: string
 }
+

@@ -4,5 +4,7 @@
  */
 
 import {BackendCategory} from "./BackendCategory";
+
 export interface BackendCategoryUpdate extends BackendCategory {
 }
+

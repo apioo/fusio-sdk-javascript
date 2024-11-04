@@ -3,4 +3,6 @@
  * {@link https://sdkgen.app}
  */
 
-export type BackendConnectionConfig = Record<string, any>;
+export interface BackendConnectionConfig {
+}
+

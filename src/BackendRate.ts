@@ -5,6 +5,7 @@
 
 import {BackendRateAllocation} from "./BackendRateAllocation";
 import {CommonMetadata} from "./CommonMetadata";
+
 export interface BackendRate {
     id?: number
     priority?: number
@@ -14,3 +15,4 @@ export interface BackendRate {
     allocation?: Array<BackendRateAllocation>
     metadata?: CommonMetadata
 }
+

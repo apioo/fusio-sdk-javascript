@@ -6,4 +6,6 @@
 /**
  * Contains a UI vocabulary to describe the UI of the schema
  */
-export type BackendSchemaForm = Record<string, any>;
+export interface BackendSchemaForm {
+}
+

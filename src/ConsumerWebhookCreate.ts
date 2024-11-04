@@ -4,7 +4,8 @@
  */
 
 export interface ConsumerWebhookCreate {
-    event: string
-    name: string
-    endpoint: string
+    event?: string
+    name?: string
+    endpoint?: string
 }
+

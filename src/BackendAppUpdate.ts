@@ -4,5 +4,7 @@
  */
 
 import {BackendApp} from "./BackendApp";
+
 export interface BackendAppUpdate extends BackendApp {
 }
+

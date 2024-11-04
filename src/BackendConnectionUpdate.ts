@@ -4,5 +4,7 @@
  */
 
 import {BackendConnection} from "./BackendConnection";
+
 export interface BackendConnectionUpdate extends BackendConnection {
 }
+

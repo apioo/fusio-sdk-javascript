@@ -7,3 +7,4 @@ export interface SystemHealthCheck {
     healthy?: boolean
     error?: string
 }
+

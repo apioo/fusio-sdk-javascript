@@ -9,3 +9,4 @@ export interface MarketplaceCollection<T> {
     itemsPerPage?: number
     entry?: Array<T>
 }
+

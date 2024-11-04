@@ -4,5 +4,7 @@
  */
 
 import {BackendWebhook} from "./BackendWebhook";
+
 export interface BackendWebhookUpdate extends BackendWebhook {
 }
+

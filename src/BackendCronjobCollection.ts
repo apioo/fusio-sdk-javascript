@@ -5,4 +5,7 @@
 
 import {CommonCollection} from "./CommonCollection";
 import {BackendCronjob} from "./BackendCronjob";
-export type BackendCronjobCollection = CommonCollection<BackendCronjob>;
+
+export interface BackendCronjobCollection extends CommonCollection<BackendCronjob> {
+}
+

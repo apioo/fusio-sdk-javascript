@@ -4,8 +4,10 @@
  */
 
 import {BackendStatisticChartData} from "./BackendStatisticChartData";
+
 export interface BackendStatisticChart {
     labels?: Array<string>
     data?: Array<BackendStatisticChartData>
     series?: Array<string>
 }
+

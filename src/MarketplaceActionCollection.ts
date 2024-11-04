@@ -5,4 +5,7 @@
 
 import {MarketplaceCollection} from "./MarketplaceCollection";
 import {MarketplaceAction} from "./MarketplaceAction";
-export type MarketplaceActionCollection = MarketplaceCollection<MarketplaceAction>;
+
+export interface MarketplaceActionCollection extends MarketplaceCollection<MarketplaceAction> {
+}
+

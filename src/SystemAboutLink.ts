@@ -7,3 +7,4 @@ export interface SystemAboutLink {
     rel?: string
     href?: string
 }
+

@@ -4,5 +4,7 @@
  */
 
 import {BackendEvent} from "./BackendEvent";
+
 export interface BackendEventUpdate extends BackendEvent {
 }
+

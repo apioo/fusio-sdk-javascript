@@ -7,3 +7,4 @@ export interface BackendGeneratorIndexProvider {
     name?: string
     class?: string
 }
+

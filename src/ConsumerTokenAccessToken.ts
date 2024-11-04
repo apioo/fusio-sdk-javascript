@@ -10,3 +10,4 @@ export interface ConsumerTokenAccessToken {
     refresh_token?: string
     scope?: string
 }
+

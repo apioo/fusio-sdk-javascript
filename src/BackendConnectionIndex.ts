@@ -4,6 +4,8 @@
  */
 
 import {BackendConnectionIndexEntry} from "./BackendConnectionIndexEntry";
+
 export interface BackendConnectionIndex {
     connections?: Array<BackendConnectionIndexEntry>
 }
+

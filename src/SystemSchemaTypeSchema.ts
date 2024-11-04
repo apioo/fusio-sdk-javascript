@@ -3,4 +3,6 @@
  * {@link https://sdkgen.app}
  */
 
-export type SystemSchemaTypeSchema = Record<string, any>;
+export interface SystemSchemaTypeSchema {
+}
+

@@ -5,6 +5,7 @@
 
 import {BackendConnectionConfig} from "./BackendConnectionConfig";
 import {CommonMetadata} from "./CommonMetadata";
+
 export interface BackendConnection {
     id?: number
     name?: string
@@ -13,3 +14,4 @@ export interface BackendConnection {
     config?: BackendConnectionConfig
     metadata?: CommonMetadata
 }
+

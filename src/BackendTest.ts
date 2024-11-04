@@ -4,6 +4,7 @@
  */
 
 import {BackendTestConfig} from "./BackendTestConfig";
+
 export interface BackendTest {
     id?: number
     status?: number
@@ -12,3 +13,4 @@ export interface BackendTest {
     response?: string
     config?: BackendTestConfig
 }
+

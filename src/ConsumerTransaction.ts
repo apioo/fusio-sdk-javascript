@@ -4,6 +4,7 @@
  */
 
 import {ConsumerPlan} from "./ConsumerPlan";
+
 export interface ConsumerTransaction {
     id?: number
     userId?: number
@@ -16,3 +17,4 @@ export interface ConsumerTransaction {
     periodEnd?: string
     insertDate?: string
 }
+

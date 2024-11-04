@@ -4,6 +4,7 @@
  */
 
 import {CommonMetadata} from "./CommonMetadata";
+
 export interface BackendPage {
     id?: number
     status?: number
@@ -12,3 +13,4 @@ export interface BackendPage {
     content?: string
     metadata?: CommonMetadata
 }
+

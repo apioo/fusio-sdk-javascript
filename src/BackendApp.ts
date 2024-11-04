@@ -5,6 +5,7 @@
 
 import {CommonMetadata} from "./CommonMetadata";
 import {BackendToken} from "./BackendToken";
+
 export interface BackendApp {
     id?: number
     userId?: number
@@ -19,3 +20,4 @@ export interface BackendApp {
     scopes?: Array<string>
     tokens?: Array<BackendToken>
 }
+

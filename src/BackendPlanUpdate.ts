@@ -4,5 +4,7 @@
  */
 
 import {BackendPlan} from "./BackendPlan";
+
 export interface BackendPlanUpdate extends BackendPlan {
 }
+

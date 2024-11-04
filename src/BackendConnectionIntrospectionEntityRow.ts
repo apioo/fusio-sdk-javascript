@@ -6,3 +6,4 @@
 export interface BackendConnectionIntrospectionEntityRow {
     values?: Array<string>
 }
+

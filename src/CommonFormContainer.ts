@@ -3,10 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonFormElementInput} from "./CommonFormElementInput";
-import {CommonFormElementSelect} from "./CommonFormElementSelect";
-import {CommonFormElementTag} from "./CommonFormElementTag";
-import {CommonFormElementTextArea} from "./CommonFormElementTextArea";
+import {CommonFormElement} from "./CommonFormElement";
+
 export interface CommonFormContainer {
-    element?: Array<CommonFormElementInput | CommonFormElementSelect | CommonFormElementTag | CommonFormElementTextArea>
+    element?: Array<CommonFormElement>
 }
+

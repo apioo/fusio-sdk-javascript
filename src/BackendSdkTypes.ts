@@ -3,4 +3,6 @@
  * {@link https://sdkgen.app}
  */
 
-export type BackendSdkTypes = Record<string, string>;
+export interface BackendSdkTypes {
+}
+

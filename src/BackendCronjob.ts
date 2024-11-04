@@ -5,6 +5,7 @@
 
 import {CommonMetadata} from "./CommonMetadata";
 import {BackendCronjobError} from "./BackendCronjobError";
+
 export interface BackendCronjob {
     id?: number
     name?: string
@@ -15,3 +16,4 @@ export interface BackendCronjob {
     metadata?: CommonMetadata
     errors?: Array<BackendCronjobError>
 }
+

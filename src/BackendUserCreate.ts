@@ -4,6 +4,8 @@
  */
 
 import {BackendUser} from "./BackendUser";
+
 export interface BackendUserCreate extends BackendUser {
-    password: string
+    password?: string
 }
+

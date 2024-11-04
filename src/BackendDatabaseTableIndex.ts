@@ -8,3 +8,4 @@ export interface BackendDatabaseTableIndex {
     unique?: boolean
     columns?: Array<string>
 }
+

@@ -7,3 +7,4 @@ export interface BackendConnectionIndexEntry {
     name?: string
     class?: string
 }
+

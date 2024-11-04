@@ -4,6 +4,7 @@
  */
 
 export interface ConsumerTokenUpdate {
-    name: string
-    expire: string
+    name?: string
+    expire?: string
 }
+

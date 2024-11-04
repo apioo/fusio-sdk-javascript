@@ -17,7 +17,7 @@ import {CommonMessageException} from "./CommonMessageException";
 export class BackendWebhookTag extends TagAbstract {
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageExceptionException}
+     * @throws {CommonMessageException}
      * @throws {ClientException}
      */
     public async delete(webhookId: string): Promise<CommonMessage> {
@@ -28,6 +28,8 @@ export class BackendWebhookTag extends TagAbstract {
         let params: AxiosRequestConfig = {
             url: url,
             method: 'DELETE',
+            headers: {
+            },
             params: this.parser.query({
             }, [
             ]),
@@ -40,18 +42,25 @@ export class BackendWebhookTag extends TagAbstract {
             if (error instanceof ClientException) {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 401:
-                        throw new CommonMessageException(error.response.data);
-                    case 404:
-                        throw new CommonMessageException(error.response.data);
-                    case 410:
-                        throw new CommonMessageException(error.response.data);
-                    case 500:
-                        throw new CommonMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
+                const statusCode = error.response.status;
+
+                if (statusCode === 401) {
+                    throw new CommonMessageException(error.response.data);
                 }
+
+                if (statusCode === 404) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                if (statusCode === 410) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                if (statusCode === 500) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
             } else {
                 throw new ClientException('An unknown error occurred: ' + String(error));
             }
@@ -60,7 +69,7 @@ export class BackendWebhookTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageExceptionException}
+     * @throws {CommonMessageException}
      * @throws {ClientException}
      */
     public async update(webhookId: string, payload: BackendWebhookUpdate): Promise<CommonMessage> {
@@ -71,6 +80,9 @@ export class BackendWebhookTag extends TagAbstract {
         let params: AxiosRequestConfig = {
             url: url,
             method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
             params: this.parser.query({
             }, [
             ]),
@@ -84,20 +96,29 @@ export class BackendWebhookTag extends TagAbstract {
             if (error instanceof ClientException) {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 400:
-                        throw new CommonMessageException(error.response.data);
-                    case 401:
-                        throw new CommonMessageException(error.response.data);
-                    case 404:
-                        throw new CommonMessageException(error.response.data);
-                    case 410:
-                        throw new CommonMessageException(error.response.data);
-                    case 500:
-                        throw new CommonMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
+                const statusCode = error.response.status;
+
+                if (statusCode === 400) {
+                    throw new CommonMessageException(error.response.data);
                 }
+
+                if (statusCode === 401) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                if (statusCode === 404) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                if (statusCode === 410) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                if (statusCode === 500) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
             } else {
                 throw new ClientException('An unknown error occurred: ' + String(error));
             }
@@ -106,7 +127,7 @@ export class BackendWebhookTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendWebhook>}
-     * @throws {CommonMessageExceptionException}
+     * @throws {CommonMessageException}
      * @throws {ClientException}
      */
     public async get(webhookId: string): Promise<BackendWebhook> {
@@ -117,6 +138,8 @@ export class BackendWebhookTag extends TagAbstract {
         let params: AxiosRequestConfig = {
             url: url,
             method: 'GET',
+            headers: {
+            },
             params: this.parser.query({
             }, [
             ]),
@@ -129,16 +152,21 @@ export class BackendWebhookTag extends TagAbstract {
             if (error instanceof ClientException) {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 401:
-                        throw new CommonMessageException(error.response.data);
-                    case 404:
-                        throw new CommonMessageException(error.response.data);
-                    case 500:
-                        throw new CommonMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
+                const statusCode = error.response.status;
+
+                if (statusCode === 401) {
+                    throw new CommonMessageException(error.response.data);
                 }
+
+                if (statusCode === 404) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                if (statusCode === 500) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
             } else {
                 throw new ClientException('An unknown error occurred: ' + String(error));
             }
@@ -147,7 +175,7 @@ export class BackendWebhookTag extends TagAbstract {
 
     /**
      * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageExceptionException}
+     * @throws {CommonMessageException}
      * @throws {ClientException}
      */
     public async create(payload: BackendWebhookCreate): Promise<CommonMessage> {
@@ -157,6 +185,9 @@ export class BackendWebhookTag extends TagAbstract {
         let params: AxiosRequestConfig = {
             url: url,
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
             params: this.parser.query({
             }, [
             ]),
@@ -170,16 +201,21 @@ export class BackendWebhookTag extends TagAbstract {
             if (error instanceof ClientException) {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 400:
-                        throw new CommonMessageException(error.response.data);
-                    case 401:
-                        throw new CommonMessageException(error.response.data);
-                    case 500:
-                        throw new CommonMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
+                const statusCode = error.response.status;
+
+                if (statusCode === 400) {
+                    throw new CommonMessageException(error.response.data);
                 }
+
+                if (statusCode === 401) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                if (statusCode === 500) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
             } else {
                 throw new ClientException('An unknown error occurred: ' + String(error));
             }
@@ -188,7 +224,7 @@ export class BackendWebhookTag extends TagAbstract {
 
     /**
      * @returns {Promise<BackendWebhookCollection>}
-     * @throws {CommonMessageExceptionException}
+     * @throws {CommonMessageException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<BackendWebhookCollection> {
@@ -198,6 +234,8 @@ export class BackendWebhookTag extends TagAbstract {
         let params: AxiosRequestConfig = {
             url: url,
             method: 'GET',
+            headers: {
+            },
             params: this.parser.query({
                 'startIndex': startIndex,
                 'count': count,
@@ -213,14 +251,17 @@ export class BackendWebhookTag extends TagAbstract {
             if (error instanceof ClientException) {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 401:
-                        throw new CommonMessageException(error.response.data);
-                    case 500:
-                        throw new CommonMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
+                const statusCode = error.response.status;
+
+                if (statusCode === 401) {
+                    throw new CommonMessageException(error.response.data);
                 }
+
+                if (statusCode === 500) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
             } else {
                 throw new ClientException('An unknown error occurred: ' + String(error));
             }

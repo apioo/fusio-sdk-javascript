@@ -3,5 +3,6 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendOperationSchema} from "./BackendOperationSchema";
-export type BackendOperationParameters = Record<string, BackendOperationSchema>;
+export interface BackendOperationParameters {
+}
+

@@ -8,3 +8,4 @@ export interface BackendScopeCategoryScope {
     name?: string
     description?: string
 }
+

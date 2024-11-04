@@ -7,3 +7,4 @@ export interface BackendScopeOperation {
     operationId?: number
     allow?: boolean
 }
+

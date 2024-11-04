@@ -5,4 +5,7 @@
 
 import {CommonCollection} from "./CommonCollection";
 import {ConsumerToken} from "./ConsumerToken";
-export type ConsumerTokenCollection = CommonCollection<ConsumerToken>;
+
+export interface ConsumerTokenCollection extends CommonCollection<ConsumerToken> {
+}
+

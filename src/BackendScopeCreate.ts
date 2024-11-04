@@ -4,5 +4,7 @@
  */
 
 import {BackendScope} from "./BackendScope";
+
 export interface BackendScopeCreate extends BackendScope {
 }
+

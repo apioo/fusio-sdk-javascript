@@ -4,7 +4,8 @@
  */
 
 export interface ConsumerTokenCreate {
-    name: string
-    scopes: Array<string>
-    expire: string
+    name?: string
+    scopes?: Array<string>
+    expire?: string
 }
+

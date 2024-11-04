@@ -7,3 +7,4 @@ export interface BackendActionIndexEntry {
     name?: string
     class?: string
 }
+

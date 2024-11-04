@@ -12,3 +12,4 @@ export interface ConsumerToken {
     expire?: string
     date?: string
 }
+

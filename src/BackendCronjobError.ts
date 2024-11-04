@@ -9,3 +9,4 @@ export interface BackendCronjobError {
     file?: string
     line?: number
 }
+

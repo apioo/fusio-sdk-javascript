@@ -4,8 +4,10 @@
  */
 
 import {MarketplaceObject} from "./MarketplaceObject";
+
 export interface MarketplaceApp extends MarketplaceObject {
     scopes?: Array<string>
     downloadUrl?: string
     hash?: string
 }
+

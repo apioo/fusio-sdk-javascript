@@ -4,6 +4,7 @@
  */
 
 import {CommonMetadata} from "./CommonMetadata";
+
 export interface ConsumerPlan {
     id?: number
     name?: string
@@ -13,3 +14,4 @@ export interface ConsumerPlan {
     period?: number
     metadata?: CommonMetadata
 }
+

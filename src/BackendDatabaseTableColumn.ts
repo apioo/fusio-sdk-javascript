@@ -16,3 +16,4 @@ export interface BackendDatabaseTableColumn {
     default?: any
     comment?: string
 }
+

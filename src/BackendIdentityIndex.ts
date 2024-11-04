@@ -4,6 +4,8 @@
  */
 
 import {BackendIdentityIndexEntry} from "./BackendIdentityIndexEntry";
+
 export interface BackendIdentityIndex {
     providers?: Array<BackendIdentityIndexEntry>
 }
+

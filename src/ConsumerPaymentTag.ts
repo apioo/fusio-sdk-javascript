@@ -16,7 +16,7 @@ import {ConsumerPaymentPortalResponse} from "./ConsumerPaymentPortalResponse";
 export class ConsumerPaymentTag extends TagAbstract {
     /**
      * @returns {Promise<ConsumerPaymentCheckoutResponse>}
-     * @throws {CommonMessageExceptionException}
+     * @throws {CommonMessageException}
      * @throws {ClientException}
      */
     public async checkout(provider: string, payload: ConsumerPaymentCheckoutRequest): Promise<ConsumerPaymentCheckoutResponse> {
@@ -27,6 +27,9 @@ export class ConsumerPaymentTag extends TagAbstract {
         let params: AxiosRequestConfig = {
             url: url,
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
             params: this.parser.query({
             }, [
             ]),
@@ -40,14 +43,17 @@ export class ConsumerPaymentTag extends TagAbstract {
             if (error instanceof ClientException) {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 401:
-                        throw new CommonMessageException(error.response.data);
-                    case 500:
-                        throw new CommonMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
+                const statusCode = error.response.status;
+
+                if (statusCode === 401) {
+                    throw new CommonMessageException(error.response.data);
                 }
+
+                if (statusCode === 500) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
             } else {
                 throw new ClientException('An unknown error occurred: ' + String(error));
             }
@@ -56,7 +62,7 @@ export class ConsumerPaymentTag extends TagAbstract {
 
     /**
      * @returns {Promise<ConsumerPaymentPortalResponse>}
-     * @throws {CommonMessageExceptionException}
+     * @throws {CommonMessageException}
      * @throws {ClientException}
      */
     public async portal(provider: string, payload: ConsumerPaymentPortalRequest): Promise<ConsumerPaymentPortalResponse> {
@@ -67,6 +73,9 @@ export class ConsumerPaymentTag extends TagAbstract {
         let params: AxiosRequestConfig = {
             url: url,
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
             params: this.parser.query({
             }, [
             ]),
@@ -80,14 +89,17 @@ export class ConsumerPaymentTag extends TagAbstract {
             if (error instanceof ClientException) {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 401:
-                        throw new CommonMessageException(error.response.data);
-                    case 500:
-                        throw new CommonMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
+                const statusCode = error.response.status;
+
+                if (statusCode === 401) {
+                    throw new CommonMessageException(error.response.data);
                 }
+
+                if (statusCode === 500) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
             } else {
                 throw new ClientException('An unknown error occurred: ' + String(error));
             }

@@ -9,3 +9,4 @@ export interface ConsumerAuthorizeResponseToken {
     expires_in?: string
     scope?: string
 }
+

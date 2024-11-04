@@ -4,5 +4,6 @@
  */
 
 export interface ConsumerUserActivate {
-    token: string
+    token?: string
 }
+

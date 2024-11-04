@@ -4,6 +4,7 @@
  */
 
 import {CommonMetadata} from "./CommonMetadata";
+
 export interface BackendEvent {
     id?: number
     name?: string
@@ -11,3 +12,4 @@ export interface BackendEvent {
     schema?: string
     metadata?: CommonMetadata
 }
+

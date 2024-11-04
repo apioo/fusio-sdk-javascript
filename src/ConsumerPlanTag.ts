@@ -14,7 +14,7 @@ import {ConsumerPlanCollection} from "./ConsumerPlanCollection";
 export class ConsumerPlanTag extends TagAbstract {
     /**
      * @returns {Promise<ConsumerPlan>}
-     * @throws {CommonMessageExceptionException}
+     * @throws {CommonMessageException}
      * @throws {ClientException}
      */
     public async get(planId: string): Promise<ConsumerPlan> {
@@ -25,6 +25,8 @@ export class ConsumerPlanTag extends TagAbstract {
         let params: AxiosRequestConfig = {
             url: url,
             method: 'GET',
+            headers: {
+            },
             params: this.parser.query({
             }, [
             ]),
@@ -37,18 +39,25 @@ export class ConsumerPlanTag extends TagAbstract {
             if (error instanceof ClientException) {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 401:
-                        throw new CommonMessageException(error.response.data);
-                    case 404:
-                        throw new CommonMessageException(error.response.data);
-                    case 410:
-                        throw new CommonMessageException(error.response.data);
-                    case 500:
-                        throw new CommonMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
+                const statusCode = error.response.status;
+
+                if (statusCode === 401) {
+                    throw new CommonMessageException(error.response.data);
                 }
+
+                if (statusCode === 404) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                if (statusCode === 410) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                if (statusCode === 500) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
             } else {
                 throw new ClientException('An unknown error occurred: ' + String(error));
             }
@@ -57,7 +66,7 @@ export class ConsumerPlanTag extends TagAbstract {
 
     /**
      * @returns {Promise<ConsumerPlanCollection>}
-     * @throws {CommonMessageExceptionException}
+     * @throws {CommonMessageException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, count?: number, search?: string): Promise<ConsumerPlanCollection> {
@@ -67,6 +76,8 @@ export class ConsumerPlanTag extends TagAbstract {
         let params: AxiosRequestConfig = {
             url: url,
             method: 'GET',
+            headers: {
+            },
             params: this.parser.query({
                 'startIndex': startIndex,
                 'count': count,
@@ -82,14 +93,17 @@ export class ConsumerPlanTag extends TagAbstract {
             if (error instanceof ClientException) {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 401:
-                        throw new CommonMessageException(error.response.data);
-                    case 500:
-                        throw new CommonMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
+                const statusCode = error.response.status;
+
+                if (statusCode === 401) {
+                    throw new CommonMessageException(error.response.data);
                 }
+
+                if (statusCode === 500) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
             } else {
                 throw new ClientException('An unknown error occurred: ' + String(error));
             }

@@ -8,3 +8,4 @@ export interface ConsumerUserLogin {
     password?: string
     scopes?: Array<string>
 }
+

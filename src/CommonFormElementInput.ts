@@ -4,6 +4,7 @@
  */
 
 import {CommonFormElement} from "./CommonFormElement";
+
 export interface CommonFormElementInput extends CommonFormElement {
-    type?: string
 }
+

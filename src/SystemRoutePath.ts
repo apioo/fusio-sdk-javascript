@@ -3,5 +3,6 @@
  * {@link https://sdkgen.app}
  */
 
-import {SystemRouteMethod} from "./SystemRouteMethod";
-export type SystemRoutePath = Record<string, SystemRouteMethod>;
+export interface SystemRoutePath {
+}
+

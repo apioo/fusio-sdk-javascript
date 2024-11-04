@@ -4,9 +4,11 @@
  */
 
 import {CommonMetadata} from "./CommonMetadata";
+
 export interface ConsumerEvent {
     id?: number
     name?: string
     description?: string
     metadata?: CommonMetadata
 }
+

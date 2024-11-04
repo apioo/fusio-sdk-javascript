@@ -6,6 +6,7 @@
 import {BackendSchemaSource} from "./BackendSchemaSource";
 import {BackendSchemaForm} from "./BackendSchemaForm";
 import {CommonMetadata} from "./CommonMetadata";
+
 export interface BackendSchema {
     id?: number
     status?: number
@@ -14,3 +15,4 @@ export interface BackendSchema {
     form?: BackendSchemaForm
     metadata?: CommonMetadata
 }
+

@@ -8,3 +8,4 @@ export interface BackendTrashData {
     status?: number
     name?: string
 }
+

@@ -3,4 +3,6 @@
  * {@link https://sdkgen.app}
  */
 
-export type BackendOperationThrows = Record<string, string>;
+export interface BackendOperationThrows {
+}
+

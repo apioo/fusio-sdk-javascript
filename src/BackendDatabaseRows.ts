@@ -5,4 +5,7 @@
 
 import {CommonCollection} from "./CommonCollection";
 import {BackendDatabaseRow} from "./BackendDatabaseRow";
-export type BackendDatabaseRows = CommonCollection<BackendDatabaseRow>;
+
+export interface BackendDatabaseRows extends CommonCollection<BackendDatabaseRow> {
+}
+

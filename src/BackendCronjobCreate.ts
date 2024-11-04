@@ -4,5 +4,7 @@
  */
 
 import {BackendCronjob} from "./BackendCronjob";
+
 export interface BackendCronjobCreate extends BackendCronjob {
 }
+

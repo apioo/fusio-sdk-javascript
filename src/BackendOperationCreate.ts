@@ -4,5 +4,7 @@
  */
 
 import {BackendOperation} from "./BackendOperation";
+
 export interface BackendOperationCreate extends BackendOperation {
 }
+

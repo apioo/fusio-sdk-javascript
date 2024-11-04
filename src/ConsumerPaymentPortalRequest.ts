@@ -6,3 +6,4 @@
 export interface ConsumerPaymentPortalRequest {
     returnUrl?: string
 }
+

@@ -9,3 +9,4 @@ export interface CommonCollection<T> {
     itemsPerPage?: number
     entry?: Array<T>
 }
+

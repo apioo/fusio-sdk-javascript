@@ -4,9 +4,11 @@
  */
 
 import {BackendGeneratorProviderConfig} from "./BackendGeneratorProviderConfig";
+
 export interface BackendGeneratorProvider {
     path?: string
     scopes?: Array<string>
     public?: boolean
     config?: BackendGeneratorProviderConfig
 }
+

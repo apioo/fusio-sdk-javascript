@@ -5,4 +5,7 @@
 
 import {CommonCollection} from "./CommonCollection";
 import {ConsumerPlan} from "./ConsumerPlan";
-export type ConsumerPlanCollection = CommonCollection<ConsumerPlan>;
+
+export interface ConsumerPlanCollection extends CommonCollection<ConsumerPlan> {
+}
+

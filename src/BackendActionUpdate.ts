@@ -4,5 +4,7 @@
  */
 
 import {BackendAction} from "./BackendAction";
+
 export interface BackendActionUpdate extends BackendAction {
 }
+

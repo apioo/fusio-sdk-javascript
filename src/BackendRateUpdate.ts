@@ -4,5 +4,7 @@
  */
 
 import {BackendRate} from "./BackendRate";
+
 export interface BackendRateUpdate extends BackendRate {
 }
+

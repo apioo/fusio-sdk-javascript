@@ -7,3 +7,4 @@ export interface BackendIdentityIndexEntry {
     name?: string
     class?: string
 }
+

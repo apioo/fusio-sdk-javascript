@@ -4,9 +4,11 @@
  */
 
 import {ConsumerAuthorizeResponseToken} from "./ConsumerAuthorizeResponseToken";
+
 export interface ConsumerAuthorizeResponse {
     type?: string
     token?: ConsumerAuthorizeResponseToken
     code?: string
     redirectUri?: string
 }
+

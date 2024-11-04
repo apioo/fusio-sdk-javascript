@@ -5,4 +5,7 @@
 
 import {CommonCollection} from "./CommonCollection";
 import {BackendEvent} from "./BackendEvent";
-export type BackendEventCollection = CommonCollection<BackendEvent>;
+
+export interface BackendEventCollection extends CommonCollection<BackendEvent> {
+}
+

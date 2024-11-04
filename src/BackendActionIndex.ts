@@ -4,6 +4,8 @@
  */
 
 import {BackendActionIndexEntry} from "./BackendActionIndexEntry";
+
 export interface BackendActionIndex {
     actions?: Array<BackendActionIndexEntry>
 }
+

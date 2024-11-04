@@ -4,8 +4,10 @@
  */
 
 import {BackendScopeCategoryScope} from "./BackendScopeCategoryScope";
+
 export interface BackendScopeCategory {
     id?: number
     name?: string
     scopes?: Array<BackendScopeCategoryScope>
 }
+
