@@ -3,6 +3,6 @@
  * {@link https://sdkgen.app}
  */
 
-export interface BackendGeneratorProviderConfig {
+export interface BackendGeneratorProviderConfig extends Record<string, any> {
 }
 

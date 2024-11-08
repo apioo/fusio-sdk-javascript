@@ -3,6 +3,6 @@
  * {@link https://sdkgen.app}
  */
 
-export interface SystemAboutApps {
+export interface SystemAboutApps extends Record<string, string> {
 }
 

@@ -6,6 +6,6 @@
 /**
  * Contains the TypeSchema specification
  */
-export interface BackendSchemaSource {
+export interface BackendSchemaSource extends Record<string, any> {
 }
 

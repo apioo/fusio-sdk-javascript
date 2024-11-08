@@ -3,6 +3,6 @@
  * {@link https://sdkgen.app}
  */
 
-export interface BackendSdkTypes {
+export interface BackendSdkTypes extends Record<string, string> {
 }
 

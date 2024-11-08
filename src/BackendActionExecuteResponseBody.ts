@@ -3,6 +3,6 @@
  * {@link https://sdkgen.app}
  */
 
-export interface BackendActionExecuteResponseBody {
+export interface BackendActionExecuteResponseBody extends Record<string, any> {
 }
 

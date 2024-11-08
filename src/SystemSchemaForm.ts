@@ -3,6 +3,6 @@
  * {@link https://sdkgen.app}
  */
 
-export interface SystemSchemaForm {
+export interface SystemSchemaForm extends Record<string, any> {
 }
 

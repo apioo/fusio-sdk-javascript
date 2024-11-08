@@ -3,6 +3,6 @@
  * {@link https://sdkgen.app}
  */
 
-export interface MarketplaceActionConfig {
+export interface MarketplaceActionConfig extends Record<string, any> {
 }
 

@@ -3,6 +3,6 @@
  * {@link https://sdkgen.app}
  */
 
-export interface CommonMetadata {
+export interface CommonMetadata extends Record<string, string> {
 }
 

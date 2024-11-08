@@ -6,6 +6,6 @@
 /**
  * A key value object containing the changes
  */
-export interface BackendAuditObject {
+export interface BackendAuditObject extends Record<string, any> {
 }
 
