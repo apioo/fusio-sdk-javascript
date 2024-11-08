@@ -6,6 +6,7 @@
 import {BackendApp} from "./BackendApp";
 import {BackendUser} from "./BackendUser";
 import {BackendAuditObject} from "./BackendAuditObject";
+
 export interface BackendAudit {
     id?: number
     app?: BackendApp
@@ -16,3 +17,4 @@ export interface BackendAudit {
     content?: BackendAuditObject
     date?: string
 }
+

@@ -10,3 +10,4 @@ export interface BackendLogError {
     file?: string
     line?: number
 }
+

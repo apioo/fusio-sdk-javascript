@@ -4,5 +4,7 @@
  */
 
 import {BackendUser} from "./BackendUser";
+
 export interface BackendUserUpdate extends BackendUser {
 }
+

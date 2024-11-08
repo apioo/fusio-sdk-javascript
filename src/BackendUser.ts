@@ -5,6 +5,7 @@
 
 import {BackendApp} from "./BackendApp";
 import {CommonMetadata} from "./CommonMetadata";
+
 export interface BackendUser {
     id?: number
     roleId?: number
@@ -18,3 +19,4 @@ export interface BackendUser {
     metadata?: CommonMetadata
     date?: string
 }
+

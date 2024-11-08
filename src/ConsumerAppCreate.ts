@@ -4,7 +4,8 @@
  */
 
 export interface ConsumerAppCreate {
-    name: string
-    url: string
-    scopes: Array<string>
+    name?: string
+    url?: string
+    scopes?: Array<string>
 }
+

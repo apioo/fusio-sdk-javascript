@@ -7,3 +7,4 @@ export interface ConsumerPaymentCheckoutRequest {
     planId?: number
     returnUrl?: string
 }
+

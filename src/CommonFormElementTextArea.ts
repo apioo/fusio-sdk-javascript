@@ -4,6 +4,8 @@
  */
 
 import {CommonFormElement} from "./CommonFormElement";
+
 export interface CommonFormElementTextArea extends CommonFormElement {
     mode?: string
 }
+

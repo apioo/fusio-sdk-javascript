@@ -5,6 +5,8 @@
 
 import {CommonFormElement} from "./CommonFormElement";
 import {CommonFormElementSelectOption} from "./CommonFormElementSelectOption";
+
 export interface CommonFormElementSelect extends CommonFormElement {
     options?: Array<CommonFormElementSelectOption>
 }
+

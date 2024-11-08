@@ -5,6 +5,7 @@
 
 import {SystemAboutApps} from "./SystemAboutApps";
 import {SystemAboutLink} from "./SystemAboutLink";
+
 export interface SystemAbout {
     apiVersion?: string
     title?: string
@@ -21,3 +22,4 @@ export interface SystemAbout {
     apps?: SystemAboutApps
     links?: Array<SystemAboutLink>
 }
+

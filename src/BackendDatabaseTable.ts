@@ -6,6 +6,7 @@
 import {BackendDatabaseTableColumn} from "./BackendDatabaseTableColumn";
 import {BackendDatabaseTableIndex} from "./BackendDatabaseTableIndex";
 import {BackendDatabaseTableForeignKeyConstraint} from "./BackendDatabaseTableForeignKeyConstraint";
+
 export interface BackendDatabaseTable {
     name?: string
     columns?: Array<BackendDatabaseTableColumn>
@@ -13,3 +14,4 @@ export interface BackendDatabaseTable {
     indexes?: Array<BackendDatabaseTableIndex>
     foreignKeys?: Array<BackendDatabaseTableForeignKeyConstraint>
 }
+

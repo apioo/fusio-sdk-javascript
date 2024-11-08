@@ -5,4 +5,7 @@
 
 import {CommonCollection} from "./CommonCollection";
 import {BackendWebhook} from "./BackendWebhook";
-export type BackendWebhookCollection = CommonCollection<BackendWebhook>;
+
+export interface BackendWebhookCollection extends CommonCollection<BackendWebhook> {
+}
+

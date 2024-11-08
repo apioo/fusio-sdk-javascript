@@ -8,3 +8,4 @@ export interface BackendSdkMessage {
     message?: string
     link?: string
 }
+

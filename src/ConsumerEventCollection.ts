@@ -5,4 +5,7 @@
 
 import {CommonCollection} from "./CommonCollection";
 import {ConsumerEvent} from "./ConsumerEvent";
-export type ConsumerEventCollection = CommonCollection<ConsumerEvent>;
+
+export interface ConsumerEventCollection extends CommonCollection<ConsumerEvent> {
+}
+

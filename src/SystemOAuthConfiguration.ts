@@ -11,3 +11,4 @@ export interface SystemOAuthConfiguration {
     scopes_supported?: Array<string>
     claims_supported?: Array<string>
 }
+

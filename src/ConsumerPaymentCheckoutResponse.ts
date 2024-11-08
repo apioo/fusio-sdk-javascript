@@ -6,3 +6,4 @@
 export interface ConsumerPaymentCheckoutResponse {
     approvalUrl?: string
 }
+

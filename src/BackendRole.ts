@@ -9,3 +9,4 @@ export interface BackendRole {
     name?: string
     scopes?: Array<string>
 }
+

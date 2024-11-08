@@ -4,8 +4,10 @@
  */
 
 import {ConsumerScope} from "./ConsumerScope";
+
 export interface ConsumerAuthorizeMeta {
     name?: string
     url?: string
     scopes?: Array<ConsumerScope>
 }
+

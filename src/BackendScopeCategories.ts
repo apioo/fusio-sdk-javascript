@@ -4,6 +4,8 @@
  */
 
 import {BackendScopeCategory} from "./BackendScopeCategory";
+
 export interface BackendScopeCategories {
     categories?: Array<BackendScopeCategory>
 }
+

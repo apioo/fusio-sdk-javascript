@@ -4,5 +4,7 @@
  */
 
 import {BackendPage} from "./BackendPage";
+
 export interface BackendPageCreate extends BackendPage {
 }
+

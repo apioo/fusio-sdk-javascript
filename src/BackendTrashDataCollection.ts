@@ -5,4 +5,7 @@
 
 import {CommonCollection} from "./CommonCollection";
 import {BackendTrashData} from "./BackendTrashData";
-export type BackendTrashDataCollection = CommonCollection<BackendTrashData>;
+
+export interface BackendTrashDataCollection extends CommonCollection<BackendTrashData> {
+}
+

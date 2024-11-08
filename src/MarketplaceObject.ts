@@ -4,6 +4,10 @@
  */
 
 import {MarketplaceUser} from "./MarketplaceUser";
+
+/**
+ * Base class of all objects on the marketplace
+ */
 export interface MarketplaceObject {
     id?: number
     name?: string
@@ -16,3 +20,4 @@ export interface MarketplaceObject {
     updateDate?: string
     insertDate?: string
 }
+

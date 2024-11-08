@@ -4,6 +4,7 @@
  */
 
 import {CommonMetadata} from "./CommonMetadata";
+
 export interface BackendPlan {
     id?: number
     name?: string
@@ -15,3 +16,4 @@ export interface BackendPlan {
     scopes?: Array<string>
     metadata?: CommonMetadata
 }
+

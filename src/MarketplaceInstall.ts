@@ -3,6 +3,10 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Installs an object from the marketplace
+ */
 export interface MarketplaceInstall {
     name?: string
 }
+

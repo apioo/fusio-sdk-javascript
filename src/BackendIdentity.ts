@@ -4,6 +4,7 @@
  */
 
 import {BackendIdentityConfig} from "./BackendIdentityConfig";
+
 export interface BackendIdentity {
     id?: number
     appId?: number
@@ -14,3 +15,4 @@ export interface BackendIdentity {
     config?: BackendIdentityConfig
     allowCreate?: boolean
 }
+

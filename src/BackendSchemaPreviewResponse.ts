@@ -6,3 +6,4 @@
 export interface BackendSchemaPreviewResponse {
     preview?: string
 }
+

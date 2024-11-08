@@ -3,4 +3,6 @@
  * {@link https://sdkgen.app}
  */
 
-export type SystemRouteMethod = Record<string, string>;
+export interface SystemRouteMethod {
+}
+

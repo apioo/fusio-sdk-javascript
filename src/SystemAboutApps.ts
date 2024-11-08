@@ -3,4 +3,6 @@
  * {@link https://sdkgen.app}
  */
 
-export type SystemAboutApps = Record<string, string>;
+export interface SystemAboutApps {
+}
+

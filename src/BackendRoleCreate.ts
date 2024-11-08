@@ -4,5 +4,7 @@
  */
 
 import {BackendRole} from "./BackendRole";
+
 export interface BackendRoleCreate extends BackendRole {
 }
+

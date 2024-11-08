@@ -4,6 +4,7 @@
  */
 
 import {CommonMetadata} from "./CommonMetadata";
+
 export interface ConsumerApp {
     id?: number
     userId?: number
@@ -16,3 +17,4 @@ export interface ConsumerApp {
     scopes?: Array<string>
     metadata?: CommonMetadata
 }
+

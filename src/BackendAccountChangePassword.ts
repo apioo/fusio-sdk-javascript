@@ -8,3 +8,4 @@ export interface BackendAccountChangePassword {
     newPassword?: string
     verifyPassword?: string
 }
+

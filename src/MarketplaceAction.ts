@@ -5,7 +5,9 @@
 
 import {MarketplaceObject} from "./MarketplaceObject";
 import {MarketplaceActionConfig} from "./MarketplaceActionConfig";
+
 export interface MarketplaceAction extends MarketplaceObject {
     class?: string
     config?: MarketplaceActionConfig
 }
+

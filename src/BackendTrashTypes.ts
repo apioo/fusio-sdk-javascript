@@ -6,3 +6,4 @@
 export interface BackendTrashTypes {
     types?: Array<string>
 }
+

@@ -5,4 +5,7 @@
 
 import {CommonCollection} from "./CommonCollection";
 import {BackendSchema} from "./BackendSchema";
-export type BackendSchemaCollection = CommonCollection<BackendSchema>;
+
+export interface BackendSchemaCollection extends CommonCollection<BackendSchema> {
+}
+

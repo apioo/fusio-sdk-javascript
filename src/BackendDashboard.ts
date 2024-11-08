@@ -4,6 +4,7 @@
  */
 
 import {BackendStatisticChart} from "./BackendStatisticChart";
+
 export interface BackendDashboard {
     errorsPerOperation?: BackendStatisticChart
     incomingRequests?: BackendStatisticChart
@@ -15,3 +16,4 @@ export interface BackendDashboard {
     activitiesPerUser?: BackendStatisticChart
     userRegistrations?: BackendStatisticChart
 }
+

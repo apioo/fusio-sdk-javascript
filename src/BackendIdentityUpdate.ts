@@ -4,5 +4,7 @@
  */
 
 import {BackendIdentity} from "./BackendIdentity";
+
 export interface BackendIdentityUpdate extends BackendIdentity {
 }
+

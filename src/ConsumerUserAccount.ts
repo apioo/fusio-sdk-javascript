@@ -5,6 +5,7 @@
 
 import {ConsumerUserPlan} from "./ConsumerUserPlan";
 import {CommonMetadata} from "./CommonMetadata";
+
 export interface ConsumerUserAccount {
     id?: number
     planId?: number
@@ -17,3 +18,4 @@ export interface ConsumerUserAccount {
     metadata?: CommonMetadata
     date?: string
 }
+

@@ -14,3 +14,4 @@ export interface BackendTransaction {
     periodEnd?: string
     insertDate?: string
 }
+

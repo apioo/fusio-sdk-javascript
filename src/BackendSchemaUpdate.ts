@@ -4,5 +4,7 @@
  */
 
 import {BackendSchema} from "./BackendSchema";
+
 export interface BackendSchemaUpdate extends BackendSchema {
 }
+

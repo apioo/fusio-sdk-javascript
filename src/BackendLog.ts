@@ -4,6 +4,7 @@
  */
 
 import {BackendLogError} from "./BackendLogError";
+
 export interface BackendLog {
     id?: number
     ip?: string
@@ -15,3 +16,4 @@ export interface BackendLog {
     date?: string
     errors?: Array<BackendLogError>
 }
+

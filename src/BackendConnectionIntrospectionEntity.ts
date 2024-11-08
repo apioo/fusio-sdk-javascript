@@ -4,8 +4,10 @@
  */
 
 import {BackendConnectionIntrospectionEntityRow} from "./BackendConnectionIntrospectionEntityRow";
+
 export interface BackendConnectionIntrospectionEntity {
     name?: string
     headers?: Array<string>
     rows?: Array<BackendConnectionIntrospectionEntityRow>
 }
+

@@ -6,8 +6,10 @@
 import {BackendSchema} from "./BackendSchema";
 import {BackendAction} from "./BackendAction";
 import {BackendOperation} from "./BackendOperation";
+
 export interface BackendGeneratorProviderChangelog {
     schemas?: Array<BackendSchema>
     actions?: Array<BackendAction>
     operations?: Array<BackendOperation>
 }
+

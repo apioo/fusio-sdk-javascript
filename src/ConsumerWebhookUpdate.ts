@@ -4,7 +4,8 @@
  */
 
 export interface ConsumerWebhookUpdate {
-    event: string
-    name: string
-    endpoint: string
+    event?: string
+    name?: string
+    endpoint?: string
 }
+

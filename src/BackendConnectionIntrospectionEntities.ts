@@ -6,3 +6,4 @@
 export interface BackendConnectionIntrospectionEntities {
     entities?: Array<string>
 }
+

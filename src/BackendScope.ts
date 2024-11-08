@@ -5,6 +5,7 @@
 
 import {BackendScopeOperation} from "./BackendScopeOperation";
 import {CommonMetadata} from "./CommonMetadata";
+
 export interface BackendScope {
     id?: number
     name?: string
@@ -12,3 +13,4 @@ export interface BackendScope {
     operations?: Array<BackendScopeOperation>
     metadata?: CommonMetadata
 }
+

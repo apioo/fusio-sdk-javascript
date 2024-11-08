@@ -11,3 +11,4 @@ export interface BackendRateAllocation {
     appId?: number
     authenticated?: boolean
 }
+

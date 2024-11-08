@@ -11,3 +11,4 @@ export interface BackendWebhookResponse {
     error?: string
     executeDate?: string
 }
+

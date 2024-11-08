@@ -4,6 +4,7 @@
  */
 
 import {BackendWebhookResponse} from "./BackendWebhookResponse";
+
 export interface BackendWebhook {
     id?: number
     eventId?: number
@@ -12,3 +13,4 @@ export interface BackendWebhook {
     endpoint?: string
     responses?: Array<BackendWebhookResponse>
 }
+

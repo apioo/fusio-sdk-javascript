@@ -4,6 +4,8 @@
  */
 
 import {SystemRoutePath} from "./SystemRoutePath";
+
 export interface SystemRoute {
     routes?: SystemRoutePath
 }
+

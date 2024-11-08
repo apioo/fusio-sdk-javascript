@@ -6,3 +6,4 @@
 export interface BackendDatabaseConnections {
     connections?: Array<string>
 }
+

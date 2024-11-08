@@ -48,7 +48,8 @@ export class Client extends ClientAbstract {
 
 
 
-    public static build(baseUrl: string): Client
+
+    public static buildAnonymous(baseUrl: string): Client
     {
         return new Client(baseUrl, new Anonymous());
     }

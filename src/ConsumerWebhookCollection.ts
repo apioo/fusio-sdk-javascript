@@ -5,4 +5,7 @@
 
 import {CommonCollection} from "./CommonCollection";
 import {ConsumerWebhook} from "./ConsumerWebhook";
-export type ConsumerWebhookCollection = CommonCollection<ConsumerWebhook>;
+
+export interface ConsumerWebhookCollection extends CommonCollection<ConsumerWebhook> {
+}
+

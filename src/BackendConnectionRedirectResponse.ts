@@ -6,3 +6,4 @@
 export interface BackendConnectionRedirectResponse {
     redirectUri?: string
 }
+

@@ -4,6 +4,7 @@
  */
 
 import {CommonMetadata} from "./CommonMetadata";
+
 export interface ConsumerPage {
     id?: number
     title?: string
@@ -11,3 +12,4 @@ export interface ConsumerPage {
     content?: string
     metadata?: CommonMetadata
 }
+

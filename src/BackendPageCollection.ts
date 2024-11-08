@@ -5,4 +5,7 @@
 
 import {CommonCollection} from "./CommonCollection";
 import {BackendPage} from "./BackendPage";
-export type BackendPageCollection = CommonCollection<BackendPage>;
+
+export interface BackendPageCollection extends CommonCollection<BackendPage> {
+}
+

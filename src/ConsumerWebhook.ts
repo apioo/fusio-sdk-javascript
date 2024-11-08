@@ -4,6 +4,7 @@
  */
 
 import {ConsumerWebhookResponse} from "./ConsumerWebhookResponse";
+
 export interface ConsumerWebhook {
     id?: number
     status?: number
@@ -12,3 +13,4 @@ export interface ConsumerWebhook {
     endpoint?: string
     responses?: Array<ConsumerWebhookResponse>
 }
+

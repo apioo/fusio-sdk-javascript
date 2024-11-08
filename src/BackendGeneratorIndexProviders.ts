@@ -4,6 +4,8 @@
  */
 
 import {BackendGeneratorIndexProvider} from "./BackendGeneratorIndexProvider";
+
 export interface BackendGeneratorIndexProviders {
     providers?: Array<BackendGeneratorIndexProvider>
 }
+

@@ -4,5 +4,7 @@
  */
 
 import {CommonFormElement} from "./CommonFormElement";
+
 export interface CommonFormElementTag extends CommonFormElement {
 }
+

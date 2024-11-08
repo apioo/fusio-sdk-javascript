@@ -9,3 +9,4 @@ export interface ConsumerUserJWT {
     refresh_token?: string
     scope?: string
 }
+

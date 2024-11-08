@@ -6,3 +6,4 @@
 export interface BackendDatabaseTables {
     tables?: Array<string>
 }
+

@@ -6,3 +6,4 @@
 export interface ConsumerPaymentPortalResponse {
     redirectUrl?: string
 }
+

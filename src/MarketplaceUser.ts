@@ -8,3 +8,4 @@ export interface MarketplaceUser {
     name?: string
     verified?: boolean
 }
+

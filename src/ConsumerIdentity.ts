@@ -9,3 +9,4 @@ export interface ConsumerIdentity {
     icon?: string
     redirect?: string
 }
+

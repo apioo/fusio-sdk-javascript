@@ -9,3 +9,4 @@ export interface BackendDatabaseTableForeignKeyConstraint {
     localColumnNames?: Array<string>
     foreignColumnNames?: Array<string>
 }
+

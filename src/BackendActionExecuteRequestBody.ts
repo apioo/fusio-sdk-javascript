@@ -3,4 +3,6 @@
  * {@link https://sdkgen.app}
  */
 
-export type BackendActionExecuteRequestBody = Record<string, any>;
+export interface BackendActionExecuteRequestBody {
+}
+

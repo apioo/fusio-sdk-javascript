@@ -16,7 +16,7 @@ import {MarketplaceMessageException} from "./MarketplaceMessageException";
 export class BackendMarketplaceAppTag extends TagAbstract {
     /**
      * @returns {Promise<MarketplaceMessage>}
-     * @throws {MarketplaceMessageExceptionException}
+     * @throws {MarketplaceMessageException}
      * @throws {ClientException}
      */
     public async upgrade(user: string, name: string): Promise<MarketplaceMessage> {
@@ -28,6 +28,8 @@ export class BackendMarketplaceAppTag extends TagAbstract {
         let params: AxiosRequestConfig = {
             url: url,
             method: 'PUT',
+            headers: {
+            },
             params: this.parser.query({
             }, [
             ]),
@@ -40,20 +42,29 @@ export class BackendMarketplaceAppTag extends TagAbstract {
             if (error instanceof ClientException) {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 400:
-                        throw new MarketplaceMessageException(error.response.data);
-                    case 401:
-                        throw new MarketplaceMessageException(error.response.data);
-                    case 404:
-                        throw new MarketplaceMessageException(error.response.data);
-                    case 410:
-                        throw new MarketplaceMessageException(error.response.data);
-                    case 500:
-                        throw new MarketplaceMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
+                const statusCode = error.response.status;
+
+                if (statusCode === 400) {
+                    throw new MarketplaceMessageException(error.response.data);
                 }
+
+                if (statusCode === 401) {
+                    throw new MarketplaceMessageException(error.response.data);
+                }
+
+                if (statusCode === 404) {
+                    throw new MarketplaceMessageException(error.response.data);
+                }
+
+                if (statusCode === 410) {
+                    throw new MarketplaceMessageException(error.response.data);
+                }
+
+                if (statusCode === 500) {
+                    throw new MarketplaceMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
             } else {
                 throw new ClientException('An unknown error occurred: ' + String(error));
             }
@@ -62,7 +73,7 @@ export class BackendMarketplaceAppTag extends TagAbstract {
 
     /**
      * @returns {Promise<MarketplaceApp>}
-     * @throws {MarketplaceMessageExceptionException}
+     * @throws {MarketplaceMessageException}
      * @throws {ClientException}
      */
     public async get(user: string, name: string): Promise<MarketplaceApp> {
@@ -74,6 +85,8 @@ export class BackendMarketplaceAppTag extends TagAbstract {
         let params: AxiosRequestConfig = {
             url: url,
             method: 'GET',
+            headers: {
+            },
             params: this.parser.query({
             }, [
             ]),
@@ -86,18 +99,25 @@ export class BackendMarketplaceAppTag extends TagAbstract {
             if (error instanceof ClientException) {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 401:
-                        throw new MarketplaceMessageException(error.response.data);
-                    case 404:
-                        throw new MarketplaceMessageException(error.response.data);
-                    case 410:
-                        throw new MarketplaceMessageException(error.response.data);
-                    case 500:
-                        throw new MarketplaceMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
+                const statusCode = error.response.status;
+
+                if (statusCode === 401) {
+                    throw new MarketplaceMessageException(error.response.data);
                 }
+
+                if (statusCode === 404) {
+                    throw new MarketplaceMessageException(error.response.data);
+                }
+
+                if (statusCode === 410) {
+                    throw new MarketplaceMessageException(error.response.data);
+                }
+
+                if (statusCode === 500) {
+                    throw new MarketplaceMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
             } else {
                 throw new ClientException('An unknown error occurred: ' + String(error));
             }
@@ -106,7 +126,7 @@ export class BackendMarketplaceAppTag extends TagAbstract {
 
     /**
      * @returns {Promise<MarketplaceMessage>}
-     * @throws {MarketplaceMessageExceptionException}
+     * @throws {MarketplaceMessageException}
      * @throws {ClientException}
      */
     public async install(payload: MarketplaceInstall): Promise<MarketplaceMessage> {
@@ -116,6 +136,9 @@ export class BackendMarketplaceAppTag extends TagAbstract {
         let params: AxiosRequestConfig = {
             url: url,
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
             params: this.parser.query({
             }, [
             ]),
@@ -129,16 +152,21 @@ export class BackendMarketplaceAppTag extends TagAbstract {
             if (error instanceof ClientException) {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 400:
-                        throw new MarketplaceMessageException(error.response.data);
-                    case 401:
-                        throw new MarketplaceMessageException(error.response.data);
-                    case 500:
-                        throw new MarketplaceMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
+                const statusCode = error.response.status;
+
+                if (statusCode === 400) {
+                    throw new MarketplaceMessageException(error.response.data);
                 }
+
+                if (statusCode === 401) {
+                    throw new MarketplaceMessageException(error.response.data);
+                }
+
+                if (statusCode === 500) {
+                    throw new MarketplaceMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
             } else {
                 throw new ClientException('An unknown error occurred: ' + String(error));
             }
@@ -147,7 +175,7 @@ export class BackendMarketplaceAppTag extends TagAbstract {
 
     /**
      * @returns {Promise<MarketplaceAppCollection>}
-     * @throws {MarketplaceMessageExceptionException}
+     * @throws {MarketplaceMessageException}
      * @throws {ClientException}
      */
     public async getAll(startIndex?: number, query?: string): Promise<MarketplaceAppCollection> {
@@ -157,6 +185,8 @@ export class BackendMarketplaceAppTag extends TagAbstract {
         let params: AxiosRequestConfig = {
             url: url,
             method: 'GET',
+            headers: {
+            },
             params: this.parser.query({
                 'startIndex': startIndex,
                 'query': query,
@@ -171,14 +201,17 @@ export class BackendMarketplaceAppTag extends TagAbstract {
             if (error instanceof ClientException) {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
-                switch (error.response.status) {
-                    case 401:
-                        throw new MarketplaceMessageException(error.response.data);
-                    case 500:
-                        throw new MarketplaceMessageException(error.response.data);
-                    default:
-                        throw new UnknownStatusCodeException('The server returned an unknown status code');
+                const statusCode = error.response.status;
+
+                if (statusCode === 401) {
+                    throw new MarketplaceMessageException(error.response.data);
                 }
+
+                if (statusCode === 500) {
+                    throw new MarketplaceMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
             } else {
                 throw new ClientException('An unknown error occurred: ' + String(error));
             }

@@ -10,3 +10,4 @@ export interface ConsumerUserPlan {
     points?: number
     period?: number
 }
+

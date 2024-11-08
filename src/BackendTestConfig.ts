@@ -4,5 +4,7 @@
  */
 
 import {BackendActionExecuteRequest} from "./BackendActionExecuteRequest";
+
 export interface BackendTestConfig extends BackendActionExecuteRequest {
 }
+
