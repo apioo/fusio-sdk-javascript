@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Base collection
+ */
 export interface CommonCollection<T> {
     totalResults?: number
     startIndex?: number
