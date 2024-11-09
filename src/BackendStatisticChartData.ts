@@ -3,6 +3,6 @@
  * {@link https://sdkgen.app}
  */
 
-export interface BackendStatisticChartData {
+export interface BackendStatisticChartData extends Record<string, any> {
 }
 

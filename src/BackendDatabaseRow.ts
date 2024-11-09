@@ -3,6 +3,6 @@
  * {@link https://sdkgen.app}
  */
 
-export interface BackendDatabaseRow {
+export interface BackendDatabaseRow extends Record<string, any> {
 }
 

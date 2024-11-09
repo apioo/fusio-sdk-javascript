@@ -6,6 +6,6 @@
 /**
  * No schema information available
  */
-export interface Passthru {
+export interface Passthru extends Record<string, any> {
 }
 

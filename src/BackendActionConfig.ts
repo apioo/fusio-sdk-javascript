@@ -3,6 +3,6 @@
  * {@link https://sdkgen.app}
  */
 
-export interface BackendActionConfig {
+export interface BackendActionConfig extends Record<string, any> {
 }
 

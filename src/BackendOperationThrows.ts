@@ -3,6 +3,6 @@
  * {@link https://sdkgen.app}
  */
 
-export interface BackendOperationThrows {
+export interface BackendOperationThrows extends Record<string, string> {
 }
 
