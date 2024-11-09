@@ -37,6 +37,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: npm version ${{ inputs.typehub_version }} --no-git-tag-version
       - run: npm install
+      - run: node ./build_index.js
       - run: npm run build
       - run: npm publish --access public
         env:

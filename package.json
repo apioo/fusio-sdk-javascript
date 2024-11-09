@@ -13,24 +13,24 @@
   "license": "MIT",
   "homepage": "https://www.fusio-project.org/",
   "type": "module",
-  "main": "./dist/Client.cjs",
-  "module": "./dist/Client.js",
-  "types": "./dist/Client.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     "import": {
-      "types": "./dist/Client.d.ts",
-      "import": "./dist/Client.js"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     },
     "require": {
-      "types": "./dist/Client.d.cts",
-      "require": "./dist/Client.cjs"
+      "types": "./dist/index.d.cts",
+      "require": "./dist/index.cjs"
     }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/Client.ts --format cjs,esm --dts --clean --sourcemap",
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean --sourcemap",
     "test": "jest"
   },
   "dependencies": {
