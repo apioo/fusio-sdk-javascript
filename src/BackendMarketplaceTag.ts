@@ -11,17 +11,17 @@ import {BackendMarketplaceActionTag} from "./BackendMarketplaceActionTag";
 import {BackendMarketplaceAppTag} from "./BackendMarketplaceAppTag";
 
 export class BackendMarketplaceTag extends TagAbstract {
-    public app(): BackendMarketplaceAppTag
+    public action(): BackendMarketplaceActionTag
     {
-        return new BackendMarketplaceAppTag(
+        return new BackendMarketplaceActionTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public action(): BackendMarketplaceActionTag
+    public app(): BackendMarketplaceAppTag
     {
-        return new BackendMarketplaceActionTag(
+        return new BackendMarketplaceAppTag(
             this.httpClient,
             this.parser
         );

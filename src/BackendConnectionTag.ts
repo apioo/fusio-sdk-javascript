@@ -21,28 +21,28 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendConnectionTag extends TagAbstract {
     /**
-     * @returns {Promise<BackendConnectionIntrospectionEntity>}
+     * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
-    public async getIntrospectionForEntity(connectionId: string, entity: string): Promise<BackendConnectionIntrospectionEntity> {
-        const url = this.parser.url('/backend/connection/$connection_id<[0-9]+|^~>/introspection/:entity', {
-            'connection_id': connectionId,
-            'entity': entity,
+    public async create(payload: BackendConnectionCreate): Promise<CommonMessage> {
+        const url = this.parser.url('/backend/connection', {
         });
 
         let params: AxiosRequestConfig = {
             url: url,
-            method: 'GET',
+            method: 'POST',
             headers: {
+                'Content-Type': 'application/json',
             },
             params: this.parser.query({
             }, [
             ]),
+            data: payload
         };
 
         try {
-            const response = await this.httpClient.request<BackendConnectionIntrospectionEntity>(params);
+            const response = await this.httpClient.request<CommonMessage>(params);
             return response.data;
         } catch (error) {
             if (error instanceof ClientException) {
@@ -50,107 +50,7 @@ export class BackendConnectionTag extends TagAbstract {
             } else if (axios.isAxiosError(error) && error.response) {
                 const statusCode = error.response.status;
 
-                if (statusCode === 401) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 404) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 500) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-            } else {
-                throw new ClientException('An unknown error occurred: ' + String(error));
-            }
-        }
-    }
-
-    /**
-     * @returns {Promise<BackendConnectionIntrospectionEntities>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async getIntrospection(connectionId: string): Promise<BackendConnectionIntrospectionEntities> {
-        const url = this.parser.url('/backend/connection/$connection_id<[0-9]+|^~>/introspection', {
-            'connection_id': connectionId,
-        });
-
-        let params: AxiosRequestConfig = {
-            url: url,
-            method: 'GET',
-            headers: {
-            },
-            params: this.parser.query({
-            }, [
-            ]),
-        };
-
-        try {
-            const response = await this.httpClient.request<BackendConnectionIntrospectionEntities>(params);
-            return response.data;
-        } catch (error) {
-            if (error instanceof ClientException) {
-                throw error;
-            } else if (axios.isAxiosError(error) && error.response) {
-                const statusCode = error.response.status;
-
-                if (statusCode === 401) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 404) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 500) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-            } else {
-                throw new ClientException('An unknown error occurred: ' + String(error));
-            }
-        }
-    }
-
-    /**
-     * @returns {Promise<BackendConnectionRedirectResponse>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async getRedirect(connectionId: string): Promise<BackendConnectionRedirectResponse> {
-        const url = this.parser.url('/backend/connection/$connection_id<[0-9]+|^~>/redirect', {
-            'connection_id': connectionId,
-        });
-
-        let params: AxiosRequestConfig = {
-            url: url,
-            method: 'GET',
-            headers: {
-            },
-            params: this.parser.query({
-            }, [
-            ]),
-        };
-
-        try {
-            const response = await this.httpClient.request<BackendConnectionRedirectResponse>(params);
-            return response.data;
-        } catch (error) {
-            if (error instanceof ClientException) {
-                throw error;
-            } else if (axios.isAxiosError(error) && error.response) {
-                const statusCode = error.response.status;
-
-                if (statusCode === 401) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 500) {
+                if (statusCode >= 0 && statusCode <= 999) {
                     throw new CommonMessageException(error.response.data);
                 }
 
@@ -190,77 +90,7 @@ export class BackendConnectionTag extends TagAbstract {
             } else if (axios.isAxiosError(error) && error.response) {
                 const statusCode = error.response.status;
 
-                if (statusCode === 401) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 404) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 410) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 500) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-            } else {
-                throw new ClientException('An unknown error occurred: ' + String(error));
-            }
-        }
-    }
-
-    /**
-     * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async update(connectionId: string, payload: BackendConnectionUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/connection/$connection_id<[0-9]+|^~>', {
-            'connection_id': connectionId,
-        });
-
-        let params: AxiosRequestConfig = {
-            url: url,
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            params: this.parser.query({
-            }, [
-            ]),
-            data: payload
-        };
-
-        try {
-            const response = await this.httpClient.request<CommonMessage>(params);
-            return response.data;
-        } catch (error) {
-            if (error instanceof ClientException) {
-                throw error;
-            } else if (axios.isAxiosError(error) && error.response) {
-                const statusCode = error.response.status;
-
-                if (statusCode === 400) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 401) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 404) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 410) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 500) {
+                if (statusCode >= 0 && statusCode <= 999) {
                     throw new CommonMessageException(error.response.data);
                 }
 
@@ -300,155 +130,7 @@ export class BackendConnectionTag extends TagAbstract {
             } else if (axios.isAxiosError(error) && error.response) {
                 const statusCode = error.response.status;
 
-                if (statusCode === 404) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 401) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 410) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 500) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-            } else {
-                throw new ClientException('An unknown error occurred: ' + String(error));
-            }
-        }
-    }
-
-    /**
-     * @returns {Promise<CommonFormContainer>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async getForm(_class?: string): Promise<CommonFormContainer> {
-        const url = this.parser.url('/backend/connection/form', {
-        });
-
-        let params: AxiosRequestConfig = {
-            url: url,
-            method: 'GET',
-            headers: {
-            },
-            params: this.parser.query({
-                'class': _class,
-            }, [
-            ]),
-        };
-
-        try {
-            const response = await this.httpClient.request<CommonFormContainer>(params);
-            return response.data;
-        } catch (error) {
-            if (error instanceof ClientException) {
-                throw error;
-            } else if (axios.isAxiosError(error) && error.response) {
-                const statusCode = error.response.status;
-
-                if (statusCode === 401) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 500) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-            } else {
-                throw new ClientException('An unknown error occurred: ' + String(error));
-            }
-        }
-    }
-
-    /**
-     * @returns {Promise<BackendConnectionIndex>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async getClasses(): Promise<BackendConnectionIndex> {
-        const url = this.parser.url('/backend/connection/list', {
-        });
-
-        let params: AxiosRequestConfig = {
-            url: url,
-            method: 'GET',
-            headers: {
-            },
-            params: this.parser.query({
-            }, [
-            ]),
-        };
-
-        try {
-            const response = await this.httpClient.request<BackendConnectionIndex>(params);
-            return response.data;
-        } catch (error) {
-            if (error instanceof ClientException) {
-                throw error;
-            } else if (axios.isAxiosError(error) && error.response) {
-                const statusCode = error.response.status;
-
-                if (statusCode === 401) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 500) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-            } else {
-                throw new ClientException('An unknown error occurred: ' + String(error));
-            }
-        }
-    }
-
-    /**
-     * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async create(payload: BackendConnectionCreate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/connection', {
-        });
-
-        let params: AxiosRequestConfig = {
-            url: url,
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            params: this.parser.query({
-            }, [
-            ]),
-            data: payload
-        };
-
-        try {
-            const response = await this.httpClient.request<CommonMessage>(params);
-            return response.data;
-        } catch (error) {
-            if (error instanceof ClientException) {
-                throw error;
-            } else if (axios.isAxiosError(error) && error.response) {
-                const statusCode = error.response.status;
-
-                if (statusCode === 400) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 401) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 500) {
+                if (statusCode >= 0 && statusCode <= 999) {
                     throw new CommonMessageException(error.response.data);
                 }
 
@@ -490,11 +172,249 @@ export class BackendConnectionTag extends TagAbstract {
             } else if (axios.isAxiosError(error) && error.response) {
                 const statusCode = error.response.status;
 
-                if (statusCode === 401) {
+                if (statusCode >= 0 && statusCode <= 999) {
                     throw new CommonMessageException(error.response.data);
                 }
 
-                if (statusCode === 500) {
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+            } else {
+                throw new ClientException('An unknown error occurred: ' + String(error));
+            }
+        }
+    }
+
+    /**
+     * @returns {Promise<BackendConnectionIndex>}
+     * @throws {CommonMessageException}
+     * @throws {ClientException}
+     */
+    public async getClasses(): Promise<BackendConnectionIndex> {
+        const url = this.parser.url('/backend/connection/list', {
+        });
+
+        let params: AxiosRequestConfig = {
+            url: url,
+            method: 'GET',
+            headers: {
+            },
+            params: this.parser.query({
+            }, [
+            ]),
+        };
+
+        try {
+            const response = await this.httpClient.request<BackendConnectionIndex>(params);
+            return response.data;
+        } catch (error) {
+            if (error instanceof ClientException) {
+                throw error;
+            } else if (axios.isAxiosError(error) && error.response) {
+                const statusCode = error.response.status;
+
+                if (statusCode >= 0 && statusCode <= 999) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+            } else {
+                throw new ClientException('An unknown error occurred: ' + String(error));
+            }
+        }
+    }
+
+    /**
+     * @returns {Promise<CommonFormContainer>}
+     * @throws {CommonMessageException}
+     * @throws {ClientException}
+     */
+    public async getForm(_class?: string): Promise<CommonFormContainer> {
+        const url = this.parser.url('/backend/connection/form', {
+        });
+
+        let params: AxiosRequestConfig = {
+            url: url,
+            method: 'GET',
+            headers: {
+            },
+            params: this.parser.query({
+                'class': _class,
+            }, [
+            ]),
+        };
+
+        try {
+            const response = await this.httpClient.request<CommonFormContainer>(params);
+            return response.data;
+        } catch (error) {
+            if (error instanceof ClientException) {
+                throw error;
+            } else if (axios.isAxiosError(error) && error.response) {
+                const statusCode = error.response.status;
+
+                if (statusCode >= 0 && statusCode <= 999) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+            } else {
+                throw new ClientException('An unknown error occurred: ' + String(error));
+            }
+        }
+    }
+
+    /**
+     * @returns {Promise<BackendConnectionIntrospectionEntities>}
+     * @throws {CommonMessageException}
+     * @throws {ClientException}
+     */
+    public async getIntrospection(connectionId: string): Promise<BackendConnectionIntrospectionEntities> {
+        const url = this.parser.url('/backend/connection/$connection_id<[0-9]+|^~>/introspection', {
+            'connection_id': connectionId,
+        });
+
+        let params: AxiosRequestConfig = {
+            url: url,
+            method: 'GET',
+            headers: {
+            },
+            params: this.parser.query({
+            }, [
+            ]),
+        };
+
+        try {
+            const response = await this.httpClient.request<BackendConnectionIntrospectionEntities>(params);
+            return response.data;
+        } catch (error) {
+            if (error instanceof ClientException) {
+                throw error;
+            } else if (axios.isAxiosError(error) && error.response) {
+                const statusCode = error.response.status;
+
+                if (statusCode >= 0 && statusCode <= 999) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+            } else {
+                throw new ClientException('An unknown error occurred: ' + String(error));
+            }
+        }
+    }
+
+    /**
+     * @returns {Promise<BackendConnectionIntrospectionEntity>}
+     * @throws {CommonMessageException}
+     * @throws {ClientException}
+     */
+    public async getIntrospectionForEntity(connectionId: string, entity: string): Promise<BackendConnectionIntrospectionEntity> {
+        const url = this.parser.url('/backend/connection/$connection_id<[0-9]+|^~>/introspection/:entity', {
+            'connection_id': connectionId,
+            'entity': entity,
+        });
+
+        let params: AxiosRequestConfig = {
+            url: url,
+            method: 'GET',
+            headers: {
+            },
+            params: this.parser.query({
+            }, [
+            ]),
+        };
+
+        try {
+            const response = await this.httpClient.request<BackendConnectionIntrospectionEntity>(params);
+            return response.data;
+        } catch (error) {
+            if (error instanceof ClientException) {
+                throw error;
+            } else if (axios.isAxiosError(error) && error.response) {
+                const statusCode = error.response.status;
+
+                if (statusCode >= 0 && statusCode <= 999) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+            } else {
+                throw new ClientException('An unknown error occurred: ' + String(error));
+            }
+        }
+    }
+
+    /**
+     * @returns {Promise<BackendConnectionRedirectResponse>}
+     * @throws {CommonMessageException}
+     * @throws {ClientException}
+     */
+    public async getRedirect(connectionId: string): Promise<BackendConnectionRedirectResponse> {
+        const url = this.parser.url('/backend/connection/$connection_id<[0-9]+|^~>/redirect', {
+            'connection_id': connectionId,
+        });
+
+        let params: AxiosRequestConfig = {
+            url: url,
+            method: 'GET',
+            headers: {
+            },
+            params: this.parser.query({
+            }, [
+            ]),
+        };
+
+        try {
+            const response = await this.httpClient.request<BackendConnectionRedirectResponse>(params);
+            return response.data;
+        } catch (error) {
+            if (error instanceof ClientException) {
+                throw error;
+            } else if (axios.isAxiosError(error) && error.response) {
+                const statusCode = error.response.status;
+
+                if (statusCode >= 0 && statusCode <= 999) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+            } else {
+                throw new ClientException('An unknown error occurred: ' + String(error));
+            }
+        }
+    }
+
+    /**
+     * @returns {Promise<CommonMessage>}
+     * @throws {CommonMessageException}
+     * @throws {ClientException}
+     */
+    public async update(connectionId: string, payload: BackendConnectionUpdate): Promise<CommonMessage> {
+        const url = this.parser.url('/backend/connection/$connection_id<[0-9]+|^~>', {
+            'connection_id': connectionId,
+        });
+
+        let params: AxiosRequestConfig = {
+            url: url,
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            params: this.parser.query({
+            }, [
+            ]),
+            data: payload
+        };
+
+        try {
+            const response = await this.httpClient.request<CommonMessage>(params);
+            return response.data;
+        } catch (error) {
+            if (error instanceof ClientException) {
+                throw error;
+            } else if (axios.isAxiosError(error) && error.response) {
+                const statusCode = error.response.status;
+
+                if (statusCode >= 0 && statusCode <= 999) {
                     throw new CommonMessageException(error.response.data);
                 }
 

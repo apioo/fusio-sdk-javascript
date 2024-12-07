@@ -17,50 +17,6 @@ export class ConsumerIdentityTag extends TagAbstract {
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
-    public async redirect(identity: string): Promise<Passthru> {
-        const url = this.parser.url('/consumer/identity/:identity/redirect', {
-            'identity': identity,
-        });
-
-        let params: AxiosRequestConfig = {
-            url: url,
-            method: 'GET',
-            headers: {
-            },
-            params: this.parser.query({
-            }, [
-            ]),
-        };
-
-        try {
-            const response = await this.httpClient.request<Passthru>(params);
-            return response.data;
-        } catch (error) {
-            if (error instanceof ClientException) {
-                throw error;
-            } else if (axios.isAxiosError(error) && error.response) {
-                const statusCode = error.response.status;
-
-                if (statusCode === 400) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 500) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-            } else {
-                throw new ClientException('An unknown error occurred: ' + String(error));
-            }
-        }
-    }
-
-    /**
-     * @returns {Promise<Passthru>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
     public async exchange(identity: string): Promise<Passthru> {
         const url = this.parser.url('/consumer/identity/:identity/exchange', {
             'identity': identity,
@@ -85,11 +41,7 @@ export class ConsumerIdentityTag extends TagAbstract {
             } else if (axios.isAxiosError(error) && error.response) {
                 const statusCode = error.response.status;
 
-                if (statusCode === 400) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 500) {
+                if (statusCode >= 0 && statusCode <= 999) {
                     throw new CommonMessageException(error.response.data);
                 }
 
@@ -130,11 +82,47 @@ export class ConsumerIdentityTag extends TagAbstract {
             } else if (axios.isAxiosError(error) && error.response) {
                 const statusCode = error.response.status;
 
-                if (statusCode === 400) {
+                if (statusCode >= 0 && statusCode <= 999) {
                     throw new CommonMessageException(error.response.data);
                 }
 
-                if (statusCode === 500) {
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+            } else {
+                throw new ClientException('An unknown error occurred: ' + String(error));
+            }
+        }
+    }
+
+    /**
+     * @returns {Promise<Passthru>}
+     * @throws {CommonMessageException}
+     * @throws {ClientException}
+     */
+    public async redirect(identity: string): Promise<Passthru> {
+        const url = this.parser.url('/consumer/identity/:identity/redirect', {
+            'identity': identity,
+        });
+
+        let params: AxiosRequestConfig = {
+            url: url,
+            method: 'GET',
+            headers: {
+            },
+            params: this.parser.query({
+            }, [
+            ]),
+        };
+
+        try {
+            const response = await this.httpClient.request<Passthru>(params);
+            return response.data;
+        } catch (error) {
+            if (error instanceof ClientException) {
+                throw error;
+            } else if (axios.isAxiosError(error) && error.response) {
+                const statusCode = error.response.status;
+
+                if (statusCode >= 0 && statusCode <= 999) {
                     throw new CommonMessageException(error.response.data);
                 }
 

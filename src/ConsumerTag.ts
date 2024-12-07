@@ -22,6 +22,38 @@ import {ConsumerTransactionTag} from "./ConsumerTransactionTag";
 import {ConsumerWebhookTag} from "./ConsumerWebhookTag";
 
 export class ConsumerTag extends TagAbstract {
+    public account(): ConsumerAccountTag
+    {
+        return new ConsumerAccountTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public app(): ConsumerAppTag
+    {
+        return new ConsumerAppTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public event(): ConsumerEventTag
+    {
+        return new ConsumerEventTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public grant(): ConsumerGrantTag
+    {
+        return new ConsumerGrantTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
     public identity(): ConsumerIdentityTag
     {
         return new ConsumerIdentityTag(
@@ -30,9 +62,49 @@ export class ConsumerTag extends TagAbstract {
         );
     }
 
-    public account(): ConsumerAccountTag
+    public log(): ConsumerLogTag
     {
-        return new ConsumerAccountTag(
+        return new ConsumerLogTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public page(): ConsumerPageTag
+    {
+        return new ConsumerPageTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public payment(): ConsumerPaymentTag
+    {
+        return new ConsumerPaymentTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public plan(): ConsumerPlanTag
+    {
+        return new ConsumerPlanTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public scope(): ConsumerScopeTag
+    {
+        return new ConsumerScopeTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public token(): ConsumerTokenTag
+    {
+        return new ConsumerTokenTag(
             this.httpClient,
             this.parser
         );
@@ -49,78 +121,6 @@ export class ConsumerTag extends TagAbstract {
     public webhook(): ConsumerWebhookTag
     {
         return new ConsumerWebhookTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public token(): ConsumerTokenTag
-    {
-        return new ConsumerTokenTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public scope(): ConsumerScopeTag
-    {
-        return new ConsumerScopeTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public plan(): ConsumerPlanTag
-    {
-        return new ConsumerPlanTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public payment(): ConsumerPaymentTag
-    {
-        return new ConsumerPaymentTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public page(): ConsumerPageTag
-    {
-        return new ConsumerPageTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public log(): ConsumerLogTag
-    {
-        return new ConsumerLogTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public grant(): ConsumerGrantTag
-    {
-        return new ConsumerGrantTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public event(): ConsumerEventTag
-    {
-        return new ConsumerEventTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public app(): ConsumerAppTag
-    {
-        return new ConsumerAppTag(
             this.httpClient,
             this.parser
         );

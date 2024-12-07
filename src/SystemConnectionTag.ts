@@ -8,10 +8,12 @@ import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {CommonMessage} from "./CommonMessage";
+import {CommonMessageException} from "./CommonMessageException";
 
 export class SystemConnectionTag extends TagAbstract {
     /**
      * @returns {Promise<CommonMessage>}
+     * @throws {CommonMessageException}
      * @throws {ClientException}
      */
     public async callback(name: string): Promise<CommonMessage> {
@@ -37,6 +39,10 @@ export class SystemConnectionTag extends TagAbstract {
                 throw error;
             } else if (axios.isAxiosError(error) && error.response) {
                 const statusCode = error.response.status;
+
+                if (statusCode >= 0 && statusCode <= 999) {
+                    throw new CommonMessageException(error.response.data);
+                }
 
                 throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
             } else {

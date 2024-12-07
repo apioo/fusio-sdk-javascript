@@ -41,241 +41,9 @@ import {BackendUserTag} from "./BackendUserTag";
 import {BackendWebhookTag} from "./BackendWebhookTag";
 
 export class BackendTag extends TagAbstract {
-    public webhook(): BackendWebhookTag
+    public account(): BackendAccountTag
     {
-        return new BackendWebhookTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public user(): BackendUserTag
-    {
-        return new BackendUserTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public trash(): BackendTrashTag
-    {
-        return new BackendTrashTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public transaction(): BackendTransactionTag
-    {
-        return new BackendTransactionTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public token(): BackendTokenTag
-    {
-        return new BackendTokenTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public test(): BackendTestTag
-    {
-        return new BackendTestTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public tenant(): BackendTenantTag
-    {
-        return new BackendTenantTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public statistic(): BackendStatisticTag
-    {
-        return new BackendStatisticTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public sdk(): BackendSdkTag
-    {
-        return new BackendSdkTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public scope(): BackendScopeTag
-    {
-        return new BackendScopeTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public schema(): BackendSchemaTag
-    {
-        return new BackendSchemaTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public operation(): BackendOperationTag
-    {
-        return new BackendOperationTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public role(): BackendRoleTag
-    {
-        return new BackendRoleTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public rate(): BackendRateTag
-    {
-        return new BackendRateTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public plan(): BackendPlanTag
-    {
-        return new BackendPlanTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public page(): BackendPageTag
-    {
-        return new BackendPageTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public marketplace(): BackendMarketplaceTag
-    {
-        return new BackendMarketplaceTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public log(): BackendLogTag
-    {
-        return new BackendLogTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public identity(): BackendIdentityTag
-    {
-        return new BackendIdentityTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public generator(): BackendGeneratorTag
-    {
-        return new BackendGeneratorTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public backup(): BackendBackupTag
-    {
-        return new BackendBackupTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public event(): BackendEventTag
-    {
-        return new BackendEventTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public database(): BackendDatabaseTag
-    {
-        return new BackendDatabaseTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public dashboard(): BackendDashboardTag
-    {
-        return new BackendDashboardTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public cronjob(): BackendCronjobTag
-    {
-        return new BackendCronjobTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public connection(): BackendConnectionTag
-    {
-        return new BackendConnectionTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public config(): BackendConfigTag
-    {
-        return new BackendConfigTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public category(): BackendCategoryTag
-    {
-        return new BackendCategoryTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public audit(): BackendAuditTag
-    {
-        return new BackendAuditTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
-    public app(): BackendAppTag
-    {
-        return new BackendAppTag(
+        return new BackendAccountTag(
             this.httpClient,
             this.parser
         );
@@ -289,9 +57,241 @@ export class BackendTag extends TagAbstract {
         );
     }
 
-    public account(): BackendAccountTag
+    public app(): BackendAppTag
     {
-        return new BackendAccountTag(
+        return new BackendAppTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public audit(): BackendAuditTag
+    {
+        return new BackendAuditTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public backup(): BackendBackupTag
+    {
+        return new BackendBackupTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public category(): BackendCategoryTag
+    {
+        return new BackendCategoryTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public config(): BackendConfigTag
+    {
+        return new BackendConfigTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public connection(): BackendConnectionTag
+    {
+        return new BackendConnectionTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public cronjob(): BackendCronjobTag
+    {
+        return new BackendCronjobTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public dashboard(): BackendDashboardTag
+    {
+        return new BackendDashboardTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public database(): BackendDatabaseTag
+    {
+        return new BackendDatabaseTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public event(): BackendEventTag
+    {
+        return new BackendEventTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public generator(): BackendGeneratorTag
+    {
+        return new BackendGeneratorTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public identity(): BackendIdentityTag
+    {
+        return new BackendIdentityTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public log(): BackendLogTag
+    {
+        return new BackendLogTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public marketplace(): BackendMarketplaceTag
+    {
+        return new BackendMarketplaceTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public operation(): BackendOperationTag
+    {
+        return new BackendOperationTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public page(): BackendPageTag
+    {
+        return new BackendPageTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public plan(): BackendPlanTag
+    {
+        return new BackendPlanTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public rate(): BackendRateTag
+    {
+        return new BackendRateTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public role(): BackendRoleTag
+    {
+        return new BackendRoleTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public schema(): BackendSchemaTag
+    {
+        return new BackendSchemaTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public scope(): BackendScopeTag
+    {
+        return new BackendScopeTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public sdk(): BackendSdkTag
+    {
+        return new BackendSdkTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public statistic(): BackendStatisticTag
+    {
+        return new BackendStatisticTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public tenant(): BackendTenantTag
+    {
+        return new BackendTenantTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public test(): BackendTestTag
+    {
+        return new BackendTestTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public token(): BackendTokenTag
+    {
+        return new BackendTokenTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public transaction(): BackendTransactionTag
+    {
+        return new BackendTransactionTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public trash(): BackendTrashTag
+    {
+        return new BackendTrashTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public user(): BackendUserTag
+    {
+        return new BackendUserTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public webhook(): BackendWebhookTag
+    {
+        return new BackendWebhookTag(
             this.httpClient,
             this.parser
         );

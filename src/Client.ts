@@ -9,9 +9,9 @@ import {Anonymous} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {AuthorizationTag} from "./AuthorizationTag";
-import {SystemTag} from "./SystemTag";
-import {ConsumerTag} from "./ConsumerTag";
 import {BackendTag} from "./BackendTag";
+import {ConsumerTag} from "./ConsumerTag";
+import {SystemTag} from "./SystemTag";
 
 export class Client extends ClientAbstract {
     public authorization(): AuthorizationTag
@@ -22,9 +22,9 @@ export class Client extends ClientAbstract {
         );
     }
 
-    public system(): SystemTag
+    public backend(): BackendTag
     {
-        return new SystemTag(
+        return new BackendTag(
             this.httpClient,
             this.parser
         );
@@ -38,9 +38,9 @@ export class Client extends ClientAbstract {
         );
     }
 
-    public backend(): BackendTag
+    public system(): SystemTag
     {
-        return new BackendTag(
+        return new SystemTag(
             this.httpClient,
             this.parser
         );

@@ -45,11 +45,7 @@ export class ConsumerPaymentTag extends TagAbstract {
             } else if (axios.isAxiosError(error) && error.response) {
                 const statusCode = error.response.status;
 
-                if (statusCode === 401) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 500) {
+                if (statusCode >= 0 && statusCode <= 999) {
                     throw new CommonMessageException(error.response.data);
                 }
 
@@ -91,11 +87,7 @@ export class ConsumerPaymentTag extends TagAbstract {
             } else if (axios.isAxiosError(error) && error.response) {
                 const statusCode = error.response.status;
 
-                if (statusCode === 401) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 500) {
+                if (statusCode >= 0 && statusCode <= 999) {
                     throw new CommonMessageException(error.response.data);
                 }
 

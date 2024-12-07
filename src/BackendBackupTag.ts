@@ -14,6 +14,45 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendBackupTag extends TagAbstract {
     /**
+     * @returns {Promise<BackendBackupExport>}
+     * @throws {CommonMessageException}
+     * @throws {ClientException}
+     */
+    public async export(): Promise<BackendBackupExport> {
+        const url = this.parser.url('/backend/backup/export', {
+        });
+
+        let params: AxiosRequestConfig = {
+            url: url,
+            method: 'POST',
+            headers: {
+            },
+            params: this.parser.query({
+            }, [
+            ]),
+        };
+
+        try {
+            const response = await this.httpClient.request<BackendBackupExport>(params);
+            return response.data;
+        } catch (error) {
+            if (error instanceof ClientException) {
+                throw error;
+            } else if (axios.isAxiosError(error) && error.response) {
+                const statusCode = error.response.status;
+
+                if (statusCode >= 0 && statusCode <= 999) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+            } else {
+                throw new ClientException('An unknown error occurred: ' + String(error));
+            }
+        }
+    }
+
+    /**
      * @returns {Promise<BackendBackupImportResult>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -43,54 +82,7 @@ export class BackendBackupTag extends TagAbstract {
             } else if (axios.isAxiosError(error) && error.response) {
                 const statusCode = error.response.status;
 
-                if (statusCode === 401) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 500) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-            } else {
-                throw new ClientException('An unknown error occurred: ' + String(error));
-            }
-        }
-    }
-
-    /**
-     * @returns {Promise<BackendBackupExport>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async export(): Promise<BackendBackupExport> {
-        const url = this.parser.url('/backend/backup/export', {
-        });
-
-        let params: AxiosRequestConfig = {
-            url: url,
-            method: 'POST',
-            headers: {
-            },
-            params: this.parser.query({
-            }, [
-            ]),
-        };
-
-        try {
-            const response = await this.httpClient.request<BackendBackupExport>(params);
-            return response.data;
-        } catch (error) {
-            if (error instanceof ClientException) {
-                throw error;
-            } else if (axios.isAxiosError(error) && error.response) {
-                const statusCode = error.response.status;
-
-                if (statusCode === 401) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                if (statusCode === 500) {
+                if (statusCode >= 0 && statusCode <= 999) {
                     throw new CommonMessageException(error.response.data);
                 }
 

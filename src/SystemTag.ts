@@ -12,9 +12,9 @@ import {SystemMetaTag} from "./SystemMetaTag";
 import {SystemPaymentTag} from "./SystemPaymentTag";
 
 export class SystemTag extends TagAbstract {
-    public payment(): SystemPaymentTag
+    public connection(): SystemConnectionTag
     {
-        return new SystemPaymentTag(
+        return new SystemConnectionTag(
             this.httpClient,
             this.parser
         );
@@ -28,9 +28,9 @@ export class SystemTag extends TagAbstract {
         );
     }
 
-    public connection(): SystemConnectionTag
+    public payment(): SystemPaymentTag
     {
-        return new SystemConnectionTag(
+        return new SystemPaymentTag(
             this.httpClient,
             this.parser
         );
