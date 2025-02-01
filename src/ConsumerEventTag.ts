@@ -8,9 +8,50 @@ import {TagAbstract} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {CommonMessageException} from "./CommonMessageException";
+import {ConsumerEvent} from "./ConsumerEvent";
 import {ConsumerEventCollection} from "./ConsumerEventCollection";
 
 export class ConsumerEventTag extends TagAbstract {
+    /**
+     * @returns {Promise<ConsumerEvent>}
+     * @throws {CommonMessageException}
+     * @throws {ClientException}
+     */
+    public async get(eventId: string): Promise<ConsumerEvent> {
+        const url = this.parser.url('/consumer/event/$event_id<[0-9]+|^~>', {
+            'event_id': eventId,
+        });
+
+        let params: AxiosRequestConfig = {
+            url: url,
+            method: 'GET',
+            headers: {
+            },
+            params: this.parser.query({
+            }, [
+            ]),
+        };
+
+        try {
+            const response = await this.httpClient.request<ConsumerEvent>(params);
+            return response.data;
+        } catch (error) {
+            if (error instanceof ClientException) {
+                throw error;
+            } else if (axios.isAxiosError(error) && error.response) {
+                const statusCode = error.response.status;
+
+                if (statusCode >= 0 && statusCode <= 999) {
+                    throw new CommonMessageException(error.response.data);
+                }
+
+                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+            } else {
+                throw new ClientException('An unknown error occurred: ' + String(error));
+            }
+        }
+    }
+
     /**
      * @returns {Promise<ConsumerEventCollection>}
      * @throws {CommonMessageException}
