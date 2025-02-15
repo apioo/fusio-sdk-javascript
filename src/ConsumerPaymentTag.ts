@@ -3,10 +3,10 @@
  * {@link https://sdkgen.app}
  */
 
-import axios, {AxiosRequestConfig} from "axios";
-import {TagAbstract} from "sdkgen-client"
+import {TagAbstract, HttpRequest} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
+import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 import {ConsumerPaymentCheckoutRequest} from "./ConsumerPaymentCheckoutRequest";
 import {ConsumerPaymentCheckoutResponse} from "./ConsumerPaymentCheckoutResponse";
@@ -24,7 +24,7 @@ export class ConsumerPaymentTag extends TagAbstract {
             'provider': provider,
         });
 
-        let params: AxiosRequestConfig = {
+        let request: HttpRequest = {
             url: url,
             method: 'POST',
             headers: {
@@ -36,26 +36,18 @@ export class ConsumerPaymentTag extends TagAbstract {
             data: payload
         };
 
-        try {
-            const response = await this.httpClient.request<ConsumerPaymentCheckoutResponse>(params);
-            return response.data;
-        } catch (error) {
-            if (error instanceof ClientException) {
-                throw error;
-            } else if (axios.isAxiosError(error) && error.response) {
-                const statusCode = error.response.status;
-
-                if (statusCode >= 0 && statusCode <= 999) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-            } else {
-                throw new ClientException('An unknown error occurred: ' + String(error));
-            }
+        const response = await this.httpClient.request(request);
+        if (response.ok) {
+            return await response.json() as ConsumerPaymentCheckoutResponse;
         }
-    }
 
+        const statusCode = response.status;
+        if (statusCode >= 0 && statusCode <= 999) {
+            throw new CommonMessageException(await response.json() as CommonMessage);
+        }
+
+        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+    }
     /**
      * @returns {Promise<ConsumerPaymentPortalResponse>}
      * @throws {CommonMessageException}
@@ -66,7 +58,7 @@ export class ConsumerPaymentTag extends TagAbstract {
             'provider': provider,
         });
 
-        let params: AxiosRequestConfig = {
+        let request: HttpRequest = {
             url: url,
             method: 'POST',
             headers: {
@@ -78,25 +70,19 @@ export class ConsumerPaymentTag extends TagAbstract {
             data: payload
         };
 
-        try {
-            const response = await this.httpClient.request<ConsumerPaymentPortalResponse>(params);
-            return response.data;
-        } catch (error) {
-            if (error instanceof ClientException) {
-                throw error;
-            } else if (axios.isAxiosError(error) && error.response) {
-                const statusCode = error.response.status;
-
-                if (statusCode >= 0 && statusCode <= 999) {
-                    throw new CommonMessageException(error.response.data);
-                }
-
-                throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-            } else {
-                throw new ClientException('An unknown error occurred: ' + String(error));
-            }
+        const response = await this.httpClient.request(request);
+        if (response.ok) {
+            return await response.json() as ConsumerPaymentPortalResponse;
         }
+
+        const statusCode = response.status;
+        if (statusCode >= 0 && statusCode <= 999) {
+            throw new CommonMessageException(await response.json() as CommonMessage);
+        }
+
+        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
+
 
 
 }

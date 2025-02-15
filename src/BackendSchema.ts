@@ -13,6 +13,7 @@ export interface BackendSchema {
     name?: string
     source?: BackendSchemaSource
     form?: BackendSchemaForm
+    readonly?: boolean
     metadata?: CommonMetadata
 }
 
