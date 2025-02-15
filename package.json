@@ -30,11 +30,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts --clean --sourcemap",
-    "test": "jest"
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean --sourcemap"
   },
   "dependencies": {
-    "sdkgen-client": "^2.0.3"
+    "sdkgen-client": "^2.1.0"
   },
   "devDependencies": {
     "typescript": "^4.3",
