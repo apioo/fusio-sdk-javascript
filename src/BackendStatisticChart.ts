@@ -3,11 +3,10 @@
  * {@link https://sdkgen.app}
  */
 
-import {Array} from "./Array";
+import {BackendStatisticChartSeries} from "./BackendStatisticChartSeries";
 
 export interface BackendStatisticChart {
     labels?: Array<string>
-    data?: Array<Array>
-    series?: Array<string>
+    series?: Array<BackendStatisticChartSeries>
 }
 
