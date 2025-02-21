@@ -6,11 +6,10 @@
 import {TagAbstract, HttpRequest} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
-import {BackendDatabaseConnections} from "./BackendDatabaseConnections";
 import {BackendDatabaseRow} from "./BackendDatabaseRow";
-import {BackendDatabaseRows} from "./BackendDatabaseRows";
+import {BackendDatabaseRowCollection} from "./BackendDatabaseRowCollection";
 import {BackendDatabaseTable} from "./BackendDatabaseTable";
-import {BackendDatabaseTables} from "./BackendDatabaseTables";
+import {BackendDatabaseTableCollection} from "./BackendDatabaseTableCollection";
 import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 
@@ -152,37 +151,6 @@ export class BackendDatabaseTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
-     * @returns {Promise<BackendDatabaseConnections>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async getConnections(): Promise<BackendDatabaseConnections> {
-        const url = this.parser.url('/backend/database', {
-        });
-
-        let request: HttpRequest = {
-            url: url,
-            method: 'GET',
-            headers: {
-            },
-            params: this.parser.query({
-            }, [
-            ]),
-        };
-
-        const response = await this.httpClient.request(request);
-        if (response.ok) {
-            return await response.json() as BackendDatabaseConnections;
-        }
-
-        const statusCode = response.status;
-        if (statusCode >= 0 && statusCode <= 999) {
-            throw new CommonMessageException(await response.json() as CommonMessage);
-        }
-
-        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-    }
-    /**
      * @returns {Promise<BackendDatabaseRow>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -217,11 +185,11 @@ export class BackendDatabaseTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
-     * @returns {Promise<BackendDatabaseRows>}
+     * @returns {Promise<BackendDatabaseRowCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
-    public async getRows(connectionId: string, tableName: string, startIndex?: number, count?: number, filterBy?: string, filterOp?: string, filterValue?: string, sortBy?: string, sortOrder?: string, columns?: string): Promise<BackendDatabaseRows> {
+    public async getRows(connectionId: string, tableName: string, startIndex?: number, count?: number, filterBy?: string, filterOp?: string, filterValue?: string, sortBy?: string, sortOrder?: string, columns?: string): Promise<BackendDatabaseRowCollection> {
         const url = this.parser.url('/backend/database/:connection_id/:table_name/rows', {
             'connection_id': connectionId,
             'table_name': tableName,
@@ -247,7 +215,7 @@ export class BackendDatabaseTag extends TagAbstract {
 
         const response = await this.httpClient.request(request);
         if (response.ok) {
-            return await response.json() as BackendDatabaseRows;
+            return await response.json() as BackendDatabaseRowCollection;
         }
 
         const statusCode = response.status;
@@ -291,11 +259,11 @@ export class BackendDatabaseTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
-     * @returns {Promise<BackendDatabaseTables>}
+     * @returns {Promise<BackendDatabaseTableCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
-    public async getTables(connectionId: string): Promise<BackendDatabaseTables> {
+    public async getTables(connectionId: string): Promise<BackendDatabaseTableCollection> {
         const url = this.parser.url('/backend/database/:connection_id', {
             'connection_id': connectionId,
         });
@@ -312,7 +280,7 @@ export class BackendDatabaseTag extends TagAbstract {
 
         const response = await this.httpClient.request(request);
         if (response.ok) {
-            return await response.json() as BackendDatabaseTables;
+            return await response.json() as BackendDatabaseTableCollection;
         }
 
         const statusCode = response.status;

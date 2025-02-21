@@ -10,8 +10,6 @@ import {BackendConnection} from "./BackendConnection";
 import {BackendConnectionCollection} from "./BackendConnectionCollection";
 import {BackendConnectionCreate} from "./BackendConnectionCreate";
 import {BackendConnectionIndex} from "./BackendConnectionIndex";
-import {BackendConnectionIntrospectionEntities} from "./BackendConnectionIntrospectionEntities";
-import {BackendConnectionIntrospectionEntity} from "./BackendConnectionIntrospectionEntity";
 import {BackendConnectionRedirectResponse} from "./BackendConnectionRedirectResponse";
 import {BackendConnectionUpdate} from "./BackendConnectionUpdate";
 import {CommonFormContainer} from "./CommonFormContainer";
@@ -121,7 +119,7 @@ export class BackendConnectionTag extends TagAbstract {
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
-    public async getAll(startIndex?: number, count?: number, search?: string): Promise<BackendConnectionCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string, _class?: string): Promise<BackendConnectionCollection> {
         const url = this.parser.url('/backend/connection', {
         });
 
@@ -134,6 +132,7 @@ export class BackendConnectionTag extends TagAbstract {
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,
+                'class': _class,
             }, [
             ]),
         };
@@ -204,71 +203,6 @@ export class BackendConnectionTag extends TagAbstract {
         const response = await this.httpClient.request(request);
         if (response.ok) {
             return await response.json() as CommonFormContainer;
-        }
-
-        const statusCode = response.status;
-        if (statusCode >= 0 && statusCode <= 999) {
-            throw new CommonMessageException(await response.json() as CommonMessage);
-        }
-
-        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-    }
-    /**
-     * @returns {Promise<BackendConnectionIntrospectionEntities>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async getIntrospection(connectionId: string): Promise<BackendConnectionIntrospectionEntities> {
-        const url = this.parser.url('/backend/connection/$connection_id<[0-9]+|^~>/introspection', {
-            'connection_id': connectionId,
-        });
-
-        let request: HttpRequest = {
-            url: url,
-            method: 'GET',
-            headers: {
-            },
-            params: this.parser.query({
-            }, [
-            ]),
-        };
-
-        const response = await this.httpClient.request(request);
-        if (response.ok) {
-            return await response.json() as BackendConnectionIntrospectionEntities;
-        }
-
-        const statusCode = response.status;
-        if (statusCode >= 0 && statusCode <= 999) {
-            throw new CommonMessageException(await response.json() as CommonMessage);
-        }
-
-        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-    }
-    /**
-     * @returns {Promise<BackendConnectionIntrospectionEntity>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async getIntrospectionForEntity(connectionId: string, entity: string): Promise<BackendConnectionIntrospectionEntity> {
-        const url = this.parser.url('/backend/connection/$connection_id<[0-9]+|^~>/introspection/:entity', {
-            'connection_id': connectionId,
-            'entity': entity,
-        });
-
-        let request: HttpRequest = {
-            url: url,
-            method: 'GET',
-            headers: {
-            },
-            params: this.parser.query({
-            }, [
-            ]),
-        };
-
-        const response = await this.httpClient.request(request);
-        if (response.ok) {
-            return await response.json() as BackendConnectionIntrospectionEntity;
         }
 
         const statusCode = response.status;
