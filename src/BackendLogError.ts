@@ -5,9 +5,11 @@
 
 export interface BackendLogError {
     id?: number
-    message?: number
+    logId?: number
+    message?: string
     trace?: string
     file?: string
     line?: number
+    insertDate?: string
 }
 
