@@ -51,7 +51,7 @@ export class BackendLogTag extends TagAbstract {
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
-    public async getAll(startIndex?: number, count?: number, search?: string, from?: string, to?: string, routeId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<BackendLogCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string, from?: string, to?: string, operationId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<BackendLogCollection> {
         const url = this.parser.url('/backend/log', {
         });
 
@@ -66,7 +66,7 @@ export class BackendLogTag extends TagAbstract {
                 'search': search,
                 'from': from,
                 'to': to,
-                'routeId': routeId,
+                'operationId': operationId,
                 'appId': appId,
                 'userId': userId,
                 'ip': ip,
