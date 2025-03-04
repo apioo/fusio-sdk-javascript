@@ -8,6 +8,7 @@ import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
+import {ConsumerScopeCategories} from "./ConsumerScopeCategories";
 import {ConsumerScopeCollection} from "./ConsumerScopeCollection";
 
 export class ConsumerScopeTag extends TagAbstract {
@@ -36,6 +37,37 @@ export class ConsumerScopeTag extends TagAbstract {
         const response = await this.httpClient.request(request);
         if (response.ok) {
             return await response.json() as ConsumerScopeCollection;
+        }
+
+        const statusCode = response.status;
+        if (statusCode >= 0 && statusCode <= 999) {
+            throw new CommonMessageException(await response.json() as CommonMessage);
+        }
+
+        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+    }
+    /**
+     * @returns {Promise<ConsumerScopeCategories>}
+     * @throws {CommonMessageException}
+     * @throws {ClientException}
+     */
+    public async getCategories(): Promise<ConsumerScopeCategories> {
+        const url = this.parser.url('/consumer/scope/categories', {
+        });
+
+        let request: HttpRequest = {
+            url: url,
+            method: 'GET',
+            headers: {
+            },
+            params: this.parser.query({
+            }, [
+            ]),
+        };
+
+        const response = await this.httpClient.request(request);
+        if (response.ok) {
+            return await response.json() as ConsumerScopeCategories;
         }
 
         const statusCode = response.status;
