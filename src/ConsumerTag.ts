@@ -9,6 +9,7 @@ import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 import {ConsumerAccountTag} from "./ConsumerAccountTag";
 import {ConsumerAppTag} from "./ConsumerAppTag";
 import {ConsumerEventTag} from "./ConsumerEventTag";
+import {ConsumerFormTag} from "./ConsumerFormTag";
 import {ConsumerGrantTag} from "./ConsumerGrantTag";
 import {ConsumerIdentityTag} from "./ConsumerIdentityTag";
 import {ConsumerLogTag} from "./ConsumerLogTag";
@@ -40,6 +41,14 @@ export class ConsumerTag extends TagAbstract {
     public event(): ConsumerEventTag
     {
         return new ConsumerEventTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public form(): ConsumerFormTag
+    {
+        return new ConsumerFormTag(
             this.httpClient,
             this.parser
         );
