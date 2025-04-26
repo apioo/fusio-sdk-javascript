@@ -10,7 +10,6 @@ export interface BackendFirewall {
     name?: string
     type?: number
     ip?: string
-    mask?: number
     expire?: string
     metadata?: CommonMetadata
 }
