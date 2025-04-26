@@ -18,6 +18,7 @@ import {BackendCronjobTag} from "./BackendCronjobTag";
 import {BackendDashboardTag} from "./BackendDashboardTag";
 import {BackendDatabaseTag} from "./BackendDatabaseTag";
 import {BackendEventTag} from "./BackendEventTag";
+import {BackendFirewallTag} from "./BackendFirewallTag";
 import {BackendFormTag} from "./BackendFormTag";
 import {BackendGeneratorTag} from "./BackendGeneratorTag";
 import {BackendIdentityTag} from "./BackendIdentityTag";
@@ -132,6 +133,14 @@ export class BackendTag extends TagAbstract {
     public event(): BackendEventTag
     {
         return new BackendEventTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public firewall(): BackendFirewallTag
+    {
+        return new BackendFirewallTag(
             this.httpClient,
             this.parser
         );
