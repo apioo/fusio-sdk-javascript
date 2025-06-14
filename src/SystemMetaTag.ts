@@ -9,6 +9,7 @@ import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 import {Passthru} from "./Passthru";
+import {SystemAPICatalog} from "./SystemAPICatalog";
 import {SystemAbout} from "./SystemAbout";
 import {SystemHealthCheck} from "./SystemHealthCheck";
 import {SystemOAuthConfiguration} from "./SystemOAuthConfiguration";
@@ -38,6 +39,37 @@ export class SystemMetaTag extends TagAbstract {
         const response = await this.httpClient.request(request);
         if (response.ok) {
             return await response.json() as SystemAbout;
+        }
+
+        const statusCode = response.status;
+        if (statusCode >= 0 && statusCode <= 999) {
+            throw new CommonMessageException(await response.json() as CommonMessage);
+        }
+
+        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+    }
+    /**
+     * @returns {Promise<SystemAPICatalog>}
+     * @throws {CommonMessageException}
+     * @throws {ClientException}
+     */
+    public async getAPICatalog(): Promise<SystemAPICatalog> {
+        const url = this.parser.url('/system/api-catalog', {
+        });
+
+        let request: HttpRequest = {
+            url: url,
+            method: 'GET',
+            headers: {
+            },
+            params: this.parser.query({
+            }, [
+            ]),
+        };
+
+        const response = await this.httpClient.request(request);
+        if (response.ok) {
+            return await response.json() as SystemAPICatalog;
         }
 
         const statusCode = response.status;
