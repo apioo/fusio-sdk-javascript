@@ -263,7 +263,7 @@ export class BackendDatabaseTag extends TagAbstract {
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
-    public async getTables(connectionId: string): Promise<BackendDatabaseTableCollection> {
+    public async getTables(connectionId: string, startIndex?: number, count?: number): Promise<BackendDatabaseTableCollection> {
         const url = this.parser.url('/backend/database/:connection_id', {
             'connection_id': connectionId,
         });
@@ -274,6 +274,8 @@ export class BackendDatabaseTag extends TagAbstract {
             headers: {
             },
             params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
             }, [
             ]),
         };
