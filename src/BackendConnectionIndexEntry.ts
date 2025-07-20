@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Represents a concrete connection class
+ */
 export interface BackendConnectionIndexEntry {
     name?: string
     class?: string

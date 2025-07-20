@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendOperation} from "./BackendOperation";
 
+/**
+ * A paginated collection of operation objects
+ */
 export interface BackendOperationCollection extends CommonCollection<BackendOperation> {
 }
 

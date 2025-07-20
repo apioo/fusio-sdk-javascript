@@ -5,6 +5,9 @@
 
 import {BackendStatisticChart} from "./BackendStatisticChart";
 
+/**
+ * Represents an object containing all widget data for the dashboard
+ */
 export interface BackendDashboard {
     errorsPerOperation?: BackendStatisticChart
     incomingRequests?: BackendStatisticChart

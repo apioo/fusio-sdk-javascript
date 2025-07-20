@@ -13,6 +13,8 @@ import {ConsumerScopeCollection} from "./ConsumerScopeCollection";
 
 export class ConsumerScopeTag extends TagAbstract {
     /**
+     * Returns a paginated list of scopes which are assigned to the authenticated user
+     *
      * @returns {Promise<ConsumerScopeCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -47,6 +49,8 @@ export class ConsumerScopeTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns all scopes by category
+     *
      * @returns {Promise<ConsumerScopeCategories>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

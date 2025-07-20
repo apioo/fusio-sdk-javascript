@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendApp} from "./BackendApp";
 
+/**
+ * A paginated collection of app objects
+ */
 export interface BackendAppCollection extends CommonCollection<BackendApp> {
 }
 

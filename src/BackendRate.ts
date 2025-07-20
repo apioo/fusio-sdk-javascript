@@ -6,6 +6,9 @@
 import {BackendRateAllocation} from "./BackendRateAllocation";
 import {CommonMetadata} from "./CommonMetadata";
 
+/**
+ * This object represents a rate limitation, which allows to limit the requests which a user can send
+ */
 export interface BackendRate {
     id?: number
     priority?: number

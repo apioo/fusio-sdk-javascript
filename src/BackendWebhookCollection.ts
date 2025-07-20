@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendWebhook} from "./BackendWebhook";
 
+/**
+ * A paginated collection of webhook objects
+ */
 export interface BackendWebhookCollection extends CommonCollection<BackendWebhook> {
 }
 

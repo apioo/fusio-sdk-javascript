@@ -13,6 +13,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendTestTag extends TagAbstract {
     /**
+     * Returns a specific test
+     *
      * @returns {Promise<BackendTest>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -45,6 +47,8 @@ export class BackendTestTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of tests
+     *
      * @returns {Promise<BackendTestCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -79,6 +83,8 @@ export class BackendTestTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Refresh all tests
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -110,6 +116,8 @@ export class BackendTestTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Run all tests
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -141,6 +149,8 @@ export class BackendTestTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Updates an existing test
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

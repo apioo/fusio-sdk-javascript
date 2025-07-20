@@ -3,12 +3,11 @@
  * {@link https://sdkgen.app}
  */
 
-import {ConsumerAuthorizeResponseToken} from "./ConsumerAuthorizeResponseToken";
-
 export interface ConsumerAuthorizeResponse {
     type?: string
-    token?: ConsumerAuthorizeResponseToken
     code?: string
+    error?: string
+    state?: string
     redirectUri?: string
 }
 

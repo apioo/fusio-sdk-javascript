@@ -15,6 +15,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendCategoryTag extends TagAbstract {
     /**
+     * Creates a new category
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -48,6 +50,8 @@ export class BackendCategoryTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Deletes an existing category
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -80,6 +84,8 @@ export class BackendCategoryTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a specific category
+     *
      * @returns {Promise<BackendCategory>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -112,6 +118,8 @@ export class BackendCategoryTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of categories
+     *
      * @returns {Promise<BackendCategoryCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -146,6 +154,8 @@ export class BackendCategoryTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Updates an existing category
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

@@ -15,6 +15,8 @@ import {ConsumerPaymentPortalResponse} from "./ConsumerPaymentPortalResponse";
 
 export class ConsumerPaymentTag extends TagAbstract {
     /**
+     * Start the checkout process for a specific plan
+     *
      * @returns {Promise<ConsumerPaymentCheckoutResponse>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -49,6 +51,8 @@ export class ConsumerPaymentTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Generates a payment portal link for the authenticated user
+     *
      * @returns {Promise<ConsumerPaymentPortalResponse>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

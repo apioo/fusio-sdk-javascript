@@ -5,6 +5,9 @@
 
 import {BackendIdentityConfig} from "./BackendIdentityConfig";
 
+/**
+ * This object represents an identity which allows to authenticate with a remote identity provider
+ */
 export interface BackendIdentity {
     id?: number
     appId?: number

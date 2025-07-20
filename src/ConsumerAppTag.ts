@@ -15,6 +15,8 @@ import {ConsumerAppUpdate} from "./ConsumerAppUpdate";
 
 export class ConsumerAppTag extends TagAbstract {
     /**
+     * Creates a new app for the authenticated user
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -48,6 +50,8 @@ export class ConsumerAppTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Deletes an existing app for the authenticated user
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -80,6 +84,8 @@ export class ConsumerAppTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a specific app for the authenticated user
+     *
      * @returns {Promise<ConsumerApp>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -112,6 +118,8 @@ export class ConsumerAppTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of apps which are assigned to the authenticated user
+     *
      * @returns {Promise<ConsumerAppCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -146,6 +154,8 @@ export class ConsumerAppTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Updates an existing app for the authenticated user
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

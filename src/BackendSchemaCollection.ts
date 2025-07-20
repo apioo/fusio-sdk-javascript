@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendSchema} from "./BackendSchema";
 
+/**
+ * A paginated collection of schema objects
+ */
 export interface BackendSchemaCollection extends CommonCollection<BackendSchema> {
 }
 

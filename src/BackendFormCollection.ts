@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendForm} from "./BackendForm";
 
+/**
+ * A paginated collection of form objects
+ */
 export interface BackendFormCollection extends CommonCollection<BackendForm> {
 }
 

@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendConnection} from "./BackendConnection";
 
+/**
+ * A paginated collection of connection objects
+ */
 export interface BackendConnectionCollection extends CommonCollection<BackendConnection> {
 }
 

@@ -13,6 +13,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendAuditTag extends TagAbstract {
     /**
+     * Returns a specific audit
+     *
      * @returns {Promise<BackendAudit>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -45,6 +47,8 @@ export class BackendAuditTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of audits
+     *
      * @returns {Promise<BackendAuditCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendConfig} from "./BackendConfig";
 
+/**
+ * A paginated collection of config objects
+ */
 export interface BackendConfigCollection extends CommonCollection<BackendConfig> {
 }
 

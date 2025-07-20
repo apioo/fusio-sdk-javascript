@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendLog} from "./BackendLog";
 
+/**
+ * A paginated collection of log objects
+ */
 export interface BackendLogCollection extends CommonCollection<BackendLog> {
 }
 

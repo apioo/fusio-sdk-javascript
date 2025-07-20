@@ -12,6 +12,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendDashboardTag extends TagAbstract {
     /**
+     * Returns all available dashboard widgets
+     *
      * @returns {Promise<BackendDashboard>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

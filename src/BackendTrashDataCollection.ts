@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendTrashData} from "./BackendTrashData";
 
+/**
+ * A paginated collection of deleted objects
+ */
 export interface BackendTrashDataCollection extends CommonCollection<BackendTrashData> {
 }
 

@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendRole} from "./BackendRole";
 
+/**
+ * A paginated collection of role objects
+ */
 export interface BackendRoleCollection extends CommonCollection<BackendRole> {
 }
 

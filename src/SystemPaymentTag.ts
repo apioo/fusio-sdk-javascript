@@ -11,6 +11,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class SystemPaymentTag extends TagAbstract {
     /**
+     * Payment webhook endpoint after successful purchase of a plan
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

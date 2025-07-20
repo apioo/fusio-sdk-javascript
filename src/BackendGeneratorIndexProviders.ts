@@ -5,6 +5,9 @@
 
 import {BackendGeneratorIndexProvider} from "./BackendGeneratorIndexProvider";
 
+/**
+ * Contains all possible classes which can be used at an generator as class
+ */
 export interface BackendGeneratorIndexProviders {
     providers?: Array<BackendGeneratorIndexProvider>
 }

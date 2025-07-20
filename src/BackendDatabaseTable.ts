@@ -7,6 +7,9 @@ import {BackendDatabaseTableColumn} from "./BackendDatabaseTableColumn";
 import {BackendDatabaseTableIndex} from "./BackendDatabaseTableIndex";
 import {BackendDatabaseTableForeignKeyConstraint} from "./BackendDatabaseTableForeignKeyConstraint";
 
+/**
+ * This object represents a relational table on a database connection
+ */
 export interface BackendDatabaseTable {
     name?: string
     columns?: Array<BackendDatabaseTableColumn>

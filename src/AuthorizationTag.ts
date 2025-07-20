@@ -12,6 +12,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class AuthorizationTag extends TagAbstract {
     /**
+     * Returns user data of the current authenticated user
+     *
      * @returns {Promise<BackendUser>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -43,6 +45,8 @@ export class AuthorizationTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Revoke the access token of the current authenticated user
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

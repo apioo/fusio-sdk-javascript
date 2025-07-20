@@ -9,7 +9,6 @@ import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 import {BackendSchema} from "./BackendSchema";
 import {BackendSchemaCollection} from "./BackendSchemaCollection";
 import {BackendSchemaCreate} from "./BackendSchemaCreate";
-import {BackendSchemaForm} from "./BackendSchemaForm";
 import {BackendSchemaPreviewResponse} from "./BackendSchemaPreviewResponse";
 import {BackendSchemaUpdate} from "./BackendSchemaUpdate";
 import {CommonMessage} from "./CommonMessage";
@@ -17,6 +16,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendSchemaTag extends TagAbstract {
     /**
+     * Creates a new schema
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -50,6 +51,8 @@ export class BackendSchemaTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Deletes an existing schema
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -82,6 +85,8 @@ export class BackendSchemaTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a specific schema
+     *
      * @returns {Promise<BackendSchema>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -114,6 +119,8 @@ export class BackendSchemaTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of schemas
+     *
      * @returns {Promise<BackendSchemaCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -180,46 +187,14 @@ export class BackendSchemaTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Updates an existing schema
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
     public async update(schemaId: string, payload: BackendSchemaUpdate): Promise<CommonMessage> {
         const url = this.parser.url('/backend/schema/$schema_id<[0-9]+|^~>', {
-            'schema_id': schemaId,
-        });
-
-        let request: HttpRequest = {
-            url: url,
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            params: this.parser.query({
-            }, [
-            ]),
-            data: payload
-        };
-
-        const response = await this.httpClient.request(request);
-        if (response.ok) {
-            return await response.json() as CommonMessage;
-        }
-
-        const statusCode = response.status;
-        if (statusCode >= 0 && statusCode <= 999) {
-            throw new CommonMessageException(await response.json() as CommonMessage);
-        }
-
-        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-    }
-    /**
-     * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async updateForm(schemaId: string, payload: BackendSchemaForm): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/schema/form/$schema_id<[0-9]+>', {
             'schema_id': schemaId,
         });
 

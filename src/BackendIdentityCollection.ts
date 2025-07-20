@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendIdentity} from "./BackendIdentity";
 
+/**
+ * A paginated collection of identity objects
+ */
 export interface BackendIdentityCollection extends CommonCollection<BackendIdentity> {
 }
 

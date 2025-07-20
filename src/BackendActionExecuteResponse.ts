@@ -6,6 +6,9 @@
 import {BackendActionExecuteResponseHeaders} from "./BackendActionExecuteResponseHeaders";
 import {BackendActionExecuteResponseBody} from "./BackendActionExecuteResponseBody";
 
+/**
+ * Represents an action execution response
+ */
 export interface BackendActionExecuteResponse {
     statusCode?: number
     headers?: BackendActionExecuteResponseHeaders

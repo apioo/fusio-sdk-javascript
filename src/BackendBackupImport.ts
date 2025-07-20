@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Import a previously exported system configuration
+ */
 export interface BackendBackupImport {
     import?: string
 }

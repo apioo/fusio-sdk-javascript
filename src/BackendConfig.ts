@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * This object represents a system configuration
+ */
 export interface BackendConfig {
     id?: number
     type?: number

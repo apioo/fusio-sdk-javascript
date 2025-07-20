@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Represents a concrete identity class
+ */
 export interface BackendIdentityIndexEntry {
     name?: string
     class?: string

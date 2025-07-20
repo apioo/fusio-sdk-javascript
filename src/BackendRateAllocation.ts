@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * This object represents a rate allocation, in case a request matches it gets assigned to the attached rate
+ */
 export interface BackendRateAllocation {
     id?: number
     operationId?: number

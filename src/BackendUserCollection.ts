@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendUser} from "./BackendUser";
 
+/**
+ * A paginated collection of user objects
+ */
 export interface BackendUserCollection extends CommonCollection<BackendUser> {
 }
 

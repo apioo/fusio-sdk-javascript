@@ -18,6 +18,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendConnectionTag extends TagAbstract {
     /**
+     * Creates a new connection
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -51,6 +53,8 @@ export class BackendConnectionTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Deletes an existing connection
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -83,6 +87,8 @@ export class BackendConnectionTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a specific connection
+     *
      * @returns {Promise<BackendConnection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -115,6 +121,8 @@ export class BackendConnectionTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of connections
+     *
      * @returns {Promise<BackendConnectionCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -150,6 +158,8 @@ export class BackendConnectionTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns all available connection classes
+     *
      * @returns {Promise<BackendConnectionIndex>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -181,6 +191,8 @@ export class BackendConnectionTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns the connection config form
+     *
      * @returns {Promise<CommonFormContainer>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -213,6 +225,8 @@ export class BackendConnectionTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a redirect url to start the OAuth2 authorization flow for the given connection
+     *
      * @returns {Promise<BackendConnectionRedirectResponse>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -245,6 +259,8 @@ export class BackendConnectionTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Updates an existing connection
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

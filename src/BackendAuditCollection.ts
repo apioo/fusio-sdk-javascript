@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendAudit} from "./BackendAudit";
 
+/**
+ * A paginated collection of audit objects
+ */
 export interface BackendAuditCollection extends CommonCollection<BackendAudit> {
 }
 

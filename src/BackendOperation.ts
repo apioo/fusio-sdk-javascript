@@ -7,6 +7,9 @@ import {BackendOperationParameters} from "./BackendOperationParameters";
 import {BackendOperationThrows} from "./BackendOperationThrows";
 import {CommonMetadata} from "./CommonMetadata";
 
+/**
+ * This object represents an operation, an operation invokes an action in case a specific HTTP method and path was requested. It defines also schema information about the request and response payload
+ */
 export interface BackendOperation {
     id?: number
     status?: number

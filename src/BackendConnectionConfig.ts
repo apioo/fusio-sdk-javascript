@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * The connection configuration which contains arbitrary key-value entries
+ */
 export interface BackendConnectionConfig extends Record<string, any> {
 }
 

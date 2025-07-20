@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Export of the complete system configuration
+ */
 export interface BackendBackupExport {
     export?: string
 }

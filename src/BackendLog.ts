@@ -5,6 +5,9 @@
 
 import {BackendLogError} from "./BackendLogError";
 
+/**
+ * This object represents a log entry. Every HTTP requests to the system generates such a log entry.
+ */
 export interface BackendLog {
     id?: number
     ip?: string

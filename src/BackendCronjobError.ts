@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Represents an error which occurred on cronjob execution
+ */
 export interface BackendCronjobError {
     message?: string
     trace?: string

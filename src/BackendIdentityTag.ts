@@ -17,6 +17,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendIdentityTag extends TagAbstract {
     /**
+     * Creates a new identity
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -50,6 +52,8 @@ export class BackendIdentityTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Deletes an existing identity
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -82,6 +86,8 @@ export class BackendIdentityTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a specific identity
+     *
      * @returns {Promise<BackendIdentity>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -114,6 +120,8 @@ export class BackendIdentityTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of identities
+     *
      * @returns {Promise<BackendIdentityCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -148,6 +156,8 @@ export class BackendIdentityTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns all available identity classes
+     *
      * @returns {Promise<BackendIdentityIndex>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -179,6 +189,8 @@ export class BackendIdentityTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns the identity config form
+     *
      * @returns {Promise<CommonFormContainer>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -211,6 +223,8 @@ export class BackendIdentityTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Updates an existing identity
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

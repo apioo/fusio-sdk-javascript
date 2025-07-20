@@ -11,6 +11,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class SystemConnectionTag extends TagAbstract {
     /**
+     * Connection OAuth2 callback to authorize a connection
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

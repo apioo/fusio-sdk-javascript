@@ -14,6 +14,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendConfigTag extends TagAbstract {
     /**
+     * Returns a specific config
+     *
      * @returns {Promise<BackendConfig>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -46,6 +48,8 @@ export class BackendConfigTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of configuration values
+     *
      * @returns {Promise<BackendConfigCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -80,6 +84,8 @@ export class BackendConfigTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Updates an existing config value
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

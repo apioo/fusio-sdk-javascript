@@ -15,6 +15,8 @@ import {MarketplaceMessage} from "./MarketplaceMessage";
 
 export class BackendMarketplaceActionTag extends TagAbstract {
     /**
+     * Returns a specific marketplace action
+     *
      * @returns {Promise<MarketplaceAction>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -48,6 +50,8 @@ export class BackendMarketplaceActionTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of marketplace actions
+     *
      * @returns {Promise<MarketplaceActionCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

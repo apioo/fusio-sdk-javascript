@@ -13,6 +13,8 @@ import {ConsumerPlanCollection} from "./ConsumerPlanCollection";
 
 export class ConsumerPlanTag extends TagAbstract {
     /**
+     * Returns a specific plan for the authenticated user
+     *
      * @returns {Promise<ConsumerPlan>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -45,6 +47,8 @@ export class ConsumerPlanTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of plans which are relevant to the authenticated user
+     *
      * @returns {Promise<ConsumerPlanCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

@@ -5,6 +5,9 @@
 
 import {BackendConnectionIndexEntry} from "./BackendConnectionIndexEntry";
 
+/**
+ * Contains all possible classes which can be used at an connection as class
+ */
 export interface BackendConnectionIndex {
     connections?: Array<BackendConnectionIndexEntry>
 }

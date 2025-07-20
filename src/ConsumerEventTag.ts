@@ -13,6 +13,8 @@ import {ConsumerEventCollection} from "./ConsumerEventCollection";
 
 export class ConsumerEventTag extends TagAbstract {
     /**
+     * Returns a specific event for the authenticated user
+     *
      * @returns {Promise<ConsumerEvent>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -45,6 +47,8 @@ export class ConsumerEventTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of apps which are assigned to the authenticated user
+     *
      * @returns {Promise<ConsumerEventCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

@@ -6,6 +6,9 @@
 import {BackendActionConfig} from "./BackendActionConfig";
 import {CommonMetadata} from "./CommonMetadata";
 
+/**
+ * This object represents the business logic which can be executed either through an operation or cronjob
+ */
 export interface BackendAction {
     id?: number
     status?: number

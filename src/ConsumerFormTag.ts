@@ -13,6 +13,8 @@ import {ConsumerFormCollection} from "./ConsumerFormCollection";
 
 export class ConsumerFormTag extends TagAbstract {
     /**
+     * Returns a specific form for the authenticated user
+     *
      * @returns {Promise<ConsumerForm>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -45,6 +47,8 @@ export class ConsumerFormTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of forms which are relevant to the authenticated user
+     *
      * @returns {Promise<ConsumerFormCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

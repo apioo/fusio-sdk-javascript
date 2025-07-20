@@ -13,6 +13,8 @@ import {ConsumerTransactionCollection} from "./ConsumerTransactionCollection";
 
 export class ConsumerTransactionTag extends TagAbstract {
     /**
+     * Returns a specific transaction for the authenticated user
+     *
      * @returns {Promise<ConsumerTransaction>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -45,6 +47,8 @@ export class ConsumerTransactionTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of transactions which are assigned to the authenticated user
+     *
      * @returns {Promise<ConsumerTransactionCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

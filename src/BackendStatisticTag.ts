@@ -13,6 +13,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendStatisticTag extends TagAbstract {
     /**
+     * Returns a statistic containing the activities per user
+     *
      * @returns {Promise<BackendStatisticChart>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -58,6 +60,8 @@ export class BackendStatisticTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a statistic containing the request count
+     *
      * @returns {Promise<BackendStatisticCount>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -103,6 +107,8 @@ export class BackendStatisticTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a statistic containing the errors per operation
+     *
      * @returns {Promise<BackendStatisticChart>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -148,6 +154,8 @@ export class BackendStatisticTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a statistic containing the incoming requests
+     *
      * @returns {Promise<BackendStatisticChart>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -193,6 +201,8 @@ export class BackendStatisticTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a statistic containing the incoming transactions
+     *
      * @returns {Promise<BackendStatisticChart>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -238,6 +248,8 @@ export class BackendStatisticTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a statistic containing the issues tokens
+     *
      * @returns {Promise<BackendStatisticChart>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -283,6 +295,8 @@ export class BackendStatisticTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a statistic containing the most used activities
+     *
      * @returns {Promise<BackendStatisticChart>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -328,6 +342,8 @@ export class BackendStatisticTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a statistic containing the most used apps
+     *
      * @returns {Promise<BackendStatisticChart>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -373,6 +389,8 @@ export class BackendStatisticTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a statistic containing the most used operations
+     *
      * @returns {Promise<BackendStatisticChart>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -418,6 +436,8 @@ export class BackendStatisticTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a statistic containing the test coverage
+     *
      * @returns {Promise<BackendStatisticChart>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -449,6 +469,8 @@ export class BackendStatisticTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a statistic containing the time average
+     *
      * @returns {Promise<BackendStatisticChart>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -494,6 +516,8 @@ export class BackendStatisticTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a statistic containing the time per operation
+     *
      * @returns {Promise<BackendStatisticChart>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -539,6 +563,8 @@ export class BackendStatisticTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a statistic containing the used points
+     *
      * @returns {Promise<BackendStatisticChart>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -584,6 +610,8 @@ export class BackendStatisticTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a statistic containing the user registrations
+     *
      * @returns {Promise<BackendStatisticChart>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

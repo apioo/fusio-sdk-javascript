@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendTest} from "./BackendTest";
 
+/**
+ * A paginated collection of test objects
+ */
 export interface BackendTestCollection extends CommonCollection<BackendTest> {
 }
 

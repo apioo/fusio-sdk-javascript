@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendCronjob} from "./BackendCronjob";
 
+/**
+ * A paginated collection of cronjob objects
+ */
 export interface BackendCronjobCollection extends CommonCollection<BackendCronjob> {
 }
 

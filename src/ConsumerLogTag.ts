@@ -13,6 +13,8 @@ import {ConsumerLogCollection} from "./ConsumerLogCollection";
 
 export class ConsumerLogTag extends TagAbstract {
     /**
+     * Returns a specific log for the authenticated user
+     *
      * @returns {Promise<ConsumerLog>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -45,6 +47,8 @@ export class ConsumerLogTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of logs which are assigned to the authenticated user
+     *
      * @returns {Promise<ConsumerLogCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

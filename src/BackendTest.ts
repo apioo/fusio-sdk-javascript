@@ -5,6 +5,9 @@
 
 import {BackendTestConfig} from "./BackendTestConfig";
 
+/**
+ * This object represents a test. A test helps to verify that all operations work as expected
+ */
 export interface BackendTest {
     id?: number
     status?: number

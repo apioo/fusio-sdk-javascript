@@ -11,6 +11,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendTenantTag extends TagAbstract {
     /**
+     * Removes an existing tenant
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -43,6 +45,8 @@ export class BackendTenantTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Setup a new tenant
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

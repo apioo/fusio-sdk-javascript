@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * This object represents a table index on a relational database
+ */
 export interface BackendDatabaseTableIndex {
     name?: string
     unique?: boolean

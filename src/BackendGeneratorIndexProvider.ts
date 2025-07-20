@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Represents a concrete generator class
+ */
 export interface BackendGeneratorIndexProvider {
     name?: string
     class?: string

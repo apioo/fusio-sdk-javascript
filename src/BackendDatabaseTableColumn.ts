@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * This object represents a column at a relation table
+ */
 export interface BackendDatabaseTableColumn {
     name?: string
     type?: string

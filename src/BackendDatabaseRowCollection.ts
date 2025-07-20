@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendDatabaseRow} from "./BackendDatabaseRow";
 
+/**
+ * A paginated collection of database rows
+ */
 export interface BackendDatabaseRowCollection extends CommonCollection<BackendDatabaseRow> {
 }
 

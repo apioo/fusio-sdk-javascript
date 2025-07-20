@@ -13,6 +13,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendTokenTag extends TagAbstract {
     /**
+     * Returns a specific token
+     *
      * @returns {Promise<BackendToken>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -45,6 +47,8 @@ export class BackendTokenTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of tokens
+     *
      * @returns {Promise<BackendTokenCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

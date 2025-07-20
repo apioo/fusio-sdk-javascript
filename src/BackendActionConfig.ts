@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * The action configuration which contains arbitrary key-value entries
+ */
 export interface BackendActionConfig extends Record<string, any> {
 }
 

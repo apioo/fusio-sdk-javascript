@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendLogError} from "./BackendLogError";
 
+/**
+ * A paginated collection of log error objects
+ */
 export interface BackendLogErrorCollection extends CommonCollection<BackendLogError> {
 }
 

@@ -12,6 +12,8 @@ import {ConsumerGrantCollection} from "./ConsumerGrantCollection";
 
 export class ConsumerGrantTag extends TagAbstract {
     /**
+     * Deletes an existing grant for an app which was created by the authenticated user
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -44,6 +46,8 @@ export class ConsumerGrantTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of grants which are assigned to the authenticated user
+     *
      * @returns {Promise<ConsumerGrantCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

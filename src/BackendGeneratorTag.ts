@@ -84,6 +84,8 @@ export class BackendGeneratorTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns all available generator classes
+     *
      * @returns {Promise<BackendGeneratorIndexProviders>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -115,6 +117,8 @@ export class BackendGeneratorTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns the generator config form
+     *
      * @returns {Promise<CommonFormContainer>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

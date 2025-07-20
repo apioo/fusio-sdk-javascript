@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Represents a concrete action class
+ */
 export interface BackendActionIndexEntry {
     name?: string
     class?: string

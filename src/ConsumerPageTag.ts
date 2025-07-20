@@ -13,6 +13,8 @@ import {ConsumerPageCollection} from "./ConsumerPageCollection";
 
 export class ConsumerPageTag extends TagAbstract {
     /**
+     * Returns a specific page for the authenticated user
+     *
      * @returns {Promise<ConsumerPage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -45,6 +47,8 @@ export class ConsumerPageTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of pages which are relevant to the authenticated user
+     *
      * @returns {Promise<ConsumerPageCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

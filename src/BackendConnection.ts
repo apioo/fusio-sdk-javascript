@@ -6,6 +6,9 @@
 import {BackendConnectionConfig} from "./BackendConnectionConfig";
 import {CommonMetadata} from "./CommonMetadata";
 
+/**
+ * This object represents a connection to an external system like i.e. a database, message-queue or client-sdk
+ */
 export interface BackendConnection {
     id?: number
     name?: string

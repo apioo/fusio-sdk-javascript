@@ -9,15 +9,15 @@ import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 import {Passthru} from "./Passthru";
-import {SystemAPICatalog} from "./SystemAPICatalog";
 import {SystemAbout} from "./SystemAbout";
 import {SystemHealthCheck} from "./SystemHealthCheck";
-import {SystemOAuthConfiguration} from "./SystemOAuthConfiguration";
 import {SystemRoute} from "./SystemRoute";
 import {SystemSchema} from "./SystemSchema";
 
 export class SystemMetaTag extends TagAbstract {
     /**
+     * Returns meta information and links about the current installed Fusio version
+     *
      * @returns {Promise<SystemAbout>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -49,37 +49,8 @@ export class SystemMetaTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
-     * @returns {Promise<SystemAPICatalog>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async getAPICatalog(): Promise<SystemAPICatalog> {
-        const url = this.parser.url('/system/api-catalog', {
-        });
-
-        let request: HttpRequest = {
-            url: url,
-            method: 'GET',
-            headers: {
-            },
-            params: this.parser.query({
-            }, [
-            ]),
-        };
-
-        const response = await this.httpClient.request(request);
-        if (response.ok) {
-            return await response.json() as SystemAPICatalog;
-        }
-
-        const statusCode = response.status;
-        if (statusCode >= 0 && statusCode <= 999) {
-            throw new CommonMessageException(await response.json() as CommonMessage);
-        }
-
-        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-    }
-    /**
+     * Debug endpoint which returns the provided data
+     *
      * @returns {Promise<Passthru>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -113,6 +84,8 @@ export class SystemMetaTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Health check endpoint which returns information about the health status of the system
+     *
      * @returns {Promise<SystemHealthCheck>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -144,37 +117,8 @@ export class SystemMetaTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
-     * @returns {Promise<SystemOAuthConfiguration>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async getOAuthConfiguration(): Promise<SystemOAuthConfiguration> {
-        const url = this.parser.url('/system/oauth-authorization-server', {
-        });
-
-        let request: HttpRequest = {
-            url: url,
-            method: 'GET',
-            headers: {
-            },
-            params: this.parser.query({
-            }, [
-            ]),
-        };
-
-        const response = await this.httpClient.request(request);
-        if (response.ok) {
-            return await response.json() as SystemOAuthConfiguration;
-        }
-
-        const statusCode = response.status;
-        if (statusCode >= 0 && statusCode <= 999) {
-            throw new CommonMessageException(await response.json() as CommonMessage);
-        }
-
-        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-    }
-    /**
+     * Returns all available routes
+     *
      * @returns {Promise<SystemRoute>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -206,6 +150,8 @@ export class SystemMetaTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns details of a specific schema
+     *
      * @returns {Promise<SystemSchema>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

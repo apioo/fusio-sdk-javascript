@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendCategory} from "./BackendCategory";
 
+/**
+ * A paginated collection of category objects
+ */
 export interface BackendCategoryCollection extends CommonCollection<BackendCategory> {
 }
 

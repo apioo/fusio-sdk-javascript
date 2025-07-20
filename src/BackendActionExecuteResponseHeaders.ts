@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Represents a map of headers
+ */
 export interface BackendActionExecuteResponseHeaders extends Record<string, string> {
 }
 

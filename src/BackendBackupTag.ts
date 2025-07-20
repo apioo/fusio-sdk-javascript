@@ -14,6 +14,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendBackupTag extends TagAbstract {
     /**
+     * Generates an backup of the current system
+     *
      * @returns {Promise<BackendBackupExport>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -45,6 +47,8 @@ export class BackendBackupTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Imports an backup to the current system
+     *
      * @returns {Promise<BackendBackupImportResult>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

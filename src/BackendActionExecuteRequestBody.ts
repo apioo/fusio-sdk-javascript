@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Represents a request body
+ */
 export interface BackendActionExecuteRequestBody extends Record<string, any> {
 }
 

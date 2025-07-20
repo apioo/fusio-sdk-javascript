@@ -14,6 +14,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendSdkTag extends TagAbstract {
     /**
+     * Generates a specific SDK
+     *
      * @returns {Promise<BackendSdkMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -47,6 +49,8 @@ export class BackendSdkTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of SDKs
+     *
      * @returns {Promise<BackendSdkResponse>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

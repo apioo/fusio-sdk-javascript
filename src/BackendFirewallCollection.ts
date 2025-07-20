@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendFirewall} from "./BackendFirewall";
 
+/**
+ * A paginated collection of firewall objects
+ */
 export interface BackendFirewallCollection extends CommonCollection<BackendFirewall> {
 }
 

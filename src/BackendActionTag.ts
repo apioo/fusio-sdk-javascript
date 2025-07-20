@@ -19,6 +19,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendActionTag extends TagAbstract {
     /**
+     * Creates a new action
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -52,6 +54,8 @@ export class BackendActionTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Deletes an existing action
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -84,6 +88,8 @@ export class BackendActionTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Executes a specific action
+     *
      * @returns {Promise<BackendActionExecuteResponse>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -118,6 +124,8 @@ export class BackendActionTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a specific action
+     *
      * @returns {Promise<BackendAction>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -150,6 +158,8 @@ export class BackendActionTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of actions
+     *
      * @returns {Promise<BackendActionCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -184,6 +194,8 @@ export class BackendActionTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns all available action classes
+     *
      * @returns {Promise<BackendActionIndex>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -215,6 +227,8 @@ export class BackendActionTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns the action config form
+     *
      * @returns {Promise<CommonFormContainer>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -247,6 +261,8 @@ export class BackendActionTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Updates an existing action
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

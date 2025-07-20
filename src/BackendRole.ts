@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * This object represents a role, every user is assigned to a role and all scopes of the role are automatically attached to the user
+ */
 export interface BackendRole {
     id?: number
     categoryId?: number

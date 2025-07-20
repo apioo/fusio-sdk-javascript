@@ -13,6 +13,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendTransactionTag extends TagAbstract {
     /**
+     * Returns a specific transaction
+     *
      * @returns {Promise<BackendTransaction>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -45,6 +47,8 @@ export class BackendTransactionTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of transactions
+     *
      * @returns {Promise<BackendTransactionCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

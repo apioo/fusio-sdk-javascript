@@ -5,6 +5,9 @@
 
 import {CommonMetadata} from "./CommonMetadata";
 
+/**
+ * This object represents a page at the developer portal
+ */
 export interface BackendPage {
     id?: number
     status?: number

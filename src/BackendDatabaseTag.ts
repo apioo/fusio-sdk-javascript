@@ -15,6 +15,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendDatabaseTag extends TagAbstract {
     /**
+     * Creates a new row at a table on a database
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -50,6 +52,8 @@ export class BackendDatabaseTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Creates a new table on a database
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -84,6 +88,8 @@ export class BackendDatabaseTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Deletes an existing row at a table on a database
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -118,6 +124,8 @@ export class BackendDatabaseTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Deletes an existing table on a database
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -151,6 +159,8 @@ export class BackendDatabaseTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a specific row at a table on a database
+     *
      * @returns {Promise<BackendDatabaseRow>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -185,6 +195,8 @@ export class BackendDatabaseTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns paginated rows at a table on a database
+     *
      * @returns {Promise<BackendDatabaseRowCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -226,6 +238,8 @@ export class BackendDatabaseTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns the schema of a specific table on a database
+     *
      * @returns {Promise<BackendDatabaseTable>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -259,6 +273,8 @@ export class BackendDatabaseTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns all available tables on a database
+     *
      * @returns {Promise<BackendDatabaseTableCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -293,6 +309,8 @@ export class BackendDatabaseTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Updates an existing row at a table on a database
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -329,6 +347,8 @@ export class BackendDatabaseTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Updates an existing table on a database
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

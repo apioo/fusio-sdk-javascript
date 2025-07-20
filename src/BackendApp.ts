@@ -6,6 +6,9 @@
 import {CommonMetadata} from "./CommonMetadata";
 import {BackendToken} from "./BackendToken";
 
+/**
+ * This object represents an app to access the API on-behalf of a user
+ */
 export interface BackendApp {
     id?: number
     userId?: number

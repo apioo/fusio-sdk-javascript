@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Represents available SDK type which can be generated
+ */
 export interface BackendSdkTypes extends Record<string, string> {
 }
 

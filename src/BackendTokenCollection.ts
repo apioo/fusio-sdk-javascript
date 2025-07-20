@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendToken} from "./BackendToken";
 
+/**
+ * A paginated collection of token objects
+ */
 export interface BackendTokenCollection extends CommonCollection<BackendToken> {
 }
 

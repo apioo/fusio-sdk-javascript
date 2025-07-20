@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendPlan} from "./BackendPlan";
 
+/**
+ * A paginated collection of plan objects
+ */
 export interface BackendPlanCollection extends CommonCollection<BackendPlan> {
 }
 

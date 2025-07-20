@@ -4,16 +4,16 @@
  */
 
 import {BackendSchemaSource} from "./BackendSchemaSource";
-import {BackendSchemaForm} from "./BackendSchemaForm";
 import {CommonMetadata} from "./CommonMetadata";
 
+/**
+ * This object represents a schema to describe a JSON payload
+ */
 export interface BackendSchema {
     id?: number
     status?: number
     name?: string
     source?: BackendSchemaSource
-    form?: BackendSchemaForm
-    readonly?: boolean
     metadata?: CommonMetadata
 }
 

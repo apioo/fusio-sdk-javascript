@@ -6,6 +6,9 @@
 import {CommonMetadata} from "./CommonMetadata";
 import {BackendCronjobError} from "./BackendCronjobError";
 
+/**
+ * This object represents a cronjob which can invoke an action at a specific interval
+ */
 export interface BackendCronjob {
     id?: number
     name?: string

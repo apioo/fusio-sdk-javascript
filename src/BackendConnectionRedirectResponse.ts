@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Redirect response to initiate an OAuth2 flow
+ */
 export interface BackendConnectionRedirectResponse {
     redirectUri?: string
 }

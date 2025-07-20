@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendRate} from "./BackendRate";
 
+/**
+ * A paginated collection of rate objects
+ */
 export interface BackendRateCollection extends CommonCollection<BackendRate> {
 }
 

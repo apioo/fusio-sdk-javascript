@@ -13,6 +13,8 @@ import {Passthru} from "./Passthru";
 
 export class ConsumerIdentityTag extends TagAbstract {
     /**
+     * Identity callback endpoint to exchange an access token
+     *
      * @returns {Promise<Passthru>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -45,6 +47,8 @@ export class ConsumerIdentityTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of identities which are relevant to the authenticated user
+     *
      * @returns {Promise<ConsumerIdentityCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -78,6 +82,8 @@ export class ConsumerIdentityTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Redirect the user to the configured identity provider
+     *
      * @returns {Promise<Passthru>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

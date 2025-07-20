@@ -14,6 +14,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendTrashTag extends TagAbstract {
     /**
+     * Returns all deleted records by trash type
+     *
      * @returns {Promise<BackendTrashDataCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -49,6 +51,8 @@ export class BackendTrashTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns all trash types
+     *
      * @returns {Promise<BackendTrashTypes>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -80,6 +84,8 @@ export class BackendTrashTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Restores a previously deleted record
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

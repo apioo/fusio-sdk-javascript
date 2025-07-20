@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * This object represents a foreign key constraint on a relational database
+ */
 export interface BackendDatabaseTableForeignKeyConstraint {
     name?: string
     foreignTable?: string

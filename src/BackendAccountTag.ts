@@ -14,6 +14,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendAccountTag extends TagAbstract {
     /**
+     * Changes the password of the authenticated user
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -47,6 +49,8 @@ export class BackendAccountTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns user data of the authenticated user
+     *
      * @returns {Promise<BackendUser>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -78,6 +82,8 @@ export class BackendAccountTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Updates user data of the authenticated user
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

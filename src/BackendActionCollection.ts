@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendAction} from "./BackendAction";
 
+/**
+ * A paginated collection of action objects
+ */
 export interface BackendActionCollection extends CommonCollection<BackendAction> {
 }
 

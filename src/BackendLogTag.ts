@@ -15,6 +15,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendLogTag extends TagAbstract {
     /**
+     * Returns a specific log
+     *
      * @returns {Promise<BackendLog>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -47,6 +49,8 @@ export class BackendLogTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of logs
+     *
      * @returns {Promise<BackendLogCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -92,6 +96,8 @@ export class BackendLogTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of log errors
+     *
      * @returns {Promise<BackendLogErrorCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

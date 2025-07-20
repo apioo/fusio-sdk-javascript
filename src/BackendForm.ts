@@ -5,6 +5,9 @@
 
 import {CommonMetadata} from "./CommonMetadata";
 
+/**
+ * This object represents a form which helps to dynamically generate a form at a frontend app
+ */
 export interface BackendForm {
     id?: number
     status?: number

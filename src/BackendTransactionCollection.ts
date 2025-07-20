@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendTransaction} from "./BackendTransaction";
 
+/**
+ * A paginated collection of transaction objects
+ */
 export interface BackendTransactionCollection extends CommonCollection<BackendTransaction> {
 }
 

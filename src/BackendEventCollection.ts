@@ -6,6 +6,9 @@
 import {CommonCollection} from "./CommonCollection";
 import {BackendEvent} from "./BackendEvent";
 
+/**
+ * A paginated collection of event objects
+ */
 export interface BackendEventCollection extends CommonCollection<BackendEvent> {
 }
 

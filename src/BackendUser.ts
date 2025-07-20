@@ -6,6 +6,9 @@
 import {BackendApp} from "./BackendApp";
 import {CommonMetadata} from "./CommonMetadata";
 
+/**
+ * This object represents a user
+ */
 export interface BackendUser {
     id?: number
     roleId?: number

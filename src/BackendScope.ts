@@ -6,6 +6,9 @@
 import {BackendScopeOperation} from "./BackendScopeOperation";
 import {CommonMetadata} from "./CommonMetadata";
 
+/**
+ * This object represents a scope. A scope is assigned to a user and is required to access operations
+ */
 export interface BackendScope {
     id?: number
     name?: string

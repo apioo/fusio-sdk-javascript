@@ -16,6 +16,8 @@ import {ConsumerTokenUpdate} from "./ConsumerTokenUpdate";
 
 export class ConsumerTokenTag extends TagAbstract {
     /**
+     * Creates a new token for the authenticated user
+     *
      * @returns {Promise<ConsumerTokenAccessToken>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -49,6 +51,8 @@ export class ConsumerTokenTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Deletes an existing token for the authenticated user
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -81,6 +85,8 @@ export class ConsumerTokenTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a specific token for the authenticated user
+     *
      * @returns {Promise<ConsumerToken>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -113,6 +119,8 @@ export class ConsumerTokenTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a paginated list of tokens which are assigned to the authenticated user
+     *
      * @returns {Promise<ConsumerTokenCollection>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -147,6 +155,8 @@ export class ConsumerTokenTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Updates an existing token for the authenticated user
+     *
      * @returns {Promise<ConsumerTokenAccessToken>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

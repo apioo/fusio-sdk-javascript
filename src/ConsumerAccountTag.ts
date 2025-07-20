@@ -23,6 +23,8 @@ import {ConsumerUserRegister} from "./ConsumerUserRegister";
 
 export class ConsumerAccountTag extends TagAbstract {
     /**
+     * Activates an previously registered account through a token which was provided to the user via email
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -56,6 +58,8 @@ export class ConsumerAccountTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Authorizes the access of a specific app for the authenticated user
+     *
      * @returns {Promise<ConsumerAuthorizeResponse>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -89,6 +93,8 @@ export class ConsumerAccountTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Change the password for the authenticated user
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -122,6 +128,8 @@ export class ConsumerAccountTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Change the password after the password reset flow was started
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -155,6 +163,8 @@ export class ConsumerAccountTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a user data for the authenticated user
+     *
      * @returns {Promise<ConsumerUserAccount>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -186,11 +196,13 @@ export class ConsumerAccountTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns information about a specific app to start the OAuth2 authorization code flow
+     *
      * @returns {Promise<ConsumerAuthorizeMeta>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
-    public async getApp(): Promise<ConsumerAuthorizeMeta> {
+    public async getApp(clientId?: string, scope?: string): Promise<ConsumerAuthorizeMeta> {
         const url = this.parser.url('/consumer/authorize', {
         });
 
@@ -200,6 +212,8 @@ export class ConsumerAccountTag extends TagAbstract {
             headers: {
             },
             params: this.parser.query({
+                'client_id': clientId,
+                'scope': scope,
             }, [
             ]),
         };
@@ -217,6 +231,8 @@ export class ConsumerAccountTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * User login by providing a username and password
+     *
      * @returns {Promise<ConsumerUserJWT>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -250,6 +266,8 @@ export class ConsumerAccountTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Refresh a previously obtained access token
+     *
      * @returns {Promise<ConsumerUserJWT>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -283,6 +301,8 @@ export class ConsumerAccountTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Register a new user account
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -316,6 +336,8 @@ export class ConsumerAccountTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Start the password reset flow
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -349,6 +371,8 @@ export class ConsumerAccountTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Updates user data for the authenticated user
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

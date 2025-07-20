@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Result of a backup import operation
+ */
 export interface BackendBackupImportResult {
     success?: boolean
     message?: string
