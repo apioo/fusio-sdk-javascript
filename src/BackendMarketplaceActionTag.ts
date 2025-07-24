@@ -85,6 +85,8 @@ export class BackendMarketplaceActionTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Installs an action from the marketplace
+     *
      * @returns {Promise<MarketplaceMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
