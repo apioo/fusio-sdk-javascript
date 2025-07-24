@@ -132,6 +132,8 @@ export class BackendLogTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a specific error
+     *
      * @returns {Promise<BackendLogError>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

@@ -155,6 +155,8 @@ export class BackendSchemaTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a HTML preview of the provided schema
+     *
      * @returns {Promise<BackendSchemaPreviewResponse>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

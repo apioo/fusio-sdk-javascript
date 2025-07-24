@@ -16,6 +16,8 @@ import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendGeneratorTag extends TagAbstract {
     /**
+     * Executes a generator with the provided config
+     *
      * @returns {Promise<CommonMessage>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
@@ -50,6 +52,8 @@ export class BackendGeneratorTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Generates a changelog of all potential changes if you execute this generator with the provided config
+     *
      * @returns {Promise<BackendGeneratorProviderChangelog>}
      * @throws {CommonMessageException}
      * @throws {ClientException}

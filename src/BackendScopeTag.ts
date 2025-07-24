@@ -155,6 +155,8 @@ export class BackendScopeTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns all available scopes grouped by category
+     *
      * @returns {Promise<BackendScopeCategories>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
