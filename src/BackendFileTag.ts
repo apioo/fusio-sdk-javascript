@@ -55,7 +55,7 @@ export class BackendFileTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(connectionId: string, fileId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/filesystem/:connection_id/:file_id', {
+        const url = this.parser.url('/backend/file/:connection_id/:file_id', {
             'connection_id': connectionId,
             'file_id': fileId,
         });
