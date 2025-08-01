@@ -9,14 +9,50 @@ import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 import {BackendConnection} from "./BackendConnection";
 import {BackendConnectionCollection} from "./BackendConnectionCollection";
 import {BackendConnectionCreate} from "./BackendConnectionCreate";
+import {BackendConnectionDatabaseTag} from "./BackendConnectionDatabaseTag";
+import {BackendConnectionFilesystemTag} from "./BackendConnectionFilesystemTag";
+import {BackendConnectionHttpTag} from "./BackendConnectionHttpTag";
 import {BackendConnectionIndex} from "./BackendConnectionIndex";
 import {BackendConnectionRedirectResponse} from "./BackendConnectionRedirectResponse";
+import {BackendConnectionSdkTag} from "./BackendConnectionSdkTag";
 import {BackendConnectionUpdate} from "./BackendConnectionUpdate";
 import {CommonFormContainer} from "./CommonFormContainer";
 import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendConnectionTag extends TagAbstract {
+    public database(): BackendConnectionDatabaseTag
+    {
+        return new BackendConnectionDatabaseTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public filesystem(): BackendConnectionFilesystemTag
+    {
+        return new BackendConnectionFilesystemTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public http(): BackendConnectionHttpTag
+    {
+        return new BackendConnectionHttpTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public sdk(): BackendConnectionSdkTag
+    {
+        return new BackendConnectionSdkTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
     /**
      * Creates a new connection
      *
@@ -232,7 +268,7 @@ export class BackendConnectionTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async getRedirect(connectionId: string): Promise<BackendConnectionRedirectResponse> {
-        const url = this.parser.url('/backend/connection/$connection_id<[0-9]+|^~>/redirect', {
+        const url = this.parser.url('/backend/connection/:connection_id/redirect', {
             'connection_id': connectionId,
         });
 
