@@ -84,11 +84,11 @@ export class BackendConnectionFilesystemTag extends TagAbstract {
     /**
      * Returns the content of the provided file id on the filesystem connection
      *
-     * @returns {Promise<void>}
+     * @returns {Promise<ArrayBuffer>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
-    public async get(connectionId: string, fileId: string): Promise<void> {
+    public async get(connectionId: string, fileId: string): Promise<ArrayBuffer> {
         const url = this.parser.url('/backend/connection/:connection_id/filesystem/:file_id', {
             'connection_id': connectionId,
             'file_id': fileId,
@@ -98,6 +98,7 @@ export class BackendConnectionFilesystemTag extends TagAbstract {
             url: url,
             method: 'GET',
             headers: {
+                'Accept': 'application/octet-stream',
             },
             params: this.parser.query({
             }, [
@@ -106,6 +107,7 @@ export class BackendConnectionFilesystemTag extends TagAbstract {
 
         const response = await this.httpClient.request(request);
         if (response.ok) {
+            return await response.arrayBuffer();
         }
 
         const statusCode = response.status;
