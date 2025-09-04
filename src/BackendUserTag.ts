@@ -12,6 +12,7 @@ import {BackendUserCreate} from "./BackendUserCreate";
 import {BackendUserUpdate} from "./BackendUserUpdate";
 import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
+import {Passthru} from "./Passthru";
 
 export class BackendUserTag extends TagAbstract {
     /**
@@ -144,6 +145,42 @@ export class BackendUserTag extends TagAbstract {
         const response = await this.httpClient.request(request);
         if (response.ok) {
             return await response.json() as BackendUserCollection;
+        }
+
+        const statusCode = response.status;
+        if (statusCode >= 0 && statusCode <= 999) {
+            throw new CommonMessageException(await response.json() as CommonMessage);
+        }
+
+        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+    }
+    /**
+     * Resend the activation mail to the provided user
+     *
+     * @returns {Promise<CommonMessage>}
+     * @throws {CommonMessageException}
+     * @throws {ClientException}
+     */
+    public async resend(userId: string, payload: Passthru): Promise<CommonMessage> {
+        const url = this.parser.url('/backend/user/$user_id<[0-9]+|^~>/resend', {
+            'user_id': userId,
+        });
+
+        let request: HttpRequest = {
+            url: url,
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            params: this.parser.query({
+            }, [
+            ]),
+            data: payload
+        };
+
+        const response = await this.httpClient.request(request);
+        if (response.ok) {
+            return await response.json() as CommonMessage;
         }
 
         const statusCode = response.status;
