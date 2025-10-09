@@ -37,6 +37,7 @@ import {BackendTestTag} from "./BackendTestTag";
 import {BackendTokenTag} from "./BackendTokenTag";
 import {BackendTransactionTag} from "./BackendTransactionTag";
 import {BackendTrashTag} from "./BackendTrashTag";
+import {BackendTriggerTag} from "./BackendTriggerTag";
 import {BackendUserTag} from "./BackendUserTag";
 import {BackendWebhookTag} from "./BackendWebhookTag";
 
@@ -284,6 +285,14 @@ export class BackendTag extends TagAbstract {
     public trash(): BackendTrashTag
     {
         return new BackendTrashTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public trigger(): BackendTriggerTag
+    {
+        return new BackendTriggerTag(
             this.httpClient,
             this.parser
         );
