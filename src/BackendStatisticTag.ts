@@ -436,6 +436,147 @@ export class BackendStatisticTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns a statistic containing the requests per ip
+     *
+     * @returns {Promise<BackendStatisticChart>}
+     * @throws {CommonMessageException}
+     * @throws {ClientException}
+     */
+    public async getRequestsPerIP(startIndex?: number, count?: number, search?: string, from?: string, to?: string, operationId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<BackendStatisticChart> {
+        const url = this.parser.url('/backend/statistic/requests_per_ip', {
+        });
+
+        let request: HttpRequest = {
+            url: url,
+            method: 'GET',
+            headers: {
+            },
+            params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
+                'from': from,
+                'to': to,
+                'operationId': operationId,
+                'appId': appId,
+                'userId': userId,
+                'ip': ip,
+                'userAgent': userAgent,
+                'method': method,
+                'path': path,
+                'header': header,
+                'body': body,
+            }, [
+            ]),
+        };
+
+        const response = await this.httpClient.request(request);
+        if (response.ok) {
+            return await response.json() as BackendStatisticChart;
+        }
+
+        const statusCode = response.status;
+        if (statusCode >= 0 && statusCode <= 999) {
+            throw new CommonMessageException(await response.json() as CommonMessage);
+        }
+
+        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+    }
+    /**
+     * Returns a statistic containing the requests per operation
+     *
+     * @returns {Promise<BackendStatisticChart>}
+     * @throws {CommonMessageException}
+     * @throws {ClientException}
+     */
+    public async getRequestsPerOperation(startIndex?: number, count?: number, search?: string, from?: string, to?: string, operationId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<BackendStatisticChart> {
+        const url = this.parser.url('/backend/statistic/requests_per_operation', {
+        });
+
+        let request: HttpRequest = {
+            url: url,
+            method: 'GET',
+            headers: {
+            },
+            params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
+                'from': from,
+                'to': to,
+                'operationId': operationId,
+                'appId': appId,
+                'userId': userId,
+                'ip': ip,
+                'userAgent': userAgent,
+                'method': method,
+                'path': path,
+                'header': header,
+                'body': body,
+            }, [
+            ]),
+        };
+
+        const response = await this.httpClient.request(request);
+        if (response.ok) {
+            return await response.json() as BackendStatisticChart;
+        }
+
+        const statusCode = response.status;
+        if (statusCode >= 0 && statusCode <= 999) {
+            throw new CommonMessageException(await response.json() as CommonMessage);
+        }
+
+        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+    }
+    /**
+     * Returns a statistic containing the requests per user
+     *
+     * @returns {Promise<BackendStatisticChart>}
+     * @throws {CommonMessageException}
+     * @throws {ClientException}
+     */
+    public async getRequestsPerUser(startIndex?: number, count?: number, search?: string, from?: string, to?: string, operationId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<BackendStatisticChart> {
+        const url = this.parser.url('/backend/statistic/requests_per_user', {
+        });
+
+        let request: HttpRequest = {
+            url: url,
+            method: 'GET',
+            headers: {
+            },
+            params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
+                'from': from,
+                'to': to,
+                'operationId': operationId,
+                'appId': appId,
+                'userId': userId,
+                'ip': ip,
+                'userAgent': userAgent,
+                'method': method,
+                'path': path,
+                'header': header,
+                'body': body,
+            }, [
+            ]),
+        };
+
+        const response = await this.httpClient.request(request);
+        if (response.ok) {
+            return await response.json() as BackendStatisticChart;
+        }
+
+        const statusCode = response.status;
+        if (statusCode >= 0 && statusCode <= 999) {
+            throw new CommonMessageException(await response.json() as CommonMessage);
+        }
+
+        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+    }
+    /**
      * Returns a statistic containing the test coverage
      *
      * @returns {Promise<BackendStatisticChart>}
