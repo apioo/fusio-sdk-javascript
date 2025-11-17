@@ -8,6 +8,7 @@ import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {BackendMarketplaceActionTag} from "./BackendMarketplaceActionTag";
 import {BackendMarketplaceAppTag} from "./BackendMarketplaceAppTag";
+import {BackendMarketplaceBundleTag} from "./BackendMarketplaceBundleTag";
 
 export class BackendMarketplaceTag extends TagAbstract {
     public action(): BackendMarketplaceActionTag
@@ -21,6 +22,14 @@ export class BackendMarketplaceTag extends TagAbstract {
     public app(): BackendMarketplaceAppTag
     {
         return new BackendMarketplaceAppTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public bundle(): BackendMarketplaceBundleTag
+    {
+        return new BackendMarketplaceBundleTag(
             this.httpClient,
             this.parser
         );
