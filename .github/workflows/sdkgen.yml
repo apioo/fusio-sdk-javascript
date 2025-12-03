@@ -12,12 +12,13 @@ on:
         description: "The TypeHub changelog on tag"
         required: false
 permissions:
-  contents: 'write'
+  id-token: write  # Required for OIDC
+  contents: write
 jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: apioo/sdkgen-generator-action@v0.2.1
         with:
           client_id: '${{ secrets.SDKGEN_CLIENT_ID }}'
@@ -30,10 +31,10 @@ jobs:
     needs: generate
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: '22.x'
           registry-url: 'https://registry.npmjs.org'
       - run: npm version ${{ inputs.typehub_version }} --no-git-tag-version
       - run: npm install
