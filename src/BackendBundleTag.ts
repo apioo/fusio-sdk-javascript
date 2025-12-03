@@ -8,8 +8,8 @@ import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {BackendBundleCollection} from "./BackendBundleCollection";
 import {BackendBundleCreate} from "./BackendBundleCreate";
+import {BackendBundleUpdate} from "./BackendBundleUpdate";
 import {BackendEvent} from "./BackendEvent";
-import {BackendEventUpdate} from "./BackendEventUpdate";
 import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 
@@ -160,7 +160,7 @@ export class BackendBundleTag extends TagAbstract {
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
-    public async update(bundleId: string, payload: BackendEventUpdate): Promise<CommonMessage> {
+    public async update(bundleId: string, payload: BackendBundleUpdate): Promise<CommonMessage> {
         const url = this.parser.url('/backend/bundle/$bundle_id<[0-9]+|^~>', {
             'bundle_id': bundleId,
         });
