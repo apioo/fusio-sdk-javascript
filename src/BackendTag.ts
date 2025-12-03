@@ -11,6 +11,7 @@ import {BackendActionTag} from "./BackendActionTag";
 import {BackendAppTag} from "./BackendAppTag";
 import {BackendAuditTag} from "./BackendAuditTag";
 import {BackendBackupTag} from "./BackendBackupTag";
+import {BackendBundleTag} from "./BackendBundleTag";
 import {BackendCategoryTag} from "./BackendCategoryTag";
 import {BackendConfigTag} from "./BackendConfigTag";
 import {BackendConnectionTag} from "./BackendConnectionTag";
@@ -77,6 +78,14 @@ export class BackendTag extends TagAbstract {
     public backup(): BackendBackupTag
     {
         return new BackendBackupTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public bundle(): BackendBundleTag
+    {
+        return new BackendBundleTag(
             this.httpClient,
             this.parser
         );
