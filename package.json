@@ -12,6 +12,9 @@
   "author": "Christoph Kappestein",
   "license": "MIT",
   "homepage": "https://www.fusio-project.org/",
+  "repository": {
+    "url": "https://github.com/apioo/fusio-sdk-javascript"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
