@@ -6,10 +6,10 @@
 import {TagAbstract, HttpRequest} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
+import {BackendBundle} from "./BackendBundle";
 import {BackendBundleCollection} from "./BackendBundleCollection";
 import {BackendBundleCreate} from "./BackendBundleCreate";
 import {BackendBundleUpdate} from "./BackendBundleUpdate";
-import {BackendEvent} from "./BackendEvent";
 import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 
@@ -86,11 +86,11 @@ export class BackendBundleTag extends TagAbstract {
     /**
      * Returns a specific bundle
      *
-     * @returns {Promise<BackendEvent>}
+     * @returns {Promise<BackendBundle>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
-    public async get(bundleId: string): Promise<BackendEvent> {
+    public async get(bundleId: string): Promise<BackendBundle> {
         const url = this.parser.url('/backend/bundle/$bundle_id<[0-9]+|^~>', {
             'bundle_id': bundleId,
         });
@@ -107,7 +107,7 @@ export class BackendBundleTag extends TagAbstract {
 
         const response = await this.httpClient.request(request);
         if (response.ok) {
-            return await response.json() as BackendEvent;
+            return await response.json() as BackendBundle;
         }
 
         const statusCode = response.status;
