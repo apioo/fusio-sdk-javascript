@@ -11,6 +11,11 @@ import {BackendBundleConfig} from "./BackendBundleConfig";
 export interface BackendBundle {
     id?: number
     name?: string
+    version?: string
+    icon?: string
+    summary?: string
+    description?: string
+    cost?: number
     config?: BackendBundleConfig
 }
 
