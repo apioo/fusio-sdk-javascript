@@ -154,6 +154,40 @@ export class BackendBundleTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Publish an existing bundle to the marketplace
+     *
+     * @returns {Promise<CommonMessage>}
+     * @throws {CommonMessageException}
+     * @throws {ClientException}
+     */
+    public async publish(bundleId: string): Promise<CommonMessage> {
+        const url = this.parser.url('/backend/bundle/$bundle_id<[0-9]+|^~>/publish', {
+            'bundle_id': bundleId,
+        });
+
+        let request: HttpRequest = {
+            url: url,
+            method: 'POST',
+            headers: {
+            },
+            params: this.parser.query({
+            }, [
+            ]),
+        };
+
+        const response = await this.httpClient.request(request);
+        if (response.ok) {
+            return await response.json() as CommonMessage;
+        }
+
+        const statusCode = response.status;
+        if (statusCode >= 0 && statusCode <= 999) {
+            throw new CommonMessageException(await response.json() as CommonMessage);
+        }
+
+        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+    }
+    /**
      * Updates an existing bundle
      *
      * @returns {Promise<CommonMessage>}
