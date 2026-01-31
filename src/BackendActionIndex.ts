@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendActionIndexEntry} from "./BackendActionIndexEntry";
+import type {BackendActionIndexEntry} from "./BackendActionIndexEntry";
 
 /**
  * Contains all possible classes which can be used at an action as class

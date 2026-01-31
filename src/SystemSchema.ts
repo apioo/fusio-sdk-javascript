@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {SystemSchemaTypeSchema} from "./SystemSchemaTypeSchema";
-import {SystemSchemaForm} from "./SystemSchemaForm";
+import type {SystemSchemaTypeSchema} from "./SystemSchemaTypeSchema";
+import type {SystemSchemaForm} from "./SystemSchemaForm";
 
 export interface SystemSchema {
     schema?: SystemSchemaTypeSchema

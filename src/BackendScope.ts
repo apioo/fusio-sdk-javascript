@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendScopeOperation} from "./BackendScopeOperation";
-import {CommonMetadata} from "./CommonMetadata";
+import type {BackendScopeOperation} from "./BackendScopeOperation";
+import type {CommonMetadata} from "./CommonMetadata";
 
 /**
  * This object represents a scope. A scope is assigned to a user and is required to access operations

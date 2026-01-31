@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendSchema} from "./BackendSchema";
+import type {BackendSchema} from "./BackendSchema";
 
 export interface BackendSchemaUpdate extends BackendSchema {
 }

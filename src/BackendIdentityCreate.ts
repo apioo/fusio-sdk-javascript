@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendIdentity} from "./BackendIdentity";
+import type {BackendIdentity} from "./BackendIdentity";
 
 export interface BackendIdentityCreate extends BackendIdentity {
 }

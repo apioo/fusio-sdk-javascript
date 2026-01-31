@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendAction} from "./BackendAction";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendAction} from "./BackendAction";
 
 /**
  * A paginated collection of action objects

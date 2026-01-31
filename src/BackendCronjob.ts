@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonMetadata} from "./CommonMetadata";
-import {BackendCronjobError} from "./BackendCronjobError";
+import type {CommonMetadata} from "./CommonMetadata";
+import type {BackendCronjobError} from "./BackendCronjobError";
 
 /**
  * This object represents a cronjob which can invoke an action at a specific interval

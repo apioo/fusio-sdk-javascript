@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendActionConfig} from "./BackendActionConfig";
-import {CommonMetadata} from "./CommonMetadata";
+import type {BackendActionConfig} from "./BackendActionConfig";
+import type {CommonMetadata} from "./CommonMetadata";
 
 /**
  * This object represents the business logic which can be executed either through an operation or cronjob

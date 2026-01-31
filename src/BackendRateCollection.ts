@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendRate} from "./BackendRate";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendRate} from "./BackendRate";
 
 /**
  * A paginated collection of rate objects

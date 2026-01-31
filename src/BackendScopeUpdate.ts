@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendScope} from "./BackendScope";
+import type {BackendScope} from "./BackendScope";
 
 export interface BackendScopeUpdate extends BackendScope {
 }

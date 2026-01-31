@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendIdentityConfig} from "./BackendIdentityConfig";
+import type {BackendIdentityConfig} from "./BackendIdentityConfig";
 
 /**
  * This object represents an identity which allows to authenticate with a remote identity provider

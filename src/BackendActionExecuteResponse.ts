@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendActionExecuteResponseHeaders} from "./BackendActionExecuteResponseHeaders";
-import {BackendActionExecuteResponseBody} from "./BackendActionExecuteResponseBody";
+import type {BackendActionExecuteResponseHeaders} from "./BackendActionExecuteResponseHeaders";
+import type {BackendActionExecuteResponseBody} from "./BackendActionExecuteResponseBody";
 
 /**
  * Represents an action execution response

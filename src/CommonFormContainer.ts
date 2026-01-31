@@ -3,9 +3,16 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonFormElement} from "./CommonFormElement";
+import type {CommonFormElement} from "./CommonFormElement";
+import type {CommonFormElementInput} from "./CommonFormElementInput";
+import type {CommonFormElementSelect} from "./CommonFormElementSelect";
+import type {CommonFormElementTag} from "./CommonFormElementTag";
+import type {CommonFormElementTextArea} from "./CommonFormElementTextArea";
 
+/**
+ * Represents a config form with a list of elements
+ */
 export interface CommonFormContainer {
-    element?: Array<CommonFormElement>
+    element?: Array<CommonFormElementInput|CommonFormElementSelect|CommonFormElementTag|CommonFormElementTextArea>
 }
 

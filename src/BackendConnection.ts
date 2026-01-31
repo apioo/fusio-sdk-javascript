@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendConnectionConfig} from "./BackendConnectionConfig";
-import {CommonMetadata} from "./CommonMetadata";
+import type {BackendConnectionConfig} from "./BackendConnectionConfig";
+import type {CommonMetadata} from "./CommonMetadata";
 
 /**
  * This object represents a connection to an external system like i.e. a database, message-queue or client-sdk

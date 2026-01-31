@@ -3,11 +3,11 @@
  * {@link https://sdkgen.app}
  */
 
-import {MarketplaceBundleAction} from "./MarketplaceBundleAction";
-import {MarketplaceBundleSchema} from "./MarketplaceBundleSchema";
-import {MarketplaceBundleEvent} from "./MarketplaceBundleEvent";
-import {MarketplaceBundleCronjob} from "./MarketplaceBundleCronjob";
-import {MarketplaceBundleTrigger} from "./MarketplaceBundleTrigger";
+import type {MarketplaceBundleAction} from "./MarketplaceBundleAction";
+import type {MarketplaceBundleSchema} from "./MarketplaceBundleSchema";
+import type {MarketplaceBundleEvent} from "./MarketplaceBundleEvent";
+import type {MarketplaceBundleCronjob} from "./MarketplaceBundleCronjob";
+import type {MarketplaceBundleTrigger} from "./MarketplaceBundleTrigger";
 
 export interface MarketplaceBundleConfig {
     actions?: Array<MarketplaceBundleAction>

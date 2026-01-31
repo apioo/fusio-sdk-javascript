@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendCronjob} from "./BackendCronjob";
+import type {BackendCronjob} from "./BackendCronjob";
 
 export interface BackendCronjobCreate extends BackendCronjob {
 }

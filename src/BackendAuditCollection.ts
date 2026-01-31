@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendAudit} from "./BackendAudit";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendAudit} from "./BackendAudit";
 
 /**
  * A paginated collection of audit objects

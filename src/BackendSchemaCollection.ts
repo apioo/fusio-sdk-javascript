@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendSchema} from "./BackendSchema";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendSchema} from "./BackendSchema";
 
 /**
  * A paginated collection of schema objects

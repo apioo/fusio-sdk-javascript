@@ -3,9 +3,13 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonFormElement} from "./CommonFormElement";
+import type {CommonFormElement} from "./CommonFormElement";
 
+/**
+ * Form element which represents a textarea
+ */
 export interface CommonFormElementTextArea extends CommonFormElement {
+    type: "http://fusio-project.org/ns/2015/form/textarea"
     mode?: string
 }
 

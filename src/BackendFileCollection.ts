@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendFile} from "./BackendFile";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendFile} from "./BackendFile";
 
 /**
  * A paginated collection of file objects

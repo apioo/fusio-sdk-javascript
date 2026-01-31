@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendConnection} from "./BackendConnection";
+import type {BackendConnection} from "./BackendConnection";
 
 export interface BackendConnectionCreate extends BackendConnection {
 }

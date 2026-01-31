@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendDatabaseTable} from "./BackendDatabaseTable";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendDatabaseTable} from "./BackendDatabaseTable";
 
 export interface BackendDatabaseTableCollection extends CommonCollection<BackendDatabaseTable> {
 }

@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendUser} from "./BackendUser";
+import type {BackendUser} from "./BackendUser";
 
 export interface BackendUserUpdate extends BackendUser {
 }

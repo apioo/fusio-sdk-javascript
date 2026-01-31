@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendConnectionIndexEntry} from "./BackendConnectionIndexEntry";
+import type {BackendConnectionIndexEntry} from "./BackendConnectionIndexEntry";
 
 /**
  * Contains all possible classes which can be used at an connection as class

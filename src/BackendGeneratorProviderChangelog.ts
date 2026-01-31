@@ -3,9 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendSchema} from "./BackendSchema";
-import {BackendAction} from "./BackendAction";
-import {BackendOperation} from "./BackendOperation";
+import type {BackendSchema} from "./BackendSchema";
+import type {BackendAction} from "./BackendAction";
+import type {BackendOperation} from "./BackendOperation";
 
 export interface BackendGeneratorProviderChangelog {
     schemas?: Array<BackendSchema>

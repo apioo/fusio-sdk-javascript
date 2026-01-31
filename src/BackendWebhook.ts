@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendWebhookResponse} from "./BackendWebhookResponse";
+import type {BackendWebhookResponse} from "./BackendWebhookResponse";
 
 /**
  * This object represents a webhook, a webhook is called in case a specific event was triggered

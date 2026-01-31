@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendActionExecuteRequestBody} from "./BackendActionExecuteRequestBody";
+import type {BackendActionExecuteRequestBody} from "./BackendActionExecuteRequestBody";
 
 /**
  * Represents a request to execute an action

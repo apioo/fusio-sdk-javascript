@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendOperation} from "./BackendOperation";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendOperation} from "./BackendOperation";
 
 /**
  * A paginated collection of operation objects

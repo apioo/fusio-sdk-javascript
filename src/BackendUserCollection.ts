@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendUser} from "./BackendUser";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendUser} from "./BackendUser";
 
 /**
  * A paginated collection of user objects

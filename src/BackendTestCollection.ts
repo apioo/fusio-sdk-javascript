@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendTest} from "./BackendTest";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendTest} from "./BackendTest";
 
 /**
  * A paginated collection of test objects

@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendGeneratorIndexProvider} from "./BackendGeneratorIndexProvider";
+import type {BackendGeneratorIndexProvider} from "./BackendGeneratorIndexProvider";
 
 /**
  * Contains all possible classes which can be used at an generator as class

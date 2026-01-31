@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendTransaction} from "./BackendTransaction";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendTransaction} from "./BackendTransaction";
 
 /**
  * A paginated collection of transaction objects

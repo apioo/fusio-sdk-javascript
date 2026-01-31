@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendSdkTypes} from "./BackendSdkTypes";
+import type {BackendSdkTypes} from "./BackendSdkTypes";
 
 export interface BackendSdkResponse {
     types?: BackendSdkTypes

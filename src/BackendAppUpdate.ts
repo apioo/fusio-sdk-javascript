@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendApp} from "./BackendApp";
+import type {BackendApp} from "./BackendApp";
 
 export interface BackendAppUpdate extends BackendApp {
 }

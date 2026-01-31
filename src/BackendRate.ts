@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendRateAllocation} from "./BackendRateAllocation";
-import {CommonMetadata} from "./CommonMetadata";
+import type {BackendRateAllocation} from "./BackendRateAllocation";
+import type {CommonMetadata} from "./CommonMetadata";
 
 /**
  * This object represents a rate limitation, which allows to limit the requests which a user can send

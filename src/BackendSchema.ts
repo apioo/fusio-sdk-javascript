@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendSchemaSource} from "./BackendSchemaSource";
-import {CommonMetadata} from "./CommonMetadata";
+import type {BackendSchemaSource} from "./BackendSchemaSource";
+import type {CommonMetadata} from "./CommonMetadata";
 
 /**
  * This object represents a schema to describe a JSON payload

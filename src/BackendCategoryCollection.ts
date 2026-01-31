@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendCategory} from "./BackendCategory";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendCategory} from "./BackendCategory";
 
 /**
  * A paginated collection of category objects

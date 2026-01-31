@@ -3,9 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendOperationParameters} from "./BackendOperationParameters";
-import {BackendOperationThrows} from "./BackendOperationThrows";
-import {CommonMetadata} from "./CommonMetadata";
+import type {BackendOperationParameters} from "./BackendOperationParameters";
+import type {BackendOperationThrows} from "./BackendOperationThrows";
+import type {CommonMetadata} from "./CommonMetadata";
 
 /**
  * This object represents an operation, an operation invokes an action in case a specific HTTP method and path was requested. It defines also schema information about the request and response payload

@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendForm} from "./BackendForm";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendForm} from "./BackendForm";
 
 /**
  * A paginated collection of form objects

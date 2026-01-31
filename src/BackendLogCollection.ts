@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendLog} from "./BackendLog";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendLog} from "./BackendLog";
 
 /**
  * A paginated collection of log objects

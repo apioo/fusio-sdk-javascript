@@ -3,8 +3,12 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonFormElement} from "./CommonFormElement";
+import type {CommonFormElement} from "./CommonFormElement";
 
+/**
+ * Form element which represents an input tag editor to enter comma-separated values
+ */
 export interface CommonFormElementTag extends CommonFormElement {
+    type: "http://fusio-project.org/ns/2015/form/tag"
 }
 

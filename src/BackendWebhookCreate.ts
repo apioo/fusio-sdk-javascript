@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendWebhook} from "./BackendWebhook";
+import type {BackendWebhook} from "./BackendWebhook";
 
 export interface BackendWebhookCreate extends BackendWebhook {
 }

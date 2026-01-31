@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {ConsumerApp} from "./ConsumerApp";
+import type {ConsumerApp} from "./ConsumerApp";
 
 export interface ConsumerGrant {
     id?: number

@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendRate} from "./BackendRate";
+import type {BackendRate} from "./BackendRate";
 
 export interface BackendRateCreate extends BackendRate {
 }

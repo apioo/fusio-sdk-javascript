@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonMetadata} from "./CommonMetadata";
+import type {CommonMetadata} from "./CommonMetadata";
 
 /**
  * This object represents a plan, a plan allows users to obtain points or in general subscribe to your app

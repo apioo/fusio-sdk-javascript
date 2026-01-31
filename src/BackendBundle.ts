@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendBundleConfig} from "./BackendBundleConfig";
+import type {BackendBundleConfig} from "./BackendBundleConfig";
 
 /**
  * This object represents a bundle which contains action, schema, event, cronjob and trigger configurations from you local instance

@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendAction} from "./BackendAction";
+import type {BackendAction} from "./BackendAction";
 
 export interface BackendActionCreate extends BackendAction {
 }

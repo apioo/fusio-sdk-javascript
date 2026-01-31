@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendTrigger} from "./BackendTrigger";
+import type {BackendTrigger} from "./BackendTrigger";
 
 export interface BackendTriggerCreate extends BackendTrigger {
 }

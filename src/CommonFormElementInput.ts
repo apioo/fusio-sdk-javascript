@@ -3,8 +3,12 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonFormElement} from "./CommonFormElement";
+import type {CommonFormElement} from "./CommonFormElement";
 
+/**
+ * Form element which represents an input element
+ */
 export interface CommonFormElementInput extends CommonFormElement {
+    type: "http://fusio-project.org/ns/2015/form/input"
 }
 

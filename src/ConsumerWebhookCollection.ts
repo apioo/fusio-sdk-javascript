@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {ConsumerWebhook} from "./ConsumerWebhook";
+import type {CommonCollection} from "./CommonCollection";
+import type {ConsumerWebhook} from "./ConsumerWebhook";
 
 export interface ConsumerWebhookCollection extends CommonCollection<ConsumerWebhook> {
 }

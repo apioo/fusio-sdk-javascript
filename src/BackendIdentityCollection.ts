@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendIdentity} from "./BackendIdentity";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendIdentity} from "./BackendIdentity";
 
 /**
  * A paginated collection of identity objects

@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendRole} from "./BackendRole";
+import type {BackendRole} from "./BackendRole";
 
 export interface BackendRoleCreate extends BackendRole {
 }

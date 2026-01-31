@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendConnection} from "./BackendConnection";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendConnection} from "./BackendConnection";
 
 /**
  * A paginated collection of connection objects

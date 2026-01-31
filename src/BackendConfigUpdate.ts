@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendConfig} from "./BackendConfig";
+import type {BackendConfig} from "./BackendConfig";
 
 export interface BackendConfigUpdate extends BackendConfig {
 }

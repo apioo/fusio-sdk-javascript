@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendToken} from "./BackendToken";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendToken} from "./BackendToken";
 
 /**
  * A paginated collection of token objects

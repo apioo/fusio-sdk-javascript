@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendPlan} from "./BackendPlan";
+import type {BackendPlan} from "./BackendPlan";
 
 export interface BackendPlanCreate extends BackendPlan {
 }

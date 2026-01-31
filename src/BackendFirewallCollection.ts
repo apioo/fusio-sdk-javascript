@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendFirewall} from "./BackendFirewall";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendFirewall} from "./BackendFirewall";
 
 /**
  * A paginated collection of firewall objects

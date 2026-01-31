@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendBundle} from "./BackendBundle";
+import type {BackendBundle} from "./BackendBundle";
 
 export interface BackendBundleUpdate extends BackendBundle {
 }

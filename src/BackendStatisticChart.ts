@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendStatisticChartSeries} from "./BackendStatisticChartSeries";
+import type {BackendStatisticChartSeries} from "./BackendStatisticChartSeries";
 
 export interface BackendStatisticChart {
     labels?: Array<string>

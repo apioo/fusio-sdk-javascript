@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {MarketplaceObject} from "./MarketplaceObject";
+import type {MarketplaceObject} from "./MarketplaceObject";
 
 export interface MarketplaceApp extends MarketplaceObject {
     scopes?: Array<string>

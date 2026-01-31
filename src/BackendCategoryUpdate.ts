@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendCategory} from "./BackendCategory";
+import type {BackendCategory} from "./BackendCategory";
 
 export interface BackendCategoryUpdate extends BackendCategory {
 }

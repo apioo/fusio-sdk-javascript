@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {ConsumerUserPlan} from "./ConsumerUserPlan";
-import {CommonMetadata} from "./CommonMetadata";
+import type {ConsumerUserPlan} from "./ConsumerUserPlan";
+import type {CommonMetadata} from "./CommonMetadata";
 
 export interface ConsumerUserAccount {
     id?: number

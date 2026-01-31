@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendPlan} from "./BackendPlan";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendPlan} from "./BackendPlan";
 
 /**
  * A paginated collection of plan objects

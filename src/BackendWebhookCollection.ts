@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendWebhook} from "./BackendWebhook";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendWebhook} from "./BackendWebhook";
 
 /**
  * A paginated collection of webhook objects

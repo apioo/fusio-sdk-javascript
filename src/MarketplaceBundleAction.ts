@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {MarketplaceBundleActionConfig} from "./MarketplaceBundleActionConfig";
+import type {MarketplaceBundleActionConfig} from "./MarketplaceBundleActionConfig";
 
 export interface MarketplaceBundleAction {
     name?: string

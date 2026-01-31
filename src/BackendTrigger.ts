@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonMetadata} from "./CommonMetadata";
+import type {CommonMetadata} from "./CommonMetadata";
 
 /**
  * This object represents a trigger which can invoke an action on a custom event

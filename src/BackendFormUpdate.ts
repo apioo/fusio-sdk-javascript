@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendForm} from "./BackendForm";
+import type {BackendForm} from "./BackendForm";
 
 export interface BackendFormUpdate extends BackendForm {
 }

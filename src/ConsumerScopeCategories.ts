@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {ConsumerScopeCategory} from "./ConsumerScopeCategory";
+import type {ConsumerScopeCategory} from "./ConsumerScopeCategory";
 
 export interface ConsumerScopeCategories {
     categories?: Array<ConsumerScopeCategory>

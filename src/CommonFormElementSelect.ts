@@ -3,10 +3,14 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonFormElement} from "./CommonFormElement";
-import {CommonFormElementSelectOption} from "./CommonFormElementSelectOption";
+import type {CommonFormElement} from "./CommonFormElement";
+import type {CommonFormElementSelectOption} from "./CommonFormElementSelectOption";
 
+/**
+ * Form element which represents a select element
+ */
 export interface CommonFormElementSelect extends CommonFormElement {
+    type: "http://fusio-project.org/ns/2015/form/select"
     options?: Array<CommonFormElementSelectOption>
 }
 

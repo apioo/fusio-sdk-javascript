@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonMetadata} from "./CommonMetadata";
+import type {CommonMetadata} from "./CommonMetadata";
 
 export interface ConsumerPage {
     id?: number

@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {MarketplaceObject} from "./MarketplaceObject";
-import {MarketplaceBundleConfig} from "./MarketplaceBundleConfig";
+import type {MarketplaceObject} from "./MarketplaceObject";
+import type {MarketplaceBundleConfig} from "./MarketplaceBundleConfig";
 
 export interface MarketplaceBundle extends MarketplaceObject {
     config?: MarketplaceBundleConfig

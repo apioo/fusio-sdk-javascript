@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendDatabaseRow} from "./BackendDatabaseRow";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendDatabaseRow} from "./BackendDatabaseRow";
 
 /**
  * A paginated collection of database rows

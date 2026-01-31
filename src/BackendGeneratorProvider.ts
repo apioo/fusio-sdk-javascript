@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendGeneratorProviderConfig} from "./BackendGeneratorProviderConfig";
+import type {BackendGeneratorProviderConfig} from "./BackendGeneratorProviderConfig";
 
 export interface BackendGeneratorProvider {
     path?: string

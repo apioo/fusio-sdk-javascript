@@ -3,9 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendDatabaseTableColumn} from "./BackendDatabaseTableColumn";
-import {BackendDatabaseTableIndex} from "./BackendDatabaseTableIndex";
-import {BackendDatabaseTableForeignKeyConstraint} from "./BackendDatabaseTableForeignKeyConstraint";
+import type {BackendDatabaseTableColumn} from "./BackendDatabaseTableColumn";
+import type {BackendDatabaseTableIndex} from "./BackendDatabaseTableIndex";
+import type {BackendDatabaseTableForeignKeyConstraint} from "./BackendDatabaseTableForeignKeyConstraint";
 
 /**
  * This object represents a relational table on a database connection

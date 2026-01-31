@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Represents a concrete option entry
+ */
 export interface CommonFormElementSelectOption {
     key?: string
     value?: string

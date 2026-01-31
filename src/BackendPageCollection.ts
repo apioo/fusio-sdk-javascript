@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendPage} from "./BackendPage";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendPage} from "./BackendPage";
 
 /**
  * A paginated collection of page objects

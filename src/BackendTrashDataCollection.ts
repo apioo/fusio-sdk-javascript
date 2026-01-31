@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendTrashData} from "./BackendTrashData";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendTrashData} from "./BackendTrashData";
 
 /**
  * A paginated collection of deleted objects

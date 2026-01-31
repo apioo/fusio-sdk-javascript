@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {ConsumerWebhookResponse} from "./ConsumerWebhookResponse";
+import type {ConsumerWebhookResponse} from "./ConsumerWebhookResponse";
 
 export interface ConsumerWebhook {
     id?: number

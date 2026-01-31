@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendActionExecuteRequest} from "./BackendActionExecuteRequest";
+import type {BackendActionExecuteRequest} from "./BackendActionExecuteRequest";
 
 export interface BackendTestConfig extends BackendActionExecuteRequest {
 }

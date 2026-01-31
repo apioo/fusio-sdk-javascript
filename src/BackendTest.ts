@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendTestConfig} from "./BackendTestConfig";
+import type {BackendTestConfig} from "./BackendTestConfig";
 
 /**
  * This object represents a test. A test helps to verify that all operations work as expected

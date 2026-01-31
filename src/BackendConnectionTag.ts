@@ -7,6 +7,7 @@ import {TagAbstract, HttpRequest} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {BackendConnection} from "./BackendConnection";
+import {BackendConnectionAgentTag} from "./BackendConnectionAgentTag";
 import {BackendConnectionCollection} from "./BackendConnectionCollection";
 import {BackendConnectionCreate} from "./BackendConnectionCreate";
 import {BackendConnectionDatabaseTag} from "./BackendConnectionDatabaseTag";
@@ -21,6 +22,14 @@ import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendConnectionTag extends TagAbstract {
+    public agent(): BackendConnectionAgentTag
+    {
+        return new BackendConnectionAgentTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
     public database(): BackendConnectionDatabaseTag
     {
         return new BackendConnectionDatabaseTag(

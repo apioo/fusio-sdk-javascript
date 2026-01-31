@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendEvent} from "./BackendEvent";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendEvent} from "./BackendEvent";
 
 /**
  * A paginated collection of event objects

@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendIdentityIndexEntry} from "./BackendIdentityIndexEntry";
+import type {BackendIdentityIndexEntry} from "./BackendIdentityIndexEntry";
 
 /**
  * Contains all possible classes which can be used at an identity as class

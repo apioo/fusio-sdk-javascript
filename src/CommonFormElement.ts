@@ -3,13 +3,15 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonFormElementInput} from "./CommonFormElementInput";
-import {CommonFormElementSelect} from "./CommonFormElementSelect";
-import {CommonFormElementTag} from "./CommonFormElementTag";
-import {CommonFormElementTextArea} from "./CommonFormElementTextArea";
+import type {CommonFormElementInput} from "./CommonFormElementInput";
+import type {CommonFormElementSelect} from "./CommonFormElementSelect";
+import type {CommonFormElementTag} from "./CommonFormElementTag";
+import type {CommonFormElementTextArea} from "./CommonFormElementTextArea";
 
+/**
+ * Form base element
+ */
 export interface CommonFormElement {
-    type?: string
     element?: string
     name?: string
     title?: string

@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {ConsumerApp} from "./ConsumerApp";
+import type {CommonCollection} from "./CommonCollection";
+import type {ConsumerApp} from "./ConsumerApp";
 
 export interface ConsumerAppCollection extends CommonCollection<ConsumerApp> {
 }

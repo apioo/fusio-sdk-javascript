@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendPage} from "./BackendPage";
+import type {BackendPage} from "./BackendPage";
 
 export interface BackendPageCreate extends BackendPage {
 }

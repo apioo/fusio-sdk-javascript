@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendCronjob} from "./BackendCronjob";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendCronjob} from "./BackendCronjob";
 
 /**
  * A paginated collection of cronjob objects

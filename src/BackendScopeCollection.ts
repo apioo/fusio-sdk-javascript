@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendScope} from "./BackendScope";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendScope} from "./BackendScope";
 
 /**
  * A paginated collection of scope objects

@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendStatisticChart} from "./BackendStatisticChart";
+import type {BackendStatisticChart} from "./BackendStatisticChart";
 
 /**
  * Represents an object containing all widget data for the dashboard

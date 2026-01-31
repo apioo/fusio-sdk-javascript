@@ -3,9 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendApp} from "./BackendApp";
-import {BackendUser} from "./BackendUser";
-import {BackendAuditObject} from "./BackendAuditObject";
+import type {BackendApp} from "./BackendApp";
+import type {BackendUser} from "./BackendUser";
+import type {BackendAuditObject} from "./BackendAuditObject";
 
 /**
  * This object represents an audit which is created every time something was changed at the system

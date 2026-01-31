@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonMetadata} from "./CommonMetadata";
+import type {CommonMetadata} from "./CommonMetadata";
 
 /**
  * This object represents an event which can be triggered by an action

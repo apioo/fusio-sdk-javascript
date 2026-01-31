@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonMetadata} from "./CommonMetadata";
-import {BackendToken} from "./BackendToken";
+import type {CommonMetadata} from "./CommonMetadata";
+import type {BackendToken} from "./BackendToken";
 
 /**
  * This object represents an app to access the API on-behalf of a user

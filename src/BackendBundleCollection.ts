@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendBundle} from "./BackendBundle";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendBundle} from "./BackendBundle";
 
 /**
  * A paginated collection of bundle objects

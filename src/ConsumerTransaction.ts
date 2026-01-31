@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {ConsumerPlan} from "./ConsumerPlan";
+import type {ConsumerPlan} from "./ConsumerPlan";
 
 export interface ConsumerTransaction {
     id?: number

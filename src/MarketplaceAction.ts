@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {MarketplaceObject} from "./MarketplaceObject";
-import {MarketplaceActionConfig} from "./MarketplaceActionConfig";
+import type {MarketplaceObject} from "./MarketplaceObject";
+import type {MarketplaceActionConfig} from "./MarketplaceActionConfig";
 
 export interface MarketplaceAction extends MarketplaceObject {
     class?: string

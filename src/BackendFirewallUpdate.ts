@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendFirewall} from "./BackendFirewall";
+import type {BackendFirewall} from "./BackendFirewall";
 
 export interface BackendFirewallUpdate extends BackendFirewall {
 }

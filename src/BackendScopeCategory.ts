@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendScopeCategoryScope} from "./BackendScopeCategoryScope";
+import type {BackendScopeCategoryScope} from "./BackendScopeCategoryScope";
 
 export interface BackendScopeCategory {
     id?: number

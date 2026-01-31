@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {MarketplaceUser} from "./MarketplaceUser";
+import type {MarketplaceUser} from "./MarketplaceUser";
 
 /**
  * Base class of all objects on the marketplace

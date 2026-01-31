@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonMetadata} from "./CommonMetadata";
+import type {CommonMetadata} from "./CommonMetadata";
 
 /**
  * This object represents a form which helps to dynamically generate a form at a frontend app

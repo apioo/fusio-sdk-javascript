@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendEvent} from "./BackendEvent";
+import type {BackendEvent} from "./BackendEvent";
 
 export interface BackendEventCreate extends BackendEvent {
 }

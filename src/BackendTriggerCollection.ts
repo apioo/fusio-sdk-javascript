@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendTrigger} from "./BackendTrigger";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendTrigger} from "./BackendTrigger";
 
 /**
  * A paginated collection of trigger objects

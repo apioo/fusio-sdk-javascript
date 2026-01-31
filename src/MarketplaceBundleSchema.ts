@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {MarketplaceBundleSchemaSource} from "./MarketplaceBundleSchemaSource";
+import type {MarketplaceBundleSchemaSource} from "./MarketplaceBundleSchemaSource";
 
 export interface MarketplaceBundleSchema {
     name?: string

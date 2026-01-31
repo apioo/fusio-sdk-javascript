@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {CommonCollection} from "./CommonCollection";
-import {BackendRole} from "./BackendRole";
+import type {CommonCollection} from "./CommonCollection";
+import type {BackendRole} from "./BackendRole";
 
 /**
  * A paginated collection of role objects

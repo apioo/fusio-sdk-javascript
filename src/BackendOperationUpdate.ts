@@ -3,7 +3,7 @@
  * {@link https://sdkgen.app}
  */
 
-import {BackendOperation} from "./BackendOperation";
+import type {BackendOperation} from "./BackendOperation";
 
 export interface BackendOperationUpdate extends BackendOperation {
 }
