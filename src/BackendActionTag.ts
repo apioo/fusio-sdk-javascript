@@ -8,6 +8,7 @@ import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {BackendAction} from "./BackendAction";
 import {BackendActionCollection} from "./BackendActionCollection";
+import {BackendActionCommitCollection} from "./BackendActionCommitCollection";
 import {BackendActionCreate} from "./BackendActionCreate";
 import {BackendActionExecuteRequest} from "./BackendActionExecuteRequest";
 import {BackendActionExecuteResponse} from "./BackendActionExecuteResponse";
@@ -217,6 +218,43 @@ export class BackendActionTag extends TagAbstract {
         const response = await this.httpClient.request(request);
         if (response.ok) {
             return await response.json() as BackendActionIndex;
+        }
+
+        const statusCode = response.status;
+        if (statusCode >= 0 && statusCode <= 999) {
+            throw new CommonMessageException(await response.json() as CommonMessage);
+        }
+
+        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+    }
+    /**
+     * Returns a paginated list of action commits
+     *
+     * @returns {Promise<BackendActionCommitCollection>}
+     * @throws {CommonMessageException}
+     * @throws {ClientException}
+     */
+    public async getCommits(actionId: string, startIndex?: number, count?: number, search?: string): Promise<BackendActionCommitCollection> {
+        const url = this.parser.url('/backend/action/$action_id<[0-9]+|^~>/commit', {
+            'action_id': actionId,
+        });
+
+        let request: HttpRequest = {
+            url: url,
+            method: 'GET',
+            headers: {
+            },
+            params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
+            }, [
+            ]),
+        };
+
+        const response = await this.httpClient.request(request);
+        if (response.ok) {
+            return await response.json() as BackendActionCommitCollection;
         }
 
         const statusCode = response.status;

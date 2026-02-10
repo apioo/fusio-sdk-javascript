@@ -8,6 +8,7 @@ import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {BackendSchema} from "./BackendSchema";
 import {BackendSchemaCollection} from "./BackendSchemaCollection";
+import {BackendSchemaCommitCollection} from "./BackendSchemaCommitCollection";
 import {BackendSchemaCreate} from "./BackendSchemaCreate";
 import {BackendSchemaPreviewResponse} from "./BackendSchemaPreviewResponse";
 import {BackendSchemaUpdate} from "./BackendSchemaUpdate";
@@ -145,6 +146,43 @@ export class BackendSchemaTag extends TagAbstract {
         const response = await this.httpClient.request(request);
         if (response.ok) {
             return await response.json() as BackendSchemaCollection;
+        }
+
+        const statusCode = response.status;
+        if (statusCode >= 0 && statusCode <= 999) {
+            throw new CommonMessageException(await response.json() as CommonMessage);
+        }
+
+        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+    }
+    /**
+     * Returns a paginated list of schema commits
+     *
+     * @returns {Promise<BackendSchemaCommitCollection>}
+     * @throws {CommonMessageException}
+     * @throws {ClientException}
+     */
+    public async getCommits(schemaId: string, startIndex?: number, count?: number, search?: string): Promise<BackendSchemaCommitCollection> {
+        const url = this.parser.url('/backend/schema/$schema_id<[0-9]+|^~>/commit', {
+            'schema_id': schemaId,
+        });
+
+        let request: HttpRequest = {
+            url: url,
+            method: 'GET',
+            headers: {
+            },
+            params: this.parser.query({
+                'startIndex': startIndex,
+                'count': count,
+                'search': search,
+            }, [
+            ]),
+        };
+
+        const response = await this.httpClient.request(request);
+        if (response.ok) {
+            return await response.json() as BackendSchemaCommitCollection;
         }
 
         const statusCode = response.status;
