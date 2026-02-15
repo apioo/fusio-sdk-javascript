@@ -124,7 +124,7 @@ export class BackendOperationTag extends TagAbstract {
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
-    public async getAll(startIndex?: number, count?: number, search?: string): Promise<BackendOperationCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string, taxonomy?: number): Promise<BackendOperationCollection> {
         const url = this.parser.url('/backend/operation', {
         });
 
@@ -137,6 +137,7 @@ export class BackendOperationTag extends TagAbstract {
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,
+                'taxonomy': taxonomy,
             }, [
             ]),
         };

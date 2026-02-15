@@ -53,7 +53,7 @@ export class BackendTransactionTag extends TagAbstract {
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
-    public async getAll(startIndex?: number, count?: number, search?: string, from?: string, to?: string, planId?: number, userId?: number, appId?: number, status?: string, provider?: string): Promise<BackendTransactionCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string, from?: string, to?: string, planId?: number, userId?: number, appId?: number, status?: string, provider?: string, taxonomy?: number): Promise<BackendTransactionCollection> {
         const url = this.parser.url('/backend/transaction', {
         });
 
@@ -73,6 +73,7 @@ export class BackendTransactionTag extends TagAbstract {
                 'appId': appId,
                 'status': status,
                 'provider': provider,
+                'taxonomy': taxonomy,
             }, [
             ]),
         };

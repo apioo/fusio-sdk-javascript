@@ -53,7 +53,7 @@ export class ConsumerEventTag extends TagAbstract {
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
-    public async getAll(startIndex?: number, count?: number, search?: string): Promise<ConsumerEventCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string, taxonomy?: number): Promise<ConsumerEventCollection> {
         const url = this.parser.url('/consumer/event', {
         });
 
@@ -66,6 +66,7 @@ export class ConsumerEventTag extends TagAbstract {
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,
+                'taxonomy': taxonomy,
             }, [
             ]),
         };

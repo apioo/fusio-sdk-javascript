@@ -124,7 +124,7 @@ export class BackendCronjobTag extends TagAbstract {
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
-    public async getAll(startIndex?: number, count?: number, search?: string): Promise<BackendCronjobCollection> {
+    public async getAll(startIndex?: number, count?: number, search?: string, taxonomy?: number): Promise<BackendCronjobCollection> {
         const url = this.parser.url('/backend/cronjob', {
         });
 
@@ -137,6 +137,7 @@ export class BackendCronjobTag extends TagAbstract {
                 'startIndex': startIndex,
                 'count': count,
                 'search': search,
+                'taxonomy': taxonomy,
             }, [
             ]),
         };
