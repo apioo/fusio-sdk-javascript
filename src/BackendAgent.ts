@@ -3,20 +3,22 @@
  * {@link https://sdkgen.app}
  */
 
-import type {BackendAgentMessage} from "./BackendAgentMessage";
-import type {BackendAgentMessageBinary} from "./BackendAgentMessageBinary";
-import type {BackendAgentMessageChoice} from "./BackendAgentMessageChoice";
-import type {BackendAgentMessageObject} from "./BackendAgentMessageObject";
-import type {BackendAgentMessageText} from "./BackendAgentMessageText";
-import type {BackendAgentMessageToolCall} from "./BackendAgentMessageToolCall";
+import type {CommonMetadata} from "./CommonMetadata";
 
 /**
- * This object represents an agent message
+ * This object represents an agent
  */
 export interface BackendAgent {
     id?: number
-    origin?: number
-    message?: BackendAgentMessageBinary|BackendAgentMessageChoice|BackendAgentMessageObject|BackendAgentMessageText|BackendAgentMessageToolCall
+    connection?: number
+    type?: number
+    name?: string
+    description?: string
+    introduction?: string
+    tools?: Array<string>
+    outgoing?: string
+    action?: string
     insertDate?: string
+    metadata?: CommonMetadata
 }
 

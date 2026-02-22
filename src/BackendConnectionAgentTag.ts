@@ -6,90 +6,19 @@
 import {TagAbstract, HttpRequest} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
-import {BackendAgentCollection} from "./BackendAgentCollection";
-import {BackendAgentRequest} from "./BackendAgentRequest";
-import {BackendAgentResponse} from "./BackendAgentResponse";
+import {BackendAgentContent} from "./BackendAgentContent";
 import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 
 export class BackendConnectionAgentTag extends TagAbstract {
     /**
-     * Returns all previous sent messages
-     *
-     * @returns {Promise<BackendAgentCollection>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async get(connectionId: string, intent?: string): Promise<BackendAgentCollection> {
-        const url = this.parser.url('/backend/connection/:connection_id/agent', {
-            'connection_id': connectionId,
-        });
-
-        let request: HttpRequest = {
-            url: url,
-            method: 'GET',
-            headers: {
-            },
-            params: this.parser.query({
-                'intent': intent,
-            }, [
-            ]),
-        };
-
-        const response = await this.httpClient.request(request);
-        if (response.ok) {
-            return await response.json() as BackendAgentCollection;
-        }
-
-        const statusCode = response.status;
-        if (statusCode >= 0 && statusCode <= 999) {
-            throw new CommonMessageException(await response.json() as CommonMessage);
-        }
-
-        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-    }
-    /**
-     * Resets all agent messages
-     *
-     * @returns {Promise<CommonMessage>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async reset(connectionId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/connection/:connection_id/agent', {
-            'connection_id': connectionId,
-        });
-
-        let request: HttpRequest = {
-            url: url,
-            method: 'DELETE',
-            headers: {
-            },
-            params: this.parser.query({
-            }, [
-            ]),
-        };
-
-        const response = await this.httpClient.request(request);
-        if (response.ok) {
-            return await response.json() as CommonMessage;
-        }
-
-        const statusCode = response.status;
-        if (statusCode >= 0 && statusCode <= 999) {
-            throw new CommonMessageException(await response.json() as CommonMessage);
-        }
-
-        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-    }
-    /**
      * Sends a message to an agent
      *
-     * @returns {Promise<BackendAgentResponse>}
+     * @returns {Promise<BackendAgentContent>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
-    public async send(connectionId: string, payload: BackendAgentRequest): Promise<BackendAgentResponse> {
+    public async send(connectionId: string, payload: BackendAgentContent): Promise<BackendAgentContent> {
         const url = this.parser.url('/backend/connection/:connection_id/agent', {
             'connection_id': connectionId,
         });
@@ -108,7 +37,7 @@ export class BackendConnectionAgentTag extends TagAbstract {
 
         const response = await this.httpClient.request(request);
         if (response.ok) {
-            return await response.json() as BackendAgentResponse;
+            return await response.json() as BackendAgentContent;
         }
 
         const statusCode = response.status;

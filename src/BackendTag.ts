@@ -8,6 +8,7 @@ import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {BackendAccountTag} from "./BackendAccountTag";
 import {BackendActionTag} from "./BackendActionTag";
+import {BackendAgentTag} from "./BackendAgentTag";
 import {BackendAppTag} from "./BackendAppTag";
 import {BackendAuditTag} from "./BackendAuditTag";
 import {BackendBackupTag} from "./BackendBackupTag";
@@ -55,6 +56,14 @@ export class BackendTag extends TagAbstract {
     public action(): BackendActionTag
     {
         return new BackendActionTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public agent(): BackendAgentTag
+    {
+        return new BackendAgentTag(
             this.httpClient,
             this.parser
         );

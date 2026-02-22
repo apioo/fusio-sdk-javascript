@@ -3,17 +3,20 @@
  * {@link https://sdkgen.app}
  */
 
-import type {BackendAgentMessageBinary} from "./BackendAgentMessageBinary";
-import type {BackendAgentMessageChoice} from "./BackendAgentMessageChoice";
-import type {BackendAgentMessageObject} from "./BackendAgentMessageObject";
-import type {BackendAgentMessageText} from "./BackendAgentMessageText";
-import type {BackendAgentMessageToolCall} from "./BackendAgentMessageToolCall";
+import type {BackendAgentContent} from "./BackendAgentContent";
+import type {BackendAgentContentBinary} from "./BackendAgentContentBinary";
+import type {BackendAgentContentChoice} from "./BackendAgentContentChoice";
+import type {BackendAgentContentObject} from "./BackendAgentContentObject";
+import type {BackendAgentContentText} from "./BackendAgentContentText";
+import type {BackendAgentContentToolCall} from "./BackendAgentContentToolCall";
 
 /**
- * Agent call result
+ * This object represents an agent message
  */
 export interface BackendAgentMessage {
-    type?: string
-    metadata?: Record<string, any>
+    id?: number
+    role?: string
+    content?: BackendAgentContentBinary|BackendAgentContentChoice|BackendAgentContentObject|BackendAgentContentText|BackendAgentContentToolCall
+    insertDate?: string
 }
 
