@@ -6,7 +6,8 @@
 import {TagAbstract, HttpRequest} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
-import {BackendAgentContent} from "./BackendAgentContent";
+import {BackendAgentInput} from "./BackendAgentInput";
+import {BackendAgentOutput} from "./BackendAgentOutput";
 import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 
@@ -14,11 +15,11 @@ export class BackendConnectionAgentTag extends TagAbstract {
     /**
      * Sends a message to an agent
      *
-     * @returns {Promise<BackendAgentContent>}
+     * @returns {Promise<BackendAgentOutput>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
-    public async send(connectionId: string, payload: BackendAgentContent): Promise<BackendAgentContent> {
+    public async send(connectionId: string, payload: BackendAgentInput): Promise<BackendAgentOutput> {
         const url = this.parser.url('/backend/connection/:connection_id/agent', {
             'connection_id': connectionId,
         });
@@ -37,7 +38,7 @@ export class BackendConnectionAgentTag extends TagAbstract {
 
         const response = await this.httpClient.request(request);
         if (response.ok) {
-            return await response.json() as BackendAgentContent;
+            return await response.json() as BackendAgentOutput;
         }
 
         const statusCode = response.status;
