@@ -14,6 +14,7 @@ import type {BackendAgentContentToolCall} from "./BackendAgentContentToolCall";
  * This object represents an agent output
  */
 export interface BackendAgentOutput {
+    id?: string
     output?: BackendAgentContentBinary|BackendAgentContentChoice|BackendAgentContentObject|BackendAgentContentText|BackendAgentContentToolCall
 }
 

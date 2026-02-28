@@ -6,9 +6,9 @@
 import {TagAbstract, HttpRequest} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
-import {BackendAgentContent} from "./BackendAgentContent";
-import {BackendAgentMessage} from "./BackendAgentMessage";
+import {BackendAgentInput} from "./BackendAgentInput";
 import {BackendAgentMessageCollection} from "./BackendAgentMessageCollection";
+import {BackendAgentOutput} from "./BackendAgentOutput";
 import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
 
@@ -51,11 +51,11 @@ export class BackendAgentMessageTag extends TagAbstract {
     /**
      * Submits a new agent message
      *
-     * @returns {Promise<BackendAgentMessage>}
+     * @returns {Promise<BackendAgentOutput>}
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
-    public async submit(agentId: string, payload: BackendAgentContent): Promise<BackendAgentMessage> {
+    public async submit(agentId: string, payload: BackendAgentInput): Promise<BackendAgentOutput> {
         const url = this.parser.url('/backend/agent/$agent_id<[0-9]+|^~>/message', {
             'agent_id': agentId,
         });
@@ -74,7 +74,7 @@ export class BackendAgentMessageTag extends TagAbstract {
 
         const response = await this.httpClient.request(request);
         if (response.ok) {
-            return await response.json() as BackendAgentMessage;
+            return await response.json() as BackendAgentOutput;
         }
 
         const statusCode = response.status;
