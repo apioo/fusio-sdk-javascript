@@ -9,6 +9,7 @@
 export interface BackendTaxonomyMove {
     operations?: Array<number>
     actions?: Array<number>
+    schemas?: Array<number>
     events?: Array<number>
     cronjobs?: Array<number>
     triggers?: Array<number>
