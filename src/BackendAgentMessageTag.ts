@@ -20,7 +20,7 @@ export class BackendAgentMessageTag extends TagAbstract {
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
-    public async getAll(agentId: string, parent?: number): Promise<BackendAgentMessageCollection> {
+    public async getAll(agentId: string, chatId?: string): Promise<BackendAgentMessageCollection> {
         const url = this.parser.url('/backend/agent/$agent_id<[0-9]+|^~>/message', {
             'agent_id': agentId,
         });
@@ -31,7 +31,7 @@ export class BackendAgentMessageTag extends TagAbstract {
             headers: {
             },
             params: this.parser.query({
-                'parent': parent,
+                'chat_id': chatId,
             }, [
             ]),
         };
@@ -55,7 +55,7 @@ export class BackendAgentMessageTag extends TagAbstract {
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
-    public async submit(agentId: string, payload: CommonAgentInput, parent?: number): Promise<CommonAgentOutput> {
+    public async submit(agentId: string, payload: CommonAgentInput): Promise<CommonAgentOutput> {
         const url = this.parser.url('/backend/agent/$agent_id<[0-9]+|^~>/message', {
             'agent_id': agentId,
         });
@@ -67,7 +67,6 @@ export class BackendAgentMessageTag extends TagAbstract {
                 'Content-Type': 'application/json',
             },
             params: this.parser.query({
-                'parent': parent,
             }, [
             ]),
             data: payload
