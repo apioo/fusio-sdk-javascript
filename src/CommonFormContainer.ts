@@ -4,15 +4,22 @@
  */
 
 import type {CommonFormElement} from "./CommonFormElement";
+import type {CommonFormElementAction} from "./CommonFormElementAction";
+import type {CommonFormElementAgent} from "./CommonFormElementAgent";
+import type {CommonFormElementCheckbox} from "./CommonFormElementCheckbox";
+import type {CommonFormElementCollection} from "./CommonFormElementCollection";
+import type {CommonFormElementConnection} from "./CommonFormElementConnection";
 import type {CommonFormElementInput} from "./CommonFormElementInput";
+import type {CommonFormElementMap} from "./CommonFormElementMap";
 import type {CommonFormElementSelect} from "./CommonFormElementSelect";
-import type {CommonFormElementTag} from "./CommonFormElementTag";
 import type {CommonFormElementTextArea} from "./CommonFormElementTextArea";
+import type {CommonFormElementTypeAPI} from "./CommonFormElementTypeAPI";
+import type {CommonFormElementTypeSchema} from "./CommonFormElementTypeSchema";
 
 /**
  * Represents a config form with a list of elements
  */
 export interface CommonFormContainer {
-    element?: Array<CommonFormElementInput|CommonFormElementSelect|CommonFormElementTag|CommonFormElementTextArea>
+    element?: Array<CommonFormElementAction|CommonFormElementAgent|CommonFormElementCheckbox|CommonFormElementCollection|CommonFormElementConnection|CommonFormElementInput|CommonFormElementMap|CommonFormElementSelect|CommonFormElementTextArea|CommonFormElementTypeAPI|CommonFormElementTypeSchema>
 }
 

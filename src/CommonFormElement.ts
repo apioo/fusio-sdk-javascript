@@ -3,10 +3,17 @@
  * {@link https://sdkgen.app}
  */
 
+import type {CommonFormElementAction} from "./CommonFormElementAction";
+import type {CommonFormElementAgent} from "./CommonFormElementAgent";
+import type {CommonFormElementCheckbox} from "./CommonFormElementCheckbox";
+import type {CommonFormElementCollection} from "./CommonFormElementCollection";
+import type {CommonFormElementConnection} from "./CommonFormElementConnection";
 import type {CommonFormElementInput} from "./CommonFormElementInput";
+import type {CommonFormElementMap} from "./CommonFormElementMap";
 import type {CommonFormElementSelect} from "./CommonFormElementSelect";
-import type {CommonFormElementTag} from "./CommonFormElementTag";
 import type {CommonFormElementTextArea} from "./CommonFormElementTextArea";
+import type {CommonFormElementTypeAPI} from "./CommonFormElementTypeAPI";
+import type {CommonFormElementTypeSchema} from "./CommonFormElementTypeSchema";
 
 /**
  * Form base element

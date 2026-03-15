@@ -10,7 +10,7 @@ import type {CommonFormElementSelectOption} from "./CommonFormElementSelectOptio
  * Form element which represents a select element
  */
 export interface CommonFormElementSelect extends CommonFormElement {
-    type: "http://fusio-project.org/ns/2015/form/select"
+    type: "select"
     options?: Array<CommonFormElementSelectOption>
 }
 
