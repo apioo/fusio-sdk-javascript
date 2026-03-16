@@ -3,12 +3,12 @@
  * {@link https://sdkgen.app}
  */
 
-import type {CommonFormElementInput} from "./CommonFormElementInput";
+import type {CommonFormElement} from "./CommonFormElement";
 
 /**
  * Form element which represents a map element
  */
-export interface CommonFormElementMap extends CommonFormElementInput {
+export interface CommonFormElementMap extends CommonFormElement {
     type: "map"
 }
 

@@ -3,12 +3,12 @@
  * {@link https://sdkgen.app}
  */
 
-import type {CommonFormElementInput} from "./CommonFormElementInput";
+import type {CommonFormElement} from "./CommonFormElement";
 
 /**
  * Form element which represents a collection element
  */
-export interface CommonFormElementCollection extends CommonFormElementInput {
+export interface CommonFormElementCollection extends CommonFormElement {
     type: "collection"
 }
 
