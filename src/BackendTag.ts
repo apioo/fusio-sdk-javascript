@@ -33,6 +33,7 @@ import {BackendRoleTag} from "./BackendRoleTag";
 import {BackendSchemaTag} from "./BackendSchemaTag";
 import {BackendScopeTag} from "./BackendScopeTag";
 import {BackendSdkTag} from "./BackendSdkTag";
+import {BackendSpecificationTag} from "./BackendSpecificationTag";
 import {BackendStatisticTag} from "./BackendStatisticTag";
 import {BackendTaxonomyTag} from "./BackendTaxonomyTag";
 import {BackendTenantTag} from "./BackendTenantTag";
@@ -256,6 +257,14 @@ export class BackendTag extends TagAbstract {
     public sdk(): BackendSdkTag
     {
         return new BackendSdkTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public specification(): BackendSpecificationTag
+    {
+        return new BackendSpecificationTag(
             this.httpClient,
             this.parser
         );
