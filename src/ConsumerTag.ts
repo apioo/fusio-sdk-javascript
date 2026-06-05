@@ -7,6 +7,7 @@ import {TagAbstract, HttpRequest} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {ConsumerAccountTag} from "./ConsumerAccountTag";
+import {ConsumerAgentTag} from "./ConsumerAgentTag";
 import {ConsumerAppTag} from "./ConsumerAppTag";
 import {ConsumerEventTag} from "./ConsumerEventTag";
 import {ConsumerFormTag} from "./ConsumerFormTag";
@@ -25,6 +26,14 @@ export class ConsumerTag extends TagAbstract {
     public account(): ConsumerAccountTag
     {
         return new ConsumerAccountTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public agent(): ConsumerAgentTag
+    {
+        return new ConsumerAgentTag(
             this.httpClient,
             this.parser
         );

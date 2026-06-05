@@ -12,6 +12,7 @@ export interface BackendAgent {
     id?: number
     connection?: number
     type?: number
+    public?: boolean
     name?: string
     description?: string
     introduction?: string
