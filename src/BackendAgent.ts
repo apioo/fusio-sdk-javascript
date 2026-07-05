@@ -16,6 +16,7 @@ export interface BackendAgent {
     name?: string
     description?: string
     introduction?: string
+    temperature?: number
     tools?: Array<string>
     outgoing?: string
     action?: string
