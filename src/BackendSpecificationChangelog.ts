@@ -7,6 +7,6 @@ export interface BackendSpecificationChangelog {
     master?: any
     tag?: any
     version?: string
-    changelog?: Array<string>
+    changelog?: string
 }
 
