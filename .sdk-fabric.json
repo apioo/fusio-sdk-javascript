@@ -1,0 +1,10 @@
+{
+  "typehub_user": "fusio",
+  "typehub_document": "sdk",
+  "github_user": "apioo",
+  "github_repository": "fusio-sdk-javascript",
+
+  "name": "fusio-sdk",
+  "description": "Fusio JavaScript SDK managed by SDK Fabric",
+  "website": "https://www.fusio-project.org"
+}
