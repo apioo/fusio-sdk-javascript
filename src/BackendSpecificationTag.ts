@@ -6,10 +6,12 @@
 import {TagAbstract, HttpRequest} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
+import {BackendSpecificationChangelog} from "./BackendSpecificationChangelog";
 import {BackendSpecificationGet} from "./BackendSpecificationGet";
 import {BackendSpecificationPublish} from "./BackendSpecificationPublish";
 import {CommonMessage} from "./CommonMessage";
 import {CommonMessageException} from "./CommonMessageException";
+import {Passthru} from "./Passthru";
 
 export class BackendSpecificationTag extends TagAbstract {
     /**
@@ -46,6 +48,39 @@ export class BackendSpecificationTag extends TagAbstract {
         throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
     }
     /**
+     * Returns the changelog between your current specification and the last tag
+     *
+     * @returns {Promise<BackendSpecificationChangelog>}
+     * @throws {CommonMessageException}
+     * @throws {ClientException}
+     */
+    public async getChangelog(): Promise<BackendSpecificationChangelog> {
+        const url = this.parser.url('/backend/specification/changelog', {
+        });
+
+        let request: HttpRequest = {
+            url: url,
+            method: 'GET',
+            headers: {
+            },
+            params: this.parser.query({
+            }, [
+            ]),
+        };
+
+        const response = await this.httpClient.request(request);
+        if (response.ok) {
+            return await response.json() as BackendSpecificationChangelog;
+        }
+
+        const statusCode = response.status;
+        if (statusCode >= 0 && statusCode <= 999) {
+            throw new CommonMessageException(await response.json() as CommonMessage);
+        }
+
+        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+    }
+    /**
      * Publish the specification
      *
      * @returns {Promise<CommonMessage>}
@@ -54,6 +89,41 @@ export class BackendSpecificationTag extends TagAbstract {
      */
     public async publish(payload: BackendSpecificationPublish): Promise<CommonMessage> {
         const url = this.parser.url('/backend/specification', {
+        });
+
+        let request: HttpRequest = {
+            url: url,
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            params: this.parser.query({
+            }, [
+            ]),
+            data: payload
+        };
+
+        const response = await this.httpClient.request(request);
+        if (response.ok) {
+            return await response.json() as CommonMessage;
+        }
+
+        const statusCode = response.status;
+        if (statusCode >= 0 && statusCode <= 999) {
+            throw new CommonMessageException(await response.json() as CommonMessage);
+        }
+
+        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+    }
+    /**
+     * Creates a new tag of your specification
+     *
+     * @returns {Promise<CommonMessage>}
+     * @throws {CommonMessageException}
+     * @throws {ClientException}
+     */
+    public async tag(payload: Passthru): Promise<CommonMessage> {
+        const url = this.parser.url('/backend/specification/tag', {
         });
 
         let request: HttpRequest = {
