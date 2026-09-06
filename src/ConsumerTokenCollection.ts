@@ -6,6 +6,9 @@
 import type {CommonCollection} from "./CommonCollection";
 import type {ConsumerToken} from "./ConsumerToken";
 
+/**
+ * Collection of personal access tokens
+ */
 export interface ConsumerTokenCollection extends CommonCollection<ConsumerToken> {
 }
 

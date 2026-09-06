@@ -5,6 +5,9 @@
 
 import type {BackendCategory} from "./BackendCategory";
 
+/**
+ * Payload for updating an existing category
+ */
 export interface BackendCategoryUpdate extends BackendCategory {
 }
 

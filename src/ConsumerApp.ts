@@ -5,7 +5,11 @@
 
 import type {CommonMetadata} from "./CommonMetadata";
 
+/**
+ * Represents a consumer application registered by a user
+ */
 export interface ConsumerApp {
+    kind?: string
     id?: number
     userId?: number
     status?: number

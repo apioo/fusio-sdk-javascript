@@ -10,6 +10,7 @@ import type {BackendSchemaSource} from "./BackendSchemaSource";
  * A schema commit which represents a change in the schema source
  */
 export interface BackendSchemaCommit {
+    kind?: string
     id?: number
     user?: BackendUser
     commitHash?: string

@@ -6,6 +6,9 @@
 import type {CommonCollection} from "./CommonCollection";
 import type {ConsumerApp} from "./ConsumerApp";
 
+/**
+ * Collection of consumer applications
+ */
 export interface ConsumerAppCollection extends CommonCollection<ConsumerApp> {
 }
 

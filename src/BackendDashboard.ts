@@ -9,6 +9,7 @@ import type {BackendStatisticChart} from "./BackendStatisticChart";
  * Represents an object containing all widget data for the dashboard
  */
 export interface BackendDashboard {
+    kind?: string
     errorsPerOperation?: BackendStatisticChart
     incomingRequests?: BackendStatisticChart
     incomingTransactions?: BackendStatisticChart

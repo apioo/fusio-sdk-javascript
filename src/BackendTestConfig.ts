@@ -5,6 +5,9 @@
 
 import type {BackendActionExecuteRequest} from "./BackendActionExecuteRequest";
 
+/**
+ * Configuration parameters for executing a test run
+ */
 export interface BackendTestConfig extends BackendActionExecuteRequest {
 }
 

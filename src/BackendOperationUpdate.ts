@@ -5,6 +5,9 @@
 
 import type {BackendOperation} from "./BackendOperation";
 
+/**
+ * Payload for updating an existing operation entity
+ */
 export interface BackendOperationUpdate extends BackendOperation {
 }
 

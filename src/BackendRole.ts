@@ -7,6 +7,7 @@
  * This object represents a role, every user is assigned to a role and all scopes of the role are automatically attached to the user
  */
 export interface BackendRole {
+    kind?: string
     id?: number
     categoryId?: number
     name?: string

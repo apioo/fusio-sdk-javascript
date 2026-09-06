@@ -10,6 +10,7 @@ import type {BackendActionConfig} from "./BackendActionConfig";
  * An action commit which represents a change in the action configuration
  */
 export interface BackendActionCommit {
+    kind?: string
     id?: number
     user?: BackendUser
     commitHash?: string

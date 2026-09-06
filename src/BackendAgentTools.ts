@@ -9,6 +9,7 @@ import type {BackendAgentTool} from "./BackendAgentTool";
  * Represents a collection of available tools
  */
 export interface BackendAgentTools {
+    kind?: string
     tools?: Array<BackendAgentTool>
 }
 

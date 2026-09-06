@@ -5,7 +5,11 @@
 
 import type {BackendSdkTypes} from "./BackendSdkTypes";
 
+/**
+ * Container listing target SDK languages or formats available for generator execution
+ */
 export interface BackendSdkResponse {
+    kind?: string
     types?: BackendSdkTypes
 }
 

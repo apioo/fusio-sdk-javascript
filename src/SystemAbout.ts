@@ -7,6 +7,7 @@ import type {SystemAboutApps} from "./SystemAboutApps";
 import type {SystemAboutLink} from "./SystemAboutLink";
 
 export interface SystemAbout {
+    kind?: string
     apiVersion?: string
     title?: string
     description?: string

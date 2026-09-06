@@ -5,6 +5,9 @@
 
 import type {BackendForm} from "./BackendForm";
 
+/**
+ * Payload for creating a new form definition
+ */
 export interface BackendFormCreate extends BackendForm {
 }
 

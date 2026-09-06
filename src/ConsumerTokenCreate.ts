@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Payload for issuing a new personal access token
+ */
 export interface ConsumerTokenCreate {
     name?: string
     scopes?: Array<string>

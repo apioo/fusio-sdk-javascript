@@ -10,6 +10,7 @@ import type {BackendActionExecuteResponseBody} from "./BackendActionExecuteRespo
  * Represents an action execution response
  */
 export interface BackendActionExecuteResponse {
+    kind?: string
     statusCode?: number
     headers?: BackendActionExecuteResponseHeaders
     body?: BackendActionExecuteResponseBody

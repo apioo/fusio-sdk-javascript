@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Payload defining configuration parameters for publishing an API specification export
+ */
 export interface BackendSpecificationPublish {
     name?: string
     filterName?: string

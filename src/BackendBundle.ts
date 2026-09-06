@@ -9,6 +9,7 @@ import type {BackendBundleConfig} from "./BackendBundleConfig";
  * This object represents a bundle which contains action, schema, event, cronjob and trigger configurations from you local instance
  */
 export interface BackendBundle {
+    kind?: string
     id?: number
     name?: string
     version?: string

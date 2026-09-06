@@ -6,6 +6,9 @@
 import type {CommonCollection} from "./CommonCollection";
 import type {BackendDatabaseTable} from "./BackendDatabaseTable";
 
+/**
+ * A paginated collection of database table objects
+ */
 export interface BackendDatabaseTableCollection extends CommonCollection<BackendDatabaseTable> {
 }
 

@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Scope entry within a specific category group
+ */
 export interface ConsumerScopeCategoryScope {
     id?: number
     name?: string

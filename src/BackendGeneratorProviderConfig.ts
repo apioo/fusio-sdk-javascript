@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Arbitrary configuration map for the generator provider
+ */
 export interface BackendGeneratorProviderConfig extends Record<string, any> {
 }
 

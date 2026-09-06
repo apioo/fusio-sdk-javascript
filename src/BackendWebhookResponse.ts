@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Log record representing an execution attempt and delivery response for a webhook target
+ */
 export interface BackendWebhookResponse {
     id?: number
     status?: number

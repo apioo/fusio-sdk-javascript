@@ -9,6 +9,7 @@ import type {BackendWebhookResponse} from "./BackendWebhookResponse";
  * This object represents a webhook, a webhook is called in case a specific event was triggered
  */
 export interface BackendWebhook {
+    kind?: string
     id?: number
     eventId?: number
     userId?: number

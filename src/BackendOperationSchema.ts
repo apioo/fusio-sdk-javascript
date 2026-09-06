@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Defines primitive type constraints for parameter schema definitions
+ */
 export interface BackendOperationSchema {
     description?: string
     type?: string

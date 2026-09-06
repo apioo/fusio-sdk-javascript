@@ -3,7 +3,11 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Identity provider configuration for single sign-on
+ */
 export interface ConsumerIdentity {
+    kind?: string
     id?: number
     name?: string
     icon?: string

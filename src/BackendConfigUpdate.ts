@@ -5,6 +5,9 @@
 
 import type {BackendConfig} from "./BackendConfig";
 
+/**
+ * Payload for updating a system configuration entry
+ */
 export interface BackendConfigUpdate extends BackendConfig {
 }
 

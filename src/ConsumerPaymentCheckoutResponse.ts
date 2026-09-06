@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Response payload containing the payment provider checkout URI
+ */
 export interface ConsumerPaymentCheckoutResponse {
     approvalUrl?: string
 }

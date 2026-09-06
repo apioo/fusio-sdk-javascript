@@ -7,6 +7,7 @@
  * This object represents a system configuration
  */
 export interface BackendConfig {
+    kind?: string
     id?: number
     type?: number
     name?: string

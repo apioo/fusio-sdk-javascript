@@ -6,6 +6,9 @@
 import type {CommonCollection} from "./CommonCollection";
 import type {ConsumerLog} from "./ConsumerLog";
 
+/**
+ * Collection of access log records
+ */
 export interface ConsumerLogCollection extends CommonCollection<ConsumerLog> {
 }
 

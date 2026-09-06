@@ -5,6 +5,9 @@
 
 import type {BackendEvent} from "./BackendEvent";
 
+/**
+ * Payload for creating a new event entity
+ */
 export interface BackendEventCreate extends BackendEvent {
 }
 

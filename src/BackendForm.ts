@@ -9,6 +9,7 @@ import type {CommonMetadata} from "./CommonMetadata";
  * This object represents a form which helps to dynamically generate a form at a frontend app
  */
 export interface BackendForm {
+    kind?: string
     id?: number
     status?: number
     name?: string

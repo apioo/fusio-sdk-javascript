@@ -5,7 +5,11 @@
 
 import type {ConsumerApp} from "./ConsumerApp";
 
+/**
+ * Represents user authorization granted to a consumer application
+ */
 export interface ConsumerGrant {
+    kind?: string
     id?: number
     app?: ConsumerApp
     createDate?: string

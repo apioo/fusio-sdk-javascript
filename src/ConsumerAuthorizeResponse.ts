@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Result of an OAuth authorization decision
+ */
 export interface ConsumerAuthorizeResponse {
     type?: string
     code?: string

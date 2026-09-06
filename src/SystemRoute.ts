@@ -6,6 +6,7 @@
 import type {SystemRoutePath} from "./SystemRoutePath";
 
 export interface SystemRoute {
+    kind?: string
     routes?: SystemRoutePath
 }
 

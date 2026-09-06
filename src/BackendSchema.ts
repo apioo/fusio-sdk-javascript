@@ -10,6 +10,7 @@ import type {CommonMetadata} from "./CommonMetadata";
  * This object represents a schema to describe a JSON payload
  */
 export interface BackendSchema {
+    kind?: string
     id?: number
     status?: number
     name?: string

@@ -7,6 +7,7 @@
  * This object represents a transaction. The system generates a transaction in case a payment was successfully executed
  */
 export interface BackendTransaction {
+    kind?: string
     id?: number
     userId?: number
     planId?: number

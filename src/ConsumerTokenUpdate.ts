@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Payload for updating an existing personal access token
+ */
 export interface ConsumerTokenUpdate {
     name?: string
     expire?: string

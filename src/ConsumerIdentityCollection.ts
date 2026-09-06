@@ -6,6 +6,9 @@
 import type {CommonCollection} from "./CommonCollection";
 import type {ConsumerIdentity} from "./ConsumerIdentity";
 
+/**
+ * Collection of third-party identity providers
+ */
 export interface ConsumerIdentityCollection extends CommonCollection<ConsumerIdentity> {
 }
 

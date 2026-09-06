@@ -10,6 +10,7 @@ import type {CommonMetadata} from "./CommonMetadata";
  * This object represents the business logic which can be executed either through an operation or cronjob
  */
 export interface BackendAction {
+    kind?: string
     id?: number
     status?: number
     name?: string

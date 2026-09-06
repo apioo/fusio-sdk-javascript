@@ -5,6 +5,9 @@
 
 import type {BackendTaxonomy} from "./BackendTaxonomy";
 
+/**
+ * Payload for updating an existing taxonomy node
+ */
 export interface BackendTaxonomyUpdate extends BackendTaxonomy {
 }
 

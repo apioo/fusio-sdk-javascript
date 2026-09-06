@@ -7,6 +7,7 @@
  * Base collection
  */
 export interface CommonCollection<T> {
+    kind?: string
     totalResults?: number
     startIndex?: number
     itemsPerPage?: number

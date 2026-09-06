@@ -5,6 +5,9 @@
 
 import type {BackendBundle} from "./BackendBundle";
 
+/**
+ * Payload for creating a new configuration bundle
+ */
 export interface BackendBundleCreate extends BackendBundle {
 }
 

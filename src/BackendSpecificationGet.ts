@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Container delivering the compiled API specification schema object
+ */
 export interface BackendSpecificationGet {
     spec?: any
 }

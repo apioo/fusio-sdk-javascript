@@ -5,6 +5,9 @@
 
 import type {BackendConnection} from "./BackendConnection";
 
+/**
+ * Payload for creating a new connection
+ */
 export interface BackendConnectionCreate extends BackendConnection {
 }
 

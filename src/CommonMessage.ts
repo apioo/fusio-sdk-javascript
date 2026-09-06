@@ -7,6 +7,7 @@
  * Common error message
  */
 export interface CommonMessage {
+    kind?: string
     success?: boolean
     message?: string
     id?: string

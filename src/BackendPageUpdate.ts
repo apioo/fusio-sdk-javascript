@@ -5,6 +5,9 @@
 
 import type {BackendPage} from "./BackendPage";
 
+/**
+ * Payload for updating an existing portal page
+ */
 export interface BackendPageUpdate extends BackendPage {
 }
 

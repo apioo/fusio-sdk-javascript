@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Identity provider configuration containing key-value parameters
+ */
 export interface BackendIdentityConfig extends Record<string, any> {
 }
 

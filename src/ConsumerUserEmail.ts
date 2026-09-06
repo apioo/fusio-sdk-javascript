@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Payload used to initiate account recovery or email requests
+ */
 export interface ConsumerUserEmail {
     email?: string
     captcha?: string

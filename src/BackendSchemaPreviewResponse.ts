@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Response container for a generated schema code preview
+ */
 export interface BackendSchemaPreviewResponse {
     preview?: string
 }

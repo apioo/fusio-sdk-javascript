@@ -5,6 +5,9 @@
 
 import type {BackendScopeCategory} from "./BackendScopeCategory";
 
+/**
+ * Container for grouping available scopes into logical categories
+ */
 export interface BackendScopeCategories {
     categories?: Array<BackendScopeCategory>
 }

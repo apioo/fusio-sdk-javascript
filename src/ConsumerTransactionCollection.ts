@@ -6,6 +6,9 @@
 import type {CommonCollection} from "./CommonCollection";
 import type {ConsumerTransaction} from "./ConsumerTransaction";
 
+/**
+ * Collection of transaction records
+ */
 export interface ConsumerTransactionCollection extends CommonCollection<ConsumerTransaction> {
 }
 

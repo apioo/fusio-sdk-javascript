@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Payload for registering a new user account
+ */
 export interface ConsumerUserRegister {
     name?: string
     email?: string

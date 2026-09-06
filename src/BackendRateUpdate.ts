@@ -5,6 +5,9 @@
 
 import type {BackendRate} from "./BackendRate";
 
+/**
+ * Payload for updating an existing rate limit policy
+ */
 export interface BackendRateUpdate extends BackendRate {
 }
 

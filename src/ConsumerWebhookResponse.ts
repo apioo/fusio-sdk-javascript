@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Recorded delivery log response for a webhook dispatch
+ */
 export interface ConsumerWebhookResponse {
     status?: number
     code?: number

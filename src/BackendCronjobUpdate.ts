@@ -5,6 +5,9 @@
 
 import type {BackendCronjob} from "./BackendCronjob";
 
+/**
+ * Payload for updating an existing cronjob
+ */
 export interface BackendCronjobUpdate extends BackendCronjob {
 }
 

@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Active plan summary associated with a user
+ */
 export interface ConsumerUserPlan {
     id?: number
     name?: string

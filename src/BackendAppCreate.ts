@@ -5,6 +5,9 @@
 
 import type {BackendApp} from "./BackendApp";
 
+/**
+ * Payload for creating a new consumer application
+ */
 export interface BackendAppCreate extends BackendApp {
 }
 

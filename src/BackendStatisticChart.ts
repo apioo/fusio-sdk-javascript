@@ -5,6 +5,9 @@
 
 import type {BackendStatisticChartSeries} from "./BackendStatisticChartSeries";
 
+/**
+ * Represents dataset structures formatted for rendering statistic charts
+ */
 export interface BackendStatisticChart {
     labels?: Array<string>
     series?: Array<BackendStatisticChartSeries>

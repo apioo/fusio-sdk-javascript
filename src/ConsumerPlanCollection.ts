@@ -6,6 +6,9 @@
 import type {CommonCollection} from "./CommonCollection";
 import type {ConsumerPlan} from "./ConsumerPlan";
 
+/**
+ * Collection of subscription plans
+ */
 export interface ConsumerPlanCollection extends CommonCollection<ConsumerPlan> {
 }
 

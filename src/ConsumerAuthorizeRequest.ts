@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Parameters sent to initiate an OAuth authorization decision
+ */
 export interface ConsumerAuthorizeRequest {
     responseType?: string
     clientId?: string

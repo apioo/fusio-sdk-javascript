@@ -14,6 +14,7 @@ import type {AgentItemToolCall} from "./AgentItemToolCall";
  * This object represents an agent message
  */
 export interface ConsumerAgentMessage {
+    kind?: string
     id?: number
     chatId?: string
     role?: string

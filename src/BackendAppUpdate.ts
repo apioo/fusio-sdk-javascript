@@ -5,6 +5,9 @@
 
 import type {BackendApp} from "./BackendApp";
 
+/**
+ * Payload for updating an existing consumer application
+ */
 export interface BackendAppUpdate extends BackendApp {
 }
 

@@ -5,6 +5,9 @@
 
 import type {BackendUser} from "./BackendUser";
 
+/**
+ * Request payload to update existing user account information
+ */
 export interface BackendUserUpdate extends BackendUser {
 }
 

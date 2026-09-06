@@ -4,6 +4,7 @@
  */
 
 export interface SystemHealthCheck {
+    kind?: string
     healthy?: boolean
     error?: string
 }

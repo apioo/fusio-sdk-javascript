@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Request payload to initiate a checkout flow for a plan
+ */
 export interface ConsumerPaymentCheckoutRequest {
     planId?: number
     returnUrl?: string

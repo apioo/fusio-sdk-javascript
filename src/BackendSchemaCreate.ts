@@ -5,6 +5,9 @@
 
 import type {BackendSchema} from "./BackendSchema";
 
+/**
+ * Payload for creating a new schema definition
+ */
 export interface BackendSchemaCreate extends BackendSchema {
 }
 

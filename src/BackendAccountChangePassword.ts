@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Payload required to update the current user's password
+ */
 export interface BackendAccountChangePassword {
     oldPassword?: string
     newPassword?: string
