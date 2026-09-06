@@ -1,18 +1,13 @@
 {
   "name": "fusio-sdk",
-  "version": "7.0.8",
-  "description": "SDK to talk to the Fusio API",
-  "keywords": [
-    "API",
-    "API Management",
-    "REST",
-    "Fusio",
-    "SDK"
-  ],
-  "author": "Christoph Kappestein",
+  "version": "0.0.0",
+  "description": "Fusio JavaScript SDK managed by SDK Fabric",
   "license": "MIT",
-  "homepage": "https://www.fusio-project.org/",
-  "repository": "github:apioo/fusio-sdk-javascript",
+  "homepage": "https://www.fusio-project.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apioo/fusio-sdk-javascript"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -37,7 +32,7 @@
     "sdkgen-client": "^2.1.0"
   },
   "devDependencies": {
-    "typescript": "^5.0",
+    "typescript": "^4.3",
     "tsup": "^8.3.5"
   }
 }
