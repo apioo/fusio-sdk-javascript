@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * This object represents a deleted item stored in the trash bin
+ */
 export interface BackendTrashData {
     id?: number
     status?: number

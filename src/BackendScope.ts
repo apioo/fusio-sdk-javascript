@@ -10,6 +10,7 @@ import type {CommonMetadata} from "./CommonMetadata";
  * This object represents a scope. A scope is assigned to a user and is required to access operations
  */
 export interface BackendScope {
+    kind?: string
     id?: number
     name?: string
     description?: string

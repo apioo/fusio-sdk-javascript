@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Configuration settings and resource specs exported within the bundle
+ */
 export interface BackendBundleConfig extends Record<string, any> {
 }
 

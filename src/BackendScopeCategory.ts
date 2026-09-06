@@ -5,6 +5,9 @@
 
 import type {BackendScopeCategoryScope} from "./BackendScopeCategoryScope";
 
+/**
+ * Represents a functional grouping of scopes
+ */
 export interface BackendScopeCategory {
     id?: number
     name?: string

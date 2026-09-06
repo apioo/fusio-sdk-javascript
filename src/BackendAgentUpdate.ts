@@ -5,6 +5,9 @@
 
 import type {BackendAgent} from "./BackendAgent";
 
+/**
+ * Payload for updating an existing AI agent
+ */
 export interface BackendAgentUpdate extends BackendAgent {
 }
 

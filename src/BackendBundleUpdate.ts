@@ -5,6 +5,9 @@
 
 import type {BackendBundle} from "./BackendBundle";
 
+/**
+ * Payload for updating an existing configuration bundle
+ */
 export interface BackendBundleUpdate extends BackendBundle {
 }
 

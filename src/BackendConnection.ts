@@ -10,6 +10,7 @@ import type {CommonMetadata} from "./CommonMetadata";
  * This object represents a connection to an external system like i.e. a database, message-queue or client-sdk
  */
 export interface BackendConnection {
+    kind?: string
     id?: number
     name?: string
     class?: string

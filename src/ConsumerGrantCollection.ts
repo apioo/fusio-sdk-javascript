@@ -6,6 +6,9 @@
 import type {CommonCollection} from "./CommonCollection";
 import type {ConsumerGrant} from "./ConsumerGrant";
 
+/**
+ * Collection of user authorization grant records
+ */
 export interface ConsumerGrantCollection extends CommonCollection<ConsumerGrant> {
 }
 

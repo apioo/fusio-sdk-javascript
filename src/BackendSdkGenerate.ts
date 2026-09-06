@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Payload defining target format and configuration for triggering an SDK generation run
+ */
 export interface BackendSdkGenerate {
     format?: string
     config?: string

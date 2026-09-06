@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * A single data line or bar series for a statistic chart
+ */
 export interface BackendStatisticChartSeries {
     name?: string
     data?: Array<number>

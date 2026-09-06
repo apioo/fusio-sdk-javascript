@@ -5,6 +5,9 @@
 
 import type {BackendTrigger} from "./BackendTrigger";
 
+/**
+ * Request payload to create a new trigger
+ */
 export interface BackendTriggerCreate extends BackendTrigger {
 }
 

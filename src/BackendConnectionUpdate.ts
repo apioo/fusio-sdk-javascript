@@ -5,6 +5,9 @@
 
 import type {BackendConnection} from "./BackendConnection";
 
+/**
+ * Payload for updating an existing connection
+ */
 export interface BackendConnectionUpdate extends BackendConnection {
 }
 

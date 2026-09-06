@@ -5,6 +5,9 @@
 
 import type {BackendRole} from "./BackendRole";
 
+/**
+ * Payload for creating a new user role entity
+ */
 export interface BackendRoleCreate extends BackendRole {
 }
 

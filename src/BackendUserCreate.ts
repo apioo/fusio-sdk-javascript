@@ -5,6 +5,9 @@
 
 import type {BackendUser} from "./BackendUser";
 
+/**
+ * Request payload to register or create a new user account
+ */
 export interface BackendUserCreate extends BackendUser {
     password?: string
 }

@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Credentials payload for user login
+ */
 export interface ConsumerUserLogin {
     username?: string
     password?: string

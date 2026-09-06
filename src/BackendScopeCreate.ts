@@ -5,6 +5,9 @@
 
 import type {BackendScope} from "./BackendScope";
 
+/**
+ * Payload for creating a new scope entity
+ */
 export interface BackendScopeCreate extends BackendScope {
 }
 

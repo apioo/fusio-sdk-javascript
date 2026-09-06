@@ -9,6 +9,7 @@ import type {CommonMetadata} from "./CommonMetadata";
  * This object represents an event which can be triggered by an action
  */
 export interface BackendEvent {
+    kind?: string
     id?: number
     name?: string
     description?: string

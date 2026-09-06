@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * JWT authentication response containing access credentials
+ */
 export interface ConsumerUserJWT {
     token?: string
     expires_in?: number

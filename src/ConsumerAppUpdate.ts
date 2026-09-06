@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Payload for updating an existing consumer application
+ */
 export interface ConsumerAppUpdate {
     name?: string
     url?: string

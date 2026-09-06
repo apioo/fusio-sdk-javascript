@@ -5,6 +5,9 @@
 
 import type {BackendIdentity} from "./BackendIdentity";
 
+/**
+ * Payload for updating an existing identity provider entity
+ */
 export interface BackendIdentityUpdate extends BackendIdentity {
 }
 

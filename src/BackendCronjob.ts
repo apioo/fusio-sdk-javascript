@@ -10,6 +10,7 @@ import type {BackendCronjobError} from "./BackendCronjobError";
  * This object represents a cronjob which can invoke an action at a specific interval
  */
 export interface BackendCronjob {
+    kind?: string
     id?: number
     name?: string
     cron?: string

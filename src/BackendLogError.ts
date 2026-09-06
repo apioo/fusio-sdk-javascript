@@ -3,7 +3,11 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Represents an error logged during a specific HTTP request
+ */
 export interface BackendLogError {
+    kind?: string
     id?: number
     logId?: number
     message?: string

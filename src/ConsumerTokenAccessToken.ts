@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * OAuth 2.0 access token response object
+ */
 export interface ConsumerTokenAccessToken {
     access_token?: string
     token_type?: string

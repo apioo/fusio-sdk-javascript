@@ -5,6 +5,9 @@
 
 import type {BackendFirewall} from "./BackendFirewall";
 
+/**
+ * Payload for updating an existing firewall rule
+ */
 export interface BackendFirewallUpdate extends BackendFirewall {
 }
 

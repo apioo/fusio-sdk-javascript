@@ -3,7 +3,11 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Response structure detailing the outcome of an SDK generation job
+ */
 export interface BackendSdkMessage {
+    kind?: string
     success?: boolean
     message?: string
     link?: string

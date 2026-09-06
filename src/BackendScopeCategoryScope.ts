@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Simplified scope representation within a category view
+ */
 export interface BackendScopeCategoryScope {
     id?: number
     name?: string

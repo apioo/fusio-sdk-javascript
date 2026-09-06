@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * List of available entity types that can be restored from the trash
+ */
 export interface BackendTrashTypes {
     types?: Array<string>
 }

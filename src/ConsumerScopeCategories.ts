@@ -5,7 +5,11 @@
 
 import type {ConsumerScopeCategory} from "./ConsumerScopeCategory";
 
+/**
+ * Grouped list of scope categories for user authorization forms
+ */
 export interface ConsumerScopeCategories {
+    kind?: string
     categories?: Array<ConsumerScopeCategory>
 }
 

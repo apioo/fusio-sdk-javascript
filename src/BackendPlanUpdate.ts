@@ -5,6 +5,9 @@
 
 import type {BackendPlan} from "./BackendPlan";
 
+/**
+ * Payload for updating an existing plan definition
+ */
 export interface BackendPlanUpdate extends BackendPlan {
 }
 

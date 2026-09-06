@@ -5,6 +5,9 @@
 
 import type {BackendAction} from "./BackendAction";
 
+/**
+ * Payload for updating an existing action entity
+ */
 export interface BackendActionUpdate extends BackendAction {
 }
 

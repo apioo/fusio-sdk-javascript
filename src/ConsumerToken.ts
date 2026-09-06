@@ -3,7 +3,11 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Personal access token entity generated for consumer access
+ */
 export interface ConsumerToken {
+    kind?: string
     id?: number
     status?: number
     name?: string

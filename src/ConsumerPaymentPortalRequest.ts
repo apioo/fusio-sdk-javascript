@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Request payload to launch the billing management portal
+ */
 export interface ConsumerPaymentPortalRequest {
     returnUrl?: string
 }

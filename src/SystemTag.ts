@@ -6,11 +6,20 @@
 import {TagAbstract, HttpRequest} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
+import {SystemCaptchaTag} from "./SystemCaptchaTag";
 import {SystemConnectionTag} from "./SystemConnectionTag";
 import {SystemMetaTag} from "./SystemMetaTag";
 import {SystemPaymentTag} from "./SystemPaymentTag";
 
 export class SystemTag extends TagAbstract {
+    public captcha(): SystemCaptchaTag
+    {
+        return new SystemCaptchaTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
     public connection(): SystemConnectionTag
     {
         return new SystemConnectionTag(

@@ -7,6 +7,9 @@ import type {BackendSchema} from "./BackendSchema";
 import type {BackendAction} from "./BackendAction";
 import type {BackendOperation} from "./BackendOperation";
 
+/**
+ * Represents a preview changelog of entities created or updated by a generator run
+ */
 export interface BackendGeneratorProviderChangelog {
     schemas?: Array<BackendSchema>
     actions?: Array<BackendAction>

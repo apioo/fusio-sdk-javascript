@@ -9,6 +9,7 @@ import type {CommonMetadata} from "./CommonMetadata";
  * This object represents an agent
  */
 export interface BackendAgent {
+    kind?: string
     id?: number
     connection?: number
     type?: number

@@ -6,6 +6,9 @@
 import type {CommonCollection} from "./CommonCollection";
 import type {ConsumerPage} from "./ConsumerPage";
 
+/**
+ * Collection of content page entries
+ */
 export interface ConsumerPageCollection extends CommonCollection<ConsumerPage> {
 }
 

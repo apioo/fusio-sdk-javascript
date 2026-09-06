@@ -9,6 +9,7 @@ import type {BackendActionIndexEntry} from "./BackendActionIndexEntry";
  * Contains all possible classes which can be used at an action as class
  */
 export interface BackendActionIndex {
+    kind?: string
     actions?: Array<BackendActionIndexEntry>
 }
 

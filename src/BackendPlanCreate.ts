@@ -5,6 +5,9 @@
 
 import type {BackendPlan} from "./BackendPlan";
 
+/**
+ * Payload for creating a new subscription or point plan
+ */
 export interface BackendPlanCreate extends BackendPlan {
 }
 

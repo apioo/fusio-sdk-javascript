@@ -7,6 +7,7 @@ import type {SystemSchemaTypeSchema} from "./SystemSchemaTypeSchema";
 import type {SystemSchemaForm} from "./SystemSchemaForm";
 
 export interface SystemSchema {
+    kind?: string
     schema?: SystemSchemaTypeSchema
     form?: SystemSchemaForm
 }

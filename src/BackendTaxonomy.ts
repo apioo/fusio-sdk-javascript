@@ -7,6 +7,7 @@
  * This object represents a taxonomy. A taxonomy helps to internally organize operations, actions and other entities
  */
 export interface BackendTaxonomy {
+    kind?: string
     id?: number
     parentId?: number
     name?: string

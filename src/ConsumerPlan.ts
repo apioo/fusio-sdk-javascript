@@ -5,7 +5,11 @@
 
 import type {CommonMetadata} from "./CommonMetadata";
 
+/**
+ * Subscription or monetization plan for API consumers
+ */
 export interface ConsumerPlan {
+    kind?: string
     id?: number
     name?: string
     description?: string

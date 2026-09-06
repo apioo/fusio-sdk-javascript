@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Payload for registering a new webhook subscription
+ */
 export interface ConsumerWebhookCreate {
     event?: string
     name?: string

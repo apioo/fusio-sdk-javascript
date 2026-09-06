@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Payload for completing a password reset
+ */
 export interface ConsumerUserPasswordReset {
     token?: string
     newPassword?: string

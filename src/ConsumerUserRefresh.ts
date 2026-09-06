@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Payload to request a refreshed authentication token
+ */
 export interface ConsumerUserRefresh {
     refresh_token?: string
 }

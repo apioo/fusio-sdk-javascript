@@ -9,6 +9,7 @@ import type {BackendIdentityIndexEntry} from "./BackendIdentityIndexEntry";
  * Contains all possible classes which can be used at an identity as class
  */
 export interface BackendIdentityIndex {
+    kind?: string
     providers?: Array<BackendIdentityIndexEntry>
 }
 

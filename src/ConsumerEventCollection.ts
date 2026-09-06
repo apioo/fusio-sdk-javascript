@@ -6,6 +6,9 @@
 import type {CommonCollection} from "./CommonCollection";
 import type {ConsumerEvent} from "./ConsumerEvent";
 
+/**
+ * Collection of event definitions
+ */
 export interface ConsumerEventCollection extends CommonCollection<ConsumerEvent> {
 }
 

@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Response payload containing the customer portal portal link
+ */
 export interface ConsumerPaymentPortalResponse {
     redirectUrl?: string
 }

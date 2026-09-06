@@ -7,6 +7,7 @@
  * This object represents an agent
  */
 export interface ConsumerAgent {
+    kind?: string
     id?: number
     name?: string
     description?: string

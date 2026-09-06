@@ -3,7 +3,11 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Access log entry recording an incoming HTTP request
+ */
 export interface ConsumerLog {
+    kind?: string
     id?: number
     appId?: number
     ip?: string

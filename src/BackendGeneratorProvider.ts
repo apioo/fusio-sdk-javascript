@@ -5,6 +5,9 @@
 
 import type {BackendGeneratorProviderConfig} from "./BackendGeneratorProviderConfig";
 
+/**
+ * Configuration object used to invoke a schema/operation generator
+ */
 export interface BackendGeneratorProvider {
     path?: string
     scopes?: Array<string>

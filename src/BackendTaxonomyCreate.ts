@@ -5,6 +5,9 @@
 
 import type {BackendTaxonomy} from "./BackendTaxonomy";
 
+/**
+ * Payload for creating a new taxonomy organization node
+ */
 export interface BackendTaxonomyCreate extends BackendTaxonomy {
 }
 

@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Mapping defining access permissions for a specific operation within a scope
+ */
 export interface BackendScopeOperation {
     operationId?: number
     allow?: boolean

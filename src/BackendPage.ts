@@ -9,6 +9,7 @@ import type {CommonMetadata} from "./CommonMetadata";
  * This object represents a page at the developer portal
  */
 export interface BackendPage {
+    kind?: string
     id?: number
     status?: number
     title?: string

@@ -10,6 +10,7 @@ import type {BackendToken} from "./BackendToken";
  * This object represents an app to access the API on-behalf of a user
  */
 export interface BackendApp {
+    kind?: string
     id?: number
     userId?: number
     status?: number

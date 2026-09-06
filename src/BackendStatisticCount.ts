@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Represents an aggregated count metric over a specific timeframe
+ */
 export interface BackendStatisticCount {
     count?: number
     from?: string

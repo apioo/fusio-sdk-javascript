@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Request payload to restore an item from the trash bin
+ */
 export interface BackendTrashRestore {
     id?: number
 }

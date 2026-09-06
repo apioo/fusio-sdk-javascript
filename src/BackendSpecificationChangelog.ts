@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Represents structural changelog differences between specification versions
+ */
 export interface BackendSpecificationChangelog {
     master?: any
     tag?: any

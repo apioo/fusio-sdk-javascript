@@ -5,6 +5,9 @@
 
 import type {BackendWebhook} from "./BackendWebhook";
 
+/**
+ * Request payload to update an existing webhook subscription
+ */
 export interface BackendWebhookUpdate extends BackendWebhook {
 }
 

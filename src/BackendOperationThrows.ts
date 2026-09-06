@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Map of HTTP error status codes to target schema names
+ */
 export interface BackendOperationThrows extends Record<string, string> {
 }
 

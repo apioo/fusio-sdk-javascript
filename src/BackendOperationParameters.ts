@@ -5,6 +5,9 @@
 
 import type {BackendOperationSchema} from "./BackendOperationSchema";
 
+/**
+ * Map of path or query parameters accepted by the operation
+ */
 export interface BackendOperationParameters extends Record<string, BackendOperationSchema> {
 }
 

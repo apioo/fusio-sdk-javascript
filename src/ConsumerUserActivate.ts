@@ -3,6 +3,9 @@
  * {@link https://sdkgen.app}
  */
 
+/**
+ * Payload used to activate a user account via token
+ */
 export interface ConsumerUserActivate {
     token?: string
 }

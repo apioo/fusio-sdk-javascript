@@ -9,6 +9,7 @@ import type {CommonMetadata} from "./CommonMetadata";
  * This object represents a firewall rule which blocks specific IP addresses
  */
 export interface BackendFirewall {
+    kind?: string
     id?: number
     name?: string
     type?: number

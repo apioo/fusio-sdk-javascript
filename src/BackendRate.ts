@@ -10,6 +10,7 @@ import type {CommonMetadata} from "./CommonMetadata";
  * This object represents a rate limitation, which allows to limit the requests which a user can send
  */
 export interface BackendRate {
+    kind?: string
     id?: number
     priority?: number
     name?: string
