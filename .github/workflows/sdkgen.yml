@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: apioo/sdkgen-generator-action@v0.2.1
+      - uses: apioo/sdkgen-generator-action@v0.3.0
         with:
           client_id: '${{ secrets.SDKGEN_CLIENT_ID }}'
           client_secret: '${{ secrets.SDKGEN_CLIENT_SECRET }}'
@@ -36,11 +36,10 @@ jobs:
         with:
           node-version: '22.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm install -g npm@~11.10.0
       - run: npm version ${{ inputs.typehub_version }} --no-git-tag-version
       - run: npm install
       - run: node ./build_index.js
-      - run: npm run build --if-present
+      - run: npm run build
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
