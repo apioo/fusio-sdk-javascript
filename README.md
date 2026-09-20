@@ -70,10 +70,10 @@ const response = await client.backend().agent().getAll(1, 1, "search");
 const response = await client.backend().agent().getTools();
 
 // Returns a paginated list of agent messages.
-const response = await client.backend().agent().message().getAll("agent_id", "chat_id");
+const response = await client.backend().agent().message().getAll("agent_id", 1, "chat_id");
 
 // Submits a new agent message.
-const response = await client.backend().agent().message().submit("agent_id", new Agent_Input());
+const response = await client.backend().agent().message().submit("agent_id", 1, new Agent_Input());
 
 // Updates an existing agent.
 const response = await client.backend().agent().update("agent_id", new Backend_AgentUpdate());
@@ -703,10 +703,10 @@ const response = await client.consumer().agent().get("agent_id");
 const response = await client.consumer().agent().getAll(1, 1, "search");
 
 // Returns a paginated list of agent messages.
-const response = await client.consumer().agent().message().getAll("agent_id", "chat_id");
+const response = await client.consumer().agent().message().getAll("agent_id", 1, "chat_id");
 
 // Submits a new agent message.
-const response = await client.consumer().agent().message().submit("agent_id", new Agent_Input());
+const response = await client.consumer().agent().message().submit("agent_id", 1, new Agent_Input());
 
 // Creates a new app for the authenticated user.
 const response = await client.consumer().app().create(new Consumer_AppCreate());
