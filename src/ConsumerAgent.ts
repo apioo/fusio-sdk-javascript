@@ -9,6 +9,7 @@
 export interface ConsumerAgent {
     kind?: string
     id?: number
+    type?: number
     name?: string
     description?: string
 }
