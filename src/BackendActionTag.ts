@@ -201,7 +201,7 @@ export class BackendActionTag extends TagAbstract {
      * @throws {CommonMessageException}
      * @throws {ClientException}
      */
-    public async getClasses(): Promise<BackendActionIndex> {
+    public async getClasses(marketplace?: boolean, startIndex?: number, search?: string): Promise<BackendActionIndex> {
         const url = this.parser.url('/backend/action/list', {
         });
 
@@ -211,6 +211,9 @@ export class BackendActionTag extends TagAbstract {
             headers: {
             },
             params: this.parser.query({
+                'marketplace': marketplace,
+                'startIndex': startIndex,
+                'search': search,
             }, [
             ]),
         };
