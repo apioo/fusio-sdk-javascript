@@ -43,7 +43,7 @@ const response = await client.backend().action().get("action_id");
 const response = await client.backend().action().getAll(1, 1, "search");
 
 // Returns all available action classes.
-const response = await client.backend().action().getClasses();
+const response = await client.backend().action().getClasses(true, 1, "search");
 
 // Returns a paginated list of action commits.
 const response = await client.backend().action().getCommits("action_id", 1, 1, "search");
