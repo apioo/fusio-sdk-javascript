@@ -10,6 +10,7 @@ import type {MarketplaceUser} from "./MarketplaceUser";
  */
 export interface MarketplaceObject {
     id?: number
+    visibility?: number
     name?: string
     author?: MarketplaceUser
     version?: string
