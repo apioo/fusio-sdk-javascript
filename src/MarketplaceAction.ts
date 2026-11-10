@@ -4,23 +4,11 @@
  */
 
 import type {MarketplaceObject} from "./MarketplaceObject";
-import type {FormElement} from "./FormElement";
 import type {MarketplaceActionConfig} from "./MarketplaceActionConfig";
-import type {FormElementAction} from "./FormElementAction";
-import type {FormElementAgent} from "./FormElementAgent";
-import type {FormElementCheckbox} from "./FormElementCheckbox";
-import type {FormElementCollection} from "./FormElementCollection";
-import type {FormElementConnection} from "./FormElementConnection";
-import type {FormElementInput} from "./FormElementInput";
-import type {FormElementMap} from "./FormElementMap";
-import type {FormElementSelect} from "./FormElementSelect";
-import type {FormElementTextArea} from "./FormElementTextArea";
-import type {FormElementTypeAPI} from "./FormElementTypeAPI";
-import type {FormElementTypeSchema} from "./FormElementTypeSchema";
 
 export interface MarketplaceAction extends MarketplaceObject {
     class?: string
-    form?: Array<FormElementAction|FormElementAgent|FormElementCheckbox|FormElementCollection|FormElementConnection|FormElementInput|FormElementMap|FormElementSelect|FormElementTextArea|FormElementTypeAPI|FormElementTypeSchema>
+    form?: any
     config?: MarketplaceActionConfig
 }
 
