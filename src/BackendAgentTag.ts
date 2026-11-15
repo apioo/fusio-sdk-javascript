@@ -10,6 +10,7 @@ import {BackendAgent} from "./BackendAgent";
 import {BackendAgentCollection} from "./BackendAgentCollection";
 import {BackendAgentCreate} from "./BackendAgentCreate";
 import {BackendAgentMessageTag} from "./BackendAgentMessageTag";
+import {BackendAgentTaskTag} from "./BackendAgentTaskTag";
 import {BackendAgentTools} from "./BackendAgentTools";
 import {BackendAgentUpdate} from "./BackendAgentUpdate";
 import {CommonMessage} from "./CommonMessage";
@@ -19,6 +20,14 @@ export class BackendAgentTag extends TagAbstract {
     public message(): BackendAgentMessageTag
     {
         return new BackendAgentMessageTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public task(): BackendAgentTaskTag
+    {
+        return new BackendAgentTaskTag(
             this.httpClient,
             this.parser
         );
