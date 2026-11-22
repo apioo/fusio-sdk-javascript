@@ -75,6 +75,18 @@ const response = await client.backend().agent().message().getAll("agent_id", 1, 
 // Submits a new agent message.
 const response = await client.backend().agent().message().submit("agent_id", 1, new Agent_Input());
 
+// Cancels a pending or running agent task.
+const response = await client.backend().agent().task().cancel("agent_id", "task_id");
+
+// Creates a new agent task which executes the action of the agent in the background, the optional connection is passed to the action i.
+const response = await client.backend().agent().task().create("agent_id", "connection", new Backend_AgentTaskCreate());
+
+// Returns a specific agent task including all executed steps.
+const response = await client.backend().agent().task().get("agent_id", "task_id");
+
+// Returns a paginated list of agent tasks of the current user.
+const response = await client.backend().agent().task().getAll("agent_id", 1, 1);
+
 // Updates an existing agent.
 const response = await client.backend().agent().update("agent_id", new Backend_AgentUpdate());
 
