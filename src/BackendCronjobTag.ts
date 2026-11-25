@@ -57,7 +57,7 @@ export class BackendCronjobTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(cronjobId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/cronjob/$cronjob_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/cronjob/:cronjob_id', {
             'cronjob_id': cronjobId,
         });
 
@@ -91,7 +91,7 @@ export class BackendCronjobTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(cronjobId: string): Promise<BackendCronjob> {
-        const url = this.parser.url('/backend/cronjob/$cronjob_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/cronjob/:cronjob_id', {
             'cronjob_id': cronjobId,
         });
 
@@ -162,7 +162,7 @@ export class BackendCronjobTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(cronjobId: string, payload: BackendCronjobUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/cronjob/$cronjob_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/cronjob/:cronjob_id', {
             'cronjob_id': cronjobId,
         });
 

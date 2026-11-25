@@ -19,7 +19,7 @@ export class ConsumerGrantTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(grantId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/consumer/grant/$grant_id<[0-9]+>', {
+        const url = this.parser.url('/consumer/grant/:grant_id', {
             'grant_id': grantId,
         });
 

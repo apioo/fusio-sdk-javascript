@@ -57,7 +57,7 @@ export class BackendBundleTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(bundleId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/bundle/$bundle_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/bundle/:bundle_id', {
             'bundle_id': bundleId,
         });
 
@@ -91,7 +91,7 @@ export class BackendBundleTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(bundleId: string): Promise<BackendBundle> {
-        const url = this.parser.url('/backend/bundle/$bundle_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/bundle/:bundle_id', {
             'bundle_id': bundleId,
         });
 
@@ -161,7 +161,7 @@ export class BackendBundleTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async publish(bundleId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/bundle/$bundle_id<[0-9]+|^~>/publish', {
+        const url = this.parser.url('/backend/bundle/:bundle_id/publish', {
             'bundle_id': bundleId,
         });
 
@@ -195,7 +195,7 @@ export class BackendBundleTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(bundleId: string, payload: BackendBundleUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/bundle/$bundle_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/bundle/:bundle_id', {
             'bundle_id': bundleId,
         });
 

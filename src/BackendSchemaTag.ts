@@ -59,7 +59,7 @@ export class BackendSchemaTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(schemaId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/schema/$schema_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/schema/:schema_id', {
             'schema_id': schemaId,
         });
 
@@ -93,7 +93,7 @@ export class BackendSchemaTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(schemaId: string): Promise<BackendSchema> {
-        const url = this.parser.url('/backend/schema/$schema_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/schema/:schema_id', {
             'schema_id': schemaId,
         });
 
@@ -164,7 +164,7 @@ export class BackendSchemaTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async getCommits(schemaId: string, startIndex?: number, count?: number, search?: string): Promise<BackendSchemaCommitCollection> {
-        const url = this.parser.url('/backend/schema/$schema_id<[0-9]+|^~>/commit', {
+        const url = this.parser.url('/backend/schema/:schema_id/commit', {
             'schema_id': schemaId,
         });
 
@@ -201,7 +201,7 @@ export class BackendSchemaTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async getPreview(schemaId: string): Promise<BackendSchemaPreviewResponse> {
-        const url = this.parser.url('/backend/schema/preview/:schema_id', {
+        const url = this.parser.url('/backend/schema/:schema_id/preview', {
             'schema_id': schemaId,
         });
 
@@ -235,7 +235,7 @@ export class BackendSchemaTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(schemaId: string, payload: BackendSchemaUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/schema/$schema_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/schema/:schema_id', {
             'schema_id': schemaId,
         });
 

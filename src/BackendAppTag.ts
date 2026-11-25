@@ -57,7 +57,7 @@ export class BackendAppTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(appId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/app/$app_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/app/:app_id', {
             'app_id': appId,
         });
 
@@ -91,7 +91,7 @@ export class BackendAppTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async deleteToken(appId: string, tokenId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/app/$app_id<[0-9]+>/token/:token_id', {
+        const url = this.parser.url('/backend/app/:app_id/token/:token_id', {
             'app_id': appId,
             'token_id': tokenId,
         });
@@ -126,7 +126,7 @@ export class BackendAppTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(appId: string): Promise<BackendApp> {
-        const url = this.parser.url('/backend/app/$app_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/app/:app_id', {
             'app_id': appId,
         });
 
@@ -196,7 +196,7 @@ export class BackendAppTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(appId: string, payload: BackendAppUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/app/$app_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/app/:app_id', {
             'app_id': appId,
         });
 

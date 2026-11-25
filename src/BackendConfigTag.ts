@@ -21,7 +21,7 @@ export class BackendConfigTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(configId: string): Promise<BackendConfig> {
-        const url = this.parser.url('/backend/config/$config_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/config/:config_id', {
             'config_id': configId,
         });
 
@@ -91,7 +91,7 @@ export class BackendConfigTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(configId: string, payload: BackendConfigUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/config/$config_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/config/:config_id', {
             'config_id': configId,
         });
 

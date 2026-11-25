@@ -20,7 +20,7 @@ export class ConsumerLogTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(logId: string): Promise<ConsumerLog> {
-        const url = this.parser.url('/consumer/log/$log_id<[0-9]+>', {
+        const url = this.parser.url('/consumer/log/:log_id', {
             'log_id': logId,
         });
 

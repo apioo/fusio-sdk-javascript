@@ -57,7 +57,7 @@ export class BackendFormTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(formId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/form/$form_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/form/:form_id', {
             'form_id': formId,
         });
 
@@ -91,7 +91,7 @@ export class BackendFormTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(formId: string): Promise<BackendForm> {
-        const url = this.parser.url('/backend/form/$form_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/form/:form_id', {
             'form_id': formId,
         });
 
@@ -161,7 +161,7 @@ export class BackendFormTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(formId: string, payload: BackendFormUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/form/$form_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/form/:form_id', {
             'form_id': formId,
         });
 

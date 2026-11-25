@@ -76,7 +76,7 @@ export class BackendAgentTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(agentId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/agent/$agent_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/agent/:agent_id', {
             'agent_id': agentId,
         });
 
@@ -110,7 +110,7 @@ export class BackendAgentTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(agentId: string): Promise<BackendAgent> {
-        const url = this.parser.url('/backend/agent/$agent_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/agent/:agent_id', {
             'agent_id': agentId,
         });
 
@@ -180,7 +180,7 @@ export class BackendAgentTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async getTools(): Promise<BackendAgentTools> {
-        const url = this.parser.url('/backend/agent/tools', {
+        const url = this.parser.url('/backend/capability/agent/tools', {
         });
 
         let request: HttpRequest = {
@@ -213,7 +213,7 @@ export class BackendAgentTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(agentId: string, payload: BackendAgentUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/agent/$agent_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/agent/:agent_id', {
             'agent_id': agentId,
         });
 

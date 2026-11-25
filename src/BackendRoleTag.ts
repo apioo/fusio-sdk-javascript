@@ -57,7 +57,7 @@ export class BackendRoleTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(roleId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/role/$role_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/role/:role_id', {
             'role_id': roleId,
         });
 
@@ -91,7 +91,7 @@ export class BackendRoleTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(roleId: string): Promise<BackendRole> {
-        const url = this.parser.url('/backend/role/$role_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/role/:role_id', {
             'role_id': roleId,
         });
 
@@ -161,7 +161,7 @@ export class BackendRoleTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(roleId: string, payload: BackendRoleUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/role/$role_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/role/:role_id', {
             'role_id': roleId,
         });
 

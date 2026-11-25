@@ -57,7 +57,7 @@ export class BackendRateTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(rateId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/rate/$rate_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/rate/:rate_id', {
             'rate_id': rateId,
         });
 
@@ -91,7 +91,7 @@ export class BackendRateTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(rateId: string): Promise<BackendRate> {
-        const url = this.parser.url('/backend/rate/$rate_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/rate/:rate_id', {
             'rate_id': rateId,
         });
 
@@ -161,7 +161,7 @@ export class BackendRateTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(rateId: string, payload: BackendRateUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/rate/$rate_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/rate/:rate_id', {
             'rate_id': rateId,
         });
 

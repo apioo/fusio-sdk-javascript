@@ -59,7 +59,7 @@ export class BackendIdentityTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(identityId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/identity/$identity_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/identity/:identity_id', {
             'identity_id': identityId,
         });
 
@@ -93,7 +93,7 @@ export class BackendIdentityTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(identityId: string): Promise<BackendIdentity> {
-        const url = this.parser.url('/backend/identity/$identity_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/identity/:identity_id', {
             'identity_id': identityId,
         });
 
@@ -163,7 +163,7 @@ export class BackendIdentityTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async getClasses(): Promise<BackendIdentityIndex> {
-        const url = this.parser.url('/backend/identity/list', {
+        const url = this.parser.url('/backend/capability/identity/list', {
         });
 
         let request: HttpRequest = {
@@ -196,7 +196,7 @@ export class BackendIdentityTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async getForm(_class?: string): Promise<CommonFormContainer> {
-        const url = this.parser.url('/backend/identity/form', {
+        const url = this.parser.url('/backend/capability/identity/form', {
         });
 
         let request: HttpRequest = {
@@ -230,7 +230,7 @@ export class BackendIdentityTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(identityId: string, payload: BackendIdentityUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/identity/$identity_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/identity/:identity_id', {
             'identity_id': identityId,
         });
 

@@ -62,7 +62,7 @@ export class BackendActionTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(actionId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/action/$action_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/action/:action_id', {
             'action_id': actionId,
         });
 
@@ -96,7 +96,7 @@ export class BackendActionTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async execute(actionId: string, payload: BackendActionExecuteRequest): Promise<BackendActionExecuteResponse> {
-        const url = this.parser.url('/backend/action/execute/:action_id', {
+        const url = this.parser.url('/backend/action/:action_id/execute', {
             'action_id': actionId,
         });
 
@@ -132,7 +132,7 @@ export class BackendActionTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(actionId: string): Promise<BackendAction> {
-        const url = this.parser.url('/backend/action/$action_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/action/:action_id', {
             'action_id': actionId,
         });
 
@@ -202,7 +202,7 @@ export class BackendActionTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async getClasses(marketplace?: boolean, startIndex?: number, search?: string): Promise<BackendActionIndex> {
-        const url = this.parser.url('/backend/action/list', {
+        const url = this.parser.url('/backend/capability/action/list', {
         });
 
         let request: HttpRequest = {
@@ -238,7 +238,7 @@ export class BackendActionTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async getCommits(actionId: string, startIndex?: number, count?: number, search?: string): Promise<BackendActionCommitCollection> {
-        const url = this.parser.url('/backend/action/$action_id<[0-9]+|^~>/commit', {
+        const url = this.parser.url('/backend/action/:action_id/commit', {
             'action_id': actionId,
         });
 
@@ -275,7 +275,7 @@ export class BackendActionTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async getForm(_class?: string): Promise<CommonFormContainer> {
-        const url = this.parser.url('/backend/action/form', {
+        const url = this.parser.url('/backend/capability/action/form', {
         });
 
         let request: HttpRequest = {
@@ -309,7 +309,7 @@ export class BackendActionTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(actionId: string, payload: BackendActionUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/action/$action_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/action/:action_id', {
             'action_id': actionId,
         });
 

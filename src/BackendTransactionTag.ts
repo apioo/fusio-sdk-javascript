@@ -20,7 +20,7 @@ export class BackendTransactionTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(transactionId: string): Promise<BackendTransaction> {
-        const url = this.parser.url('/backend/transaction/$transaction_id<[0-9]+>', {
+        const url = this.parser.url('/backend/transaction/:transaction_id', {
             'transaction_id': transactionId,
         });
 

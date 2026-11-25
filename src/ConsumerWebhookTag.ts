@@ -57,7 +57,7 @@ export class ConsumerWebhookTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(webhookId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/consumer/webhook/$webhook_id<[0-9]+|^~>', {
+        const url = this.parser.url('/consumer/webhook/:webhook_id', {
             'webhook_id': webhookId,
         });
 
@@ -91,7 +91,7 @@ export class ConsumerWebhookTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(webhookId: string): Promise<ConsumerWebhook> {
-        const url = this.parser.url('/consumer/webhook/$webhook_id<[0-9]+|^~>', {
+        const url = this.parser.url('/consumer/webhook/:webhook_id', {
             'webhook_id': webhookId,
         });
 
@@ -161,7 +161,7 @@ export class ConsumerWebhookTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(webhookId: string, payload: ConsumerWebhookUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/consumer/webhook/$webhook_id<[0-9]+|^~>', {
+        const url = this.parser.url('/consumer/webhook/:webhook_id', {
             'webhook_id': webhookId,
         });
 

@@ -20,7 +20,7 @@ export class ConsumerEventTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(eventId: string): Promise<ConsumerEvent> {
-        const url = this.parser.url('/consumer/event/$event_id<[0-9]+|^~>', {
+        const url = this.parser.url('/consumer/event/:event_id', {
             'event_id': eventId,
         });
 

@@ -58,7 +58,7 @@ export class ConsumerTokenTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(tokenId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/consumer/token/$token_id<[0-9]+|^~>', {
+        const url = this.parser.url('/consumer/token/:token_id', {
             'token_id': tokenId,
         });
 
@@ -92,7 +92,7 @@ export class ConsumerTokenTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(tokenId: string): Promise<ConsumerToken> {
-        const url = this.parser.url('/consumer/token/$token_id<[0-9]+|^~>', {
+        const url = this.parser.url('/consumer/token/:token_id', {
             'token_id': tokenId,
         });
 
@@ -162,7 +162,7 @@ export class ConsumerTokenTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(tokenId: string, payload: ConsumerTokenUpdate): Promise<ConsumerTokenAccessToken> {
-        const url = this.parser.url('/consumer/token/$token_id<[0-9]+|^~>', {
+        const url = this.parser.url('/consumer/token/:token_id', {
             'token_id': tokenId,
         });
 

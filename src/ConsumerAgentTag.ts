@@ -29,7 +29,7 @@ export class ConsumerAgentTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(agentId: string): Promise<ConsumerAgent> {
-        const url = this.parser.url('/consumer/agent/$agent_id<[0-9]+|^~>', {
+        const url = this.parser.url('/consumer/agent/:agent_id', {
             'agent_id': agentId,
         });
 

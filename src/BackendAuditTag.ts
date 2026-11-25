@@ -20,7 +20,7 @@ export class BackendAuditTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(auditId: string): Promise<BackendAudit> {
-        const url = this.parser.url('/backend/audit/$audit_id<[0-9]+>', {
+        const url = this.parser.url('/backend/audit/:audit_id', {
             'audit_id': auditId,
         });
 

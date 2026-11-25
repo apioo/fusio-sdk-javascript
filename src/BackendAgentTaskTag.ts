@@ -21,7 +21,7 @@ export class BackendAgentTaskTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async cancel(agentId: string, taskId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/agent/$agent_id<[0-9]+|^~>/task/:task_id', {
+        const url = this.parser.url('/backend/agent/:agent_id/task/:task_id', {
             'agent_id': agentId,
             'task_id': taskId,
         });
@@ -56,7 +56,7 @@ export class BackendAgentTaskTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async create(agentId: string, payload: BackendAgentTaskCreate, connection?: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/agent/$agent_id<[0-9]+|^~>/task', {
+        const url = this.parser.url('/backend/agent/:agent_id/task', {
             'agent_id': agentId,
         });
 
@@ -93,7 +93,7 @@ export class BackendAgentTaskTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(agentId: string, taskId: string): Promise<BackendAgentTask> {
-        const url = this.parser.url('/backend/agent/$agent_id<[0-9]+|^~>/task/:task_id', {
+        const url = this.parser.url('/backend/agent/:agent_id/task/:task_id', {
             'agent_id': agentId,
             'task_id': taskId,
         });
@@ -128,7 +128,7 @@ export class BackendAgentTaskTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async getAll(agentId: string, startIndex?: number, count?: number): Promise<BackendAgentTaskCollection> {
-        const url = this.parser.url('/backend/agent/$agent_id<[0-9]+|^~>/task', {
+        const url = this.parser.url('/backend/agent/:agent_id/task', {
             'agent_id': agentId,
         });
 

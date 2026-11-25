@@ -105,7 +105,7 @@ export class BackendConnectionTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(connectionId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/connection/$connection_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/connection/:connection_id', {
             'connection_id': connectionId,
         });
 
@@ -139,7 +139,7 @@ export class BackendConnectionTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(connectionId: string): Promise<BackendConnection> {
-        const url = this.parser.url('/backend/connection/$connection_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/connection/:connection_id', {
             'connection_id': connectionId,
         });
 
@@ -210,7 +210,7 @@ export class BackendConnectionTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async getClasses(): Promise<BackendConnectionIndex> {
-        const url = this.parser.url('/backend/connection/list', {
+        const url = this.parser.url('/backend/capability/connection/list', {
         });
 
         let request: HttpRequest = {
@@ -243,7 +243,7 @@ export class BackendConnectionTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async getForm(_class?: string): Promise<CommonFormContainer> {
-        const url = this.parser.url('/backend/connection/form', {
+        const url = this.parser.url('/backend/capability/connection/form', {
         });
 
         let request: HttpRequest = {
@@ -311,7 +311,7 @@ export class BackendConnectionTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(connectionId: string, payload: BackendConnectionUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/connection/$connection_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/connection/:connection_id', {
             'connection_id': connectionId,
         });
 

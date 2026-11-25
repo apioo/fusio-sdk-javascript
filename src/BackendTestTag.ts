@@ -20,7 +20,7 @@ export class BackendTestTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(testId: string): Promise<BackendTest> {
-        const url = this.parser.url('/backend/test/$test_id<[0-9]+>', {
+        const url = this.parser.url('/backend/test/:test_id', {
             'test_id': testId,
         });
 
@@ -156,7 +156,7 @@ export class BackendTestTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(testId: string, payload: BackendTest): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/test/$test_id<[0-9]+>', {
+        const url = this.parser.url('/backend/test/:test_id', {
             'test_id': testId,
         });
 

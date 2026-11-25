@@ -57,7 +57,7 @@ export class BackendEventTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(eventId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/event/$event_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/event/:event_id', {
             'event_id': eventId,
         });
 
@@ -91,7 +91,7 @@ export class BackendEventTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(eventId: string): Promise<BackendEvent> {
-        const url = this.parser.url('/backend/event/$event_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/event/:event_id', {
             'event_id': eventId,
         });
 
@@ -162,7 +162,7 @@ export class BackendEventTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(eventId: string, payload: BackendEventUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/event/$event_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/event/:event_id', {
             'event_id': eventId,
         });
 

@@ -57,7 +57,7 @@ export class BackendTriggerTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(triggerId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/trigger/$trigger_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/trigger/:trigger_id', {
             'trigger_id': triggerId,
         });
 
@@ -91,7 +91,7 @@ export class BackendTriggerTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(triggerId: string): Promise<BackendTrigger> {
-        const url = this.parser.url('/backend/trigger/$trigger_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/trigger/:trigger_id', {
             'trigger_id': triggerId,
         });
 
@@ -162,7 +162,7 @@ export class BackendTriggerTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(triggerId: string, payload: BackendTriggerUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/trigger/$trigger_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/trigger/:trigger_id', {
             'trigger_id': triggerId,
         });
 

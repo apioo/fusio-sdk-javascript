@@ -57,7 +57,7 @@ export class BackendFirewallTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(firewallId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/firewall/$firewall_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/firewall/:firewall_id', {
             'firewall_id': firewallId,
         });
 
@@ -91,7 +91,7 @@ export class BackendFirewallTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(firewallId: string): Promise<BackendFirewall> {
-        const url = this.parser.url('/backend/firewall/$firewall_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/firewall/:firewall_id', {
             'firewall_id': firewallId,
         });
 
@@ -161,7 +161,7 @@ export class BackendFirewallTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(firewallId: string, payload: BackendFirewallUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/firewall/$firewall_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/firewall/:firewall_id', {
             'firewall_id': firewallId,
         });
 

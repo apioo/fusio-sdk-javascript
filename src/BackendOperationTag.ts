@@ -57,7 +57,7 @@ export class BackendOperationTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(operationId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/operation/$operation_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/operation/:operation_id', {
             'operation_id': operationId,
         });
 
@@ -91,7 +91,7 @@ export class BackendOperationTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(operationId: string): Promise<BackendOperation> {
-        const url = this.parser.url('/backend/operation/$operation_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/operation/:operation_id', {
             'operation_id': operationId,
         });
 
@@ -162,7 +162,7 @@ export class BackendOperationTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(operationId: string, payload: BackendOperationUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/operation/$operation_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/operation/:operation_id', {
             'operation_id': operationId,
         });
 

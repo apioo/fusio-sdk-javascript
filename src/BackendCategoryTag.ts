@@ -57,7 +57,7 @@ export class BackendCategoryTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(categoryId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/category/$category_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/category/:category_id', {
             'category_id': categoryId,
         });
 
@@ -91,7 +91,7 @@ export class BackendCategoryTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(categoryId: string): Promise<BackendCategory> {
-        const url = this.parser.url('/backend/category/$category_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/category/:category_id', {
             'category_id': categoryId,
         });
 
@@ -161,7 +161,7 @@ export class BackendCategoryTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(categoryId: string, payload: BackendCategoryUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/category/$category_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/category/:category_id', {
             'category_id': categoryId,
         });
 

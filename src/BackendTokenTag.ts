@@ -20,7 +20,7 @@ export class BackendTokenTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(tokenId: string): Promise<BackendToken> {
-        const url = this.parser.url('/backend/token/$token_id<[0-9]+>', {
+        const url = this.parser.url('/backend/token/:token_id', {
             'token_id': tokenId,
         });
 

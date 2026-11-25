@@ -57,7 +57,7 @@ export class BackendPageTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(pageId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/page/$page_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/page/:page_id', {
             'page_id': pageId,
         });
 
@@ -91,7 +91,7 @@ export class BackendPageTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(pageId: string): Promise<BackendPage> {
-        const url = this.parser.url('/backend/page/$page_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/page/:page_id', {
             'page_id': pageId,
         });
 
@@ -161,7 +161,7 @@ export class BackendPageTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(pageId: string, payload: BackendPageUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/page/$page_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/page/:page_id', {
             'page_id': pageId,
         });
 

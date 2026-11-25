@@ -58,7 +58,7 @@ export class BackendTaxonomyTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(taxonomyId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/taxonomy/$taxonomy_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/taxonomy/:taxonomy_id', {
             'taxonomy_id': taxonomyId,
         });
 
@@ -92,7 +92,7 @@ export class BackendTaxonomyTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(taxonomyId: string): Promise<BackendTaxonomy> {
-        const url = this.parser.url('/backend/taxonomy/$taxonomy_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/taxonomy/:taxonomy_id', {
             'taxonomy_id': taxonomyId,
         });
 
@@ -162,7 +162,7 @@ export class BackendTaxonomyTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async move(taxonomyId: string, payload: BackendTaxonomyMove): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/taxonomy/$taxonomy_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/taxonomy/:taxonomy_id', {
             'taxonomy_id': taxonomyId,
         });
 
@@ -198,7 +198,7 @@ export class BackendTaxonomyTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(taxonomyId: string, payload: BackendTaxonomyUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/taxonomy/$taxonomy_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/taxonomy/:taxonomy_id', {
             'taxonomy_id': taxonomyId,
         });
 

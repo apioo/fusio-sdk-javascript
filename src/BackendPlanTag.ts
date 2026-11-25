@@ -57,7 +57,7 @@ export class BackendPlanTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(planId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/plan/$plan_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/plan/:plan_id', {
             'plan_id': planId,
         });
 
@@ -91,7 +91,7 @@ export class BackendPlanTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(planId: string): Promise<BackendPlan> {
-        const url = this.parser.url('/backend/plan/$plan_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/plan/:plan_id', {
             'plan_id': planId,
         });
 
@@ -161,7 +161,7 @@ export class BackendPlanTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(planId: string, payload: BackendPlanUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/plan/$plan_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/plan/:plan_id', {
             'plan_id': planId,
         });
 

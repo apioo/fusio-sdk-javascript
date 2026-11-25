@@ -58,7 +58,7 @@ export class BackendScopeTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async delete(scopeId: string): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/scope/$scope_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/scope/:scope_id', {
             'scope_id': scopeId,
         });
 
@@ -92,7 +92,7 @@ export class BackendScopeTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async get(scopeId: string): Promise<BackendScope> {
-        const url = this.parser.url('/backend/scope/$scope_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/scope/:scope_id', {
             'scope_id': scopeId,
         });
 
@@ -162,7 +162,7 @@ export class BackendScopeTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async getCategories(): Promise<BackendScopeCategories> {
-        const url = this.parser.url('/backend/scope/categories', {
+        const url = this.parser.url('/backend/capability/scope/categories', {
         });
 
         let request: HttpRequest = {
@@ -195,7 +195,7 @@ export class BackendScopeTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async update(scopeId: string, payload: BackendScopeUpdate): Promise<CommonMessage> {
-        const url = this.parser.url('/backend/scope/$scope_id<[0-9]+|^~>', {
+        const url = this.parser.url('/backend/scope/:scope_id', {
             'scope_id': scopeId,
         });
 

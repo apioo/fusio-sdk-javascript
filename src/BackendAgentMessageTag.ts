@@ -21,7 +21,7 @@ export class BackendAgentMessageTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async getAll(agentId: string, refId?: number, chatId?: string): Promise<BackendAgentMessageCollection> {
-        const url = this.parser.url('/backend/agent/$agent_id<[0-9]+|^~>/message', {
+        const url = this.parser.url('/backend/agent/:agent_id/message', {
             'agent_id': agentId,
         });
 
@@ -57,7 +57,7 @@ export class BackendAgentMessageTag extends TagAbstract {
      * @throws {ClientException}
      */
     public async submit(agentId: string, payload: AgentInput, refId?: number): Promise<AgentOutput> {
-        const url = this.parser.url('/backend/agent/$agent_id<[0-9]+|^~>/message', {
+        const url = this.parser.url('/backend/agent/:agent_id/message', {
             'agent_id': agentId,
         });
 
