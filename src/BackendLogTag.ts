@@ -6,94 +6,34 @@
 import {TagAbstract, HttpRequest} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
-import {BackendLog} from "./BackendLog";
-import {BackendLogCollection} from "./BackendLogCollection";
-import {CommonMessage} from "./CommonMessage";
-import {CommonMessageException} from "./CommonMessageException";
+import {BackendLogErrorTag} from "./BackendLogErrorTag";
+import {BackendLogMessageTag} from "./BackendLogMessageTag";
+import {BackendLogRequestTag} from "./BackendLogRequestTag";
 
 export class BackendLogTag extends TagAbstract {
-    /**
-     * Returns a specific log
-     *
-     * @returns {Promise<BackendLog>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async get(logId: string): Promise<BackendLog> {
-        const url = this.parser.url('/backend/log/:log_id', {
-            'log_id': logId,
-        });
-
-        let request: HttpRequest = {
-            url: url,
-            method: 'GET',
-            headers: {
-            },
-            params: this.parser.query({
-            }, [
-            ]),
-        };
-
-        const response = await this.httpClient.request(request);
-        if (response.ok) {
-            return await response.json() as BackendLog;
-        }
-
-        const statusCode = response.status;
-        if (statusCode >= 0 && statusCode <= 999) {
-            throw new CommonMessageException(await response.json() as CommonMessage);
-        }
-
-        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-    }
-    /**
-     * Returns a paginated list of logs
-     *
-     * @returns {Promise<BackendLogCollection>}
-     * @throws {CommonMessageException}
-     * @throws {ClientException}
-     */
-    public async getAll(startIndex?: number, count?: number, search?: string, from?: string, to?: string, operationId?: number, appId?: number, userId?: number, ip?: string, userAgent?: string, method?: string, path?: string, header?: string, body?: string): Promise<BackendLogCollection> {
-        const url = this.parser.url('/backend/log', {
-        });
-
-        let request: HttpRequest = {
-            url: url,
-            method: 'GET',
-            headers: {
-            },
-            params: this.parser.query({
-                'startIndex': startIndex,
-                'count': count,
-                'search': search,
-                'from': from,
-                'to': to,
-                'operationId': operationId,
-                'appId': appId,
-                'userId': userId,
-                'ip': ip,
-                'userAgent': userAgent,
-                'method': method,
-                'path': path,
-                'header': header,
-                'body': body,
-            }, [
-            ]),
-        };
-
-        const response = await this.httpClient.request(request);
-        if (response.ok) {
-            return await response.json() as BackendLogCollection;
-        }
-
-        const statusCode = response.status;
-        if (statusCode >= 0 && statusCode <= 999) {
-            throw new CommonMessageException(await response.json() as CommonMessage);
-        }
-
-        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+    public error(): BackendLogErrorTag
+    {
+        return new BackendLogErrorTag(
+            this.httpClient,
+            this.parser
+        );
     }
 
+    public message(): BackendLogMessageTag
+    {
+        return new BackendLogMessageTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public request(): BackendLogRequestTag
+    {
+        return new BackendLogRequestTag(
+            this.httpClient,
+            this.parser
+        );
+    }
 
 
 }
